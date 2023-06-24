@@ -1,0 +1,17 @@
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\BE\bin\Debug\BE.dll
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\BE\bin\Debug\BE.pdb
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\BE\obj\Debug\BE.csproj.AssemblyReference.cache
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\BE\obj\Debug\BE.dll
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\BE\obj\Debug\BE.pdb
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\BE\bin\Debug\BCrypt.Net-Next.dll
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\BE\bin\Debug\System.Buffers.dll
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\BE\bin\Debug\System.Memory.dll
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\BE\bin\Debug\System.Numerics.Vectors.dll
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\BE\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\BE\bin\Debug\BCrypt.Net-Next.xml
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\BE\bin\Debug\System.Buffers.xml
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\BE\bin\Debug\System.Memory.xml
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\BE\bin\Debug\System.Numerics.Vectors.xml
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\BE\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\BE\obj\Debug\BE.csproj.CopyComplete

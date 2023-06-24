@@ -1,0 +1,11 @@
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\Negocio\bin\Debug\Negocio.dll
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\Negocio\bin\Debug\Negocio.pdb
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\Negocio\bin\Debug\AccesosDatos.dll
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\Negocio\bin\Debug\AccesosDatos.pdb
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\Negocio\obj\Debug\Negocio.dll
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\Negocio\obj\Debug\Negocio.pdb
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\Negocio\bin\Debug\Common.dll
+E:\Escritorio\Dialect_Cafe_System\DialectCafeProgram\Negocio\bin\Debug\Common.pdb
