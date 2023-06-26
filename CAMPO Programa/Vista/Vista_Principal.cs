@@ -1,4 +1,7 @@
-﻿using Servicios.Cache;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using Negocio;
+using Servicios.Cache;
+using Servicios.Validaciones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +18,7 @@ namespace Vista
     public partial class Vista_Principal : Form
     {
         private static Vista_Principal Vista = new Vista_Principal();
-        
+        EncriptarContraseña encript;
         private Button selectedButton = null;
         public Vista_Principal()
         {
@@ -23,8 +26,23 @@ namespace Vista
         }
         private void Vista_Principal_Load(object sender, EventArgs e)
         {
+            encript = new EncriptarContraseña();
             LoadUserData();
             AttachButtonClickEvent(panelBotones);
+            consultarCambiarContraseña();
+        }
+
+        public void consultarCambiarContraseña()
+        {
+            BLL_User User = new BLL_User();
+            var primerContraseña = UserLoginInfo.user_name.Trim() + UserLoginInfo.user_lastname.Trim();
+
+            var userAux = User.retornaUsuario(UserLoginInfo.key_email);
+
+            if (encript.ValidarContraseñaUsuario(primerContraseña, userAux.user_password))
+            {
+                MessageBox.Show("Por favor cambie la contraseña ingresando a su perfil");
+            }
         }
 
         #region "salir"
@@ -138,6 +156,10 @@ namespace Vista
         {
             AbrirFormulario<Vista_GestionarUsuarios>();
         }
+        private void btnPerfil_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Vista_Perfil>();
+        }
 
         #endregion
 
@@ -174,6 +196,7 @@ namespace Vista
                 }
             }
         }
+
         #endregion
 
     }

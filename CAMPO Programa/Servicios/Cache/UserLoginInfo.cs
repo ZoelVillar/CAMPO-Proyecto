@@ -17,6 +17,16 @@ namespace Servicios.Cache
         public static int id_area { get; set; }
         public static string nombre_area{ get; set; }
 
-
+        public static void ClearCache()
+        {
+            key_email = null;
+            user_name = null;
+            user_lastname = null;
+            user_password = null;
+            user_blocked = false;
+            user_attempts = 0;
+            id_area = 0;
+            nombre_area = null;
+        }
     }
 }

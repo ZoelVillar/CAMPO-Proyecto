@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AccesosDatos;
 using BE;
+using Servicios.Cache;
 
 namespace Negocio
 {
@@ -15,6 +16,20 @@ namespace Negocio
         public bool CrearUsuario(BE_User usuario)
         {
             return DaoUser.CrearUsuario(usuario);
+        }
+
+        public bool ModificarUsuario(BE_User usuario)
+        {
+            return DaoUser.ModificarUsuario(usuario);
+        }
+        public bool ActualizarContraseña(BE_User usuario)
+        {
+            return DaoUser.ActualizarContraseña(usuario);
+        }
+
+        public bool EditarRestricciones(BE_User usuario)
+        {
+            return DaoUser.EditarRestricciones(usuario);
         }
 
         public bool LoginUser(string user)

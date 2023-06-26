@@ -46,6 +46,78 @@ namespace AccesosDatos
                 }
             }
         }
+
+        public bool ModificarUsuario(BE_User usuario)
+        {
+            using (var connection = dbConnection.GetConnection())
+            {
+                dbConnection.OpenConnection();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "UPDATE Users SET user_name = @user_name, user_lastname = @user_lastname, id_area = @id_area WHERE key_email = @key_email"; 
+
+                    // Parámetros para los valores a insertar
+                    command.Parameters.AddWithValue("@key_email", usuario.key_email);
+                    command.Parameters.AddWithValue("@user_name", usuario.user_name);
+                    command.Parameters.AddWithValue("@user_lastname", usuario.user_lastname);
+                    command.Parameters.AddWithValue("@id_area", usuario.id_area);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    { return true; }
+                    else { return false; }
+                }
+            }
+        }
+
+        public bool ActualizarContraseña(BE_User usuario)
+        {
+            using (var connection = dbConnection.GetConnection())
+            {
+                dbConnection.OpenConnection();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "UPDATE Users SET user_password = @user_password WHERE key_email = @key_email";
+
+                    // Parámetros para los valores a insertar
+                    command.Parameters.AddWithValue("@user_password", usuario.user_password);
+                    command.Parameters.AddWithValue("@key_email", usuario.key_email);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    { return true; }
+                    else { return false; }
+                }
+            }
+        }
+        public bool EditarRestricciones(BE_User usuario)
+        {
+            using (var connection = dbConnection.GetConnection())
+            {
+                dbConnection.OpenConnection();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "UPDATE Users SET user_blocked = @user_blocked, user_attempts = @user_attempts WHERE key_email = @key_email";
+
+                    // Parámetros para los valores a insertar
+                    command.Parameters.AddWithValue("@key_email", usuario.key_email);
+                    command.Parameters.AddWithValue("@user_blocked", usuario.user_blocked);
+                    command.Parameters.AddWithValue("@user_attempts", usuario.user_attempts);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    { return true; }
+                    else { return false; }
+                }
+            }
+        }
+
         public bool userExist(string key_email)
         {
             using (var connection = dbConnection.GetConnection())

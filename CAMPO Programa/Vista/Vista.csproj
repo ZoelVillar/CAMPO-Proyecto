@@ -70,6 +70,12 @@
     <Compile Include="Vista_GestionarUsuarios.Designer.cs">
       <DependentUpon>Vista_GestionarUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista_Perfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista_Perfil.Designer.cs">
+      <DependentUpon>Vista_Perfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista_Principal_Compras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Vista_GestionarUsuarios.resx">
       <DependentUpon>Vista_GestionarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista_Perfil.resx">
+      <DependentUpon>Vista_Perfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista_Principal_Compras.resx">
       <DependentUpon>Vista_Principal_Compras.cs</DependentUpon>

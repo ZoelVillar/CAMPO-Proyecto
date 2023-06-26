@@ -34,12 +34,12 @@
             this.btnModifUser = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnCrearUsuario = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridUsuarios = new System.Windows.Forms.DataGridView();
             this.Area = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bloqueado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bloqueado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.IntentosInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNuevoNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,12 +51,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.txtError = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelFunction = new System.Windows.Forms.Label();
             this.lblDatos = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.panelBotonesIzquierdo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridUsuarios)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,8 +86,9 @@
             this.btnDesbloquear.Name = "btnDesbloquear";
             this.btnDesbloquear.Size = new System.Drawing.Size(112, 32);
             this.btnDesbloquear.TabIndex = 51;
-            this.btnDesbloquear.Text = "Bloquear";
+            this.btnDesbloquear.Text = "Desbloquear";
             this.btnDesbloquear.UseVisualStyleBackColor = false;
+            this.btnDesbloquear.Click += new System.EventHandler(this.btnDesbloquear_Click);
             // 
             // btnBloquear
             // 
@@ -100,8 +101,9 @@
             this.btnBloquear.Name = "btnBloquear";
             this.btnBloquear.Size = new System.Drawing.Size(112, 32);
             this.btnBloquear.TabIndex = 50;
-            this.btnBloquear.Text = "Desbloquear";
+            this.btnBloquear.Text = "Bloquear";
             this.btnBloquear.UseVisualStyleBackColor = false;
+            this.btnBloquear.Click += new System.EventHandler(this.btnBloquear_Click);
             // 
             // btnModifUser
             // 
@@ -151,21 +153,21 @@
             this.btnCrearUsuario.UseVisualStyleBackColor = false;
             this.btnCrearUsuario.Click += new System.EventHandler(this.btnCrearUsuario_Click);
             // 
-            // dataGridView1
+            // dataGridUsuarios
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Area,
             this.Email,
             this.Nombre,
             this.Apellido,
             this.Bloqueado,
             this.IntentosInicio});
-            this.dataGridView1.Location = new System.Drawing.Point(152, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(715, 285);
-            this.dataGridView1.TabIndex = 43;
+            this.dataGridUsuarios.Location = new System.Drawing.Point(152, 12);
+            this.dataGridUsuarios.Name = "dataGridUsuarios";
+            this.dataGridUsuarios.RowHeadersWidth = 62;
+            this.dataGridUsuarios.Size = new System.Drawing.Size(715, 285);
+            this.dataGridUsuarios.TabIndex = 43;
             // 
             // Area
             // 
@@ -191,6 +193,8 @@
             // 
             this.Bloqueado.HeaderText = "Bloqueado";
             this.Bloqueado.Name = "Bloqueado";
+            this.Bloqueado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Bloqueado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // IntentosInicio
             // 
@@ -233,7 +237,7 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.btnAceptar);
             this.panel2.Controls.Add(this.txtError);
-            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.labelFunction);
             this.panel2.Controls.Add(this.lblDatos);
             this.panel2.Controls.Add(this.txtEmail);
             this.panel2.Controls.Add(this.txtNuevoNombre);
@@ -311,15 +315,15 @@
             this.txtError.Text = "Error";
             this.txtError.Visible = false;
             // 
-            // label2
+            // labelFunction
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(147, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 20);
-            this.label2.TabIndex = 59;
-            this.label2.Text = "- Crear Usuario";
+            this.labelFunction.AutoSize = true;
+            this.labelFunction.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFunction.Location = new System.Drawing.Point(147, 14);
+            this.labelFunction.Name = "labelFunction";
+            this.labelFunction.Size = new System.Drawing.Size(131, 20);
+            this.labelFunction.TabIndex = 59;
+            this.labelFunction.Text = "- Crear Usuario";
             // 
             // lblDatos
             // 
@@ -354,7 +358,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 550);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridUsuarios);
             this.Controls.Add(this.panelBotonesIzquierdo);
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
@@ -364,7 +368,7 @@
             this.Text = "Vista_GestionarUsuarios";
             this.Load += new System.EventHandler(this.Vista_GestionarUsuarios_Load);
             this.panelBotonesIzquierdo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridUsuarios)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -376,7 +380,7 @@
 
         private System.Windows.Forms.Panel panelBotonesIzquierdo;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridUsuarios;
         private System.Windows.Forms.Button btnCrearUsuario;
         private System.Windows.Forms.TextBox txtNuevoNombre;
         private System.Windows.Forms.Label label1;
@@ -386,7 +390,7 @@
         private System.Windows.Forms.Button btnDesbloquear;
         private System.Windows.Forms.Button btnBloquear;
         private System.Windows.Forms.Button btnModifUser;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelFunction;
         private System.Windows.Forms.Label txtError;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.TextBox txtEmail;
@@ -399,7 +403,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Bloqueado;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Bloqueado;
         private System.Windows.Forms.DataGridViewTextBoxColumn IntentosInicio;
     }
 }

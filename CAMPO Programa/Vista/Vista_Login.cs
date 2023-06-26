@@ -39,19 +39,70 @@ namespace Vista
 
                     if(ValidLogin == true)
                     {
-                        if (encript.Validar(txtContraseña.Text))
+                        if (!UserLoginInfo.user_blocked)
                         {
-                            Vista_Principal mainMenu = new Vista_Principal();
-                            mainMenu.Show();
-                            mainMenu.FormClosed += Logout;
-                            this.Hide();
+                            if (encript.Validar(txtContraseña.Text))
+                            {
+                                BE_User userAux = new BE_User(
+                                        UserLoginInfo.key_email,
+                                        false,
+                                        0
+                                    );
 
-                            UserLoginInfo.user_password = "";
+                                if (!User.EditarRestricciones(userAux))
+                                {
+                                    Console.WriteLine("Error");
+                                }
 
+                                Vista_Principal mainMenu = new Vista_Principal();
+                                mainMenu.Show();
+                                mainMenu.FormClosed += Logout;
+                                this.Hide();
+
+                                UserLoginInfo.user_password = "";
+
+                            }
+                            else
+                            {
+                                if(UserLoginInfo.user_attempts == 3)
+                                {
+                                    BE_User userAux = new BE_User(
+                                        UserLoginInfo.key_email,
+                                        true,
+                                        UserLoginInfo.user_attempts
+                                    );
+
+                                    if (!User.EditarRestricciones(userAux))
+                                    {
+                                        Console.WriteLine("Error");
+                                    }
+                                    msgError("Número de intentos alcanzado, se bloqueó el usuario");
+                                }
+                                else
+                                {
+
+                                    BE_User userAux = new BE_User(
+                                        UserLoginInfo.key_email,
+                                        false,
+                                        UserLoginInfo.user_attempts + 1
+                                    );
+
+                                    if (!User.EditarRestricciones(userAux))
+                                    {
+                                        Console.WriteLine("Error");
+                                    }
+                                    msgError("La contraseña no coincide, se reducen sus intentos");
+                                }                            
+
+                                UserLoginInfo.ClearCache();
+                                txtContraseña.Clear();
+                                txtUsuario.Clear();
+                            }
                         }
                         else
                         {
-                            msgError("La contraseña no coincide");
+                            UserLoginInfo.ClearCache();
+                            msgError("Su usuario se encuentra bloqueado, comuníquese con un administrador");
                             txtContraseña.Clear();
                             txtUsuario.Clear();
                         }

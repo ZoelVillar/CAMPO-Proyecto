@@ -16,9 +16,15 @@ namespace Servicios.Validaciones
 
         public bool Validar(string contraseña)
         {
-            //bool isPasswordValid = BCrypt.Net.BCrypt.Verify(contraseña, UserLoginInfo.password_user);
-            //return isPasswordValid;
-            return true;
+            bool isPasswordValid = BCrypt.Net.BCrypt.Verify(contraseña, UserLoginInfo.user_password);
+            return isPasswordValid;
+            //return true;
+        }
+
+        public bool ValidarContraseñaUsuario(string contraseñaX, string contraseñaY)
+        {
+            bool isPasswordValid = BCrypt.Net.BCrypt.Verify(contraseñaX, contraseñaY);
+            return isPasswordValid;
         }
     }
 }
