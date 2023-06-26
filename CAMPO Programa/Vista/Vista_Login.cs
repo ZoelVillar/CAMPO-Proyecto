@@ -46,7 +46,7 @@ namespace Vista
                             mainMenu.FormClosed += Logout;
                             this.Hide();
 
-                            UserLoginInfo.password_user = "";
+                            UserLoginInfo.user_password = "";
 
                         }
                         else

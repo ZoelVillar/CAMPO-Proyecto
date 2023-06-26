@@ -27,21 +27,9 @@ namespace Vista
             AttachButtonClickEvent(panelBotones);
         }
 
-        private void AttachButtonClickEvent(Panel panel)
-        {
-            foreach (Control control in panel.Controls)
-            {
-                if (control is Button button && button.Visible)
-                {
-                    button.Click -= Button_Click;
-                    button.Click += Button_Click;
-                }
-            }
-        }
-
+        #region "salir"
         private void btnLogout_Click(object sender, EventArgs e)
         {
-
             respuestaToolbox(false);
         }
 
@@ -67,7 +55,10 @@ namespace Vista
                 }
             }
         }
+        #endregion
 
+
+        //abrir form al presionar boton
         private void AbrirFormulario<MiForm>() where MiForm : Form, new(){
             Form formulario;
             formulario = panelFormularios.Controls.OfType<MiForm>().FirstOrDefault(); //Busca en la coleeccion el formulario
@@ -88,6 +79,12 @@ namespace Vista
             {
                 formulario.BringToFront();
             }
+        }
+
+        private void LoadUserData()
+        {
+            lblNombre.Text = UserLoginInfo.user_name + " " + UserLoginInfo.user_lastname;
+            lblArea.Text = UserLoginInfo.nombre_area;
         }
 
         #region "Salir , minimizar y redimensionar"
@@ -126,6 +123,7 @@ namespace Vista
         }
         #endregion
 
+        #region "Abrir Formularios"
         private void btnAbrirVentas_Click(object sender, EventArgs e)
         {
             AbrirFormulario<Vista_Principal_Ventas>();
@@ -141,7 +139,9 @@ namespace Vista
             AbrirFormulario<Vista_GestionarUsuarios>();
         }
 
-        /*Funcion que maneja el cambio de colores de los botones*/
+        #endregion
+
+        #region "Funcion que maneja el cambio de colores de los botones"
         private void Button_Click(object sender, EventArgs e)
         {
             // Verifica si hay un botón seleccionado actualmente
@@ -163,11 +163,18 @@ namespace Vista
             selectedButton = clickedButton;
         }
 
-        private void LoadUserData()
+        private void AttachButtonClickEvent(Panel panel)
         {
-            lblNombre.Text = UserLoginInfo.name_user;
-            lblArea.Text = UserLoginInfo.id_area;
+            foreach (Control control in panel.Controls)
+            {
+                if (control is Button button && button.Visible)
+                {
+                    button.Click -= Button_Click;
+                    button.Click += Button_Click;
+                }
+            }
         }
+        #endregion
 
     }
 }

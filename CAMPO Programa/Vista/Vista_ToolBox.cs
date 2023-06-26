@@ -34,11 +34,13 @@ namespace Vista
 
         public static void ClearCache()
         {
-            UserLoginInfo.id_employee = null;
-            UserLoginInfo.id_area = null;
-            UserLoginInfo.name_user = null;
-            UserLoginInfo.language_user = null;
-            UserLoginInfo.blocked_user = false;
+            UserLoginInfo.key_email = "";
+            UserLoginInfo.user_name = "";
+            UserLoginInfo.user_lastname = "";
+            UserLoginInfo.user_password = "";
+            UserLoginInfo.user_blocked = false;
+            UserLoginInfo.user_attempts = 000;
+            UserLoginInfo.id_area = 000;
         }
     }
 }

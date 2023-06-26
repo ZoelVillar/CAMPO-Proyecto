@@ -61,3 +61,24 @@ C:\Users\zoel.villar\Desktop\Dialect_Cafe_System\DialectCafeProgram\AccesosDatos
 C:\Users\zoel.villar\Desktop\Dialect_Cafe_System\DialectCafeProgram\AccesosDatos\obj\Debug\AccesosDatos.csproj.CopyComplete
 C:\Users\zoel.villar\Desktop\Dialect_Cafe_System\DialectCafeProgram\AccesosDatos\obj\Debug\AccesosDatos.dll
 C:\Users\zoel.villar\Desktop\Dialect_Cafe_System\DialectCafeProgram\AccesosDatos\obj\Debug\AccesosDatos.pdb
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\AccesosDatos\bin\Debug\AccesosDatos.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\AccesosDatos\bin\Debug\AccesosDatos.pdb
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\AccesosDatos\bin\Debug\BCrypt.Net-Next.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\AccesosDatos\bin\Debug\BE.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\AccesosDatos\bin\Debug\Servicios.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\AccesosDatos\bin\Debug\System.Buffers.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\AccesosDatos\bin\Debug\System.Memory.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\AccesosDatos\bin\Debug\System.Numerics.Vectors.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\AccesosDatos\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\AccesosDatos\bin\Debug\BE.pdb
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\AccesosDatos\bin\Debug\Servicios.pdb
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\AccesosDatos\bin\Debug\BCrypt.Net-Next.xml
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\AccesosDatos\bin\Debug\System.Buffers.xml
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\AccesosDatos\bin\Debug\System.Memory.xml
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\AccesosDatos\bin\Debug\System.Numerics.Vectors.xml
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\AccesosDatos\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\AccesosDatos\obj\Debug\AccesosDatos.csproj.AssemblyReference.cache
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\AccesosDatos\obj\Debug\AccesosDatos.csproj.CoreCompileInputs.cache
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\AccesosDatos\obj\Debug\AccesosDatos.csproj.CopyComplete
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\AccesosDatos\obj\Debug\AccesosDatos.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\AccesosDatos\obj\Debug\AccesosDatos.pdb

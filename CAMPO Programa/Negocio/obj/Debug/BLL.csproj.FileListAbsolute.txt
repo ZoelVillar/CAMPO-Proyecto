@@ -67,3 +67,26 @@ C:\Users\zoel.villar\Desktop\Dialect_Cafe_System\DialectCafeProgram\Negocio\obj\
 C:\Users\zoel.villar\Desktop\Dialect_Cafe_System\DialectCafeProgram\Negocio\obj\Debug\BLL.csproj.CopyComplete
 C:\Users\zoel.villar\Desktop\Dialect_Cafe_System\DialectCafeProgram\Negocio\obj\Debug\Negocio.dll
 C:\Users\zoel.villar\Desktop\Dialect_Cafe_System\DialectCafeProgram\Negocio\obj\Debug\Negocio.pdb
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\bin\Debug\Negocio.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\bin\Debug\Negocio.pdb
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\bin\Debug\AccesosDatos.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\bin\Debug\BCrypt.Net-Next.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\bin\Debug\BE.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\bin\Debug\Servicios.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\bin\Debug\System.Buffers.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\bin\Debug\System.Memory.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\bin\Debug\System.Numerics.Vectors.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\bin\Debug\AccesosDatos.pdb
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\bin\Debug\BE.pdb
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\bin\Debug\Servicios.pdb
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\bin\Debug\BCrypt.Net-Next.xml
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\bin\Debug\System.Buffers.xml
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\bin\Debug\System.Memory.xml
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\bin\Debug\System.Numerics.Vectors.xml
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\obj\Debug\BLL.csproj.CopyComplete
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\obj\Debug\Negocio.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\obj\Debug\Negocio.pdb

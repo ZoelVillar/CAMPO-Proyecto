@@ -8,12 +8,14 @@ namespace Servicios.Cache
 {
     public static class UserLoginInfo //Static: Los valores son permanentes mientras la app exista
     {
-        public static string id_employee { get; set; }
-        public static string id_area { get; set; }
-        public static string name_user { get; set; }
-        public static string language_user { get; set; }
-        public static string password_user { get; set; }
-        public static bool blocked_user { get; set; }
+        public static string key_email { get; set; }
+        public static string user_name { get; set; }
+        public static string user_lastname { get; set; }
+        public static string user_password { get; set; }
+        public static bool user_blocked { get; set; }
+        public static int user_attempts { get; set; }
+        public static int id_area { get; set; }
+        public static string nombre_area{ get; set; }
 
 
     }

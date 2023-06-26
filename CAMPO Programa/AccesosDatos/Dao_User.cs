@@ -7,7 +7,6 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
-using Servicios.Cache;
 
 namespace AccesosDatos
 {
@@ -28,30 +27,26 @@ namespace AccesosDatos
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = $"INSERT INTO Users (id_employee, id_area, name_user, password_user, language_user, blocked_user) VALUES (@idEmployee, @idArea, @nameUser, @passwordUser, @languageUser, @blockedUser)"; ;
+                    command.CommandText = $"INSERT INTO Users (key_email, user_name, user_lastname, user_password, user_blocked, user_attempts, id_area) VALUES (@key_email, @user_name, @user_lastname, @user_password, @user_blocked, @user_attempts, @id_area)"; ;
                     
                     // Parámetros para los valores a insertar
-                    command.Parameters.AddWithValue("@idEmployee", usuario.id_employee);
-                    command.Parameters.AddWithValue("@idArea", usuario.id_area);
-                    command.Parameters.AddWithValue("@nameUser", usuario.name_user);
-                    command.Parameters.AddWithValue("@passwordUser", usuario.password_user);
-                    command.Parameters.AddWithValue("@languageUser", usuario.language_user);
-                    command.Parameters.AddWithValue("@blockedUser", usuario.blocked_user);
+                    command.Parameters.AddWithValue("@key_email", usuario.key_email);
+                    command.Parameters.AddWithValue("@user_name", usuario.user_name);
+                    command.Parameters.AddWithValue("@user_lastname", usuario.user_lastname);
+                    command.Parameters.AddWithValue("@user_password", usuario.user_password);
+                    command.Parameters.AddWithValue("@user_blocked", usuario.user_blocked);
+                    command.Parameters.AddWithValue("@user_attempts", usuario.user_attempts);
+                    command.Parameters.AddWithValue("@id_area", usuario.id_area);
 
                     int rowsAffected = command.ExecuteNonQuery();
 
                     if (rowsAffected > 0)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                    { return true;}
+                    else{ return false;}
                 }
             }
         }
-        public bool userExist(string name_user)
+        public bool userExist(string key_email)
         {
             using (var connection = dbConnection.GetConnection())
             {
@@ -60,8 +55,8 @@ namespace AccesosDatos
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "select name_user from Users where name_user = @user";
-                    command.Parameters.AddWithValue("user", name_user);
+                    command.CommandText = "select key_email from Users where key_email = @email";
+                    command.Parameters.AddWithValue("email", key_email);
                     command.CommandType = System.Data.CommandType.Text;
 
 
@@ -78,7 +73,7 @@ namespace AccesosDatos
                 }
             }
         }
-        public BE_User retornaUsuario(string name_user)
+        public BE_User retornaUsuario(string key_email)
         {
             using (var connection = dbConnection.GetConnection())
             {
@@ -87,8 +82,8 @@ namespace AccesosDatos
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "select id_employee, id_area, name_user, password_user, language_user, blocked_user from Users where name_user = @user";
-                    command.Parameters.AddWithValue("user", name_user);
+                    command.CommandText = "SELECT U.key_email, U.user_name, U.user_lastname, U.user_password, U.user_blocked, U.user_attempts, U.id_area, A.nombre_area FROM Users U JOIN Area A ON U.id_area = A.id_area WHERE U.key_email = @user";
+                    command.Parameters.AddWithValue("user", key_email);
                     command.CommandType = System.Data.CommandType.Text;
 
 
@@ -97,12 +92,14 @@ namespace AccesosDatos
                     {
                         while (reader.Read())
                         {   
-                            usuario.id_employee = reader.GetString(0);
-                            usuario.id_area = reader.GetString(1);
-                            usuario.name_user = reader.GetString(2);
-                            usuario.password_user = reader.GetString(3);
-                            usuario.language_user = reader.GetString(4);
-                            usuario.blocked_user = reader.GetBoolean(5);
+                            usuario.key_email = reader.GetString(0);
+                            usuario.user_name = reader.GetString(1);
+                            usuario.user_lastname = reader.GetString(2);
+                            usuario.user_password = reader.GetString(3);
+                            usuario.user_blocked = reader.GetBoolean(4);
+                            usuario.user_attempts = reader.GetInt32(5);
+                            usuario.id_area = reader.GetInt32(6);
+                            usuario.nombre_area = reader.GetString(7);
                         }
                     }
 
@@ -110,7 +107,7 @@ namespace AccesosDatos
                 }
             }
         }
-        public bool Login(string name_user)
+        public bool Login(string key_email)
         {
             using (var connection = dbConnection.GetConnection())
             {
@@ -118,22 +115,23 @@ namespace AccesosDatos
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "select id_employee, id_area, name_user, password_user, language_user, blocked_user from Users where name_user = @user";
-                    command.Parameters.AddWithValue("user", name_user);
+                    command.CommandText = "SELECT U.key_email, U.user_name, U.user_lastname, U.user_password, U.user_blocked, U.user_attempts, U.id_area, A.nombre_area FROM Users U JOIN Area A ON U.id_area = A.id_area WHERE U.key_email = @user";
+                    command.Parameters.AddWithValue("user", key_email);
                     command.CommandType = System.Data.CommandType.Text;
-
 
                     SqlDataReader reader = command.ExecuteReader();
                     if (reader.HasRows)
                     {
                         while (reader.Read())
                         {
-                            UserLoginInfo.id_employee = reader.GetString(0);
-                            UserLoginInfo.id_area = reader.GetString(1);
-                            UserLoginInfo.name_user = reader.GetString(2);
-                            UserLoginInfo.password_user = reader.GetString(3);
-                            UserLoginInfo.language_user = reader.GetString(4);
-                            UserLoginInfo.blocked_user = reader.GetBoolean(5);
+                            UserLoginInfo.key_email = reader.GetString(0);
+                            UserLoginInfo.user_name = reader.GetString(1);
+                            UserLoginInfo.user_lastname = reader.GetString(2);
+                            UserLoginInfo.user_password = reader.GetString(3);
+                            UserLoginInfo.user_blocked = reader.GetBoolean(4);
+                            UserLoginInfo.user_attempts = reader.GetInt32(5);
+                            UserLoginInfo.id_area = reader.GetInt32(6);
+                            UserLoginInfo.nombre_area = reader.GetString(7);
                         }
                         return true;
                     }
@@ -153,7 +151,7 @@ namespace AccesosDatos
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "select id_employee, id_area, name_user, language_user, blocked_user from Users"; // Ajusta la consulta según tu estructura de base de datos
+                    command.CommandText = "SELECT U.key_email, U.user_name, U.user_lastname, U.user_password, U.user_blocked, U.user_attempts, U.id_area, A.nombre_area FROM Users U INNER JOIN Area A ON U.id_area = A.id_area"; // Ajusta la consulta según tu estructura de base de datos
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -162,11 +160,14 @@ namespace AccesosDatos
                         while (reader.Read())
                         {
                             BE_User usuario = new BE_User();
-                            usuario.id_employee = reader.GetString(0);
-                            usuario.id_area = reader.GetString(1);
-                            usuario.name_user = reader.GetString(2);
-                            usuario.language_user = reader.GetString(3);
-                            usuario.blocked_user = reader.GetBoolean(4);
+                            usuario.key_email = reader.GetString(0);
+                            usuario.user_name = reader.GetString(1);
+                            usuario.user_lastname = reader.GetString(2);
+                            usuario.user_password = reader.GetString(3);
+                            usuario.user_blocked = reader.GetBoolean(4);
+                            usuario.user_attempts = reader.GetInt32(5);
+                            usuario.id_area = reader.GetInt32(6);
+                            usuario.nombre_area = reader.GetString(7);
 
                             usuarios.Add(usuario);
                         }

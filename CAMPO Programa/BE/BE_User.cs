@@ -12,30 +12,25 @@ namespace BE
         {
         }
 
-        public BE_User(string id_employee, string id_area, string name_user, string language_user, bool blocked_user)
+        public BE_User(string key_email, string user_name, string user_lastname, string user_password, bool user_blocked, int user_attempts, int id_area, string nombre_area = null)
         {
-            this.id_employee = id_employee;
+            this.key_email = key_email;
+            this.user_name = user_name;
+            this.user_lastname = user_lastname;
+            this.user_password = user_password;
+            this.user_blocked = user_blocked;
+            this.user_attempts = user_attempts;
             this.id_area = id_area;
-            this.name_user = name_user;
-            this.language_user = language_user;
-            this.blocked_user = blocked_user;
+            this.nombre_area = nombre_area;
         }
 
-        public BE_User(string id_employee, string id_area, string name_user, string password_user, string language_user, bool blocked_user)
-        {
-            this.id_employee = id_employee;
-            this.id_area = id_area;
-            this.name_user = name_user;
-            this.password_user = password_user;
-            this.language_user = language_user;
-            this.blocked_user = blocked_user;
-        }
-
-        public  string id_employee { get; set; }
-        public  string id_area { get; set; }
-        public  string name_user { get; set; }
-        public string password_user { get; set; }
-        public  string language_user { get; set; }
-        public  bool blocked_user { get; set; }
+        public string key_email { get; set; }
+        public string user_name { get; set; }
+        public string user_lastname { get; set; }
+        public string user_password { get; set; }
+        public bool user_blocked { get; set; }
+        public int user_attempts { get; set; }
+        public int id_area { get; set; }
+        public string nombre_area { get; set; }
     }
 }

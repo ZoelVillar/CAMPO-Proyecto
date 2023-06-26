@@ -32,3 +32,22 @@ C:\Users\zoel.villar\Desktop\Dialect_Cafe_System\DialectCafeProgram\Servicios\ob
 C:\Users\zoel.villar\Desktop\Dialect_Cafe_System\DialectCafeProgram\Servicios\obj\Debug\Servicios.csproj.CopyComplete
 C:\Users\zoel.villar\Desktop\Dialect_Cafe_System\DialectCafeProgram\Servicios\obj\Debug\Servicios.dll
 C:\Users\zoel.villar\Desktop\Dialect_Cafe_System\DialectCafeProgram\Servicios\obj\Debug\Servicios.pdb
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\Servicios.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\Servicios.pdb
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\BCrypt.Net-Next.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\System.Buffers.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\System.Memory.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\System.Numerics.Vectors.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\BCrypt.Net-Next.xml
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\System.Buffers.xml
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\System.Memory.xml
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\System.Numerics.Vectors.xml
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Servicios\obj\Debug\Servicios.csproj.AssemblyReference.cache
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Servicios\obj\Debug\Servicios.csproj.CoreCompileInputs.cache
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Servicios\obj\Debug\Servicios.csproj.CopyComplete
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Servicios\obj\Debug\Servicios.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Servicios\obj\Debug\Servicios.pdb
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\BE.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\BE.pdb

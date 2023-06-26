@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Servicios.Cache;
-
 namespace Servicios.Validaciones
 {
     public class EncriptarContraseña

@@ -9,18 +9,20 @@ namespace Servicios.Validaciones
 {
     public class ValidarRegex
     {
-        public bool validarUserName(string nombre)
+        public bool validarEmail(string email)
         {
-            string pattern = @"^(?!.*\s{2})[a-zA-Z][a-zA-Z0-9_-]*(?:\s[a-zA-Z0-9_-]+)*$";
-            Regex regex = new Regex(pattern);
-            return regex.IsMatch(nombre);
+            string emailPattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|"
+                + @"([-a-z0-9!#$%&'*+/=?^_`{|}~]|(?<!\.)\.)*)(@"
+                + @"([a-z0-9-]+(?!-)\.)+[a-z]{2,6}$)";
+            Regex regex = new Regex(emailPattern);
+            return regex.IsMatch(email);
         }
 
-        public bool validarContraseña(string nombre)
+        public bool validarContraseña(string contraseña)
         {
             string pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[^a-zA-Z\\d\\s]).{8,20}$";
             Regex regex = new Regex(pattern);
-            return regex.IsMatch(nombre);
+            return regex.IsMatch(contraseña);
         }
 
     }

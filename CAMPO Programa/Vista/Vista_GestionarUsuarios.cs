@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BE;
 using Servicios.Validaciones;
+using Servicios.Cache;
 
 namespace Vista
 {
@@ -26,7 +27,6 @@ namespace Vista
 
         private void Vista_GestionarUsuarios_Load(object sender, EventArgs e)
         {
-
             AttachButtonClickEvent(panelBotonesIzquierdo);
 
             btnCrearUsuario.BackColor = Color.FromArgb(107, 112, 92);
@@ -37,6 +37,18 @@ namespace Vista
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
             ActualizarGrilla();
+            cargarComboboxAreas();
+        }
+
+        private void cargarComboboxAreas()
+        {
+            BLL_Areas Areas = new BLL_Areas();
+            if (Areas.retornaAreas())
+            {
+                comboAreas.DataSource = AreasCache.ListaAreas;
+                comboAreas.DisplayMember = "nombre_area";
+                comboAreas.ValueMember = "id_area";
+            }
         }
         private void ActualizarGrilla()
         {
@@ -47,7 +59,7 @@ namespace Vista
 
             foreach (var usuario in usuarios)
             {
-                dataGridView1.Rows.Add(usuario.id_employee, usuario.id_area, usuario.name_user, usuario.language_user, usuario.blocked_user); 
+                dataGridView1.Rows.Add(usuario.id_area, usuario.key_email, usuario.user_name, usuario.user_lastname, usuario.user_blocked, usuario.user_attempts); 
             }
         }
 
@@ -93,10 +105,7 @@ namespace Vista
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (lblEmail.Visible == false)
-            {
                 crearUsuario();
-            }
         }
 
         //private void modificarUsuario()
@@ -115,8 +124,8 @@ namespace Vista
         //                    BE_User AuxUsuario = User.retornaUsuario(txtNmbrUser.Text);
         //                }
 
-        //                var _nombre = txtNuevoNombre.Text;
-        //                if (validaciones.validarUserName(_nombre))
+        //                var _email = txtNuevoNombre.Text;
+        //                if (validaciones.validarEmail(_email))
         //                {
         //                    var _contraseña = txtNuevaContraseña.Text;
         //                    var _ConfirmContra = txtConfirmarContraseña.Text;
@@ -126,7 +135,7 @@ namespace Vista
         //                        if (_contraseña == _ConfirmContra)
         //                        {
         //                            string contraseña = encriptacion.Encriptar(_contraseña);
-        //                            BE_User usuario = new BE_User(_nombre, "AA001", _nombre, contraseña, "ESP", false);
+        //                            BE_User usuario = new BE_User(_email, "AA001", _email, contraseña, "ESP", false);
 
         //                            if (User.CrearUsuario(usuario))
         //                            {
@@ -175,61 +184,41 @@ namespace Vista
         {
             BLL_User User = new BLL_User();
 
-                if (txtNuevaContraseña.Text != "" || txtNuevaContraseña.Text != " ")
+                if (!String.IsNullOrEmpty(txtEmail.Text))
                 {
-                    if (txtConfirmarContraseña.Text != "" || txtConfirmarContraseña.Text != " ")
+                    if (!String.IsNullOrEmpty(txtNuevoNombre.Text) || !String.IsNullOrEmpty(txtNuevoApellido.Text))
                     {
-                        var _nombre = txtNuevoNombre.Text;
-                        if (validaciones.validarUserName(_nombre))
+                        var _email = txtEmail.Text;
+                        if (validaciones.validarEmail(_email))
                         {
-                            var _contraseña = txtNuevaContraseña.Text;
-                            var _ConfirmContra = txtConfirmarContraseña.Text;
+                            string userPassword = encriptacion.Encriptar(txtNuevoNombre.Text + txtNuevoApellido.Text);
+                            
+                            BE_User usuario = new BE_User(_email, txtNuevoNombre.Text, txtNuevoApellido.Text, userPassword, false, 0, 1);
 
-                            if (validaciones.validarContraseña(_contraseña))
+                            if (User.CrearUsuario(usuario))
                             {
-                                if (_contraseña == _ConfirmContra)
-                                {
-                                    string contraseña = encriptacion.Encriptar(_contraseña);
-                                    BE_User usuario = new BE_User(_nombre, "AA001", _nombre, contraseña, "ESP", false);
-                                    
-                                    if(User.CrearUsuario(usuario))
-                                    {
-                                        MessageBox.Show("Usuario Agregado exitosamenter");
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Hubo un error agregando el usuario");
-                                    }
-
-                                    ActualizarGrilla();
-                                }
-                                MessageBox.Show("Las contraseñas no coinciden");
-
+                                MessageBox.Show("Usuario Agregado exitosamenter");
                             }
                             else
                             {
-                                MessageBox.Show("La contraseña no cumple las normas");
-                                txtEmail.Text = "";
-                                txtNuevaContraseña.Text = "";
-                                txtConfirmarContraseña.Text = "";
+                                MessageBox.Show("Hubo un error agregando el usuario");
                             }
+                            ActualizarGrilla();
                         }
                         else
                         {
-                            MessageBox.Show("El nombre de usuario no cumple las normas");
+                            MessageBox.Show("El email no tiene un formato correcto");
                             txtEmail.Text = "";
-                            txtNuevaContraseña.Text = "";
-                            txtConfirmarContraseña.Text = "";
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Ingrese la contraseña");
+                        MessageBox.Show("Complete todos los campos");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Ingrese la contraseña");
+                    MessageBox.Show("Ingrese la email");
                 }
 
 

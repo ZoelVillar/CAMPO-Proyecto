@@ -107,3 +107,40 @@ C:\Users\zoel.villar\Desktop\Dialect_Cafe_System\DialectCafeProgram\Vista\obj\De
 C:\Users\zoel.villar\Desktop\Dialect_Cafe_System\DialectCafeProgram\Vista\obj\Debug\Vista.csproj.CopyComplete
 C:\Users\zoel.villar\Desktop\Dialect_Cafe_System\DialectCafeProgram\Vista\obj\Debug\Vista.exe
 C:\Users\zoel.villar\Desktop\Dialect_Cafe_System\DialectCafeProgram\Vista\obj\Debug\Vista.pdb
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.csproj.AssemblyReference.cache
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.csproj.SuggestedBindingRedirects.cache
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Vista_GestionarUsuarios.resources
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Vista_Principal_Compras.resources
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Vista_Principal_Ventas.resources
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Vista_ToolBox.resources
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Properties.Resources.resources
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Vista_Login.resources
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Vista_Principal.resources
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.csproj.GenerateResource.cache
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.csproj.CoreCompileInputs.cache
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.exe
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.pdb
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\Vista.exe.config
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\Vista.exe
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\Vista.pdb
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\BCrypt.Net-Next.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\BE.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\Negocio.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\Servicios.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\System.Buffers.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\System.Memory.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\System.Numerics.Vectors.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\AccesosDatos.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\BE.pdb
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\Negocio.pdb
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\Servicios.pdb
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\BCrypt.Net-Next.xml
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\System.Buffers.xml
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\System.Memory.xml
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\System.Numerics.Vectors.xml
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\AccesosDatos.pdb
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.csproj.CopyComplete
