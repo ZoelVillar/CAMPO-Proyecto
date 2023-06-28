@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelBotonesIzquierdo = new System.Windows.Forms.Panel();
-            this.btnLogout = new System.Windows.Forms.Button();
+            this.panelBotones = new System.Windows.Forms.Panel();
             this.btnModifUser = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.txtContraActual = new System.Windows.Forms.TextBox();
             this.txtNuevaContra = new System.Windows.Forms.TextBox();
             this.txtRepetirContra = new System.Windows.Forms.TextBox();
@@ -38,24 +38,38 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.panelBotonesIzquierdo.SuspendLayout();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panelBotones.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelBotonesIzquierdo
+            // panelBotones
             // 
-            this.panelBotonesIzquierdo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(202)))));
-            this.panelBotonesIzquierdo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelBotonesIzquierdo.Controls.Add(this.btnModifUser);
-            this.panelBotonesIzquierdo.Controls.Add(this.btnLogout);
-            this.panelBotonesIzquierdo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelBotonesIzquierdo.Location = new System.Drawing.Point(0, 0);
-            this.panelBotonesIzquierdo.Margin = new System.Windows.Forms.Padding(0);
-            this.panelBotonesIzquierdo.Name = "panelBotonesIzquierdo";
-            this.panelBotonesIzquierdo.Size = new System.Drawing.Size(136, 550);
-            this.panelBotonesIzquierdo.TabIndex = 43;
+            this.panelBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(202)))));
+            this.panelBotones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBotones.Controls.Add(this.btnModifUser);
+            this.panelBotones.Controls.Add(this.btnLogout);
+            this.panelBotones.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelBotones.Location = new System.Drawing.Point(0, 0);
+            this.panelBotones.Margin = new System.Windows.Forms.Padding(0);
+            this.panelBotones.Name = "panelBotones";
+            this.panelBotones.Size = new System.Drawing.Size(136, 550);
+            this.panelBotones.TabIndex = 43;
+            // 
+            // btnModifUser
+            // 
+            this.btnModifUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnModifUser.FlatAppearance.BorderSize = 0;
+            this.btnModifUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModifUser.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnModifUser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnModifUser.Location = new System.Drawing.Point(12, 106);
+            this.btnModifUser.Name = "btnModifUser";
+            this.btnModifUser.Size = new System.Drawing.Size(112, 48);
+            this.btnModifUser.TabIndex = 48;
+            this.btnModifUser.Text = "Cambiar Contraseña";
+            this.btnModifUser.UseVisualStyleBackColor = false;
             // 
             // btnLogout
             // 
@@ -74,20 +88,6 @@
             this.btnLogout.TabIndex = 40;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
-            // 
-            // btnModifUser
-            // 
-            this.btnModifUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnModifUser.FlatAppearance.BorderSize = 0;
-            this.btnModifUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModifUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifUser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnModifUser.Location = new System.Drawing.Point(12, 106);
-            this.btnModifUser.Name = "btnModifUser";
-            this.btnModifUser.Size = new System.Drawing.Size(112, 48);
-            this.btnModifUser.TabIndex = 48;
-            this.btnModifUser.Text = "Cambiar Contraseña";
-            this.btnModifUser.UseVisualStyleBackColor = false;
             // 
             // txtContraActual
             // 
@@ -153,15 +153,6 @@
             this.panel1.Size = new System.Drawing.Size(697, 526);
             this.panel1.TabIndex = 52;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(277, 95);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 13);
-            this.label4.TabIndex = 52;
-            this.label4.Text = "CAMBIAR CONTRASEÑA";
-            // 
             // btnAceptar
             // 
             this.btnAceptar.AutoEllipsis = true;
@@ -181,6 +172,15 @@
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(277, 95);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(132, 13);
+            this.label4.TabIndex = 52;
+            this.label4.Text = "CAMBIAR CONTRASEÑA";
+            // 
             // Vista_Perfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,12 +188,12 @@
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(879, 550);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelBotonesIzquierdo);
+            this.Controls.Add(this.panelBotones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Vista_Perfil";
             this.Text = "Vista_Perfil";
             this.Load += new System.EventHandler(this.Vista_Perfil_Load);
-            this.panelBotonesIzquierdo.ResumeLayout(false);
+            this.panelBotones.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -202,7 +202,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panelBotonesIzquierdo;
+        private System.Windows.Forms.Panel panelBotones;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnModifUser;
         private System.Windows.Forms.TextBox txtContraActual;

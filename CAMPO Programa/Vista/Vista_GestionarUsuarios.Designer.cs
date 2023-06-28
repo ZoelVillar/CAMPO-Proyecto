@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelBotonesIzquierdo = new System.Windows.Forms.Panel();
+            this.panelBotones = new System.Windows.Forms.Panel();
             this.btnDesbloquear = new System.Windows.Forms.Button();
             this.btnBloquear = new System.Windows.Forms.Button();
             this.btnModifUser = new System.Windows.Forms.Button();
@@ -55,32 +55,32 @@
             this.lblDatos = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.panelBotonesIzquierdo.SuspendLayout();
+            this.panelBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsuarios)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelBotonesIzquierdo
+            // panelBotones
             // 
-            this.panelBotonesIzquierdo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(202)))));
-            this.panelBotonesIzquierdo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelBotonesIzquierdo.Controls.Add(this.btnDesbloquear);
-            this.panelBotonesIzquierdo.Controls.Add(this.btnBloquear);
-            this.panelBotonesIzquierdo.Controls.Add(this.btnModifUser);
-            this.panelBotonesIzquierdo.Controls.Add(this.btnLogout);
-            this.panelBotonesIzquierdo.Controls.Add(this.btnCrearUsuario);
-            this.panelBotonesIzquierdo.Location = new System.Drawing.Point(0, 0);
-            this.panelBotonesIzquierdo.Margin = new System.Windows.Forms.Padding(0);
-            this.panelBotonesIzquierdo.Name = "panelBotonesIzquierdo";
-            this.panelBotonesIzquierdo.Size = new System.Drawing.Size(136, 556);
-            this.panelBotonesIzquierdo.TabIndex = 42;
+            this.panelBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.panelBotones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBotones.Controls.Add(this.btnDesbloquear);
+            this.panelBotones.Controls.Add(this.btnBloquear);
+            this.panelBotones.Controls.Add(this.btnModifUser);
+            this.panelBotones.Controls.Add(this.btnLogout);
+            this.panelBotones.Controls.Add(this.btnCrearUsuario);
+            this.panelBotones.Location = new System.Drawing.Point(0, 0);
+            this.panelBotones.Margin = new System.Windows.Forms.Padding(0);
+            this.panelBotones.Name = "panelBotones";
+            this.panelBotones.Size = new System.Drawing.Size(136, 556);
+            this.panelBotones.TabIndex = 42;
             // 
             // btnDesbloquear
             // 
             this.btnDesbloquear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnDesbloquear.FlatAppearance.BorderSize = 0;
             this.btnDesbloquear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesbloquear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDesbloquear.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnDesbloquear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDesbloquear.Location = new System.Drawing.Point(11, 417);
             this.btnDesbloquear.Name = "btnDesbloquear";
@@ -95,7 +95,7 @@
             this.btnBloquear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnBloquear.FlatAppearance.BorderSize = 0;
             this.btnBloquear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBloquear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBloquear.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnBloquear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnBloquear.Location = new System.Drawing.Point(11, 454);
             this.btnBloquear.Name = "btnBloquear";
@@ -110,7 +110,7 @@
             this.btnModifUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnModifUser.FlatAppearance.BorderSize = 0;
             this.btnModifUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModifUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModifUser.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnModifUser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnModifUser.Location = new System.Drawing.Point(12, 352);
             this.btnModifUser.Name = "btnModifUser";
@@ -140,10 +140,10 @@
             // 
             // btnCrearUsuario
             // 
-            this.btnCrearUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(112)))), ((int)(((byte)(92)))));
+            this.btnCrearUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCrearUsuario.FlatAppearance.BorderSize = 0;
             this.btnCrearUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrearUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearUsuario.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnCrearUsuario.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCrearUsuario.Location = new System.Drawing.Point(12, 314);
             this.btnCrearUsuario.Name = "btnCrearUsuario";
@@ -359,7 +359,7 @@
             this.ClientSize = new System.Drawing.Size(879, 550);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridUsuarios);
-            this.Controls.Add(this.panelBotonesIzquierdo);
+            this.Controls.Add(this.panelBotones);
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -367,7 +367,7 @@
             this.Name = "Vista_GestionarUsuarios";
             this.Text = "Vista_GestionarUsuarios";
             this.Load += new System.EventHandler(this.Vista_GestionarUsuarios_Load);
-            this.panelBotonesIzquierdo.ResumeLayout(false);
+            this.panelBotones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsuarios)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -378,7 +378,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panelBotonesIzquierdo;
+        private System.Windows.Forms.Panel panelBotones;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.DataGridView dataGridUsuarios;
         private System.Windows.Forms.Button btnCrearUsuario;

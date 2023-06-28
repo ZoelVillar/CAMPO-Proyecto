@@ -64,6 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Vista_GestionarAreas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista_GestionarAreas.Designer.cs">
+      <DependentUpon>Vista_GestionarAreas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista_GestionarUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Vista_GestionarAreas.resx">
+      <DependentUpon>Vista_GestionarAreas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista_GestionarUsuarios.resx">
       <DependentUpon>Vista_GestionarUsuarios.cs</DependentUpon>
     </EmbeddedResource>

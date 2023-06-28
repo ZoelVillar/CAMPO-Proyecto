@@ -38,6 +38,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblAreaP = new System.Windows.Forms.Label();
             this.panelBotones = new System.Windows.Forms.Panel();
+            this.btnGestionAreas = new System.Windows.Forms.Button();
             this.btnPerfil = new System.Windows.Forms.Button();
             this.btnGestionUsuarios = new System.Windows.Forms.Button();
             this.btnAbrirVentas = new System.Windows.Forms.Button();
@@ -152,6 +153,7 @@
             // 
             this.panelBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(44)))), ((int)(((byte)(36)))));
             this.panelBotones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBotones.Controls.Add(this.btnGestionAreas);
             this.panelBotones.Controls.Add(this.btnPerfil);
             this.panelBotones.Controls.Add(this.btnGestionUsuarios);
             this.panelBotones.Controls.Add(this.btnAbrirVentas);
@@ -160,6 +162,22 @@
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Size = new System.Drawing.Size(199, 341);
             this.panelBotones.TabIndex = 0;
+            // 
+            // btnGestionAreas
+            // 
+            this.btnGestionAreas.AutoEllipsis = true;
+            this.btnGestionAreas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.btnGestionAreas.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnGestionAreas.FlatAppearance.BorderSize = 0;
+            this.btnGestionAreas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionAreas.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnGestionAreas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGestionAreas.Location = new System.Drawing.Point(10, 136);
+            this.btnGestionAreas.Name = "btnGestionAreas";
+            this.btnGestionAreas.Size = new System.Drawing.Size(177, 35);
+            this.btnGestionAreas.TabIndex = 47;
+            this.btnGestionAreas.Text = "Gestión de Áreas";
+            this.btnGestionAreas.UseVisualStyleBackColor = false;
             // 
             // btnPerfil
             // 
@@ -386,6 +404,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnPerfil;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnGestionAreas;
     }
 }
 

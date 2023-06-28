@@ -27,7 +27,7 @@ namespace Vista
 
         private void Vista_GestionarUsuarios_Load(object sender, EventArgs e)
         {
-            AttachButtonClickEvent(panelBotonesIzquierdo);
+            AttachButtonClickEvent(panelBotones);
 
             btnCrearUsuario.BackColor = Color.FromArgb(107, 112, 92);
             selectedButton = btnCrearUsuario;
