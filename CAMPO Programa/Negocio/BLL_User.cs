@@ -51,5 +51,15 @@ namespace Negocio
         {
             return DaoUser.userExist(name_user);
         }
+
+        public void CloseConnection()
+        {
+            DaoUser.closeConnection();
+        }
+
+        public bool comprobarConexion()
+        {
+            return DaoUser.comprobarConexion();
+        }
     }
 }

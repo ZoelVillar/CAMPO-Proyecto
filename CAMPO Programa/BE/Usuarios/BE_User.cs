@@ -12,12 +12,12 @@ namespace BE
         {
         }
 
-        public BE_User(string key_email, string user_name, string user_lastname, int id_area)
+        public BE_User(string key_email, string user_name, string user_lastname, int idperfil)
         {
             this.key_email = key_email;
             this.user_name = user_name;
             this.user_lastname = user_lastname;
-            this.id_area = id_area;
+            this.id_perfil = idperfil;
         }
 
         public BE_User(string key_email, bool user_blocked, int user_attempts)
@@ -27,7 +27,7 @@ namespace BE
             this.user_attempts = user_attempts;
         }
 
-        public BE_User(string key_email, string user_name, string user_lastname, string user_password, bool user_blocked, int user_attempts, int id_area, string nombre_area = null)
+        public BE_User(string key_email, string user_name, string user_lastname, string user_password, bool user_blocked, int user_attempts, int id_perfil, string nombreperfil = null)
         {
             this.key_email = key_email;
             this.user_name = user_name;
@@ -35,8 +35,8 @@ namespace BE
             this.user_password = user_password;
             this.user_blocked = user_blocked;
             this.user_attempts = user_attempts;
-            this.id_area = id_area;
-            this.nombre_area = nombre_area;
+            this.id_perfil = id_perfil;
+            this.nombre_perfil = nombreperfil;
         }
 
         public string key_email { get; set; }
@@ -45,7 +45,7 @@ namespace BE
         public string user_password { get; set; }
         public bool user_blocked { get; set; }
         public int user_attempts { get; set; }
-        public int id_area { get; set; }
-        public string nombre_area { get; set; }
+        public int id_perfil { get; set; }
+        public string nombre_perfil { get; set; }
     }
 }

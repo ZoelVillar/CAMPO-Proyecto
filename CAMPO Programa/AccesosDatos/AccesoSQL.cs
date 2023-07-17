@@ -60,6 +60,15 @@ namespace AccesosDatos
             }
         }
 
+        public bool comprobarConexion()
+        {
+            if (connection.State == ConnectionState.Open)
+            {
+                return true;
+            }
+            else return false;
+        }
+
 
     }
 }

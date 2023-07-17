@@ -10,41 +10,43 @@ using System.Threading.Tasks;
 
 namespace AccesosDatos
 {
-    public class Dao_Areas
+    public class Dao_Perfil
     {
         private AccesoSQL dbConnection;
 
-        public Dao_Areas()
+        public Dao_Perfil()
         {
             dbConnection = AccesoSQL.getInstance();
         }
 
-        public bool retornaAreas()
+        public List<BE_Perfil> retornaPerfiles()
         {
             using (var connection = dbConnection.GetConnection())
             {
+                List<BE_Perfil> listaPerfiles = new List<BE_Perfil>();
                 dbConnection.OpenConnection();
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT id_area, nombre_area, descripcion FROM Area";
+                    command.CommandText = "SELECT id_perfil, nombre_perfil, descripcion FROM Perfil";
                     command.CommandType = System.Data.CommandType.Text;
 
                     SqlDataReader reader = command.ExecuteReader();
+
                     if (reader.HasRows)
                     {
                         while (reader.Read())
                         {
-                            BE_Areas Area = new BE_Areas();
-                            Area.id_area = reader.GetInt32(0);
-                            Area.nombre_area = reader.GetString(1);
-                            Area.descripcion = reader.GetString(2);
+                            BE_Perfil perfil = new BE_Perfil();
+                            perfil.id_perfil = reader.GetInt32(0);
+                            perfil.nombre_perfil = reader.GetString(1);
+                            perfil.descripcion = reader.GetString(2);
 
-                            AreasCache.ListaAreas.Add(Area);
+                            listaPerfiles.Add(perfil);
                         }
-                        return true;
+                        return listaPerfiles;
                     }
-                    else { return false; }
+                    else { return listaPerfiles; }
                 }
             }
         }

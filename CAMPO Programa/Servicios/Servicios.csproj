@@ -57,7 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cache\AreasCache.cs" />
+    <Compile Include="Cache\PerfilesCache.cs" />
     <Compile Include="Cache\UserLoginInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validaciones\EncriptarContraseña.cs" />

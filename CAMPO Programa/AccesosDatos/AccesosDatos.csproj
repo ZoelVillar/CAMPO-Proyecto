@@ -58,7 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoSQL.cs" />
-    <Compile Include="Dao_Areas.cs" />
+    <Compile Include="DAO_Categoria.cs" />
+    <Compile Include="DAO_Negocio.cs" />
+    <Compile Include="Dao_Perfil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Dao_User.cs" />
   </ItemGroup>

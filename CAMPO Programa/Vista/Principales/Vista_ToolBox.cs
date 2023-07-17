@@ -1,4 +1,5 @@
-﻿using Servicios.Cache;
+﻿using Negocio;
+using Servicios.Cache;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,9 @@ namespace Vista
             ClearCache();
             respuesta = true;
             this.Close();
+            BLL_User User = new BLL_User();
+
+            User.CloseConnection();
         }
 
         private void btnNO_Click(object sender, EventArgs e)
@@ -40,7 +44,7 @@ namespace Vista
             UserLoginInfo.user_password = "";
             UserLoginInfo.user_blocked = false;
             UserLoginInfo.user_attempts = 000;
-            UserLoginInfo.id_area = 000;
+            UserLoginInfo.id_perfil = 000;
         }
     }
 }

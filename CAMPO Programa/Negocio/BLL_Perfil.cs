@@ -9,13 +9,13 @@ using BE;
 
 namespace Negocio
 {
-    public class BLL_Areas
+    public class BLL_Perfil
     {
-        Dao_Areas DaoAreas = new Dao_Areas();
+        Dao_Perfil DaoPerfil = new Dao_Perfil();
 
-        public bool retornaAreas()
+        public List<BE_Perfil> retornaPerfiles()
         {
-            return DaoAreas.retornaAreas();
+            return DaoPerfil.retornaPerfiles();
         }
     }
 }

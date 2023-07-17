@@ -37,18 +37,18 @@ namespace Vista
             dataGridUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridUsuarios.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
             ActualizarGrilla();
-            cargarComboboxAreas();
+            cargarComboPerfiles();
         }
 
-        private void cargarComboboxAreas()
+        private void cargarComboPerfiles()
         {
-            BLL_Areas Areas = new BLL_Areas();
-            if (Areas.retornaAreas())
+            BLL_Perfil Perfil = new BLL_Perfil();
+            if (Perfil.retornaPerfiles().Count > 0)
             {
-                comboAreas.DataSource = AreasCache.ListaAreas;
-                comboAreas.DisplayMember = "nombre_area";
-                comboAreas.ValueMember = "id_area";
-                comboAreas.SelectedIndex = 0;
+                comboPerfiles.DataSource = Perfil.retornaPerfiles();
+                comboPerfiles.DisplayMember = "nombre_perfil";
+                comboPerfiles.ValueMember = "id_perfil";
+                comboPerfiles.SelectedIndex = 0;
             }
         }
         private void ActualizarGrilla()
@@ -60,7 +60,7 @@ namespace Vista
 
             foreach (var usuario in usuarios)
             {
-                dataGridUsuarios.Rows.Add(usuario.id_area, usuario.key_email, usuario.user_name, usuario.user_lastname, usuario.user_blocked, usuario.user_attempts); 
+                dataGridUsuarios.Rows.Add(usuario.id_perfil, usuario.key_email, usuario.user_name, usuario.user_lastname, usuario.user_blocked, usuario.user_attempts); 
             }
         }
 
@@ -109,18 +109,19 @@ namespace Vista
             
         private void btnCrearUsuario_Click(object sender, EventArgs e)
         {
+            txtEmail.Text = "";
             btnAceptar.Visible = true;
+            txtEmail.Enabled = true;
             labelFunction.Text = "- Crear Usuario";
-            lblEmail.Visible = true;
-            txtEmail.Visible = true;
             modoUsuario = ModoUsuario.Crear;
         }
         private void btnModifUser_Click(object sender, EventArgs e)
         {
             btnAceptar.Visible = true;
+            txtEmail.Enabled = false;
             labelFunction.Text = "- Modificar Usuario";
-            lblEmail.Visible = false;
-            txtEmail.Visible = false;
+            if (dataGridUsuarios.SelectedRows[0].Cells["Email"].Value != null) { txtEmail.Text = dataGridUsuarios.SelectedRows[0].Cells["Email"].Value.ToString(); }
+            else { txtEmail.Text = ""; }
             modoUsuario = ModoUsuario.Modificar;
         }
 
@@ -159,10 +160,10 @@ namespace Vista
                         if (!String.IsNullOrEmpty(txtNuevoNombre.Text) || !String.IsNullOrEmpty(txtNuevoApellido.Text))
                         {
                           
-                                int selectedId = (int)comboAreas.SelectedValue;
+                                int selectedId = (int)comboPerfiles.SelectedValue;
                                 BE_User usuarioAux = new BE_User(email, txtNuevoNombre.Text.Trim(), txtNuevoApellido.Text.Trim(), selectedId);
 
-                                string mensaje = $"Seguro que quieres modificar a {usuarioAux.key_email}, con el nombre: {usuarioAux.user_name}, el apellido: {usuarioAux.user_lastname} y el rol de: {comboAreas.SelectedItem.ToString()}?";
+                                string mensaje = $"Seguro que quieres modificar a {usuarioAux.key_email}, con el nombre: {usuarioAux.user_name}, el apellido: {usuarioAux.user_lastname} y el rol de: {comboPerfiles.SelectedItem.ToString()}?";
 
                                 DialogResult resultado = MessageBox.Show(mensaje, "Confirmar modificación de Usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -210,10 +211,10 @@ namespace Vista
                         if (validaciones.validarEmail(_email))
                         {
                             string userPassword = encriptacion.Encriptar(txtNuevoNombre.Text + txtNuevoApellido.Text);
-                            int selectedId = (int)comboAreas.SelectedValue;
+                            int selectedId = (int)comboPerfiles.SelectedValue;
                             BE_User usuario = new BE_User(_email, txtNuevoNombre.Text.Trim(), txtNuevoApellido.Text.Trim(), userPassword, false, 0, selectedId);
 
-                            string mensaje = $"Seguro que quieres crear a {usuario.key_email}, con el nombre: {usuario.user_name}, el apellido: {usuario.user_lastname} y el rol de: {comboAreas.SelectedItem.ToString()}?";
+                            string mensaje = $"Seguro que quieres crear a {usuario.key_email}, con el nombre: {usuario.user_name}, el apellido: {usuario.user_lastname} y el rol de: {comboPerfiles.SelectedItem.ToString()}?";
 
                             DialogResult resultado = MessageBox.Show(mensaje, "Confirmar Creación de Usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -327,5 +328,17 @@ namespace Vista
         }
 
         #endregion
+
+        private void dataGridUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(modoUsuario == ModoUsuario.Modificar)
+            {
+                if (dataGridUsuarios.SelectedRows[0].Cells["Email"].Value != null)
+                {
+                    txtEmail.Text = dataGridUsuarios.SelectedRows[0].Cells["Email"].Value.ToString();
+                }else { txtEmail.Text = ""; }
+            }
+            
+        }
     }
 }

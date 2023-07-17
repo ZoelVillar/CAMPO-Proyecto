@@ -51,3 +51,22 @@ D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Servicios\obj\Debug\Servicios.dll
 D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Servicios\obj\Debug\Servicios.pdb
 D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\BE.dll
 D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\BE.pdb
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Servicios\bin\Debug\Servicios.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Servicios\bin\Debug\Servicios.pdb
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Servicios\bin\Debug\BCrypt.Net-Next.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Servicios\bin\Debug\BE.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Servicios\bin\Debug\System.Buffers.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Servicios\bin\Debug\System.Memory.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Servicios\bin\Debug\System.Numerics.Vectors.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Servicios\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Servicios\bin\Debug\BE.pdb
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Servicios\bin\Debug\BCrypt.Net-Next.xml
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Servicios\bin\Debug\System.Buffers.xml
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Servicios\bin\Debug\System.Memory.xml
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Servicios\bin\Debug\System.Numerics.Vectors.xml
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Servicios\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Servicios\obj\Debug\Servicios.csproj.AssemblyReference.cache
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Servicios\obj\Debug\Servicios.csproj.CoreCompileInputs.cache
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Servicios\obj\Debug\Servicios.csproj.CopyComplete
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Servicios\obj\Debug\Servicios.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Servicios\obj\Debug\Servicios.pdb

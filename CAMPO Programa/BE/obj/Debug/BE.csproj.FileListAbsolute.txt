@@ -32,3 +32,20 @@ D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\BE\obj\Debug\BE.csproj.CoreCompileIn
 D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\BE\obj\Debug\BE.csproj.CopyComplete
 D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\BE\obj\Debug\BE.dll
 D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\BE\obj\Debug\BE.pdb
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\BE\bin\Debug\BE.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\BE\bin\Debug\BE.pdb
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\BE\bin\Debug\BCrypt.Net-Next.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\BE\bin\Debug\System.Buffers.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\BE\bin\Debug\System.Memory.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\BE\bin\Debug\System.Numerics.Vectors.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\BE\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\BE\bin\Debug\BCrypt.Net-Next.xml
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\BE\bin\Debug\System.Buffers.xml
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\BE\bin\Debug\System.Memory.xml
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\BE\bin\Debug\System.Numerics.Vectors.xml
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\BE\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\BE\obj\Debug\BE.csproj.AssemblyReference.cache
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\BE\obj\Debug\BE.csproj.CopyComplete
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\BE\obj\Debug\BE.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\BE\obj\Debug\BE.pdb

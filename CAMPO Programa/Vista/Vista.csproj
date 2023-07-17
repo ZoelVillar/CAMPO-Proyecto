@@ -64,72 +64,72 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Vista_GestionarAreas.cs">
+    <Compile Include="Usuarios\Perfiles\Vista_GestionarPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista_GestionarAreas.Designer.cs">
-      <DependentUpon>Vista_GestionarAreas.cs</DependentUpon>
+    <Compile Include="Usuarios\Perfiles\Vista_GestionarPerfil.Designer.cs">
+      <DependentUpon>Vista_GestionarPerfil.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista_GestionarUsuarios.cs">
+    <Compile Include="Usuarios\Vista_GestionarUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista_GestionarUsuarios.Designer.cs">
+    <Compile Include="Usuarios\Vista_GestionarUsuarios.Designer.cs">
       <DependentUpon>Vista_GestionarUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista_Perfil.cs">
+    <Compile Include="Principales\Vista_Perfil.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista_Perfil.Designer.cs">
+    <Compile Include="Principales\Vista_Perfil.Designer.cs">
       <DependentUpon>Vista_Perfil.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista_Principal_Compras.cs">
+    <Compile Include="Compras\Vista_Principal_Compras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista_Principal_Compras.Designer.cs">
+    <Compile Include="Compras\Vista_Principal_Compras.Designer.cs">
       <DependentUpon>Vista_Principal_Compras.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista_Principal_Ventas.cs">
+    <Compile Include="Ventas\Vista_Principal_Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista_Principal_Ventas.Designer.cs">
+    <Compile Include="Ventas\Vista_Principal_Ventas.Designer.cs">
       <DependentUpon>Vista_Principal_Ventas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista_ToolBox.cs">
+    <Compile Include="Principales\Vista_ToolBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista_ToolBox.Designer.cs">
+    <Compile Include="Principales\Vista_ToolBox.Designer.cs">
       <DependentUpon>Vista_ToolBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista_Login.cs">
+    <Compile Include="Principales\Vista_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista_Login.Designer.cs">
+    <Compile Include="Principales\Vista_Login.Designer.cs">
       <DependentUpon>Vista_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista_Principal.cs">
+    <Compile Include="Principales\Vista_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista_Principal.Designer.cs">
+    <Compile Include="Principales\Vista_Principal.Designer.cs">
       <DependentUpon>Vista_Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Vista_GestionarAreas.resx">
-      <DependentUpon>Vista_GestionarAreas.cs</DependentUpon>
+    <EmbeddedResource Include="Usuarios\Perfiles\Vista_GestionarPerfil.resx">
+      <DependentUpon>Vista_GestionarPerfil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista_GestionarUsuarios.resx">
+    <EmbeddedResource Include="Usuarios\Vista_GestionarUsuarios.resx">
       <DependentUpon>Vista_GestionarUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista_Perfil.resx">
+    <EmbeddedResource Include="Principales\Vista_Perfil.resx">
       <DependentUpon>Vista_Perfil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista_Principal_Compras.resx">
+    <EmbeddedResource Include="Compras\Vista_Principal_Compras.resx">
       <DependentUpon>Vista_Principal_Compras.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista_Principal_Ventas.resx">
+    <EmbeddedResource Include="Ventas\Vista_Principal_Ventas.resx">
       <DependentUpon>Vista_Principal_Ventas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista_ToolBox.resx">
+    <EmbeddedResource Include="Principales\Vista_ToolBox.resx">
       <DependentUpon>Vista_ToolBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -141,10 +141,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Vista_Login.resx">
+    <EmbeddedResource Include="Principales\Vista_Login.resx">
       <DependentUpon>Vista_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista_Principal.resx">
+    <EmbeddedResource Include="Principales\Vista_Principal.resx">
       <DependentUpon>Vista_Principal.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

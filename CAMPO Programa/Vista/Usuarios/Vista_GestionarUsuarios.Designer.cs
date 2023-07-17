@@ -35,7 +35,7 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnCrearUsuario = new System.Windows.Forms.Button();
             this.dataGridUsuarios = new System.Windows.Forms.DataGridView();
-            this.Area = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +46,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboAreas = new System.Windows.Forms.ComboBox();
+            this.comboPerfiles = new System.Windows.Forms.ComboBox();
             this.txtNuevoApellido = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -62,14 +62,14 @@
             // 
             // panelBotones
             // 
-            this.panelBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.panelBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(190)))), ((int)(((byte)(169)))));
             this.panelBotones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelBotones.Controls.Add(this.btnDesbloquear);
             this.panelBotones.Controls.Add(this.btnBloquear);
             this.panelBotones.Controls.Add(this.btnModifUser);
             this.panelBotones.Controls.Add(this.btnLogout);
             this.panelBotones.Controls.Add(this.btnCrearUsuario);
-            this.panelBotones.Location = new System.Drawing.Point(0, 0);
+            this.panelBotones.Location = new System.Drawing.Point(743, 0);
             this.panelBotones.Margin = new System.Windows.Forms.Padding(0);
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Size = new System.Drawing.Size(136, 556);
@@ -82,7 +82,7 @@
             this.btnDesbloquear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDesbloquear.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnDesbloquear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDesbloquear.Location = new System.Drawing.Point(11, 417);
+            this.btnDesbloquear.Location = new System.Drawing.Point(11, 111);
             this.btnDesbloquear.Name = "btnDesbloquear";
             this.btnDesbloquear.Size = new System.Drawing.Size(112, 32);
             this.btnDesbloquear.TabIndex = 51;
@@ -97,7 +97,7 @@
             this.btnBloquear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBloquear.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnBloquear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBloquear.Location = new System.Drawing.Point(11, 454);
+            this.btnBloquear.Location = new System.Drawing.Point(11, 149);
             this.btnBloquear.Name = "btnBloquear";
             this.btnBloquear.Size = new System.Drawing.Size(112, 32);
             this.btnBloquear.TabIndex = 50;
@@ -112,7 +112,7 @@
             this.btnModifUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModifUser.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnModifUser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnModifUser.Location = new System.Drawing.Point(12, 352);
+            this.btnModifUser.Location = new System.Drawing.Point(11, 64);
             this.btnModifUser.Name = "btnModifUser";
             this.btnModifUser.Size = new System.Drawing.Size(112, 32);
             this.btnModifUser.TabIndex = 48;
@@ -145,7 +145,7 @@
             this.btnCrearUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrearUsuario.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnCrearUsuario.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCrearUsuario.Location = new System.Drawing.Point(12, 314);
+            this.btnCrearUsuario.Location = new System.Drawing.Point(11, 26);
             this.btnCrearUsuario.Name = "btnCrearUsuario";
             this.btnCrearUsuario.Size = new System.Drawing.Size(112, 32);
             this.btnCrearUsuario.TabIndex = 44;
@@ -157,49 +157,63 @@
             // 
             this.dataGridUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Area,
+            this.Perfil,
             this.Email,
             this.Nombre,
             this.Apellido,
             this.Bloqueado,
             this.IntentosInicio});
-            this.dataGridUsuarios.Location = new System.Drawing.Point(152, 12);
+            this.dataGridUsuarios.Location = new System.Drawing.Point(12, 7);
             this.dataGridUsuarios.Name = "dataGridUsuarios";
             this.dataGridUsuarios.RowHeadersWidth = 62;
             this.dataGridUsuarios.Size = new System.Drawing.Size(715, 285);
             this.dataGridUsuarios.TabIndex = 43;
+            this.dataGridUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridUsuarios_CellClick);
             // 
-            // Area
+            // Perfil
             // 
-            this.Area.HeaderText = "Área";
-            this.Area.Name = "Area";
+            this.Perfil.HeaderText = "Perfil";
+            this.Perfil.MinimumWidth = 6;
+            this.Perfil.Name = "Perfil";
+            this.Perfil.Width = 125;
             // 
             // Email
             // 
             this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
             this.Email.Name = "Email";
+            this.Email.Width = 125;
             // 
             // Nombre
             // 
             this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
             this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 125;
             // 
             // Apellido
             // 
             this.Apellido.HeaderText = "Apellido";
+            this.Apellido.MinimumWidth = 6;
             this.Apellido.Name = "Apellido";
+            this.Apellido.Width = 125;
             // 
             // Bloqueado
             // 
             this.Bloqueado.HeaderText = "Bloqueado";
+            this.Bloqueado.MinimumWidth = 6;
             this.Bloqueado.Name = "Bloqueado";
+            this.Bloqueado.ReadOnly = true;
             this.Bloqueado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Bloqueado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Bloqueado.Width = 125;
             // 
             // IntentosInicio
             // 
             this.IntentosInicio.HeaderText = "Intentos de Inicio";
+            this.IntentosInicio.MinimumWidth = 6;
             this.IntentosInicio.Name = "IntentosInicio";
+            this.IntentosInicio.Width = 125;
             // 
             // txtNuevoNombre
             // 
@@ -232,7 +246,7 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.comboAreas);
+            this.panel2.Controls.Add(this.comboPerfiles);
             this.panel2.Controls.Add(this.txtNuevoApellido);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.btnAceptar);
@@ -244,7 +258,7 @@
             this.panel2.Controls.Add(this.lblEmail);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(152, 303);
+            this.panel2.Location = new System.Drawing.Point(12, 298);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(715, 240);
             this.panel2.TabIndex = 58;
@@ -255,17 +269,17 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(73, 110);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 15);
+            this.label4.Size = new System.Drawing.Size(35, 15);
             this.label4.TabIndex = 65;
-            this.label4.Text = "Área";
+            this.label4.Text = "Perfil";
             // 
-            // comboAreas
+            // comboPerfiles
             // 
-            this.comboAreas.FormattingEnabled = true;
-            this.comboAreas.Location = new System.Drawing.Point(76, 126);
-            this.comboAreas.Name = "comboAreas";
-            this.comboAreas.Size = new System.Drawing.Size(179, 23);
-            this.comboAreas.TabIndex = 64;
+            this.comboPerfiles.FormattingEnabled = true;
+            this.comboPerfiles.Location = new System.Drawing.Point(76, 126);
+            this.comboPerfiles.Name = "comboPerfiles";
+            this.comboPerfiles.Size = new System.Drawing.Size(179, 23);
+            this.comboPerfiles.TabIndex = 64;
             // 
             // txtNuevoApellido
             // 
@@ -398,8 +412,8 @@
         private System.Windows.Forms.TextBox txtNuevoApellido;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboAreas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Area;
+        private System.Windows.Forms.ComboBox comboPerfiles;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Perfil;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;

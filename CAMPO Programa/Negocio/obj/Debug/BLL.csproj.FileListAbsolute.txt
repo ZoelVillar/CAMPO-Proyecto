@@ -90,3 +90,49 @@ D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\obj\Debug\BLL.csproj.CoreCom
 D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\obj\Debug\BLL.csproj.CopyComplete
 D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\obj\Debug\Negocio.dll
 D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Negocio\obj\Debug\Negocio.pdb
+C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Negocio\bin\Debug\Negocio.dll
+C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Negocio\bin\Debug\Negocio.pdb
+C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Negocio\bin\Debug\AccesosDatos.dll
+C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Negocio\bin\Debug\BCrypt.Net-Next.dll
+C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Negocio\bin\Debug\BE.dll
+C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Negocio\bin\Debug\Servicios.dll
+C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Negocio\bin\Debug\System.Buffers.dll
+C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Negocio\bin\Debug\System.Memory.dll
+C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Negocio\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Negocio\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Negocio\bin\Debug\AccesosDatos.pdb
+C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Negocio\bin\Debug\BE.pdb
+C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Negocio\bin\Debug\Servicios.pdb
+C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Negocio\bin\Debug\BCrypt.Net-Next.xml
+C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Negocio\bin\Debug\System.Buffers.xml
+C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Negocio\bin\Debug\System.Memory.xml
+C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Negocio\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Negocio\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Negocio\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Negocio\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Negocio\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Negocio\obj\Debug\Negocio.dll
+C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Negocio\obj\Debug\Negocio.pdb
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Negocio\bin\Debug\Negocio.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Negocio\bin\Debug\Negocio.pdb
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Negocio\bin\Debug\AccesosDatos.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Negocio\bin\Debug\BCrypt.Net-Next.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Negocio\bin\Debug\BE.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Negocio\bin\Debug\Servicios.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Negocio\bin\Debug\System.Buffers.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Negocio\bin\Debug\System.Memory.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Negocio\bin\Debug\System.Numerics.Vectors.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Negocio\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Negocio\bin\Debug\AccesosDatos.pdb
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Negocio\bin\Debug\BE.pdb
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Negocio\bin\Debug\Servicios.pdb
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Negocio\bin\Debug\BCrypt.Net-Next.xml
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Negocio\bin\Debug\System.Buffers.xml
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Negocio\bin\Debug\System.Memory.xml
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Negocio\bin\Debug\System.Numerics.Vectors.xml
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Negocio\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Negocio\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Negocio\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Negocio\obj\Debug\BLL.csproj.CopyComplete
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Negocio\obj\Debug\Negocio.dll
+D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Negocio\obj\Debug\Negocio.pdb

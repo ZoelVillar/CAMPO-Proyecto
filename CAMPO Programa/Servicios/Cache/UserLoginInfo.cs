@@ -14,8 +14,8 @@ namespace Servicios.Cache
         public static string user_password { get; set; }
         public static bool user_blocked { get; set; }
         public static int user_attempts { get; set; }
-        public static int id_area { get; set; }
-        public static string nombre_area{ get; set; }
+        public static int id_perfil { get; set; }
+        public static string nombre_perfil{ get; set; }
 
         public static void ClearCache()
         {
@@ -25,8 +25,8 @@ namespace Servicios.Cache
             user_password = null;
             user_blocked = false;
             user_attempts = 0;
-            id_area = 0;
-            nombre_area = null;
+            id_perfil = 0;
+            nombre_perfil = null;
         }
     }
 }

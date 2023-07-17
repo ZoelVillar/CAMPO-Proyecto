@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class Vista_GestionarAreas : Form
+    public partial class Vista_GestionarPerfil : Form
     {
-        public Vista_GestionarAreas()
+        public Vista_GestionarPerfil()
         {
             InitializeComponent();
         }

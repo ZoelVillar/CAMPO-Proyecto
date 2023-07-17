@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class Vista_GestionarAreas
+    partial class Vista_GestionarPerfil
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.dataGridAreas = new System.Windows.Forms.DataGridView();
             this.dataGridCompuesto = new System.Windows.Forms.DataGridView();
             this.dataGridSimples = new System.Windows.Forms.DataGridView();
-            this.btnModifUser = new System.Windows.Forms.Button();
+            this.btnAgregarPerfil = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -66,19 +66,19 @@
             this.dataGridSimples.Size = new System.Drawing.Size(316, 203);
             this.dataGridSimples.TabIndex = 2;
             // 
-            // btnModifUser
+            // btnAgregarPerfil
             // 
-            this.btnModifUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnModifUser.FlatAppearance.BorderSize = 0;
-            this.btnModifUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModifUser.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnModifUser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnModifUser.Location = new System.Drawing.Point(12, 53);
-            this.btnModifUser.Name = "btnModifUser";
-            this.btnModifUser.Size = new System.Drawing.Size(131, 30);
-            this.btnModifUser.TabIndex = 49;
-            this.btnModifUser.Text = "Agregar Área";
-            this.btnModifUser.UseVisualStyleBackColor = false;
+            this.btnAgregarPerfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAgregarPerfil.FlatAppearance.BorderSize = 0;
+            this.btnAgregarPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarPerfil.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnAgregarPerfil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAgregarPerfil.Location = new System.Drawing.Point(12, 53);
+            this.btnAgregarPerfil.Name = "btnAgregarPerfil";
+            this.btnAgregarPerfil.Size = new System.Drawing.Size(131, 30);
+            this.btnAgregarPerfil.TabIndex = 49;
+            this.btnAgregarPerfil.Text = "Agregar Perfil";
+            this.btnAgregarPerfil.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -91,7 +91,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(131, 30);
             this.button1.TabIndex = 50;
-            this.button1.Text = "Modificar Área";
+            this.button1.Text = "Modificar Perfil";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // button2
@@ -105,7 +105,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(131, 30);
             this.button2.TabIndex = 51;
-            this.button2.Text = "Borrar Área";
+            this.button2.Text = "Borrar Perfil";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // button3
@@ -150,7 +150,7 @@
             this.button5.Text = "Agregar Permiso";
             this.button5.UseVisualStyleBackColor = false;
             // 
-            // Vista_GestionarAreas
+            // Vista_GestionarPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -160,11 +160,11 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnModifUser);
+            this.Controls.Add(this.btnAgregarPerfil);
             this.Controls.Add(this.dataGridSimples);
             this.Controls.Add(this.dataGridCompuesto);
             this.Controls.Add(this.dataGridAreas);
-            this.Name = "Vista_GestionarAreas";
+            this.Name = "Vista_GestionarPerfil";
             this.Text = "Vista_GestionarAreas";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAreas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCompuesto)).EndInit();
@@ -178,7 +178,7 @@
         private System.Windows.Forms.DataGridView dataGridAreas;
         private System.Windows.Forms.DataGridView dataGridCompuesto;
         private System.Windows.Forms.DataGridView dataGridSimples;
-        private System.Windows.Forms.Button btnModifUser;
+        private System.Windows.Forms.Button btnAgregarPerfil;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;

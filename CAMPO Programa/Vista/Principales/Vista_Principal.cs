@@ -102,7 +102,7 @@ namespace Vista
         private void LoadUserData()
         {
             lblNombre.Text = UserLoginInfo.user_name + " " + UserLoginInfo.user_lastname;
-            lblArea.Text = UserLoginInfo.nombre_area;
+            lblArea.Text = UserLoginInfo.nombre_perfil;
         }
 
         #region "Salir , minimizar y redimensionar"
@@ -161,6 +161,10 @@ namespace Vista
             AbrirFormulario<Vista_Perfil>();
         }
 
+        private void btnGestionAreas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Vista_GestionarPerfil>();
+        }
         #endregion
 
         #region "Funcion que maneja el cambio de colores de los botones"
@@ -199,5 +203,6 @@ namespace Vista
 
         #endregion
 
+      
     }
 }
