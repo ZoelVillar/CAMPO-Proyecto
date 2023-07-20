@@ -64,6 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Principales\ImagenBienvenidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principales\ImagenBienvenidos.Designer.cs">
+      <DependentUpon>ImagenBienvenidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios\Perfiles\Vista_GestionarPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,24 @@
     </Compile>
     <Compile Include="Compras\Vista_Principal_Compras.Designer.cs">
       <DependentUpon>Vista_Principal_Compras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Vista_Carrito_Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Vista_Carrito_Ventas.Designer.cs">
+      <DependentUpon>Vista_Carrito_Ventas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Vista_Cobrar_Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Vista_Cobrar_Ventas.Designer.cs">
+      <DependentUpon>Vista_Cobrar_Ventas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Vista_DatosVenta_Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Vista_DatosVenta_Ventas.Designer.cs">
+      <DependentUpon>Vista_DatosVenta_Ventas.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventas\Vista_Principal_Ventas.cs">
       <SubType>Form</SubType>
@@ -125,6 +149,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\Vista_Principal_Compras.resx">
       <DependentUpon>Vista_Principal_Compras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Vista_Carrito_Ventas.resx">
+      <DependentUpon>Vista_Carrito_Ventas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Vista_Cobrar_Ventas.resx">
+      <DependentUpon>Vista_Cobrar_Ventas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Vista_DatosVenta_Ventas.resx">
+      <DependentUpon>Vista_DatosVenta_Ventas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\Vista_Principal_Ventas.resx">
       <DependentUpon>Vista_Principal_Ventas.cs</DependentUpon>

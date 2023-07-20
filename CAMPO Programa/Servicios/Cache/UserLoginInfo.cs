@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,21 @@ namespace Servicios.Cache
             user_attempts = 0;
             id_perfil = 0;
             nombre_perfil = null;
+        }
+
+        public static BE_User retornarUser()
+        {
+            BE_User user = new BE_User();
+            user.key_email = key_email;
+            user.user_name = user_name;
+            user.user_lastname = user_lastname;
+            user.user_password = user_password;
+            user.user_blocked = user_blocked;
+            user.user_attempts = user_attempts;
+            user.id_perfil = id_perfil;
+            user.nombre_perfil = nombre_perfil;
+
+            return user;
         }
     }
 }

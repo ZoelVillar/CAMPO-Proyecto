@@ -145,7 +145,6 @@ D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\AccesosDatos.pdb
 D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
 D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.csproj.CopyComplete
 D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Vista_Perfil.resources
-D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Vista_GestionarAreas.resources
 C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Vista\bin\Debug\Vista.exe.config
 C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Vista\bin\Debug\Vista.exe
 C:\Users\zoel.villar\Desktop\SegundaEntregaCampo\CAMPO Programa\Vista\bin\Debug\Vista.pdb
@@ -223,3 +222,7 @@ D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Vista\obj\Debug\Vista.csproj.CoreCompi
 D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Vista\obj\Debug\Vista.csproj.CopyComplete
 D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Vista\obj\Debug\Vista.exe
 D:\Escritorio\ULTIMO CAMPO\CAMPO Programa\Vista\obj\Debug\Vista.pdb
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Vista_GestionarPerfil.resources
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Ventas.Vista_Carrito_Ventas.resources
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Ventas.Vista_DatosVenta_Ventas.resources
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Ventas.Vista_Cobrar_Ventas.resources

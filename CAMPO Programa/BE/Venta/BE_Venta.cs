@@ -20,5 +20,7 @@ namespace BE.Venta
         public string fechaCreacion { get; set; }
 
         public List<BE_DetalleVenta> oDetalleVenta { get; set; }
+
+      
     }
 }

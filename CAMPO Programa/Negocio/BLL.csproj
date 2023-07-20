@@ -57,9 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL_Perfil.cs" />
-    <Compile Include="BLL_User.cs" />
+    <Compile Include="BLL_Venta.cs" />
+    <Compile Include="Usuarios\BLL_Negocio.cs" />
+    <Compile Include="Usuarios\BLL_Perfil.cs" />
+    <Compile Include="Usuarios\BLL_User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Producto\BLL_Producto.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AccesosDatos\AccesosDatos.csproj">

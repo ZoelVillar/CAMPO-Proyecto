@@ -287,7 +287,7 @@ namespace Vista
 
                     DataGridViewRow selectedRow = dataGridUsuarios.SelectedRows[0];
                     string email = selectedRow.Cells["Email"].Value.ToString();
-
+                        
                     string funcion = condicion == true ? "Bloquear" : "Desbloquear";
                     
                     string mensaje = $"Seguro que quiere {funcion} el usuario {email}?";
