@@ -1,10 +1,11 @@
-﻿using System;
+﻿using BE.Permisos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BE
+namespace BE.Usuarios
 {
     public class BE_User
     {
@@ -27,7 +28,7 @@ namespace BE
             this.user_attempts = user_attempts;
         }
 
-        public BE_User(string key_email, string user_name, string user_lastname, string user_password, bool user_blocked, int user_attempts, int id_perfil, string nombreperfil = null)
+        public BE_User(string key_email, string user_name, string user_lastname, string user_password, bool user_blocked, int user_attempts, int id_perfil, BE_PermisoCompuesto nombreperfil = null)
         {
             this.key_email = key_email;
             this.user_name = user_name;
@@ -46,6 +47,6 @@ namespace BE
         public bool user_blocked { get; set; }
         public int user_attempts { get; set; }
         public int id_perfil { get; set; }
-        public string nombre_perfil { get; set; }
+        public BE_PermisoCompuesto nombre_perfil { get; set; }
     }
 }

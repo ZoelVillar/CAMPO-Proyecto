@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AccesosDatos;
 using BE;
+using BE.Usuarios;
 using Servicios.Cache;
 
 namespace Negocio

@@ -44,7 +44,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(119, 81);
+            this.label2.Location = new System.Drawing.Point(295, 169);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(151, 28);
             this.label2.TabIndex = 62;
@@ -55,7 +55,7 @@
             this.lblTotalPagar.AutoSize = true;
             this.lblTotalPagar.BackColor = System.Drawing.Color.White;
             this.lblTotalPagar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPagar.Location = new System.Drawing.Point(120, 118);
+            this.lblTotalPagar.Location = new System.Drawing.Point(296, 206);
             this.lblTotalPagar.Name = "lblTotalPagar";
             this.lblTotalPagar.Size = new System.Drawing.Size(15, 22);
             this.lblTotalPagar.TabIndex = 63;
@@ -65,7 +65,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(119, 173);
+            this.label3.Location = new System.Drawing.Point(295, 261);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(135, 19);
             this.label3.TabIndex = 64;
@@ -76,7 +76,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(378, 173);
+            this.label4.Location = new System.Drawing.Point(554, 261);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 19);
             this.label4.TabIndex = 66;
@@ -88,7 +88,7 @@
             this.lblCambio.AutoSize = true;
             this.lblCambio.BackColor = System.Drawing.Color.White;
             this.lblCambio.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCambio.Location = new System.Drawing.Point(378, 195);
+            this.lblCambio.Location = new System.Drawing.Point(554, 283);
             this.lblCambio.Name = "lblCambio";
             this.lblCambio.Size = new System.Drawing.Size(15, 22);
             this.lblCambio.TabIndex = 67;
@@ -97,7 +97,7 @@
             // btnCobrar
             // 
             this.btnCobrar.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F);
-            this.btnCobrar.Location = new System.Drawing.Point(124, 247);
+            this.btnCobrar.Location = new System.Drawing.Point(300, 335);
             this.btnCobrar.Name = "btnCobrar";
             this.btnCobrar.Size = new System.Drawing.Size(130, 31);
             this.btnCobrar.TabIndex = 68;
@@ -107,7 +107,7 @@
             // 
             // btnPagarTarjeta
             // 
-            this.btnPagarTarjeta.Location = new System.Drawing.Point(124, 284);
+            this.btnPagarTarjeta.Location = new System.Drawing.Point(300, 372);
             this.btnPagarTarjeta.Name = "btnPagarTarjeta";
             this.btnPagarTarjeta.Size = new System.Drawing.Size(130, 31);
             this.btnPagarTarjeta.TabIndex = 69;
@@ -117,7 +117,7 @@
             // 
             // btnVolverAtras
             // 
-            this.btnVolverAtras.Location = new System.Drawing.Point(124, 321);
+            this.btnVolverAtras.Location = new System.Drawing.Point(300, 409);
             this.btnVolverAtras.Name = "btnVolverAtras";
             this.btnVolverAtras.Size = new System.Drawing.Size(130, 31);
             this.btnVolverAtras.TabIndex = 70;
@@ -128,7 +128,7 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(123, 199);
+            this.numericUpDown1.Location = new System.Drawing.Point(299, 287);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -144,7 +144,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.ClientSize = new System.Drawing.Size(711, 472);
+            this.ClientSize = new System.Drawing.Size(945, 660);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.btnVolverAtras);
             this.Controls.Add(this.btnPagarTarjeta);

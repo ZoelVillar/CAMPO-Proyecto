@@ -1,10 +1,11 @@
-﻿using System;
+﻿using BE.Permisos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BE
+namespace BE.Usuarios
 {
     public class BE_Perfil
     {
@@ -12,15 +13,13 @@ namespace BE
         {
         }
 
-        public BE_Perfil(int idperfil, string nombreperfil, string descripcion)
+        public BE_Perfil( string id_perfil, BE_PermisoCompuesto fk_permiso)
         {
-            this.id_perfil = idperfil;
-            this.nombre_perfil = nombreperfil;
-            this.descripcion = descripcion;
+            this.id_perfil = id_perfil;
+            this.FK_PermisoPerfil = fk_permiso;
         }
 
-        public int id_perfil { get; set; }
-        public string nombre_perfil { get; set; }
-        public string descripcion { get; set; }
+        public string id_perfil { get; set; }
+        public BE_PermisoCompuesto FK_PermisoPerfil { get; set; }
     }
 }

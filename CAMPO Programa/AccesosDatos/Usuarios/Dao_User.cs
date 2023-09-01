@@ -1,4 +1,6 @@
 ﻿using BE;
+using BE.Permisos;
+using BE.Usuarios;
 using Servicios.Cache;
 using System;
 using System.Collections.Generic;
@@ -171,7 +173,7 @@ namespace AccesosDatos
                             usuario.user_blocked = reader.GetBoolean(4);
                             usuario.user_attempts = reader.GetInt32(5);
                             usuario.id_perfil = reader.GetInt32(6);
-                            usuario.nombre_perfil = reader.GetString(7);
+                            usuario.nombre_perfil = new BE_PermisoCompuesto(reader.GetString(7));
                         }
                     }
 
@@ -248,7 +250,7 @@ namespace AccesosDatos
                             usuario.user_blocked = reader.GetBoolean(4);
                             usuario.user_attempts = reader.GetInt32(5);
                             usuario.id_perfil = reader.GetInt32(6);
-                            usuario.nombre_perfil = reader.GetString(7);
+                            usuario.nombre_perfil = new BE_PermisoCompuesto(reader.GetString(7));
 
                             usuarios.Add(usuario);
                         }

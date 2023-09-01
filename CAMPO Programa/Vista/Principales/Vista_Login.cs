@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using Negocio;
 using Servicios.Validaciones;
 using BE;
+using BE.Usuarios;
 using Servicios.Cache;
 
 namespace Vista

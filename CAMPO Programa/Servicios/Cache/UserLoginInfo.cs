@@ -1,4 +1,6 @@
 ﻿using BE;
+using BE.Usuarios;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;

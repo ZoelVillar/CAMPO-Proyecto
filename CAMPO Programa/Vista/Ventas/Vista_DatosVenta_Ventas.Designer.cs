@@ -47,18 +47,18 @@
             // 
             // ctrol_numMesa
             // 
-            this.ctrol_numMesa.Location = new System.Drawing.Point(71, 85);
+            this.ctrol_numMesa.Location = new System.Drawing.Point(88, 86);
             this.ctrol_numMesa.Name = "ctrol_numMesa";
-            this.ctrol_numMesa.Size = new System.Drawing.Size(246, 20);
+            this.ctrol_numMesa.Size = new System.Drawing.Size(287, 20);
             this.ctrol_numMesa.TabIndex = 0;
             this.ctrol_numMesa.ValueChanged += new System.EventHandler(this.ctrol_numMesa_ValueChanged);
             // 
             // ctrol_nbreMesero
             // 
             this.ctrol_nbreMesero.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F);
-            this.ctrol_nbreMesero.Location = new System.Drawing.Point(71, 138);
+            this.ctrol_nbreMesero.Location = new System.Drawing.Point(88, 139);
             this.ctrol_nbreMesero.Name = "ctrol_nbreMesero";
-            this.ctrol_nbreMesero.Size = new System.Drawing.Size(246, 21);
+            this.ctrol_nbreMesero.Size = new System.Drawing.Size(287, 21);
             this.ctrol_nbreMesero.TabIndex = 1;
             this.ctrol_nbreMesero.Text = "Nombre Apellido";
             this.ctrol_nbreMesero.TextChanged += new System.EventHandler(this.ctrol_nbreMesero_TextChanged);
@@ -66,10 +66,10 @@
             // ctrol_Comentarios
             // 
             this.ctrol_Comentarios.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F);
-            this.ctrol_Comentarios.Location = new System.Drawing.Point(71, 200);
+            this.ctrol_Comentarios.Location = new System.Drawing.Point(88, 201);
             this.ctrol_Comentarios.Multiline = true;
             this.ctrol_Comentarios.Name = "ctrol_Comentarios";
-            this.ctrol_Comentarios.Size = new System.Drawing.Size(246, 119);
+            this.ctrol_Comentarios.Size = new System.Drawing.Size(287, 195);
             this.ctrol_Comentarios.TabIndex = 2;
             this.ctrol_Comentarios.Text = "Comentarios Adicionales";
             this.ctrol_Comentarios.TextChanged += new System.EventHandler(this.ctrol_Comentarios_TextChanged);
@@ -80,9 +80,9 @@
             this.ctrol_tipoPedido.Items.AddRange(new object[] {
             "Para Llevar",
             "Para Comer en Local"});
-            this.ctrol_tipoPedido.Location = new System.Drawing.Point(71, 354);
+            this.ctrol_tipoPedido.Location = new System.Drawing.Point(91, 434);
             this.ctrol_tipoPedido.Name = "ctrol_tipoPedido";
-            this.ctrol_tipoPedido.Size = new System.Drawing.Size(246, 21);
+            this.ctrol_tipoPedido.Size = new System.Drawing.Size(284, 21);
             this.ctrol_tipoPedido.TabIndex = 3;
             this.ctrol_tipoPedido.TabStop = false;
             this.ctrol_tipoPedido.SelectedIndexChanged += new System.EventHandler(this.ctrol_tipoPedido_SelectedIndexChanged);
@@ -91,7 +91,7 @@
             // 
             this.lblNumMesa.AutoSize = true;
             this.lblNumMesa.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblNumMesa.Location = new System.Drawing.Point(71, 66);
+            this.lblNumMesa.Location = new System.Drawing.Point(88, 67);
             this.lblNumMesa.Name = "lblNumMesa";
             this.lblNumMesa.Size = new System.Drawing.Size(113, 17);
             this.lblNumMesa.TabIndex = 4;
@@ -101,7 +101,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(68, 122);
+            this.label2.Location = new System.Drawing.Point(85, 123);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(130, 17);
             this.label2.TabIndex = 5;
@@ -111,7 +111,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(68, 180);
+            this.label3.Location = new System.Drawing.Point(85, 181);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 17);
             this.label3.TabIndex = 6;
@@ -121,7 +121,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(68, 334);
+            this.label4.Location = new System.Drawing.Point(88, 414);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(102, 17);
             this.label4.TabIndex = 7;
@@ -130,7 +130,7 @@
             // btnContinuarVenta
             // 
             this.btnContinuarVenta.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContinuarVenta.Location = new System.Drawing.Point(218, 396);
+            this.btnContinuarVenta.Location = new System.Drawing.Point(276, 476);
             this.btnContinuarVenta.Name = "btnContinuarVenta";
             this.btnContinuarVenta.Size = new System.Drawing.Size(99, 46);
             this.btnContinuarVenta.TabIndex = 64;
@@ -141,7 +141,7 @@
             // btnVolverAtras
             // 
             this.btnVolverAtras.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolverAtras.Location = new System.Drawing.Point(71, 396);
+            this.btnVolverAtras.Location = new System.Drawing.Point(91, 476);
             this.btnVolverAtras.Name = "btnVolverAtras";
             this.btnVolverAtras.Size = new System.Drawing.Size(99, 46);
             this.btnVolverAtras.TabIndex = 65;
@@ -153,7 +153,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(421, 66);
+            this.label1.Location = new System.Drawing.Point(567, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 17);
             this.label1.TabIndex = 68;
@@ -174,9 +174,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.textTicket);
-            this.panel1.Location = new System.Drawing.Point(424, 86);
+            this.panel1.Location = new System.Drawing.Point(570, 86);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(209, 289);
+            this.panel1.Size = new System.Drawing.Size(275, 436);
             this.panel1.TabIndex = 70;
             // 
             // Vista_DatosVenta_Ventas
@@ -184,7 +184,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.ClientSize = new System.Drawing.Size(727, 511);
+            this.ClientSize = new System.Drawing.Size(945, 660);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnVolverAtras);

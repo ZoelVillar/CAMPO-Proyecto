@@ -1,4 +1,5 @@
 ﻿using BE;
+using BE.Usuarios;
 using BE.Producto;
 using System;
 using System.Collections;

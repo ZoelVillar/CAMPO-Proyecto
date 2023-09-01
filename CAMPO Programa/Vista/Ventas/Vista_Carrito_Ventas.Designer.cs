@@ -50,7 +50,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(33, 51);
+            this.label2.Location = new System.Drawing.Point(33, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(141, 17);
             this.label2.TabIndex = 61;
@@ -65,9 +65,9 @@
             this.Cantidad,
             this.Precio,
             this.SubTotal});
-            this.gridCarrito.Location = new System.Drawing.Point(288, 67);
+            this.gridCarrito.Location = new System.Drawing.Point(413, 106);
             this.gridCarrito.Name = "gridCarrito";
-            this.gridCarrito.Size = new System.Drawing.Size(404, 329);
+            this.gridCarrito.Size = new System.Drawing.Size(483, 395);
             this.gridCarrito.TabIndex = 68;
             // 
             // NombreProducto
@@ -100,21 +100,21 @@
             this.listProductos.ItemHeight = 17;
             this.listProductos.Location = new System.Drawing.Point(36, 106);
             this.listProductos.Name = "listProductos";
-            this.listProductos.Size = new System.Drawing.Size(200, 293);
+            this.listProductos.Size = new System.Drawing.Size(288, 395);
             this.listProductos.TabIndex = 59;
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(36, 433);
+            this.txtCantidad.Location = new System.Drawing.Point(44, 543);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(103, 20);
+            this.txtCantidad.Size = new System.Drawing.Size(288, 20);
             this.txtCantidad.TabIndex = 67;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(285, 48);
+            this.label1.Location = new System.Drawing.Point(410, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 17);
             this.label1.TabIndex = 60;
@@ -124,7 +124,7 @@
             // 
             this.btnAceptarProducto.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAceptarProducto.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptarProducto.Location = new System.Drawing.Point(161, 407);
+            this.btnAceptarProducto.Location = new System.Drawing.Point(257, 569);
             this.btnAceptarProducto.Name = "btnAceptarProducto";
             this.btnAceptarProducto.Size = new System.Drawing.Size(75, 46);
             this.btnAceptarProducto.TabIndex = 66;
@@ -136,7 +136,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(33, 417);
+            this.label3.Location = new System.Drawing.Point(41, 524);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 16);
             this.label3.TabIndex = 62;
@@ -155,7 +155,7 @@
             // btnContinuarVenta
             // 
             this.btnContinuarVenta.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContinuarVenta.Location = new System.Drawing.Point(617, 407);
+            this.btnContinuarVenta.Location = new System.Drawing.Point(821, 517);
             this.btnContinuarVenta.Name = "btnContinuarVenta";
             this.btnContinuarVenta.Size = new System.Drawing.Size(75, 46);
             this.btnContinuarVenta.TabIndex = 63;
@@ -166,7 +166,7 @@
             // btnBorrarCarrito
             // 
             this.btnBorrarCarrito.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrarCarrito.Location = new System.Drawing.Point(536, 407);
+            this.btnBorrarCarrito.Location = new System.Drawing.Point(740, 517);
             this.btnBorrarCarrito.Name = "btnBorrarCarrito";
             this.btnBorrarCarrito.Size = new System.Drawing.Size(75, 46);
             this.btnBorrarCarrito.TabIndex = 64;
@@ -179,7 +179,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.ClientSize = new System.Drawing.Size(727, 511);
+            this.ClientSize = new System.Drawing.Size(945, 660);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.gridCarrito);
             this.Controls.Add(this.listProductos);

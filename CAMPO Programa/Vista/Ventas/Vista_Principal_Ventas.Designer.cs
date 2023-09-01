@@ -46,10 +46,10 @@
             this.panelBotones.Controls.Add(this.btnCrearVenta);
             this.panelBotones.Controls.Add(this.btnLogout);
             this.panelBotones.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelBotones.Location = new System.Drawing.Point(727, 0);
+            this.panelBotones.Location = new System.Drawing.Point(945, 0);
             this.panelBotones.Margin = new System.Windows.Forms.Padding(0);
             this.panelBotones.Name = "panelBotones";
-            this.panelBotones.Size = new System.Drawing.Size(136, 511);
+            this.panelBotones.Size = new System.Drawing.Size(155, 660);
             this.panelBotones.TabIndex = 44;
             // 
             // button4
@@ -59,9 +59,10 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button4.Location = new System.Drawing.Point(12, 144);
+            this.button4.Location = new System.Drawing.Point(13, 161);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(112, 48);
+            this.button4.Size = new System.Drawing.Size(130, 40);
             this.button4.TabIndex = 50;
             this.button4.Text = "Ver Reportes";
             this.button4.UseVisualStyleBackColor = false;
@@ -73,9 +74,10 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3.Location = new System.Drawing.Point(11, 90);
+            this.button3.Location = new System.Drawing.Point(12, 108);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 48);
+            this.button3.Size = new System.Drawing.Size(130, 40);
             this.button3.TabIndex = 49;
             this.button3.Text = "Ver Ventas";
             this.button3.UseVisualStyleBackColor = false;
@@ -87,9 +89,10 @@
             this.btnCrearVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrearVenta.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnCrearVenta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCrearVenta.Location = new System.Drawing.Point(11, 36);
+            this.btnCrearVenta.Location = new System.Drawing.Point(12, 55);
+            this.btnCrearVenta.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.btnCrearVenta.Name = "btnCrearVenta";
-            this.btnCrearVenta.Size = new System.Drawing.Size(112, 48);
+            this.btnCrearVenta.Size = new System.Drawing.Size(130, 40);
             this.btnCrearVenta.TabIndex = 48;
             this.btnCrearVenta.Text = "Crear Venta ";
             this.btnCrearVenta.UseVisualStyleBackColor = false;
@@ -118,14 +121,14 @@
             this.panelFormularios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFormularios.Location = new System.Drawing.Point(0, 0);
             this.panelFormularios.Name = "panelFormularios";
-            this.panelFormularios.Size = new System.Drawing.Size(727, 511);
+            this.panelFormularios.Size = new System.Drawing.Size(945, 660);
             this.panelFormularios.TabIndex = 59;
             // 
             // Vista_Principal_Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 511);
+            this.ClientSize = new System.Drawing.Size(1100, 660);
             this.Controls.Add(this.panelFormularios);
             this.Controls.Add(this.panelBotones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

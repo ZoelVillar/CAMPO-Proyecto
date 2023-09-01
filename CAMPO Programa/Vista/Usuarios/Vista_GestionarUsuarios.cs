@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BE;
+using BE.Usuarios;
 using Servicios.Validaciones;
 using Servicios.Cache;
 
@@ -60,7 +61,7 @@ namespace Vista
 
             foreach (var usuario in usuarios)
             {
-                dataGridUsuarios.Rows.Add(usuario.id_perfil, usuario.key_email, usuario.user_name, usuario.user_lastname, usuario.user_blocked, usuario.user_attempts); 
+                dataGridUsuarios.Rows.Add(usuario.nombre_perfil, usuario.key_email, usuario.user_name, usuario.user_lastname, usuario.user_blocked, usuario.user_attempts); 
             }
         }
 

@@ -60,9 +60,13 @@
     <Compile Include="Compra\BE_Compra.cs" />
     <Compile Include="Compra\BE_DetalleCompra.cs" />
     <Compile Include="Compra\BE_Proveedor.cs" />
+    <Compile Include="Permisos\BE_PermisoCompuesto.cs" />
+    <Compile Include="Permisos\BE_PermisoSimple.cs" />
+    <Compile Include="Permisos\BE_RelacionPermisos.cs" />
     <Compile Include="Producto\BE_Categoria.cs" />
     <Compile Include="Producto\BE_Producto.cs" />
     <Compile Include="Usuarios\BE_Perfil.cs" />
+    <Compile Include="Permisos\BE_Permiso.cs" />
     <Compile Include="Usuarios\BE_User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuarios\BE_Negocio.cs" />

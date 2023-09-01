@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BE;
+using BE.Usuarios;
+
 
 namespace Servicios.Cache
 {
