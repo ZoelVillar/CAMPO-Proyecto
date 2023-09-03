@@ -33,7 +33,14 @@ namespace Negocio.Usuarios
 
         public List<BE_Permiso> ObtenerTodosPermisos()
         {
-            return DaoPerfil.ObtenerTodosPermisos();
+            var list = DaoPerfil.ObtenerTodosPermisos();
+            BLL_RelacionPermisos bllRP = new BLL_RelacionPermisos();
+            foreach (BE_RelacionPermisos RP in bllRP.retornarPermisos())
+            {
+                BE_Permiso permiso = list.Find(x => x.idPermiso == RP.permiso2.idPermiso);
+                (list.Find(x => x.idPermiso == RP.permiso1.idPermiso) as BE_PermisoCompuesto).ListaPermisos.Add(permiso);
+            }
+            return list;
         }
 
         public bool ElimiarPermiso(string idPermiso)

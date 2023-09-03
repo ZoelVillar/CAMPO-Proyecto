@@ -191,5 +191,10 @@ namespace Vista
         {
             MessageBox.Show("Comuniquese con su administrador, gracias");
         }
+
+        private void btnVerContra_Click(object sender, EventArgs e)
+        {
+            if (txtContraseña.UseSystemPasswordChar == true) { txtContraseña.UseSystemPasswordChar = false;  } else txtContraseña.UseSystemPasswordChar = true;
+        }
     }
 }

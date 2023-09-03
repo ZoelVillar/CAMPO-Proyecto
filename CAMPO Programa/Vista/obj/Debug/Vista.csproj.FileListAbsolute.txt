@@ -309,3 +309,4 @@ C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\Syste
 C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\AccesosDatos.pdb
 C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
 C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.csproj.CopyComplete
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\FontAwesome.Sharp.dll

@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -126,15 +127,27 @@ namespace AccesosDatos.Usuarios
                 {
                     command.Connection = connection;
 
+
+                    command.CommandText = $"select * from RelacionPermisos where FK_CodigoPC = @Permiso1 AND FK_CodigoPS = @Permiso2";
                     command.Parameters.AddWithValue("@Permiso1", permiso1);
                     command.Parameters.AddWithValue("@Permiso2", permiso2);
-                    command.CommandText = $"insert into RelacionPermisos values(@Permiso1,@Permiso2)";
                     command.CommandType = CommandType.Text;
-                    int rowsAffected = command.ExecuteNonQuery();
+                    SqlDataReader reader = command.ExecuteReader();
 
-                    if (rowsAffected > 0)
-                    { return true; }
-                    else { return false; }
+                    if (!reader.HasRows)
+                    {
+                        reader.Close();
+                        command.CommandText = $"insert into RelacionPermisos values(@Permiso1,@Permiso2)";
+
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        { return true; }
+                        else { return false; }
+                    }
+                    else return false;
+
+
                 }
 
             }

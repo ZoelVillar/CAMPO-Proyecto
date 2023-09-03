@@ -61,8 +61,6 @@ namespace AccesosDatos
                     {
                         reader.Close();
                         command.CommandText = $"delete from Perfil where id_perfil=@id_perfil";
-                        command.Parameters.AddWithValue("@id_perfil", id_perfil);
-                        command.CommandType = CommandType.Text;
 
                         int rowsAffected = command.ExecuteNonQuery();
 

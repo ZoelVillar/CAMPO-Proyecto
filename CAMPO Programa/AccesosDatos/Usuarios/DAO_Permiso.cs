@@ -38,12 +38,17 @@ namespace AccesosDatos.Usuarios
                     SqlDataReader reader = command.ExecuteReader();
                     if (!reader.HasRows)
                     {
+                        reader.Close();
                         command.CommandText = $"Insert into Permiso values(@idPermiso, @tipoPermiso)";
                         command.CommandType = CommandType.Text;
-                        command.ExecuteReader();
-                        return true;
+                        int rowsAffected = command.ExecuteNonQuery();
+                        return rowsAffected > 0;
                     }
-                    else return false;
+                    else 
+                    {
+                        reader.Close();
+                        return false;
+                    }
 
                 }
             }
@@ -121,12 +126,16 @@ namespace AccesosDatos.Usuarios
                 {
                     command.Connection = connection;
                     command.Parameters.AddWithValue("@Permiso", idPermiso);
-                    command.CommandText = $"delete from Permiso where id_Permiso=@Permiso";
+                    command.CommandText = $"delete from RelacionPermisos where FK_CodigoPS=@Permiso";
                     command.CommandType = CommandType.Text;
-                    command.ExecuteNonQuery();
                     int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected < 1)
+                    { return false; }
 
-                    if (rowsAffected > 0)
+                    command.CommandText = $"delete from Permiso where id_Permiso=@Permiso";
+                    int rowsAffected2 = command.ExecuteNonQuery();
+
+                    if (rowsAffected2 > 0)
                     { return true; }
                     else { return false; }
                 }

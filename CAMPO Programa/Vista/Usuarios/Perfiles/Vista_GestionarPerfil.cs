@@ -39,6 +39,7 @@ namespace Vista
             grillaPerfiles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grillaPerfiles.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
 
+            refrescarGrilla();
         }
 
         private void refrescarArbol()
@@ -55,21 +56,11 @@ namespace Vista
         {
             var listaPC = bllPermiso.ObtenerPermisos("C");
             var listaPS = bllPermiso.ObtenerPermisos("S");
+            var listaPerfiles = bllPerfil.retornaPerfiles();
 
-            DataGridViewTextBoxColumn nuevaColumna = new DataGridViewTextBoxColumn();
-            nuevaColumna.Name = "id_permiso";
-            nuevaColumna.HeaderText = "id_permiso";
-            grillaPC.Columns.Add(nuevaColumna);
-            grillaPS.Columns.Add(nuevaColumna);
-
-            //perfil
-            nuevaColumna.Name = "id_perfil";
-            nuevaColumna.HeaderText = "Permiso id_perfil";
-            grillaPerfiles.Columns.Add(nuevaColumna);
-
-            nuevaColumna.Name = "PermisoPerfil";
-            nuevaColumna.HeaderText = "PermisoPerfil";
-            grillaPerfiles.Columns.Add(nuevaColumna);
+            grillaPC.Rows.Clear();
+            grillaPS.Rows.Clear();
+            grillaPerfiles.Rows.Clear();
 
             foreach (var PC in listaPC)
             {
@@ -78,6 +69,10 @@ namespace Vista
             foreach (var PS in listaPS)
             {
                 grillaPS.Rows.Add(PS.idPermiso);
+            }
+            foreach(var perfil in listaPerfiles)
+            {
+                grillaPerfiles.Rows.Add(perfil.id_perfil, perfil.FK_PermisoPerfil.idPermiso);
             }
 
             
@@ -88,12 +83,13 @@ namespace Vista
         {
             string tipoMensaje = tipo == "S" ? "Simple" : "Compuesto";
             string nuevoPermiso = Interaction.InputBox($"Ingrese el nombre del Permiso {tipoMensaje}: ");
-            if (nuevoPermiso == "") { MessageBox.Show("Ingrese un nombre válido!"); }
+            if (string.IsNullOrEmpty(nuevoPermiso)) { MessageBox.Show("Ingrese un nombre válido!"); }
             else
             {
                 if (bllPermiso.crearPermiso(nuevoPermiso, tipo))
                 {
                     refrescarGrilla();
+                    refrescarArbol();
                 }
                 else
                 {
@@ -105,7 +101,7 @@ namespace Vista
         public TreeNode LecturaNodo(BE_Permiso permiso)
         {
             TreeNode nodo = new TreeNode(permiso.idPermiso);
-            foreach (BE_Permiso p in (permiso as BE_PermisoCompuesto).RetornarPermisos())
+            foreach (BE_Permiso p in (permiso as BE_PermisoCompuesto).ListaPermisos)
             {
                 if (p is BE_PermisoSimple)
                 {
@@ -144,6 +140,8 @@ namespace Vista
                     MessageBox.Show($"Ocurrió un error al eliminar el permiso");
                 }
             }
+            refrescarArbol();
+            refrescarGrilla();
 
         }
 
@@ -166,7 +164,6 @@ namespace Vista
                         {
                             //SEGUIR ACA EL BORRADO DE: PERFIL CON ESE PC, USUARIO CON ESE PC -> Usuario
                         }
-                     
                     }
                     else
                     {
@@ -181,15 +178,21 @@ namespace Vista
         {
             string PermisoCompuesto = grillaPC.CurrentRow.Cells[0].Value.ToString();
             string PermisoSimple = grillaPS.CurrentRow.Cells[0].Value.ToString();
-            if (bllPermiso.agregarRelacion(PermisoCompuesto, PermisoSimple))
+            DialogResult result = MessageBox.Show($"¿Desea relacionar el permiso {PermisoCompuesto} con el permiso {PermisoSimple}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
             {
-                MessageBox.Show($"Permisos {PermisoCompuesto} y {PermisoSimple} relacionados con exito!");
+                if (bllPermiso.agregarRelacion(PermisoCompuesto, PermisoSimple))
+                {
+                    MessageBox.Show($"Permisos {PermisoCompuesto} y {PermisoSimple} relacionados con exito!");
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error al relacionar los permisos!");
+                }
+                refrescarArbol();
+
             }
-            else
-            {
-                MessageBox.Show("Ocurrió un error al relacionar los permisos!");
-            }
-            refrescarArbol();
         }
 
         private void btnVincularPCaPC_Click(object sender, EventArgs e)
@@ -221,10 +224,10 @@ namespace Vista
         {
             foreach (DataGridViewRow row in grillaPC.Rows)
             {
-                if (row.Cells["id_perfil"].Value != null)
+                if (row.Cells["id_permiso"].Value != null)
                 {
                     // Compara el valor de la celda con el permiso que deseas agregar
-                    if (row.Cells["id_perfil"].Value.ToString() == permisoEncontrar)
+                    if (row.Cells["id_permiso"].Value.ToString() == permisoEncontrar)
                     {
                         return true;
                     }
@@ -248,10 +251,35 @@ namespace Vista
         private void btnAgregarPerfil_Click(object sender, EventArgs e)
         {
             string idPerfil = Interaction.InputBox("Ingrese el nombre del perfil: ");
+            if (string.IsNullOrEmpty(idPerfil)) { return; }
             string permisoPerfil = grillaPC.CurrentRow.Cells[0].Value.ToString();
 
             bllPerfil.agregarPerfil(idPerfil, permisoPerfil);
             refrescarGrilla();
+            refrescarArbol();
+        }
+
+        private void btnEliminarPerfil_Click(object sender, EventArgs e)
+        {
+            string id_perfilBorrar = grillaPerfiles.CurrentRow.Cells[0].Value.ToString();
+            
+            DialogResult result = MessageBox.Show($"¿Desea eliminar el Perfil de {id_perfilBorrar}", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                if (bllPerfil.eliminarPerfil(id_perfilBorrar)) {
+                    refrescarGrilla();
+                    refrescarArbol();
+                    MessageBox.Show("Perfil eliminado correctamente"); 
+                }
+                else MessageBox.Show("No se logró eliminar el Perfil");
+            }
+            else { return; }
+        }
+
+        private void grillaPC_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            refrescarArbol();
         }
     }
 }
