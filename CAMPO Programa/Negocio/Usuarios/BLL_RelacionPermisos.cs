@@ -17,9 +17,14 @@ namespace Negocio.Usuarios
             daoPermisos = new DAO_RelacionPermisos();
         }
 
-        public List<BE_RelacionPermisos> retornarLista()
+        public List<BE_RelacionPermisos> retornarPermisos()
         {
             return daoPermisos.retornarPermisos();
+        }
+
+        public List<BE_RelacionPermisos> retornarPermisos(string FK_CodigoPC)
+        {
+            return daoPermisos.retornarPermisos(FK_CodigoPC);
         }
 
         public bool eliminarRelacion(string permiso1, string permiso2 = "")

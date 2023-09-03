@@ -89,3 +89,22 @@ D:\Escritorio\ENTREGA FINAL\CAMPO Programa\Servicios\bin\Debug\System.Memory.xml
 D:\Escritorio\ENTREGA FINAL\CAMPO Programa\Servicios\bin\Debug\System.Numerics.Vectors.xml
 D:\Escritorio\ENTREGA FINAL\CAMPO Programa\Servicios\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Escritorio\ENTREGA FINAL\CAMPO Programa\Servicios\obj\Debug\Servicios.csproj.CopyComplete
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Servicios\obj\Debug\Servicios.csproj.AssemblyReference.cache
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Servicios\obj\Debug\Servicios.csproj.CoreCompileInputs.cache
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Servicios\obj\Debug\Servicios.dll
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Servicios\obj\Debug\Servicios.pdb
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\Servicios.dll
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\Servicios.pdb
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\BCrypt.Net-Next.dll
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\BE.dll
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\System.Buffers.dll
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\System.Memory.dll
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\BE.pdb
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\BCrypt.Net-Next.xml
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\System.Buffers.xml
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\System.Memory.xml
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Servicios\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Servicios\obj\Debug\Servicios.csproj.CopyComplete

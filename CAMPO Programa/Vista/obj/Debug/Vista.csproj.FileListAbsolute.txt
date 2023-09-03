@@ -268,3 +268,44 @@ D:\Escritorio\ENTREGA FINAL\CAMPO Programa\Vista\obj\Debug\Vista.csproj.CoreComp
 D:\Escritorio\ENTREGA FINAL\CAMPO Programa\Vista\obj\Debug\Vista.csproj.CopyComplete
 D:\Escritorio\ENTREGA FINAL\CAMPO Programa\Vista\obj\Debug\Vista.exe
 D:\Escritorio\ENTREGA FINAL\CAMPO Programa\Vista\obj\Debug\Vista.pdb
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.csproj.AssemblyReference.cache
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.csproj.SuggestedBindingRedirects.cache
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Vista_GestionarPerfil.resources
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Vista_GestionarUsuarios.resources
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Vista_Perfil.resources
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Vista_Principal_Compras.resources
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Ventas.Vista_Carrito_Ventas.resources
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Ventas.Vista_Cobrar_Ventas.resources
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Ventas.Vista_DatosVenta_Ventas.resources
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Vista_Principal_Ventas.resources
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Vista_ToolBox.resources
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Properties.Resources.resources
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Vista_Login.resources
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Vista_Principal.resources
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.csproj.GenerateResource.cache
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.csproj.CoreCompileInputs.cache
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.exe
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.pdb
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\Vista.exe.config
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\Vista.exe
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\Vista.pdb
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\BCrypt.Net-Next.dll
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\BE.dll
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\Negocio.dll
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\Servicios.dll
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\System.Buffers.dll
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\System.Memory.dll
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\AccesosDatos.dll
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\BE.pdb
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\Negocio.pdb
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\Servicios.pdb
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\BCrypt.Net-Next.xml
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\System.Buffers.xml
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\System.Memory.xml
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\AccesosDatos.pdb
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
+C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.csproj.CopyComplete

@@ -1,4 +1,5 @@
 ﻿using BE;
+using BE.Permisos;
 using BE.Usuarios;
 
 using System;
@@ -17,8 +18,8 @@ namespace Servicios.Cache
         public static string user_password { get; set; }
         public static bool user_blocked { get; set; }
         public static int user_attempts { get; set; }
-        public static int id_perfil { get; set; }
-        public static string nombre_perfil{ get; set; }
+        public static string id_perfil { get; set; }
+        public static BE_PermisoCompuesto permiso_perfil { get; set; }
 
         public static void ClearCache()
         {
@@ -28,8 +29,8 @@ namespace Servicios.Cache
             user_password = null;
             user_blocked = false;
             user_attempts = 0;
-            id_perfil = 0;
-            nombre_perfil = null;
+            id_perfil = null;
+            permiso_perfil = null;
         }
 
         public static BE_User retornarUser()
@@ -42,7 +43,7 @@ namespace Servicios.Cache
             user.user_blocked = user_blocked;
             user.user_attempts = user_attempts;
             user.id_perfil = id_perfil;
-            user.nombre_perfil = nombre_perfil;
+            user.permiso_perfil = permiso_perfil;
 
             return user;
         }

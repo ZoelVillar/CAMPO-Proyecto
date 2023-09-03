@@ -47,7 +47,7 @@ namespace Vista
             if (Perfil.retornaPerfiles().Count > 0)
             {
                 comboPerfiles.DataSource = Perfil.retornaPerfiles();
-                comboPerfiles.DisplayMember = "nombre_perfil";
+                comboPerfiles.DisplayMember = "id_perfil";
                 comboPerfiles.ValueMember = "id_perfil";
                 comboPerfiles.SelectedIndex = 0;
             }
@@ -61,7 +61,7 @@ namespace Vista
 
             foreach (var usuario in usuarios)
             {
-                dataGridUsuarios.Rows.Add(usuario.nombre_perfil, usuario.key_email, usuario.user_name, usuario.user_lastname, usuario.user_blocked, usuario.user_attempts); 
+                dataGridUsuarios.Rows.Add(usuario.id_perfil, usuario.key_email, usuario.user_name, usuario.user_lastname, usuario.user_blocked, usuario.user_attempts); 
             }
         }
 
@@ -160,9 +160,8 @@ namespace Vista
 
                         if (!String.IsNullOrEmpty(txtNuevoNombre.Text) || !String.IsNullOrEmpty(txtNuevoApellido.Text))
                         {
-                          
                                 int selectedId = (int)comboPerfiles.SelectedValue;
-                                BE_User usuarioAux = new BE_User(email, txtNuevoNombre.Text.Trim(), txtNuevoApellido.Text.Trim(), selectedId);
+                                BE_User usuarioAux = new BE_User(email, txtNuevoNombre.Text.Trim(), txtNuevoApellido.Text.Trim(), comboPerfiles.SelectedItem.ToString());
 
                                 string mensaje = $"Seguro que quieres modificar a {usuarioAux.key_email}, con el nombre: {usuarioAux.user_name}, el apellido: {usuarioAux.user_lastname} y el rol de: {comboPerfiles.SelectedItem.ToString()}?";
 
@@ -212,8 +211,7 @@ namespace Vista
                         if (validaciones.validarEmail(_email))
                         {
                             string userPassword = encriptacion.Encriptar(txtNuevoNombre.Text + txtNuevoApellido.Text);
-                            int selectedId = (int)comboPerfiles.SelectedValue;
-                            BE_User usuario = new BE_User(_email, txtNuevoNombre.Text.Trim(), txtNuevoApellido.Text.Trim(), userPassword, false, 0, selectedId);
+                            BE_User usuario = new BE_User(_email, txtNuevoNombre.Text.Trim(), txtNuevoApellido.Text.Trim(), userPassword, false, 0, comboPerfiles.SelectedItem.ToString());
 
                             string mensaje = $"Seguro que quieres crear a {usuario.key_email}, con el nombre: {usuario.user_name}, el apellido: {usuario.user_lastname} y el rol de: {comboPerfiles.SelectedItem.ToString()}?";
 
@@ -341,5 +339,6 @@ namespace Vista
             }
             
         }
+
     }
 }

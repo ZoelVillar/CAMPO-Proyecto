@@ -102,7 +102,7 @@ namespace Vista
         private void LoadUserData()
         {
             lblNombre.Text = UserLoginInfo.user_name + " " + UserLoginInfo.user_lastname;
-            lblArea.Text = UserLoginInfo.nombre_perfil;
+            lblArea.Text = UserLoginInfo.id_perfil;
         }
 
         #region "Salir , minimizar y redimensionar"

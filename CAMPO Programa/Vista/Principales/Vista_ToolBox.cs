@@ -43,8 +43,9 @@ namespace Vista
             UserLoginInfo.user_lastname = "";
             UserLoginInfo.user_password = "";
             UserLoginInfo.user_blocked = false;
-            UserLoginInfo.user_attempts = 000;
-            UserLoginInfo.id_perfil = 000;
+            UserLoginInfo.user_attempts = 0;
+            UserLoginInfo.id_perfil = "";
+            UserLoginInfo.permiso_perfil = null;
         }
     }
 }

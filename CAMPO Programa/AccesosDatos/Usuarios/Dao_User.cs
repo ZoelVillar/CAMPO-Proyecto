@@ -156,7 +156,7 @@ namespace AccesosDatos
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT U.key_email, U.user_name, U.user_lastname, U.user_password, U.user_blocked, U.user_attempts, U.id_perfil, A.nombre_perfil FROM Users U JOIN Perfil A ON U.id_perfil = A.id_perfil WHERE U.key_email = @user";
+                    command.CommandText = "SELECT U.key_email, U.user_name, U.user_lastname, U.user_password, U.user_blocked, U.user_attempts, U.id_perfil, P.FK_PermisoPerfil FROM Users U JOIN Perfil P ON U.id_perfil = P.id_perfil WHERE U.key_email = @user";
                     command.Parameters.AddWithValue("user", key_email);
                     command.CommandType = System.Data.CommandType.Text;
 
@@ -172,8 +172,8 @@ namespace AccesosDatos
                             usuario.user_password = reader.GetString(3);
                             usuario.user_blocked = reader.GetBoolean(4);
                             usuario.user_attempts = reader.GetInt32(5);
-                            usuario.id_perfil = reader.GetInt32(6);
-                            usuario.nombre_perfil = new BE_PermisoCompuesto(reader.GetString(7));
+                            usuario.id_perfil = reader.GetString(6);
+                            usuario.permiso_perfil = new BE_PermisoCompuesto(reader.GetString(7));
                         }
                     }
 
@@ -189,7 +189,7 @@ namespace AccesosDatos
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT U.key_email, U.user_name, U.user_lastname, U.user_password, U.user_blocked, U.user_attempts, U.id_perfil, A.nombre_perfil FROM Users U JOIN Perfil A ON U.id_perfil = A.id_perfil WHERE U.key_email = @user";
+                    command.CommandText = "SELECT U.key_email, U.user_name, U.user_lastname, U.user_password, U.user_blocked, U.user_attempts, U.id_perfil, P.FK_PermisoPerfil FROM Users U JOIN Perfil P ON U.id_perfil = P.id_perfil WHERE U.key_email = @user";
                     command.Parameters.AddWithValue("user", key_email);
                     command.CommandType = System.Data.CommandType.Text;
 
@@ -204,8 +204,8 @@ namespace AccesosDatos
                             UserLoginInfo.user_password = reader.GetString(3);
                             UserLoginInfo.user_blocked = reader.GetBoolean(4);
                             UserLoginInfo.user_attempts = reader.GetInt32(5);
-                            UserLoginInfo.id_perfil = reader.GetInt32(6);
-                            UserLoginInfo.nombre_perfil = reader.GetString(7);
+                            UserLoginInfo.id_perfil = reader.GetString(6);
+                            UserLoginInfo.permiso_perfil = new BE_PermisoCompuesto(reader.GetString(7));
                         }
                         return true;
                     }
@@ -234,7 +234,7 @@ namespace AccesosDatos
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT U.key_email, U.user_name, U.user_lastname, U.user_password, U.user_blocked, U.user_attempts, U.id_perfil, A.nombre_perfil FROM Users U INNER JOIN Perfil A ON U.id_perfil = A.id_perfil"; 
+                    command.CommandText = "SELECT U.key_email, U.user_name, U.user_lastname, U.user_password, U.user_blocked, U.user_attempts, U.id_perfil, P.FK_PermisoPerfil FROM Users U INNER JOIN Perfil P ON U.id_perfil = P.id_perfil"; 
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -249,8 +249,8 @@ namespace AccesosDatos
                             usuario.user_password = reader.GetString(3);
                             usuario.user_blocked = reader.GetBoolean(4);
                             usuario.user_attempts = reader.GetInt32(5);
-                            usuario.id_perfil = reader.GetInt32(6);
-                            usuario.nombre_perfil = new BE_PermisoCompuesto(reader.GetString(7));
+                            usuario.id_perfil = reader.GetString(6);
+                            usuario.permiso_perfil = new BE_PermisoCompuesto(reader.GetString(7));
 
                             usuarios.Add(usuario);
                         }

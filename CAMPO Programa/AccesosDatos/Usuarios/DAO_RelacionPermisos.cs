@@ -51,6 +51,39 @@ namespace AccesosDatos.Usuarios
             }
         }
 
+        public List<BE_RelacionPermisos> retornarPermisos(string FK_CodigoPC)
+        {
+            List<BE_RelacionPermisos> listaRelacionPermisos = new List<BE_RelacionPermisos>();
+
+            using (var connection = dbConnection.GetConnection())
+            {
+                dbConnection.OpenConnection();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select * from RelacionPermisos where FK_CodigoPC = @FK_CodigoPC";
+                    command.Parameters.AddWithValue("@FK_CodigoPC", FK_CodigoPC);
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            BE_RelacionPermisos relacion = new BE_RelacionPermisos(
+                                    new BE_PermisoCompuesto(reader.GetString(0)),
+                                    new BE_PermisoSimple(reader.GetString(1))
+                                );
+                            listaRelacionPermisos.Add(relacion);
+                        }
+                    }
+
+                    return listaRelacionPermisos;
+
+                }
+            }
+        }
+
         public bool eliminarRelacion(string permiso1, string permiso2 = "")
         {
             using (var connection = dbConnection.GetConnection())

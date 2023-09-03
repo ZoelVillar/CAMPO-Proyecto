@@ -31,6 +31,11 @@ namespace Negocio.Usuarios
             return DaoPerfil.ObtenerPermisos(tipoPermiso);
         }
 
+        public List<BE_Permiso> ObtenerTodosPermisos()
+        {
+            return DaoPerfil.ObtenerTodosPermisos();
+        }
+
         public bool ElimiarPermiso(string idPermiso)
         {
             return DaoPerfil.ElimiarPermiso(idPermiso);

@@ -1,4 +1,5 @@
-﻿using BE.Usuarios;
+﻿using BE.Permisos;
+using BE.Usuarios;
 using Microsoft.VisualBasic;
 using Negocio;
 using Negocio.Usuarios;
@@ -40,10 +41,35 @@ namespace Vista
 
         }
 
+        private void refrescarArbol()
+        {
+            treeViewPermisos.Nodes.Clear();
+            List<BE_Permiso> lista = bllPermiso.ObtenerTodosPermisos();
+            string PCSeleccionado = grillaPC.SelectedRows[0].Cells[0].Value.ToString();
+            BE_Permiso Permiso = new BE_PermisoCompuesto(PCSeleccionado);
+            Permiso = lista.Find(p => p.idPermiso == Permiso.idPermiso);
+            treeViewPermisos.Nodes.Add(LecturaNodo(Permiso));
+            treeViewPermisos.ExpandAll();
+        }
         private void refrescarGrilla()
         {
             var listaPC = bllPermiso.ObtenerPermisos("C");
             var listaPS = bllPermiso.ObtenerPermisos("S");
+
+            DataGridViewTextBoxColumn nuevaColumna = new DataGridViewTextBoxColumn();
+            nuevaColumna.Name = "id_permiso";
+            nuevaColumna.HeaderText = "id_permiso";
+            grillaPC.Columns.Add(nuevaColumna);
+            grillaPS.Columns.Add(nuevaColumna);
+
+            //perfil
+            nuevaColumna.Name = "id_perfil";
+            nuevaColumna.HeaderText = "Permiso id_perfil";
+            grillaPerfiles.Columns.Add(nuevaColumna);
+
+            nuevaColumna.Name = "PermisoPerfil";
+            nuevaColumna.HeaderText = "PermisoPerfil";
+            grillaPerfiles.Columns.Add(nuevaColumna);
 
             foreach (var PC in listaPC)
             {
@@ -54,6 +80,7 @@ namespace Vista
                 grillaPS.Rows.Add(PS.idPermiso);
             }
 
+            
             //FALTA MOSTRAR PERFILES
         }
 
@@ -73,6 +100,23 @@ namespace Vista
                     MessageBox.Show("Hubo un error, verifique los datos ingresados");
                 }
             }
+        }
+
+        public TreeNode LecturaNodo(BE_Permiso permiso)
+        {
+            TreeNode nodo = new TreeNode(permiso.idPermiso);
+            foreach (BE_Permiso p in (permiso as BE_PermisoCompuesto).RetornarPermisos())
+            {
+                if (p is BE_PermisoSimple)
+                {
+                    nodo.Nodes.Add(p.idPermiso);
+                }
+                else
+                {
+                    nodo.Nodes.Add(LecturaNodo(p as BE_PermisoCompuesto));
+                }
+            }
+            return nodo;
         }
         private void btnAgregarPC_Click(object sender, EventArgs e)
         {
@@ -107,7 +151,7 @@ namespace Vista
         {
             string permisoBorrar = grillaPC.CurrentRow.Cells[0].Value.ToString();
 
-            if (string.IsNullOrEmpty(permisoBorrar) || string.IsNullOrWhiteSpace(permisoBorrar) || grillaPC.RowCount != 0 || grillaPC.SelectedRows.Count > 0)
+            if (!string.IsNullOrEmpty(permisoBorrar) && !string.IsNullOrWhiteSpace(permisoBorrar) && grillaPC.RowCount != 0 && grillaPC.SelectedRows.Count > 0)
             {
                 string mensaje = $"¿Seguro que desea eliminar el Permiso Compuesto {permisoBorrar}? Los perfiles con este permiso pasarán a tener permiso de 'usuario'. Se eliminarán todas las relaciones de este permiso ";
 
@@ -131,6 +175,83 @@ namespace Vista
                 }
             }
             else MessageBox.Show("Seleccione correctamente el permiso compuesto");
+        }
+
+        private void btnVincularPCaPS_Click(object sender, EventArgs e)
+        {
+            string PermisoCompuesto = grillaPC.CurrentRow.Cells[0].Value.ToString();
+            string PermisoSimple = grillaPS.CurrentRow.Cells[0].Value.ToString();
+            if (bllPermiso.agregarRelacion(PermisoCompuesto, PermisoSimple))
+            {
+                MessageBox.Show($"Permisos {PermisoCompuesto} y {PermisoSimple} relacionados con exito!");
+            }
+            else
+            {
+                MessageBox.Show("Ocurrió un error al relacionar los permisos!");
+            }
+            refrescarArbol();
+        }
+
+        private void btnVincularPCaPC_Click(object sender, EventArgs e)
+        { 
+            string permisoSeleccionado = grillaPC.CurrentRow.Cells[0].Value.ToString();
+            if (!string.IsNullOrEmpty(permisoSeleccionado) && !string.IsNullOrWhiteSpace(permisoSeleccionado) && grillaPC.RowCount != 0 && grillaPC.SelectedRows.Count > 0)
+            {
+                string permisoAgregar = Interaction.InputBox($"Ingrese el Permiso Compuesto a vincular con: {permisoSeleccionado}");
+                if (!string.IsNullOrEmpty(permisoAgregar) && !string.IsNullOrWhiteSpace(permisoAgregar) && permisoSeleccionado.ToLower() != permisoAgregar.ToLower())
+                {
+                    if (encontrarEnGrilla(permisoAgregar))
+                    {
+                        if(!encontrarPermiso(permisoSeleccionado, permisoAgregar))
+                        {
+                            bllRelacionPermisos.agregarRelacion(permisoSeleccionado, permisoAgregar);
+                            refrescarArbol();
+                            refrescarGrilla();
+                        }
+                    }
+                    else { MessageBox.Show("Ingrese un permiso compuesto válido"); }
+                }
+                else { MessageBox.Show("Ingrese un permiso compuesto válido"); }
+
+            }
+            else { MessageBox.Show("Ingrese un permiso compuesto válido"); }
+        }
+
+        private bool encontrarEnGrilla(string permisoEncontrar)
+        {
+            foreach (DataGridViewRow row in grillaPC.Rows)
+            {
+                if (row.Cells["id_perfil"].Value != null)
+                {
+                    // Compara el valor de la celda con el permiso que deseas agregar
+                    if (row.Cells["id_perfil"].Value.ToString() == permisoEncontrar)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        private bool encontrarPermiso(string permisoSeleccionado, string permisoAgregar)
+        {
+            foreach (var p in bllRelacionPermisos.retornarPermisos(permisoSeleccionado))
+            {
+                if(p.permiso1.idPermiso == permisoAgregar || p.permiso2.idPermiso == permisoAgregar)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void btnAgregarPerfil_Click(object sender, EventArgs e)
+        {
+            string idPerfil = Interaction.InputBox("Ingrese el nombre del perfil: ");
+            string permisoPerfil = grillaPC.CurrentRow.Cells[0].Value.ToString();
+
+            bllPerfil.agregarPerfil(idPerfil, permisoPerfil);
+            refrescarGrilla();
         }
     }
 }
