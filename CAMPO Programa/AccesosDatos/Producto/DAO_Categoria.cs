@@ -26,32 +26,41 @@ namespace AccesosDatos
         {
             List<BE_User> lista = new List<BE_User>();
 
-            using (var connection = dbConnection.GetConnection())
+            try
             {
-                dbConnection.OpenConnection();
-                StringBuilder query = new StringBuilder();
-                query.AppendLine("select idCategoria, descripcion, estado from Categoria");
-               
-                using (var command = new SqlCommand(query.ToString(), connection))
+                using (var connection = dbConnection.GetConnection())
                 {
-                    command.CommandType = CommandType.Text;
-
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    dbConnection.OpenConnection();
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("select idCategoria, descripcion, estado from Categoria");
+               
+                    using (var command = new SqlCommand(query.ToString(), connection))
                     {
-                        while (reader.Read())
-                        {
-                            BE_Categoria Categoria = new BE_Categoria();
+                        command.CommandType = CommandType.Text;
 
-                            Categoria.IdCategoria = Convert.ToInt32(reader["idCategoria"]);
-                            Categoria.Descripcion = reader["Description"].ToString();
-                            Categoria.Estado = Convert.ToBoolean(reader["Estado"]);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                BE_Categoria Categoria = new BE_Categoria();
+
+                                Categoria.IdCategoria = Convert.ToInt32(reader["idCategoria"]);
+                                Categoria.Descripcion = reader["Description"].ToString();
+                                Categoria.Estado = Convert.ToBoolean(reader["Estado"]);
                             
                             
+                            }
                         }
                     }
                 }
+                return lista;
+
             }
-            return lista;
+            catch (SqlException Exception)
+            {
+                return lista;
+            }
+
         }
 
         //public int Registrar(BE_Categoria obj, out string Mensaje)

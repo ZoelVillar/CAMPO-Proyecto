@@ -17,9 +17,12 @@ namespace Vista
 {
     public partial class Vista_GestionarUsuarios : Form
     {
+        
+        Vista_GestionarPerfil perfilForm = new Vista_GestionarPerfil();
         public Vista_GestionarUsuarios()
         {
             InitializeComponent();
+            perfilForm.PerfilAgregado += actualizarCombo;
         }
 
         ValidarRegex validaciones;
@@ -37,6 +40,7 @@ namespace Vista
             encriptacion = new EncriptarContraseña();
             dataGridUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridUsuarios.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            dataGridUsuarios.AllowUserToAddRows = false;
             ActualizarGrilla();
             cargarComboPerfiles();
         }
@@ -52,6 +56,12 @@ namespace Vista
                 comboPerfiles.SelectedIndex = 0;
             }
         }
+        private void actualizarCombo(object sender, EventArgs e)
+        {
+            cargarComboPerfiles();
+        }
+
+
         private void ActualizarGrilla()
         {
             dataGridUsuarios.Rows.Clear();
@@ -160,10 +170,9 @@ namespace Vista
 
                         if (!String.IsNullOrEmpty(txtNuevoNombre.Text) || !String.IsNullOrEmpty(txtNuevoApellido.Text))
                         {
-                                int selectedId = (int)comboPerfiles.SelectedValue;
                                 BE_User usuarioAux = new BE_User(email, txtNuevoNombre.Text.Trim(), txtNuevoApellido.Text.Trim(), comboPerfiles.SelectedItem.ToString());
 
-                                string mensaje = $"Seguro que quieres modificar a {usuarioAux.key_email}, con el nombre: {usuarioAux.user_name}, el apellido: {usuarioAux.user_lastname} y el rol de: {comboPerfiles.SelectedItem.ToString()}?";
+                                string mensaje = $"Seguro que quieres modificar a {usuarioAux.key_email}, con el nombre: {usuarioAux.user_name}, el apellido: {usuarioAux.user_lastname} y el rol de: {comboPerfiles.Text}?";
 
                                 DialogResult resultado = MessageBox.Show(mensaje, "Confirmar modificación de Usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 

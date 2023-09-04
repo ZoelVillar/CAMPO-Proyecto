@@ -19,30 +19,37 @@ namespace AccesosDatos
         }
         public bool CrearVenta(BE_Venta bEventa)
         {
-            using (var connection = dbConnection.GetConnection())
+            try
             {
-                dbConnection.OpenConnection();
-                using (var command = new SqlCommand())
+                using (var connection = dbConnection.GetConnection())
                 {
-                    command.Connection = connection;
-                    command.CommandText = $"INSERT INTO Venta (mailUsuario, [montoPago], [montoCambio], [montoTotal], [nombreMesero], [numMesa], [comentariosAdicionales], [tipoPedido]) VALUES (@mailUsuario, @montoPago, @montoCambio, @montoTotal, @nombreMesero, @numMesa, @comentariosAdicionales, @tipoPedido)"; ;
+                    dbConnection.OpenConnection();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = $"INSERT INTO Venta (mailUsuario, [montoPago], [montoCambio], [montoTotal], [nombreMesero], [numMesa], [comentariosAdicionales], [tipoPedido]) VALUES (@mailUsuario, @montoPago, @montoCambio, @montoTotal, @nombreMesero, @numMesa, @comentariosAdicionales, @tipoPedido)"; ;
 
-                    // Parámetros para los valores a insertar
-                    command.Parameters.AddWithValue("@mailUsuario", bEventa.oUsuario.key_email);
-                    command.Parameters.AddWithValue("@montoPago", bEventa.montoPago);
-                    command.Parameters.AddWithValue("@montoCambio", bEventa.montoCambio);
-                    command.Parameters.AddWithValue("@montoTotal", bEventa.montoTotal);
-                    command.Parameters.AddWithValue("@nombreMesero", bEventa.nombreMesero);
-                    command.Parameters.AddWithValue("@numMesa", bEventa.numMesa);
-                    command.Parameters.AddWithValue("@comentariosAdicionales", bEventa.comentariosAdicionales);
-                    command.Parameters.AddWithValue("@tipoPedido", bEventa.tipoPedido);
+                        // Parámetros para los valores a insertar
+                        command.Parameters.AddWithValue("@mailUsuario", bEventa.oUsuario.key_email);
+                        command.Parameters.AddWithValue("@montoPago", bEventa.montoPago);
+                        command.Parameters.AddWithValue("@montoCambio", bEventa.montoCambio);
+                        command.Parameters.AddWithValue("@montoTotal", bEventa.montoTotal);
+                        command.Parameters.AddWithValue("@nombreMesero", bEventa.nombreMesero);
+                        command.Parameters.AddWithValue("@numMesa", bEventa.numMesa);
+                        command.Parameters.AddWithValue("@comentariosAdicionales", bEventa.comentariosAdicionales);
+                        command.Parameters.AddWithValue("@tipoPedido", bEventa.tipoPedido);
 
-                    int rowsAffected = command.ExecuteNonQuery();
+                        int rowsAffected = command.ExecuteNonQuery();
 
-                    if (rowsAffected > 0)
-                    { return true; }
-                    else { return false; }
+                        if (rowsAffected > 0)
+                        { return true; }
+                        else { return false; }
+                    }
                 }
+            }
+            catch (SqlException Exception)
+            {
+                return false;
             }
         }
     }

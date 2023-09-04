@@ -23,133 +23,165 @@ namespace AccesosDatos.Usuarios
         {
             List<BE_RelacionPermisos> listaRelacionPermisos = new List<BE_RelacionPermisos>();
 
-            using (var connection = dbConnection.GetConnection())
+            try
             {
-                dbConnection.OpenConnection();
-
-                using (var command = new SqlCommand())
+                using (var connection = dbConnection.GetConnection())
                 {
-                    command.Connection = connection;
-                    command.CommandText = "select * from RelacionPermisos";
+                    dbConnection.OpenConnection();
 
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    if (reader.HasRows)
+                    using (var command = new SqlCommand())
                     {
-                        while (reader.Read())
+                        command.Connection = connection;
+                        command.CommandText = "select * from RelacionPermisos";
+
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if (reader.HasRows)
                         {
-                            BE_RelacionPermisos relacion = new BE_RelacionPermisos(
-                                    new BE_PermisoCompuesto(reader.GetString(0)),
-                                    new BE_PermisoSimple(reader.GetString(1))
-                                );
-                            listaRelacionPermisos.Add(relacion);
+                            while (reader.Read())
+                            {
+                                BE_RelacionPermisos relacion = new BE_RelacionPermisos(
+                                        new BE_PermisoCompuesto(reader.GetString(0)),
+                                        new BE_PermisoSimple(reader.GetString(1))
+                                    );
+                                listaRelacionPermisos.Add(relacion);
+                            }
                         }
+
+                        return listaRelacionPermisos;
+
                     }
-
-                    return listaRelacionPermisos;
-
                 }
+
             }
+            catch (SqlException Exception)
+            {
+                return listaRelacionPermisos;
+            }
+
         }
 
         public List<BE_RelacionPermisos> retornarPermisos(string FK_CodigoPC)
         {
             List<BE_RelacionPermisos> listaRelacionPermisos = new List<BE_RelacionPermisos>();
 
-            using (var connection = dbConnection.GetConnection())
+            try
             {
-                dbConnection.OpenConnection();
-
-                using (var command = new SqlCommand())
+                using (var connection = dbConnection.GetConnection())
                 {
-                    command.Connection = connection;
-                    command.CommandText = "select * from RelacionPermisos where FK_CodigoPC = @FK_CodigoPC";
-                    command.Parameters.AddWithValue("@FK_CodigoPC", FK_CodigoPC);
+                    dbConnection.OpenConnection();
 
-                    SqlDataReader reader = command.ExecuteReader();
-                    if (reader.HasRows)
+                    using (var command = new SqlCommand())
                     {
-                        while (reader.Read())
+                        command.Connection = connection;
+                        command.CommandText = "select * from RelacionPermisos where FK_CodigoPC = @FK_CodigoPC";
+                        command.Parameters.AddWithValue("@FK_CodigoPC", FK_CodigoPC);
+
+                        SqlDataReader reader = command.ExecuteReader();
+                        if (reader.HasRows)
                         {
-                            BE_RelacionPermisos relacion = new BE_RelacionPermisos(
-                                    new BE_PermisoCompuesto(reader.GetString(0)),
-                                    new BE_PermisoSimple(reader.GetString(1))
-                                );
-                            listaRelacionPermisos.Add(relacion);
+                            while (reader.Read())
+                            {
+                                BE_RelacionPermisos relacion = new BE_RelacionPermisos(
+                                        new BE_PermisoCompuesto(reader.GetString(0)),
+                                        new BE_PermisoSimple(reader.GetString(1))
+                                    );
+                                listaRelacionPermisos.Add(relacion);
+                            }
                         }
+
+                        return listaRelacionPermisos;
+
                     }
-
-                    return listaRelacionPermisos;
-
                 }
             }
+            catch (SqlException Exception)
+            {
+                return listaRelacionPermisos;
+            }
+
         }
 
         public bool eliminarRelacion(string permiso1, string permiso2 = "")
         {
-            using (var connection = dbConnection.GetConnection())
+            try
             {
-                dbConnection.OpenConnection();
-
-                using (var command = new SqlCommand())
+                using (var connection = dbConnection.GetConnection())
                 {
-                    command.Connection = connection;
+                    dbConnection.OpenConnection();
 
-                    if(permiso2 == "")
+                    using (var command = new SqlCommand())
                     {
-                        command.Parameters.AddWithValue("@permiso1", permiso1);
-                        command.CommandText = "delete from RelacionPermisos where FK_CodigoPC = @permiso1";
-                    }
-                    else
-                    {
-                        command.Parameters.AddWithValue("@permiso1", permiso1);
-                        command.Parameters.AddWithValue("@permiso2", permiso2);
-                        command.CommandText = "delete from RelacionPermisos where FK_CodigoPC = @permiso1 and FK_CodigoPS=@permiso2";
-                    }
+                        command.Connection = connection;
 
-                    command.CommandType = CommandType.Text;
-                    int rowsAffected = command.ExecuteNonQuery();
+                        if(permiso2 == "")
+                        {
+                            command.Parameters.AddWithValue("@permiso1", permiso1);
+                            command.CommandText = "delete from RelacionPermisos where FK_CodigoPC = @permiso1";
+                        }
+                        else
+                        {
+                            command.Parameters.AddWithValue("@permiso1", permiso1);
+                            command.Parameters.AddWithValue("@permiso2", permiso2);
+                            command.CommandText = "delete from RelacionPermisos where FK_CodigoPC = @permiso1 and FK_CodigoPS=@permiso2";
+                        }
+
+                        command.CommandType = CommandType.Text;
+                        int rowsAffected = command.ExecuteNonQuery();
                                               
-                    if (rowsAffected > 0)
-                    { return true; }
-                    else { return false; }
+                        if (rowsAffected > 0)
+                        { return true; }
+                        else { return false; }
+                    }
                 }
+
+            }
+            catch (SqlException Exception)
+            {
+                return false;
             }
         }
 
         public bool agregarRelacion(string permiso1, string permiso2)
         {
-            using (var connection = dbConnection.GetConnection())
+            try
             {
-                dbConnection.OpenConnection();
-
-                using (var command = new SqlCommand())
+                using (var connection = dbConnection.GetConnection())
                 {
-                    command.Connection = connection;
+                    dbConnection.OpenConnection();
 
-
-                    command.CommandText = $"select * from RelacionPermisos where FK_CodigoPC = @Permiso1 AND FK_CodigoPS = @Permiso2";
-                    command.Parameters.AddWithValue("@Permiso1", permiso1);
-                    command.Parameters.AddWithValue("@Permiso2", permiso2);
-                    command.CommandType = CommandType.Text;
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    if (!reader.HasRows)
+                    using (var command = new SqlCommand())
                     {
-                        reader.Close();
-                        command.CommandText = $"insert into RelacionPermisos values(@Permiso1,@Permiso2)";
+                        command.Connection = connection;
 
-                        int rowsAffected = command.ExecuteNonQuery();
 
-                        if (rowsAffected > 0)
-                        { return true; }
-                        else { return false; }
+                        command.CommandText = $"select * from RelacionPermisos where FK_CodigoPC = @Permiso1 AND FK_CodigoPS = @Permiso2";
+                        command.Parameters.AddWithValue("@Permiso1", permiso1);
+                        command.Parameters.AddWithValue("@Permiso2", permiso2);
+                        command.CommandType = CommandType.Text;
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if (!reader.HasRows)
+                        {
+                            reader.Close();
+                            command.CommandText = $"insert into RelacionPermisos values(@Permiso1,@Permiso2)";
+
+                            int rowsAffected = command.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            { return true; }
+                            else { return false; }
+                        }
+                        else return false;
+
+
                     }
-                    else return false;
-
 
                 }
-
+            }
+            catch (SqlException Exception)
+            {
+                return false;
             }
         }
     }

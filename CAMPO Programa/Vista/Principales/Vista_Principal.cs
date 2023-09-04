@@ -1,5 +1,8 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
+﻿using BE.Permisos;
+using BE.Usuarios;
+using Microsoft.VisualBasic.ApplicationServices;
 using Negocio;
+using Negocio.Usuarios;
 using Servicios.Cache;
 using Servicios.Validaciones;
 using System;
@@ -18,8 +21,12 @@ namespace Vista
     public partial class Vista_Principal : Form
     {
         private static Vista_Principal Vista = new Vista_Principal();
+
         EncriptarContraseña encript;
         private Button selectedButton = null;
+        BLL_Perfil bllPerfil;
+        BLL_Permiso bllPermiso;
+        List<BE_Permiso> listaPermisos;
         public Vista_Principal()
         {
             InitializeComponent();
@@ -27,6 +34,10 @@ namespace Vista
         private void Vista_Principal_Load(object sender, EventArgs e)
         {
             encript = new EncriptarContraseña();
+            listaPermisos = new List<BE_Permiso>();
+            bllPerfil = new BLL_Perfil();
+            bllPermiso = new BLL_Permiso();
+            //cargarPerfiles();
             LoadUserData();
             AttachButtonClickEvent(panelBotones);
             consultarCambiarContraseña();
@@ -204,5 +215,25 @@ namespace Vista
 
         #endregion
 
+        private void cargarPerfiles()
+        {
+            if(UserLoginInfo.id_perfil != "Administrador")
+            {
+                List <BE_Perfil> perfiles = bllPerfil.retornaPerfiles();
+                List<BE_Permiso> permisos = bllPermiso.ObtenerTodosPermisos();
+                BE_Perfil perfil = perfiles.Find(x => x.id_perfil == UserLoginInfo.id_perfil);
+
+                foreach(Control control in this.panelBotones.Controls)
+                {
+                    if(control is Button)
+                    {
+                        if(!permisos.Find(x => x.idPermiso == perfil.FK_PermisoPerfil.idPermiso).RetornarPermisos().Exists(x => x.idPermiso == control.Tag.ToString()))
+                        {
+                            control.Visible = false;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

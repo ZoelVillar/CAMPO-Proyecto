@@ -105,9 +105,9 @@
             this.panel3.Controls.Add(this.lblArea);
             this.panel3.Controls.Add(this.lblNombre);
             this.panel3.Controls.Add(this.lblPerfil);
-            this.panel3.Location = new System.Drawing.Point(12, 86);
+            this.panel3.Location = new System.Drawing.Point(8, 86);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(199, 51);
+            this.panel3.Size = new System.Drawing.Size(203, 51);
             this.panel3.TabIndex = 47;
             // 
             // label2
@@ -165,9 +165,9 @@
             this.panelBotones.Controls.Add(this.btnGestionUsuarios);
             this.panelBotones.Controls.Add(this.btnAbrirVentas);
             this.panelBotones.Controls.Add(this.btnAbrirCompras);
-            this.panelBotones.Location = new System.Drawing.Point(12, 143);
+            this.panelBotones.Location = new System.Drawing.Point(8, 143);
             this.panelBotones.Name = "panelBotones";
-            this.panelBotones.Size = new System.Drawing.Size(199, 431);
+            this.panelBotones.Size = new System.Drawing.Size(203, 431);
             this.panelBotones.TabIndex = 0;
             // 
             // button3
@@ -184,6 +184,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(177, 35);
             this.button3.TabIndex = 49;
+            this.button3.Tag = "btnProductos";
             this.button3.Text = "Gestión de Productos";
             this.button3.UseVisualStyleBackColor = false;
             // 
@@ -201,6 +202,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(177, 35);
             this.button2.TabIndex = 48;
+            this.button2.Tag = "btnIdiomas";
             this.button2.Text = "Gestión de Idiomas";
             this.button2.UseVisualStyleBackColor = false;
             // 
@@ -218,6 +220,7 @@
             this.btnGestionAreas.Name = "btnGestionAreas";
             this.btnGestionAreas.Size = new System.Drawing.Size(177, 35);
             this.btnGestionAreas.TabIndex = 47;
+            this.btnGestionAreas.Tag = "btnAreas";
             this.btnGestionAreas.Text = "Gestión de Áreas";
             this.btnGestionAreas.UseVisualStyleBackColor = false;
             this.btnGestionAreas.Click += new System.EventHandler(this.btnGestionAreas_Click);
@@ -254,6 +257,7 @@
             this.btnGestionUsuarios.Name = "btnGestionUsuarios";
             this.btnGestionUsuarios.Size = new System.Drawing.Size(177, 35);
             this.btnGestionUsuarios.TabIndex = 45;
+            this.btnGestionUsuarios.Tag = "btnUsuarios";
             this.btnGestionUsuarios.Text = "Gestión de Usuarios";
             this.btnGestionUsuarios.UseVisualStyleBackColor = false;
             this.btnGestionUsuarios.Click += new System.EventHandler(this.btnGestionUsuarios_Click);
@@ -273,6 +277,7 @@
             this.btnAbrirVentas.Name = "btnAbrirVentas";
             this.btnAbrirVentas.Size = new System.Drawing.Size(177, 35);
             this.btnAbrirVentas.TabIndex = 43;
+            this.btnAbrirVentas.Tag = "btnVentas";
             this.btnAbrirVentas.Text = "Gestión de Ventas";
             this.btnAbrirVentas.UseVisualStyleBackColor = false;
             this.btnAbrirVentas.Click += new System.EventHandler(this.btnAbrirVentas_Click);
@@ -291,6 +296,7 @@
             this.btnAbrirCompras.Name = "btnAbrirCompras";
             this.btnAbrirCompras.Size = new System.Drawing.Size(177, 35);
             this.btnAbrirCompras.TabIndex = 44;
+            this.btnAbrirCompras.Tag = "btnCompras";
             this.btnAbrirCompras.Text = "Gestión de Compras";
             this.btnAbrirCompras.UseVisualStyleBackColor = false;
             this.btnAbrirCompras.Click += new System.EventHandler(this.btnAbrirCompras_Click);
@@ -316,9 +322,9 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnLogout.Location = new System.Drawing.Point(12, 594);
+            this.btnLogout.Location = new System.Drawing.Point(8, 594);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(199, 35);
+            this.btnLogout.Size = new System.Drawing.Size(203, 35);
             this.btnLogout.TabIndex = 40;
             this.btnLogout.Text = "Cerrar Sesión";
             this.btnLogout.UseVisualStyleBackColor = false;

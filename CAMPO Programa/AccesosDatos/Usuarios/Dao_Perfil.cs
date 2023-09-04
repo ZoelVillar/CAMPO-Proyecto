@@ -24,43 +24,92 @@ namespace AccesosDatos
 
         public bool agregarPerfil(string id_perfil, string FK_PermisoPerfil)
         {
-            using (var connection = dbConnection.GetConnection())
+            try
             {
-                dbConnection.OpenConnection();
-                using (var command = new SqlCommand())
+                using (var connection = dbConnection.GetConnection())
                 {
-                    command.Connection = connection;
-                    command.CommandText = $"INSERT INTO Perfil (id_perfil, FK_PermisoPerfil) VALUES (@id_perfil, @FK_PermisoPerfil)"; ;
+                    dbConnection.OpenConnection();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = $"INSERT INTO Perfil (id_perfil, FK_PermisoPerfil) VALUES (@id_perfil, @FK_PermisoPerfil)"; ;
 
-                    // Parámetros para los valores a insertar
-                    command.Parameters.AddWithValue("@id_perfil", id_perfil);
-                    command.Parameters.AddWithValue("@FK_PermisoPerfil", FK_PermisoPerfil);
-                    int rowsAffected = command.ExecuteNonQuery();
+                        // Parámetros para los valores a insertar
+                        command.Parameters.AddWithValue("@id_perfil", id_perfil);
+                        command.Parameters.AddWithValue("@FK_PermisoPerfil", FK_PermisoPerfil);
+                        int rowsAffected = command.ExecuteNonQuery();
 
-                    if (rowsAffected > 0)
-                    { return true; }
-                    else { return false; }
+                        if (rowsAffected > 0)
+                        { return true; }
+                        else { return false; }
+                    }
                 }
+            }
+            catch (SqlException Exception)
+            {
+                return false;
             }
         }
 
         public bool eliminarPerfil(string id_perfil)
         {
-            using (var connection = dbConnection.GetConnection())
+            try
             {
-                dbConnection.OpenConnection();
-                using (var command = new SqlCommand())
+                using (var connection = dbConnection.GetConnection())
                 {
-                    command.Connection = connection;
-
-                    command.CommandText = $"select * from Users where id_perfil=@id_perfil";
-                    command.Parameters.AddWithValue("@id_perfil", id_perfil);
-                    command.CommandType = CommandType.Text;
-                    SqlDataReader reader = command.ExecuteReader();
-                    if (!reader.HasRows)
+                    dbConnection.OpenConnection();
+                    using (var command = new SqlCommand())
                     {
-                        reader.Close();
+                        command.Connection = connection;
+
+                        command.CommandText = $"select * from Users where id_perfil=@id_perfil";
+                        command.Parameters.AddWithValue("@id_perfil", id_perfil);
+                        command.CommandType = CommandType.Text;
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                reader.Close();
+                                command.CommandText = $"UPDATE Users SET id_perfil = 'Usuario' WHERE id_perfil = @id_perfil";
+                                int rowsAffected = command.ExecuteNonQuery();
+
+                                if (rowsAffected > 0)
+                                {
+                                    return eliminarPerfilBBDD(id_perfil);
+                                }
+                                else { return false; }
+                            }
+                            else 
+                            {
+                                reader.Close();
+                                return eliminarPerfilBBDD(id_perfil);
+                            }
+                        }
+                      
+
+                    
+                    }
+                }
+
+            }
+            catch (SqlException Exception)
+            {
+                return false;
+            }
+        }
+        private bool eliminarPerfilBBDD(string id_perfil)
+        {
+            try
+            {
+                using (var connection = dbConnection.GetConnection())
+                {
+                    dbConnection.OpenConnection();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
                         command.CommandText = $"delete from Perfil where id_perfil=@id_perfil";
+                        command.Parameters.AddWithValue("@id_perfil", id_perfil);
+                        command.CommandType = CommandType.Text;
 
                         int rowsAffected = command.ExecuteNonQuery();
 
@@ -68,64 +117,85 @@ namespace AccesosDatos
                         { return true; }
                         else { return false; }
                     }
-                    else return false;
-
-                    
                 }
+            }
+            catch (SqlException Exception)
+            {
+                return false;
             }
         }
 
         public bool modificarPerfil(string id_perfil, string usuario)
         {
-            using (var connection = dbConnection.GetConnection())
+            try
             {
-                dbConnection.OpenConnection();
-                using (var command = new SqlCommand())
+                using (var connection = dbConnection.GetConnection())
                 {
-                    command.Connection = connection;
-                    command.CommandText = $"update Users set id_perfil=@id_perfil where key_email=@usuario"; ;
+                    dbConnection.OpenConnection();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = $"update Users set id_perfil=@id_perfil where key_email=@usuario"; ;
 
-                    // Parámetros para los valores a insertar
-                    command.Parameters.AddWithValue("@id_perfil", id_perfil);
-                    command.Parameters.AddWithValue("@usuario", usuario);
-                    int rowsAffected = command.ExecuteNonQuery();
+                        // Parámetros para los valores a insertar
+                        command.Parameters.AddWithValue("@id_perfil", id_perfil);
+                        command.Parameters.AddWithValue("@usuario", usuario);
+                        int rowsAffected = command.ExecuteNonQuery();
 
-                    if (rowsAffected > 0)
-                    { return true; }
-                    else { return false; }
+                        if (rowsAffected > 0)
+                        { return true; }
+                        else { return false; }
+                    }
                 }
             }
+            catch (SqlException Exception)
+            {
+                return false;
+            }
+
+            
         }
 
         public List<BE_Perfil> retornaPerfiles()
         {
-            using (var connection = dbConnection.GetConnection())
+            try
             {
-                List<BE_Perfil> listaPerfiles = new List<BE_Perfil>();
-                dbConnection.OpenConnection();
-                using (var command = new SqlCommand())
+                using (var connection = dbConnection.GetConnection())
                 {
-                    command.Connection = connection;
-                    command.CommandText = "SELECT id_perfil, FK_PermisoPerfil FROM Perfil";
-                    command.CommandType = System.Data.CommandType.Text;
-
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    if (reader.HasRows)
+                    List<BE_Perfil> listaPerfiles = new List<BE_Perfil>();
+                    dbConnection.OpenConnection();
+                    using (var command = new SqlCommand())
                     {
-                        while (reader.Read())
-                        {
-                            BE_Perfil perfil = new BE_Perfil();
-                            perfil.id_perfil = reader.GetString(0);
-                            perfil.FK_PermisoPerfil = new BE_PermisoCompuesto(reader.GetString(1));
+                        command.Connection = connection;
+                        command.CommandText = "SELECT id_perfil, FK_PermisoPerfil FROM Perfil";
+                        command.CommandType = System.Data.CommandType.Text;
 
-                            listaPerfiles.Add(perfil);
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                BE_Perfil perfil = new BE_Perfil();
+                                perfil.id_perfil = reader.GetString(0);
+                                perfil.FK_PermisoPerfil = new BE_PermisoCompuesto(reader.GetString(1));
+
+                                listaPerfiles.Add(perfil);
+                            }
+                            return listaPerfiles;
                         }
-                        return listaPerfiles;
+                        else { return listaPerfiles; }
                     }
-                    else { return listaPerfiles; }
                 }
+
             }
+            catch (SqlException Exception)
+            {
+                List<BE_Perfil> listaVacia = new List<BE_Perfil>();
+                return listaVacia;
+            }
+
+            
         }
     }
 }

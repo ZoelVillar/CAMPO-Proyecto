@@ -24,35 +24,43 @@ namespace AccesosDatos.Producto
                 List<BE_Producto> listaProductos = new List<BE_Producto>();
                 dbConnection.OpenConnection();
 
-                using (var command = new SqlCommand())
+                try
                 {
-                    command.Connection = connection;
-                    command.CommandText = "SELECT [idProducto],[codigo],[nombre],p.[descripcion],c.[idCategoria], c.descripcion[DescripcionCategoria], p.stock,[precioCompra],[precioVenta], p.estado FROM Producto p \r\ninner join Categoria c on c.idCategoria = p.idCategoria";
-                    command.CommandType = System.Data.CommandType.Text;
-
-                    SqlDataReader dr = command.ExecuteReader();
-
-                    if (dr.HasRows)
+                    using (var command = new SqlCommand())
                     {
-                        while (dr.Read())
+                        command.Connection = connection;
+                        command.CommandText = "SELECT [idProducto],[codigo],[nombre],p.[descripcion],c.[idCategoria], c.descripcion[DescripcionCategoria], p.stock,[precioCompra],[precioVenta], p.estado FROM Producto p \r\ninner join Categoria c on c.idCategoria = p.idCategoria";
+                        command.CommandType = System.Data.CommandType.Text;
+
+                        SqlDataReader dr = command.ExecuteReader();
+
+                        if (dr.HasRows)
                         {
-                            listaProductos.Add(new BE_Producto()
+                            while (dr.Read())
                             {
-                                IdProducto = Convert.ToInt32(dr["IdProducto"]),
-                                Codigo = dr["Codigo"].ToString(), 
-                                Nombre = dr["Nombre"].ToString(),
-                                Descripcion = dr["Descripcion"].ToString(),
-                                oCategoria = new BE_Categoria() { IdCategoria = Convert.ToInt32(dr["IdCategoria"]), Descripcion = dr["DescripcionCategoria"].ToString() },
-                                Stock = Convert.ToInt32(dr["stock"].ToString()),
-                                PrecioCompra = Convert.ToDecimal(dr["PrecioCompra"].ToString()),
-                                PrecioVenta = Convert.ToDecimal(dr["Precioventa"].ToString()),
-                                Estado = Convert.ToBoolean(dr["Estado"])
-                            });
+                                listaProductos.Add(new BE_Producto()
+                                {
+                                    IdProducto = Convert.ToInt32(dr["IdProducto"]),
+                                    Codigo = dr["Codigo"].ToString(), 
+                                    Nombre = dr["Nombre"].ToString(),
+                                    Descripcion = dr["Descripcion"].ToString(),
+                                    oCategoria = new BE_Categoria() { IdCategoria = Convert.ToInt32(dr["IdCategoria"]), Descripcion = dr["DescripcionCategoria"].ToString() },
+                                    Stock = Convert.ToInt32(dr["stock"].ToString()),
+                                    PrecioCompra = Convert.ToDecimal(dr["PrecioCompra"].ToString()),
+                                    PrecioVenta = Convert.ToDecimal(dr["Precioventa"].ToString()),
+                                    Estado = Convert.ToBoolean(dr["Estado"])
+                                });
+                            }
+                            return listaProductos;
                         }
-                        return listaProductos;
+                        else { return listaProductos; }
                     }
-                    else { return listaProductos; }
                 }
+                catch (SqlException Exception)
+                {
+                    return listaProductos;
+                }
+
             }
         }
     }

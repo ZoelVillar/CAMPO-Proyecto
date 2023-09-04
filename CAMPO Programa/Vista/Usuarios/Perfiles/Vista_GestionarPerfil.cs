@@ -25,6 +25,7 @@ namespace Vista
         BLL_RelacionPermisos bllRelacionPermisos;
         BLL_User bllUser;
         BLL_Perfil bllPerfil;
+        public event EventHandler PerfilAgregado;
         private void Vista_GestionarPerfil_Load(object sender, EventArgs e)
         {
             bllPermiso = new BLL_Permiso();
@@ -33,11 +34,14 @@ namespace Vista
             bllPerfil = new BLL_Perfil();
 
             grillaPC.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grillaPS.AllowUserToAddRows = false;
             grillaPC.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            grillaPC.AllowUserToAddRows = false; 
             grillaPS.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grillaPS.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
             grillaPerfiles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grillaPerfiles.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            grillaPerfiles.AllowUserToAddRows = false; 
 
             refrescarGrilla();
         }
@@ -75,8 +79,6 @@ namespace Vista
                 grillaPerfiles.Rows.Add(perfil.id_perfil, perfil.FK_PermisoPerfil.idPermiso);
             }
 
-            
-            //FALTA MOSTRAR PERFILES
         }
 
         private void agregarPermiso(string tipo)
@@ -151,24 +153,48 @@ namespace Vista
 
             if (!string.IsNullOrEmpty(permisoBorrar) && !string.IsNullOrWhiteSpace(permisoBorrar) && grillaPC.RowCount != 0 && grillaPC.SelectedRows.Count > 0)
             {
-                string mensaje = $"¿Seguro que desea eliminar el Permiso Compuesto {permisoBorrar}? Los perfiles con este permiso pasarán a tener permiso de 'usuario'. Se eliminarán todas las relaciones de este permiso ";
+                string mensaje = $"¿Seguro que desea eliminar el Permiso Compuesto {permisoBorrar}? Los usuarios con este permiso pasarán a tener permiso de 'usuario'. Se eliminarán todas las relaciones de este permiso ";
 
                 DialogResult result = MessageBox.Show(mensaje, "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
-                    if (bllRelacionPermisos.eliminarRelacion(permisoBorrar))
+                    List<BE_Perfil> listaPerfilesBorrar = bllPerfil.retornaPerfiles().Where(x => x.FK_PermisoPerfil.idPermiso == permisoBorrar).ToList();
+                    if(listaPerfilesBorrar.Count > 0)
                     {
-                        List<BE_User> listaUsuario = bllUser.ObtenerUsuarios();
-                        foreach (BE_User user in listaUsuario)
+                        foreach (BE_Perfil perfil in listaPerfilesBorrar)
                         {
-                            //SEGUIR ACA EL BORRADO DE: PERFIL CON ESE PC, USUARIO CON ESE PC -> Usuario
-                        }
+                            bllPerfil.eliminarPerfil(perfil.id_perfil);
+                        }                 
+                    }
+
+                    bllRelacionPermisos.eliminarRelacion(permisoBorrar);
+
+                    if (bllPermiso.ElimiarPermiso(permisoBorrar))
+                    {
+                        MessageBox.Show("Permiso eliminado exitosamente");
                     }
                     else
                     {
                         MessageBox.Show("Hubo un problema eliminando el permiso");
-                    } 
+                    }
+
+                    foreach (DataGridViewRow row in grillaPC.Rows)
+                    {
+                        if (row.Cells["id_permiso"].Value != null && row.Cells["id_permiso"].Value.ToString() == "Administrador")
+                        {
+                            row.Selected = true;
+                            break; 
+                        }
+                    }
+
+                    refrescarArbol();
+                    refrescarGrilla();
+                    EventHandler handler = PerfilAgregado;
+                    if (handler != null)
+                    {
+                        handler(this, EventArgs.Empty);
+                    }
                 }
             }
             else MessageBox.Show("Seleccione correctamente el permiso compuesto");
@@ -257,20 +283,34 @@ namespace Vista
             bllPerfil.agregarPerfil(idPerfil, permisoPerfil);
             refrescarGrilla();
             refrescarArbol();
+
+            EventHandler handler = PerfilAgregado;
+            if(handler != null)
+            {
+                handler(this, EventArgs.Empty);
+            }
         }
 
         private void btnEliminarPerfil_Click(object sender, EventArgs e)
         {
             string id_perfilBorrar = grillaPerfiles.CurrentRow.Cells[0].Value.ToString();
             
-            DialogResult result = MessageBox.Show($"¿Desea eliminar el Perfil de {id_perfilBorrar}", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show($"¿Desea eliminar el Perfil de {id_perfilBorrar}? Los usuarios con este perfil continuarán con el perfil 'Usuario Basico'", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
                 if (bllPerfil.eliminarPerfil(id_perfilBorrar)) {
                     refrescarGrilla();
                     refrescarArbol();
-                    MessageBox.Show("Perfil eliminado correctamente"); 
+
+                    EventHandler handler = PerfilAgregado;
+                    if (handler != null)
+                    {
+                        handler(this, EventArgs.Empty);
+                    }
+
+                    MessageBox.Show("Perfil eliminado correctamente");
+
                 }
                 else MessageBox.Show("No se logró eliminar el Perfil");
             }
