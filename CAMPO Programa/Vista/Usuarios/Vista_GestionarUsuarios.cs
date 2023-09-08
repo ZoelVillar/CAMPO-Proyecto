@@ -43,14 +43,37 @@ namespace Vista
             dataGridUsuarios.AllowUserToAddRows = false;
             ActualizarGrilla();
             cargarComboPerfiles();
+            cargarComboBusqueda();
+        }
+
+        private void cargarComboBusqueda()
+        {
+            foreach (DataGridViewColumn col in dataGridUsuarios.Columns)
+            {
+                if (col.Visible)
+                {
+                    comboBuscar.Items.Add(new ComboItem() { Value = col.Name, Text = col.HeaderText });
+
+                }
+            }
+
+            if (comboBuscar.Items.Count > 0)
+            {
+                comboBuscar.SelectedIndex = 0;
+            }
         }
 
         private void cargarComboPerfiles()
         {
             BLL_Perfil Perfil = new BLL_Perfil();
-            if (Perfil.retornaPerfiles().Count > 0)
+            var perfiles = Perfil.retornaPerfiles();
+
+            // Filtra la lista para excluir el perfil "Administrador"
+            var perfilesFiltrados = perfiles.Where(perfil => perfil.id_perfil != "Administrador").ToList();
+
+            if (perfilesFiltrados.Count > 0)
             {
-                comboPerfiles.DataSource = Perfil.retornaPerfiles();
+                comboPerfiles.DataSource = perfilesFiltrados;
                 comboPerfiles.DisplayMember = "id_perfil";
                 comboPerfiles.ValueMember = "id_perfil";
                 comboPerfiles.SelectedIndex = 0;
@@ -220,9 +243,9 @@ namespace Vista
                         if (validaciones.validarEmail(_email))
                         {
                             string userPassword = encriptacion.Encriptar(txtNuevoNombre.Text + txtNuevoApellido.Text);
-                            BE_User usuario = new BE_User(_email, txtNuevoNombre.Text.Trim(), txtNuevoApellido.Text.Trim(), userPassword, false, 0, comboPerfiles.SelectedItem.ToString());
+                            BE_User usuario = new BE_User(_email, txtNuevoNombre.Text.Trim(), txtNuevoApellido.Text.Trim(), userPassword, false, 0, comboPerfiles.Text);
 
-                            string mensaje = $"Seguro que quieres crear a {usuario.key_email}, con el nombre: {usuario.user_name}, el apellido: {usuario.user_lastname} y el rol de: {comboPerfiles.SelectedItem.ToString()}?";
+                            string mensaje = $"Seguro que quieres crear a {usuario.key_email}, con el nombre: {usuario.user_name}, el apellido: {usuario.user_lastname} y el rol de: {comboPerfiles.Text}?";
 
                             DialogResult resultado = MessageBox.Show(mensaje, "Confirmar Creación de Usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -298,7 +321,7 @@ namespace Vista
                         
                     string funcion = condicion == true ? "Bloquear" : "Desbloquear";
                     
-                    string mensaje = $"Seguro que quiere {funcion} el usuario {email}?";
+                    string mensaje = $"¿Seguro que quiere {funcion} el usuario {email}? \nNombre: {selectedRow.Cells["Nombre"].Value.ToString()} \nApellido: {selectedRow.Cells["Apellido"].Value.ToString()}";
 
                     DialogResult resultado = MessageBox.Show(mensaje, "Confirmar modificación de Usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -349,5 +372,74 @@ namespace Vista
             
         }
 
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow fila in dataGridUsuarios.Rows)
+            {
+                fila.Visible = true;
+            }
+            cargarComboPerfiles();
+            cargarComboBusqueda();
+            ActualizarGrilla();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            // Obtiene el nombre de la columna seleccionada en el ComboBox.
+            string columnaSeleccionada = comboBuscar.SelectedItem.ToString();
+
+            // Obtiene el texto de búsqueda del TextBox.
+            string textoBusqueda = txtBuscar.Text;
+
+            // Verifica si la columna seleccionada existe en la grilla.
+            if (dataGridUsuarios.Columns.Contains(columnaSeleccionada))
+            {
+                // Itera a través de las filas de la grilla.
+                foreach (DataGridViewRow fila in dataGridUsuarios.Rows)
+                {
+                    // Obtiene el valor de la celda en la columna seleccionada.
+                    string valorCelda = fila.Cells[columnaSeleccionada].Value?.ToString();
+
+                    // Compara el valor de la celda con el texto de búsqueda, ignorando mayúsculas y minúsculas.
+                    if (!string.IsNullOrEmpty(valorCelda) && valorCelda.IndexOf(textoBusqueda, StringComparison.OrdinalIgnoreCase) >= 0)
+                    {
+                        // Si se encuentra una coincidencia, muestra la fila en la grilla.
+                        fila.Visible = true;
+                    }
+                    else
+                    {
+                        // Si no hay coincidencia, oculta la fila en la grilla.
+                        fila.Visible = false;
+                    }
+                }
+            }
+            else
+            {
+                // La columna seleccionada no existe en la grilla.
+                MessageBox.Show("La columna seleccionada no existe en la grilla.");
+            }
+        }
+
+        private void btnBorrarBusqueda_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow fila in dataGridUsuarios.Rows)
+            {
+                fila.Visible = true;
+            }
+
+            txtBuscar.Text = "";
+            dataGridUsuarios.Text = string.Empty;
+        }
+
+        private void btnBorrarIngresoDatos_Click(object sender, EventArgs e)
+        {
+            txtEmail.Text = "";
+            txtNuevoNombre.Text = "";
+            txtNuevoApellido.Text = "";
+            if (comboPerfiles.Items.Count > 0)
+            {
+                comboPerfiles.SelectedIndex = 0;
+            }
+        }
     }
 }

@@ -85,9 +85,6 @@ namespace AccesosDatos
                                 return eliminarPerfilBBDD(id_perfil);
                             }
                         }
-                      
-
-                    
                     }
                 }
 

@@ -1,6 +1,6 @@
 ﻿using BE;
 using BE.Permisos;
-using BE.Producto;
+using BE.Inventario;
 using BE.Usuarios;
 using System;
 using System.Collections.Generic;

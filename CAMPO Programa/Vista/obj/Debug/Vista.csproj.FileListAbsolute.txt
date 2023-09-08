@@ -310,3 +310,9 @@ C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\Acces
 C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
 C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.csproj.CopyComplete
 D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\FontAwesome.Sharp.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Bitacora.Vista_Bitacora.resources
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Bitacora.Vista_BitacoraCambios.resources
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Bitacora.Vista_BitacoraEvento.resources
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Inventario.Vista_InventarioPrincipal.resources
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Inventario.Vista_GestionCategorias.resources
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Inventario.Vista_GestionProductos.resources

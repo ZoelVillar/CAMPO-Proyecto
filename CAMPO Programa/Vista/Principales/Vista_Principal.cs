@@ -15,6 +15,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Inventario;
 
 namespace Vista
 {
@@ -37,7 +38,7 @@ namespace Vista
             listaPermisos = new List<BE_Permiso>();
             bllPerfil = new BLL_Perfil();
             bllPermiso = new BLL_Permiso();
-            //cargarPerfiles();
+            cargarPerfiles();
             LoadUserData();
             AttachButtonClickEvent(panelBotones);
             consultarCambiarContraseña();
@@ -176,6 +177,11 @@ namespace Vista
         {
             AbrirFormulario<Vista_GestionarPerfil>();
         }
+
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Vista_InventarioPrincipal>();
+        }
         #endregion
 
         #region "Funcion que maneja el cambio de colores de los botones"
@@ -235,5 +241,7 @@ namespace Vista
                 }
             }
         }
+
+      
     }
 }

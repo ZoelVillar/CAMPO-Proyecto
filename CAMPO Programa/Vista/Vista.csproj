@@ -71,11 +71,41 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Principales\ImagenBienvenidos.cs">
+    <Compile Include="Bitacora\Vista_Bitacora.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Principales\ImagenBienvenidos.Designer.cs">
-      <DependentUpon>ImagenBienvenidos.cs</DependentUpon>
+    <Compile Include="Bitacora\Vista_Bitacora.Designer.cs">
+      <DependentUpon>Vista_Bitacora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bitacora\Vista_BitacoraCambios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bitacora\Vista_BitacoraCambios.Designer.cs">
+      <DependentUpon>Vista_BitacoraCambios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bitacora\Vista_BitacoraEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bitacora\Vista_BitacoraEvento.Designer.cs">
+      <DependentUpon>Vista_BitacoraEvento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\Vista_GestionCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\Vista_GestionCategorias.Designer.cs">
+      <DependentUpon>Vista_GestionCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\Vista_GestionProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\Vista_GestionProductos.Designer.cs">
+      <DependentUpon>Vista_GestionProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\Vista_InventarioPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\Vista_InventarioPrincipal.Designer.cs">
+      <DependentUpon>Vista_InventarioPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuarios\Perfiles\Vista_GestionarPerfil.cs">
       <SubType>Form</SubType>
@@ -145,6 +175,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Bitacora\Vista_Bitacora.resx">
+      <DependentUpon>Vista_Bitacora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bitacora\Vista_BitacoraCambios.resx">
+      <DependentUpon>Vista_BitacoraCambios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bitacora\Vista_BitacoraEvento.resx">
+      <DependentUpon>Vista_BitacoraEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\Vista_GestionCategorias.resx">
+      <DependentUpon>Vista_GestionCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\Vista_GestionProductos.resx">
+      <DependentUpon>Vista_GestionProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\Vista_InventarioPrincipal.resx">
+      <DependentUpon>Vista_InventarioPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Perfiles\Vista_GestionarPerfil.resx">
       <DependentUpon>Vista_GestionarPerfil.cs</DependentUpon>
     </EmbeddedResource>

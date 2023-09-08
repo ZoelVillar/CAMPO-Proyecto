@@ -321,5 +321,26 @@ namespace Vista
         {
             refrescarArbol();
         }
+
+        private void btnDesvincular_Click(object sender, EventArgs e)
+        {
+            TreeNode permisoDesvincular = treeViewPermisos.SelectedNode;
+            if(permisoDesvincular != null && permisoDesvincular != treeViewPermisos.Nodes[0])
+            {
+                DialogResult result = MessageBox.Show($"¿Desea desvincular el Permiso {permisoDesvincular.Text} del Permiso Compuesto {treeViewPermisos.Nodes[0]}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    if (bllRelacionPermisos.eliminarRelacion(treeViewPermisos.Nodes[0].Text, permisoDesvincular.Text))
+                    {
+                        refrescarArbol();
+                        refrescarGrilla();
+                        MessageBox.Show("Permisos desvinculados efectivamente");
+                    }
+                    else MessageBox.Show("Hubo un problema realizando la operación");
+                }
+            }
+
+        }
     }
 }

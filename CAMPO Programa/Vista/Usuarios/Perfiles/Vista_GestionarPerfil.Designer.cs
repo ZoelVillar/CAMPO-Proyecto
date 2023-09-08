@@ -29,8 +29,12 @@
         private void InitializeComponent()
         {
             this.grillaPerfiles = new System.Windows.Forms.DataGridView();
+            this.id_perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PermisoPerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grillaPC = new System.Windows.Forms.DataGridView();
+            this.id_permiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grillaPS = new System.Windows.Forms.DataGridView();
+            this.id_permiso_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.treeViewPermisos = new System.Windows.Forms.TreeView();
             this.btnAgregarPerfil = new System.Windows.Forms.Button();
             this.btnEliminarPerfil = new System.Windows.Forms.Button();
@@ -44,10 +48,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.id_permiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_permiso_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PermisoPerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDesvincular = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grillaPerfiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grillaPC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grillaPS)).BeginInit();
@@ -66,6 +67,16 @@
             this.grillaPerfiles.Size = new System.Drawing.Size(585, 193);
             this.grillaPerfiles.TabIndex = 0;
             // 
+            // id_perfil
+            // 
+            this.id_perfil.HeaderText = "id_perfil";
+            this.id_perfil.Name = "id_perfil";
+            // 
+            // PermisoPerfil
+            // 
+            this.PermisoPerfil.HeaderText = "PermisoPerfil";
+            this.PermisoPerfil.Name = "PermisoPerfil";
+            // 
             // grillaPC
             // 
             this.grillaPC.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -79,6 +90,11 @@
             this.grillaPC.TabIndex = 1;
             this.grillaPC.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grillaPC_RowHeaderMouseClick);
             // 
+            // id_permiso
+            // 
+            this.id_permiso.HeaderText = "id_permiso";
+            this.id_permiso.Name = "id_permiso";
+            // 
             // grillaPS
             // 
             this.grillaPS.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -91,11 +107,16 @@
             this.grillaPS.Size = new System.Drawing.Size(269, 257);
             this.grillaPS.TabIndex = 2;
             // 
+            // id_permiso_
+            // 
+            this.id_permiso_.HeaderText = "id_permiso";
+            this.id_permiso_.Name = "id_permiso_";
+            // 
             // treeViewPermisos
             // 
             this.treeViewPermisos.Location = new System.Drawing.Point(41, 65);
             this.treeViewPermisos.Name = "treeViewPermisos";
-            this.treeViewPermisos.Size = new System.Drawing.Size(234, 491);
+            this.treeViewPermisos.Size = new System.Drawing.Size(234, 424);
             this.treeViewPermisos.TabIndex = 56;
             // 
             // btnAgregarPerfil
@@ -266,25 +287,21 @@
             this.label4.TabIndex = 68;
             this.label4.Text = "Permisos:";
             // 
-            // id_permiso
+            // btnDesvincular
             // 
-            this.id_permiso.HeaderText = "id_permiso";
-            this.id_permiso.Name = "id_permiso";
-            // 
-            // id_permiso_
-            // 
-            this.id_permiso_.HeaderText = "id_permiso";
-            this.id_permiso_.Name = "id_permiso_";
-            // 
-            // id_perfil
-            // 
-            this.id_perfil.HeaderText = "id_perfil";
-            this.id_perfil.Name = "id_perfil";
-            // 
-            // PermisoPerfil
-            // 
-            this.PermisoPerfil.HeaderText = "PermisoPerfil";
-            this.PermisoPerfil.Name = "PermisoPerfil";
+            this.btnDesvincular.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnDesvincular.FlatAppearance.BorderSize = 0;
+            this.btnDesvincular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDesvincular.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnDesvincular.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDesvincular.Location = new System.Drawing.Point(41, 502);
+            this.btnDesvincular.Margin = new System.Windows.Forms.Padding(3, 3, 15, 10);
+            this.btnDesvincular.Name = "btnDesvincular";
+            this.btnDesvincular.Size = new System.Drawing.Size(130, 50);
+            this.btnDesvincular.TabIndex = 69;
+            this.btnDesvincular.Text = "Desvincular";
+            this.btnDesvincular.UseVisualStyleBackColor = false;
+            this.btnDesvincular.Click += new System.EventHandler(this.btnDesvincular_Click);
             // 
             // Vista_GestionarPerfil
             // 
@@ -293,6 +310,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(234)))), ((int)(((byte)(229)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1084, 621);
+            this.Controls.Add(this.btnDesvincular);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -343,5 +361,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id_permiso_;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_perfil;
         private System.Windows.Forms.DataGridViewTextBoxColumn PermisoPerfil;
+        private System.Windows.Forms.Button btnDesvincular;
     }
 }

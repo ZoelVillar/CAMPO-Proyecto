@@ -49,14 +49,14 @@
             // 
             // btnSI
             // 
-            this.btnSI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(44)))), ((int)(((byte)(36)))));
+            this.btnSI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(129)))), ((int)(((byte)(48)))));
             this.btnSI.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSI.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(16)))), ((int)(((byte)(48)))));
             this.btnSI.FlatAppearance.BorderSize = 0;
             this.btnSI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSI.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSI.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSI.Location = new System.Drawing.Point(18, 79);
+            this.btnSI.Location = new System.Drawing.Point(174, 77);
             this.btnSI.Name = "btnSI";
             this.btnSI.Size = new System.Drawing.Size(135, 35);
             this.btnSI.TabIndex = 42;
@@ -73,7 +73,7 @@
             this.btnNO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNO.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNO.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNO.Location = new System.Drawing.Point(175, 79);
+            this.btnNO.Location = new System.Drawing.Point(17, 77);
             this.btnNO.Name = "btnNO";
             this.btnNO.Size = new System.Drawing.Size(135, 35);
             this.btnNO.TabIndex = 43;

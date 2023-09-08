@@ -1,6 +1,6 @@
-﻿using BE.Producto;
+﻿using BE.Inventario;
 using BE.Venta;
-using Negocio.Venta;
+using Negocio.Inventario;
 using Servicios.Cache;
 using System;
 using System.Collections.Generic;

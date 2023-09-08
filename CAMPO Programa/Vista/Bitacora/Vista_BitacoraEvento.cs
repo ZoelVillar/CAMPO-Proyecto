@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Vista.Principales
+namespace Vista.Bitacora
 {
-    public partial class ImagenBienvenidos : Form
+    public partial class Vista_BitacoraEvento : Form
     {
-        public ImagenBienvenidos()
+        public Vista_BitacoraEvento()
         {
             InitializeComponent();
         }
