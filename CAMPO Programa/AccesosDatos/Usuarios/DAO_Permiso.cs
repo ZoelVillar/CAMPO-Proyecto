@@ -56,7 +56,7 @@ namespace AccesosDatos.Usuarios
                 }
 
             }
-            catch (SqlException Exception)
+            catch (SqlException )
             {
                 return false;
             }
@@ -106,7 +106,7 @@ namespace AccesosDatos.Usuarios
                 }
 
             }
-            catch (SqlException Exception)
+            catch (SqlException )
             {
                 return auxPermisos;
             }
@@ -135,7 +135,7 @@ namespace AccesosDatos.Usuarios
                     }
                 }
             }
-            catch (SqlException Exception)
+            catch (SqlException )
             {
                 return false;
             }
@@ -178,7 +178,7 @@ namespace AccesosDatos.Usuarios
                     }
                 }
             }
-            catch (SqlException Exception)
+            catch (SqlException )
             {
                 throw;
             }
@@ -242,7 +242,7 @@ namespace AccesosDatos.Usuarios
                     }
                 }   
             }
-            catch (SqlException Exception)
+            catch (SqlException )
             {
                 return auxPermisos;
             }

@@ -41,18 +41,18 @@
             this.btnInventario = new System.Windows.Forms.Button();
             this.btnGestionProductos = new System.Windows.Forms.Button();
             this.btnGestionIdiomas = new System.Windows.Forms.Button();
-            this.btnGestionAreas = new System.Windows.Forms.Button();
             this.btnPerfil = new System.Windows.Forms.Button();
             this.btnGestionUsuarios = new System.Windows.Forms.Button();
             this.btnAbrirVentas = new System.Windows.Forms.Button();
             this.btnAbrirCompras = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.btnMas = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.comboIdiomas = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panelContenedor.SuspendLayout();
             this.panelDerecho.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -162,7 +162,6 @@
             this.panelBotones.Controls.Add(this.btnInventario);
             this.panelBotones.Controls.Add(this.btnGestionProductos);
             this.panelBotones.Controls.Add(this.btnGestionIdiomas);
-            this.panelBotones.Controls.Add(this.btnGestionAreas);
             this.panelBotones.Controls.Add(this.btnPerfil);
             this.panelBotones.Controls.Add(this.btnGestionUsuarios);
             this.panelBotones.Controls.Add(this.btnAbrirVentas);
@@ -181,12 +180,12 @@
             this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventario.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnInventario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnInventario.Location = new System.Drawing.Point(11, 310);
+            this.btnInventario.Location = new System.Drawing.Point(11, 260);
             this.btnInventario.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
             this.btnInventario.Name = "btnInventario";
             this.btnInventario.Size = new System.Drawing.Size(177, 35);
             this.btnInventario.TabIndex = 50;
-            this.btnInventario.Tag = "btnIdiomas";
+            this.btnInventario.Tag = "btnInventario";
             this.btnInventario.Text = "Inventario";
             this.btnInventario.UseVisualStyleBackColor = false;
             this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
@@ -218,7 +217,7 @@
             this.btnGestionIdiomas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionIdiomas.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnGestionIdiomas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnGestionIdiomas.Location = new System.Drawing.Point(10, 260);
+            this.btnGestionIdiomas.Location = new System.Drawing.Point(10, 210);
             this.btnGestionIdiomas.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
             this.btnGestionIdiomas.Name = "btnGestionIdiomas";
             this.btnGestionIdiomas.Size = new System.Drawing.Size(177, 35);
@@ -226,25 +225,7 @@
             this.btnGestionIdiomas.Tag = "btnIdiomas";
             this.btnGestionIdiomas.Text = "Gestión de Idiomas";
             this.btnGestionIdiomas.UseVisualStyleBackColor = false;
-            // 
-            // btnGestionAreas
-            // 
-            this.btnGestionAreas.AutoEllipsis = true;
-            this.btnGestionAreas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
-            this.btnGestionAreas.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnGestionAreas.FlatAppearance.BorderSize = 0;
-            this.btnGestionAreas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGestionAreas.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnGestionAreas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnGestionAreas.Location = new System.Drawing.Point(10, 210);
-            this.btnGestionAreas.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
-            this.btnGestionAreas.Name = "btnGestionAreas";
-            this.btnGestionAreas.Size = new System.Drawing.Size(177, 35);
-            this.btnGestionAreas.TabIndex = 47;
-            this.btnGestionAreas.Tag = "btnAreas";
-            this.btnGestionAreas.Text = "Gestión de Perfiles";
-            this.btnGestionAreas.UseVisualStyleBackColor = false;
-            this.btnGestionAreas.Click += new System.EventHandler(this.btnGestionAreas_Click);
+            this.btnGestionIdiomas.Click += new System.EventHandler(this.btnGestionIdiomas_Click);
             // 
             // btnPerfil
             // 
@@ -348,27 +329,10 @@
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(203, 35);
             this.btnLogout.TabIndex = 40;
+            this.btnLogout.Tag = "btnCerrarSesion";
             this.btnLogout.Text = "Cerrar Sesión";
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // btnMas
-            // 
-            this.btnMas.AutoEllipsis = true;
-            this.btnMas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnMas.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnMas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(16)))), ((int)(((byte)(48)))));
-            this.btnMas.FlatAppearance.BorderSize = 0;
-            this.btnMas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(20)))), ((int)(((byte)(57)))));
-            this.btnMas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnMas.Location = new System.Drawing.Point(26, 14);
-            this.btnMas.Name = "btnMas";
-            this.btnMas.Size = new System.Drawing.Size(35, 35);
-            this.btnMas.TabIndex = 8;
-            this.btnMas.Text = "+";
-            this.btnMas.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
@@ -423,10 +387,11 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(44)))), ((int)(((byte)(36)))));
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.comboIdiomas);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.button4);
-            this.panel4.Controls.Add(this.btnMas);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
@@ -434,6 +399,29 @@
             this.panel4.Size = new System.Drawing.Size(1320, 60);
             this.panel4.TabIndex = 21;
             this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseDown_1);
+            // 
+            // comboIdiomas
+            // 
+            this.comboIdiomas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.comboIdiomas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboIdiomas.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboIdiomas.FormattingEnabled = true;
+            this.comboIdiomas.Location = new System.Drawing.Point(78, 22);
+            this.comboIdiomas.Name = "comboIdiomas";
+            this.comboIdiomas.Size = new System.Drawing.Size(121, 21);
+            this.comboIdiomas.TabIndex = 40;
+            this.comboIdiomas.SelectedValueChanged += new System.EventHandler(this.comboIdiomas_SelectedValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(12, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 19);
+            this.label3.TabIndex = 48;
+            this.label3.Text = "Idioma:";
             // 
             // Vista_Principal
             // 
@@ -473,17 +461,17 @@
         private System.Windows.Forms.Label lblArea;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Button btnMas;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnPerfil;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnGestionAreas;
         private System.Windows.Forms.Button btnGestionIdiomas;
         private System.Windows.Forms.Button btnGestionProductos;
         private System.Windows.Forms.Button btnInventario;
+        private System.Windows.Forms.ComboBox comboIdiomas;
+        private System.Windows.Forms.Label label3;
     }
 }
 

@@ -64,7 +64,7 @@
             this.grillaPerfiles.Location = new System.Drawing.Point(456, 65);
             this.grillaPerfiles.Name = "grillaPerfiles";
             this.grillaPerfiles.RowHeadersWidth = 51;
-            this.grillaPerfiles.Size = new System.Drawing.Size(585, 193);
+            this.grillaPerfiles.Size = new System.Drawing.Size(438, 193);
             this.grillaPerfiles.TabIndex = 0;
             // 
             // id_perfil
@@ -86,7 +86,7 @@
             this.grillaPC.Location = new System.Drawing.Point(456, 295);
             this.grillaPC.Name = "grillaPC";
             this.grillaPC.RowHeadersWidth = 51;
-            this.grillaPC.Size = new System.Drawing.Size(269, 257);
+            this.grillaPC.Size = new System.Drawing.Size(180, 260);
             this.grillaPC.TabIndex = 1;
             this.grillaPC.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grillaPC_RowHeaderMouseClick);
             // 
@@ -101,10 +101,10 @@
             this.grillaPS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grillaPS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_permiso_});
-            this.grillaPS.Location = new System.Drawing.Point(772, 295);
+            this.grillaPS.Location = new System.Drawing.Point(714, 295);
             this.grillaPS.Name = "grillaPS";
             this.grillaPS.RowHeadersWidth = 51;
-            this.grillaPS.Size = new System.Drawing.Size(269, 257);
+            this.grillaPS.Size = new System.Drawing.Size(180, 260);
             this.grillaPS.TabIndex = 2;
             // 
             // id_permiso_
@@ -116,7 +116,7 @@
             // 
             this.treeViewPermisos.Location = new System.Drawing.Point(41, 65);
             this.treeViewPermisos.Name = "treeViewPermisos";
-            this.treeViewPermisos.Size = new System.Drawing.Size(234, 424);
+            this.treeViewPermisos.Size = new System.Drawing.Size(234, 490);
             this.treeViewPermisos.TabIndex = 56;
             // 
             // btnAgregarPerfil
@@ -190,7 +190,7 @@
             this.btnVincularPCaPC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVincularPCaPC.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnVincularPCaPC.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnVincularPCaPC.Location = new System.Drawing.Point(308, 502);
+            this.btnVincularPCaPC.Location = new System.Drawing.Point(308, 505);
             this.btnVincularPCaPC.Margin = new System.Windows.Forms.Padding(3, 3, 15, 10);
             this.btnVincularPCaPC.Name = "btnVincularPCaPC";
             this.btnVincularPCaPC.Size = new System.Drawing.Size(130, 50);
@@ -206,7 +206,7 @@
             this.btnVincularPCaPS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVincularPCaPS.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnVincularPCaPS.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnVincularPCaPS.Location = new System.Drawing.Point(308, 439);
+            this.btnVincularPCaPS.Location = new System.Drawing.Point(308, 442);
             this.btnVincularPCaPS.Margin = new System.Windows.Forms.Padding(3, 3, 15, 10);
             this.btnVincularPCaPS.Name = "btnVincularPCaPS";
             this.btnVincularPCaPS.Size = new System.Drawing.Size(130, 50);
@@ -222,10 +222,10 @@
             this.btnAgregarPS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarPS.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnAgregarPS.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAgregarPS.Location = new System.Drawing.Point(837, 558);
+            this.btnAgregarPS.Location = new System.Drawing.Point(714, 561);
             this.btnAgregarPS.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.btnAgregarPS.Name = "btnAgregarPS";
-            this.btnAgregarPS.Size = new System.Drawing.Size(99, 36);
+            this.btnAgregarPS.Size = new System.Drawing.Size(86, 36);
             this.btnAgregarPS.TabIndex = 63;
             this.btnAgregarPS.Text = "Nuevo PS";
             this.btnAgregarPS.UseVisualStyleBackColor = false;
@@ -238,10 +238,10 @@
             this.btnBorrarPS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrarPS.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnBorrarPS.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBorrarPS.Location = new System.Drawing.Point(942, 558);
+            this.btnBorrarPS.Location = new System.Drawing.Point(808, 561);
             this.btnBorrarPS.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.btnBorrarPS.Name = "btnBorrarPS";
-            this.btnBorrarPS.Size = new System.Drawing.Size(99, 36);
+            this.btnBorrarPS.Size = new System.Drawing.Size(86, 36);
             this.btnBorrarPS.TabIndex = 64;
             this.btnBorrarPS.Text = "Borrar PS";
             this.btnBorrarPS.UseVisualStyleBackColor = false;
@@ -261,7 +261,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(768, 273);
+            this.label2.Location = new System.Drawing.Point(710, 273);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(134, 19);
             this.label2.TabIndex = 66;
@@ -294,10 +294,10 @@
             this.btnDesvincular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDesvincular.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnDesvincular.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDesvincular.Location = new System.Drawing.Point(41, 502);
+            this.btnDesvincular.Location = new System.Drawing.Point(41, 561);
             this.btnDesvincular.Margin = new System.Windows.Forms.Padding(3, 3, 15, 10);
             this.btnDesvincular.Name = "btnDesvincular";
-            this.btnDesvincular.Size = new System.Drawing.Size(130, 50);
+            this.btnDesvincular.Size = new System.Drawing.Size(234, 36);
             this.btnDesvincular.TabIndex = 69;
             this.btnDesvincular.Text = "Desvincular";
             this.btnDesvincular.UseVisualStyleBackColor = false;
@@ -309,7 +309,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(234)))), ((int)(((byte)(229)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1084, 621);
+            this.ClientSize = new System.Drawing.Size(945, 660);
             this.Controls.Add(this.btnDesvincular);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);

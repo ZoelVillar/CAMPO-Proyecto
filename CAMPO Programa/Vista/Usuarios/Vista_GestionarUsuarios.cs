@@ -12,6 +12,7 @@ using BE;
 using BE.Usuarios;
 using Servicios.Validaciones;
 using Servicios.Cache;
+using ClosedXML.Excel;
 
 namespace Vista
 {
@@ -22,7 +23,6 @@ namespace Vista
         public Vista_GestionarUsuarios()
         {
             InitializeComponent();
-            perfilForm.PerfilAgregado += actualizarCombo;
         }
 
         ValidarRegex validaciones;
@@ -33,14 +33,15 @@ namespace Vista
         {
             AttachButtonClickEvent(panelBotones);
 
+            perfilForm.PerfilAgregado += actualizarCombo;
             btnCrearUsuario.BackColor = Color.FromArgb(107, 112, 92);
             selectedButton = btnCrearUsuario;
 
             validaciones = new ValidarRegex();
             encriptacion = new EncriptarContraseña();
-            dataGridUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridUsuarios.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
-            dataGridUsuarios.AllowUserToAddRows = false;
+            dataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            dataGrid.AllowUserToAddRows = false;
             ActualizarGrilla();
             cargarComboPerfiles();
             cargarComboBusqueda();
@@ -48,7 +49,7 @@ namespace Vista
 
         private void cargarComboBusqueda()
         {
-            foreach (DataGridViewColumn col in dataGridUsuarios.Columns)
+            foreach (DataGridViewColumn col in dataGrid.Columns)
             {
                 if (col.Visible)
                 {
@@ -87,14 +88,14 @@ namespace Vista
 
         private void ActualizarGrilla()
         {
-            dataGridUsuarios.Rows.Clear();
+            dataGrid.Rows.Clear();
             BLL_User User = new BLL_User();
 
             var usuarios = User.ObtenerUsuarios();
 
             foreach (var usuario in usuarios)
             {
-                dataGridUsuarios.Rows.Add(usuario.id_perfil, usuario.key_email, usuario.user_name, usuario.user_lastname, usuario.user_blocked, usuario.user_attempts); 
+                dataGrid.Rows.Add(usuario.id_perfil, usuario.key_email, usuario.user_name, usuario.user_lastname, usuario.user_blocked, usuario.user_attempts); 
             }
         }
 
@@ -154,7 +155,7 @@ namespace Vista
             btnAceptar.Visible = true;
             txtEmail.Enabled = false;
             labelFunction.Text = "- Modificar Usuario";
-            if (dataGridUsuarios.SelectedRows[0].Cells["Email"].Value != null) { txtEmail.Text = dataGridUsuarios.SelectedRows[0].Cells["Email"].Value.ToString(); }
+            if (dataGrid.SelectedRows[0].Cells["Email"].Value != null) { txtEmail.Text = dataGrid.SelectedRows[0].Cells["Email"].Value.ToString(); }
             else { txtEmail.Text = ""; }
             modoUsuario = ModoUsuario.Modificar;
         }
@@ -181,13 +182,13 @@ namespace Vista
         private void modificarUsuario()
         {
             
-            if (dataGridUsuarios.RowCount != 0)
+            if (dataGrid.RowCount != 0)
             {
-                if (dataGridUsuarios.SelectedRows.Count > 0)
+                if (dataGrid.SelectedRows.Count > 0)
                 {
                     BLL_User User = new BLL_User();
 
-                    DataGridViewRow selectedRow = dataGridUsuarios.SelectedRows[0];
+                    DataGridViewRow selectedRow = dataGrid.SelectedRows[0];
                     string email = selectedRow.Cells["Email"].Value.ToString().Trim();
 
 
@@ -309,14 +310,14 @@ namespace Vista
         private void bloquearDesbloquear(bool condicion)
         {
             btnAceptar.Visible = false;
-            if (dataGridUsuarios.RowCount != 0)
+            if (dataGrid.RowCount != 0)
             {
-                if (dataGridUsuarios.SelectedRows.Count > 0)
+                if (dataGrid.SelectedRows.Count > 0)
                 {
 
                     BLL_User User = new BLL_User();
 
-                    DataGridViewRow selectedRow = dataGridUsuarios.SelectedRows[0];
+                    DataGridViewRow selectedRow = dataGrid.SelectedRows[0];
                     string email = selectedRow.Cells["Email"].Value.ToString();
                         
                     string funcion = condicion == true ? "Bloquear" : "Desbloquear";
@@ -364,9 +365,9 @@ namespace Vista
         {
             if(modoUsuario == ModoUsuario.Modificar)
             {
-                if (dataGridUsuarios.SelectedRows[0].Cells["Email"].Value != null)
+                if (dataGrid.SelectedRows[0].Cells["Email"].Value != null)
                 {
-                    txtEmail.Text = dataGridUsuarios.SelectedRows[0].Cells["Email"].Value.ToString();
+                    txtEmail.Text = dataGrid.SelectedRows[0].Cells["Email"].Value.ToString();
                 }else { txtEmail.Text = ""; }
             }
             
@@ -374,7 +375,7 @@ namespace Vista
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow fila in dataGridUsuarios.Rows)
+            foreach (DataGridViewRow fila in dataGrid.Rows)
             {
                 fila.Visible = true;
             }
@@ -392,10 +393,10 @@ namespace Vista
             string textoBusqueda = txtBuscar.Text;
 
             // Verifica si la columna seleccionada existe en la grilla.
-            if (dataGridUsuarios.Columns.Contains(columnaSeleccionada))
+            if (dataGrid.Columns.Contains(columnaSeleccionada))
             {
                 // Itera a través de las filas de la grilla.
-                foreach (DataGridViewRow fila in dataGridUsuarios.Rows)
+                foreach (DataGridViewRow fila in dataGrid.Rows)
                 {
                     // Obtiene el valor de la celda en la columna seleccionada.
                     string valorCelda = fila.Cells[columnaSeleccionada].Value?.ToString();
@@ -422,13 +423,13 @@ namespace Vista
 
         private void btnBorrarBusqueda_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow fila in dataGridUsuarios.Rows)
+            foreach (DataGridViewRow fila in dataGrid.Rows)
             {
                 fila.Visible = true;
             }
 
             txtBuscar.Text = "";
-            dataGridUsuarios.Text = string.Empty;
+            dataGrid.Text = string.Empty;
         }
 
         private void btnBorrarIngresoDatos_Click(object sender, EventArgs e)
@@ -439,6 +440,75 @@ namespace Vista
             if (comboPerfiles.Items.Count > 0)
             {
                 comboPerfiles.SelectedIndex = 0;
+            }
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGrid.Rows.Count > 0)
+                {
+                    DataTable dt = new DataTable();
+
+                    foreach (DataGridViewColumn column in dataGrid.Columns)
+                    {
+                        if (column.HeaderText != "" && column.Visible)
+                        {
+                            dt.Columns.Add(column.HeaderText, typeof(string));
+                        }
+                    }
+
+                    foreach (DataGridViewRow row in dataGrid.Rows)
+                    {
+                        if (row.Visible)
+                        {
+                            object[] values = new object[dataGrid.Columns.Count];
+
+                            for (int i = 0; i < dataGrid.Columns.Count; i++)
+                            {
+                                values[i] = row.Cells[i].Value;
+                            }
+
+                            dt.Rows.Add(values);
+
+                        }
+                    }
+                    string nombreProyecto = this.GetType().Name;
+                    if (nombreProyecto.StartsWith("Vista_"))
+                    {
+                        nombreProyecto = nombreProyecto.Substring("Vista_".Length);
+                    }
+
+                    SaveFileDialog savefile = new SaveFileDialog();
+                    savefile.FileName = string.Format($"{nombreProyecto}_{DateTime.Now.ToString("ddMMyyyyHHmm")}.xlsx");
+                    savefile.Filter = "Excel Files | *.xlsx";
+
+                    if (savefile.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            XLWorkbook xLWorkbook = new XLWorkbook();
+                            var hoja = xLWorkbook.Worksheets.Add(dt, "Reporte");
+                            hoja.ColumnsUsed().AdjustToContents();
+                            xLWorkbook.SaveAs(savefile.FileName);
+                            MessageBox.Show("Reporte Generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Error generando el reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No hay datos para descargar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un error inesperado");
             }
         }
     }

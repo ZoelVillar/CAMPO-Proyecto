@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelBotones = new System.Windows.Forms.Panel();
             this.btnDesbloquear = new System.Windows.Forms.Button();
             this.btnBloquear = new System.Windows.Forms.Button();
             this.btnModifUser = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.btnCrearUsuario = new System.Windows.Forms.Button();
             this.IntentosInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Bloqueado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -40,7 +38,7 @@
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridUsuarios = new System.Windows.Forms.DataGridView();
+            this.dataGrid = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtNuevoNombre = new System.Windows.Forms.TextBox();
@@ -57,34 +55,21 @@
             this.btnBorrarIngresoDatos = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnBorrarBusqueda = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.comboBuscar = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panelBotones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridUsuarios)).BeginInit();
+            this.btnExportar = new FontAwesome.Sharp.IconButton();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.panelBotones = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panelBotones.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panelBotones
-            // 
-            this.panelBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.panelBotones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelBotones.Controls.Add(this.btnDesbloquear);
-            this.panelBotones.Controls.Add(this.btnBloquear);
-            this.panelBotones.Controls.Add(this.btnModifUser);
-            this.panelBotones.Controls.Add(this.btnLogout);
-            this.panelBotones.Controls.Add(this.btnCrearUsuario);
-            this.panelBotones.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelBotones.Location = new System.Drawing.Point(945, 0);
-            this.panelBotones.Margin = new System.Windows.Forms.Padding(0);
-            this.panelBotones.Name = "panelBotones";
-            this.panelBotones.Size = new System.Drawing.Size(155, 660);
-            this.panelBotones.TabIndex = 42;
             // 
             // btnDesbloquear
             // 
@@ -93,10 +78,10 @@
             this.btnDesbloquear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDesbloquear.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnDesbloquear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDesbloquear.Location = new System.Drawing.Point(12, 157);
+            this.btnDesbloquear.Location = new System.Drawing.Point(219, 376);
             this.btnDesbloquear.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.btnDesbloquear.Name = "btnDesbloquear";
-            this.btnDesbloquear.Size = new System.Drawing.Size(130, 40);
+            this.btnDesbloquear.Size = new System.Drawing.Size(102, 32);
             this.btnDesbloquear.TabIndex = 51;
             this.btnDesbloquear.Text = "Desbloquear";
             this.btnDesbloquear.UseVisualStyleBackColor = false;
@@ -109,10 +94,10 @@
             this.btnBloquear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBloquear.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnBloquear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBloquear.Location = new System.Drawing.Point(13, 210);
+            this.btnBloquear.Location = new System.Drawing.Point(327, 376);
             this.btnBloquear.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.btnBloquear.Name = "btnBloquear";
-            this.btnBloquear.Size = new System.Drawing.Size(130, 40);
+            this.btnBloquear.Size = new System.Drawing.Size(102, 32);
             this.btnBloquear.TabIndex = 50;
             this.btnBloquear.Text = "Bloquear";
             this.btnBloquear.UseVisualStyleBackColor = false;
@@ -125,32 +110,14 @@
             this.btnModifUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModifUser.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnModifUser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnModifUser.Location = new System.Drawing.Point(12, 79);
+            this.btnModifUser.Location = new System.Drawing.Point(119, 376);
             this.btnModifUser.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.btnModifUser.Name = "btnModifUser";
-            this.btnModifUser.Size = new System.Drawing.Size(130, 40);
+            this.btnModifUser.Size = new System.Drawing.Size(76, 32);
             this.btnModifUser.TabIndex = 48;
-            this.btnModifUser.Text = "ModifUsuario";
+            this.btnModifUser.Text = "Modificar";
             this.btnModifUser.UseVisualStyleBackColor = false;
             this.btnModifUser.Click += new System.EventHandler(this.btnModifUser_Click);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.AutoEllipsis = true;
-            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(129)))), ((int)(((byte)(48)))));
-            this.btnLogout.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(16)))), ((int)(((byte)(48)))));
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(20)))), ((int)(((byte)(57)))));
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnLogout.Location = new System.Drawing.Point(12, 500);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(0, 0);
-            this.btnLogout.TabIndex = 40;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = false;
             // 
             // btnCrearUsuario
             // 
@@ -159,12 +126,12 @@
             this.btnCrearUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrearUsuario.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnCrearUsuario.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCrearUsuario.Location = new System.Drawing.Point(12, 26);
+            this.btnCrearUsuario.Location = new System.Drawing.Point(37, 376);
             this.btnCrearUsuario.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.btnCrearUsuario.Name = "btnCrearUsuario";
-            this.btnCrearUsuario.Size = new System.Drawing.Size(130, 40);
+            this.btnCrearUsuario.Size = new System.Drawing.Size(76, 32);
             this.btnCrearUsuario.TabIndex = 44;
-            this.btnCrearUsuario.Text = "Crear Usuario";
+            this.btnCrearUsuario.Text = "Crear";
             this.btnCrearUsuario.UseVisualStyleBackColor = false;
             this.btnCrearUsuario.Click += new System.EventHandler(this.btnCrearUsuario_Click);
             // 
@@ -213,22 +180,22 @@
             this.Perfil.Name = "Perfil";
             this.Perfil.Width = 125;
             // 
-            // dataGridUsuarios
+            // dataGrid
             // 
-            this.dataGridUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Perfil,
             this.Email,
             this.Nombre,
             this.Apellido,
             this.Bloqueado,
             this.IntentosInicio});
-            this.dataGridUsuarios.Location = new System.Drawing.Point(37, 31);
-            this.dataGridUsuarios.Name = "dataGridUsuarios";
-            this.dataGridUsuarios.RowHeadersWidth = 62;
-            this.dataGridUsuarios.Size = new System.Drawing.Size(870, 329);
-            this.dataGridUsuarios.TabIndex = 43;
-            this.dataGridUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridUsuarios_CellClick);
+            this.dataGrid.Location = new System.Drawing.Point(37, 31);
+            this.dataGrid.Name = "dataGrid";
+            this.dataGrid.RowHeadersWidth = 62;
+            this.dataGrid.Size = new System.Drawing.Size(870, 329);
+            this.dataGrid.TabIndex = 43;
+            this.dataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridUsuarios_CellClick);
             // 
             // label1
             // 
@@ -368,7 +335,7 @@
             this.panel2.Controls.Add(this.lblEmail);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(37, 404);
+            this.panel2.Location = new System.Drawing.Point(37, 411);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(433, 217);
             this.panel2.TabIndex = 58;
@@ -403,7 +370,7 @@
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRefresh.Location = new System.Drawing.Point(839, 366);
+            this.btnRefresh.Location = new System.Drawing.Point(841, 376);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(68, 32);
             this.btnRefresh.TabIndex = 66;
@@ -423,10 +390,19 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(476, 404);
+            this.panel1.Location = new System.Drawing.Point(476, 411);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(433, 217);
             this.panel1.TabIndex = 66;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(231, 48);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 15);
+            this.label5.TabIndex = 68;
+            this.label5.Text = "Buscar:";
             // 
             // btnBorrarBusqueda
             // 
@@ -500,45 +476,90 @@
             this.label8.TabIndex = 58;
             this.label8.Text = "Buscar en la Grilla";
             // 
-            // label5
+            // btnExportar
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(231, 48);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 15);
-            this.label5.TabIndex = 68;
-            this.label5.Text = "Buscar:";
+            this.btnExportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(129)))), ((int)(((byte)(48)))));
+            this.btnExportar.FlatAppearance.BorderSize = 0;
+            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnExportar.ForeColor = System.Drawing.Color.White;
+            this.btnExportar.IconChar = FontAwesome.Sharp.IconChar.Download;
+            this.btnExportar.IconColor = System.Drawing.Color.White;
+            this.btnExportar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExportar.IconSize = 18;
+            this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportar.Location = new System.Drawing.Point(716, 376);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(119, 32);
+            this.btnExportar.TabIndex = 83;
+            this.btnExportar.Text = "Export Excel";
+            this.btnExportar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExportar.UseVisualStyleBackColor = false;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.AutoEllipsis = true;
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(129)))), ((int)(((byte)(48)))));
+            this.btnLogout.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(16)))), ((int)(((byte)(48)))));
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(20)))), ((int)(((byte)(57)))));
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnLogout.Location = new System.Drawing.Point(12, 500);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(0, 0);
+            this.btnLogout.TabIndex = 40;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            // 
+            // panelBotones
+            // 
+            this.panelBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.panelBotones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBotones.Controls.Add(this.btnLogout);
+            this.panelBotones.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelBotones.Location = new System.Drawing.Point(945, 0);
+            this.panelBotones.Margin = new System.Windows.Forms.Padding(0);
+            this.panelBotones.Name = "panelBotones";
+            this.panelBotones.Size = new System.Drawing.Size(0, 660);
+            this.panelBotones.TabIndex = 42;
             // 
             // Vista_GestionarUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(234)))), ((int)(((byte)(229)))));
-            this.ClientSize = new System.Drawing.Size(1100, 660);
+            this.ClientSize = new System.Drawing.Size(945, 660);
+            this.Controls.Add(this.btnBloquear);
+            this.Controls.Add(this.btnDesbloquear);
+            this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnModifUser);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.dataGridUsuarios);
+            this.Controls.Add(this.btnCrearUsuario);
+            this.Controls.Add(this.dataGrid);
             this.Controls.Add(this.panelBotones);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Vista_GestionarUsuarios";
             this.Text = "Vista_GestionarUsuarios";
             this.Load += new System.EventHandler(this.Vista_GestionarUsuarios_Load);
-            this.panelBotones.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panelBotones.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelBotones;
-        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnCrearUsuario;
         private System.Windows.Forms.Button btnDesbloquear;
         private System.Windows.Forms.Button btnBloquear;
@@ -549,7 +570,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Perfil;
-        private System.Windows.Forms.DataGridView dataGridUsuarios;
+        private System.Windows.Forms.DataGridView dataGrid;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtNuevoNombre;
@@ -573,5 +594,8 @@
         private System.Windows.Forms.Button btnBorrarBusqueda;
         private System.Windows.Forms.Button btnBorrarIngresoDatos;
         private System.Windows.Forms.Label label5;
+        private FontAwesome.Sharp.IconButton btnExportar;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Panel panelBotones;
     }
 }

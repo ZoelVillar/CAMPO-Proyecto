@@ -52,7 +52,7 @@ namespace AccesosDatos
                     }
                 }
             }
-            catch (SqlException Exception)
+            catch (SqlException )
             {
                 BE_Negocio negocioVacio = new BE_Negocio();
                 return negocioVacio;

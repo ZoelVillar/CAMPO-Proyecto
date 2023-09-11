@@ -39,10 +39,8 @@
             this.btnContinuarVenta = new System.Windows.Forms.Button();
             this.btnVolverAtras = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textTicket = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtTicket = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ctrol_numMesa)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ctrol_numMesa
@@ -159,25 +157,13 @@
             this.label1.TabIndex = 68;
             this.label1.Text = "Ticket:";
             // 
-            // textTicket
+            // txtTicket
             // 
-            this.textTicket.AutoSize = true;
-            this.textTicket.BackColor = System.Drawing.Color.White;
-            this.textTicket.Location = new System.Drawing.Point(10, 14);
-            this.textTicket.Name = "textTicket";
-            this.textTicket.Size = new System.Drawing.Size(35, 13);
-            this.textTicket.TabIndex = 69;
-            this.textTicket.Text = "label5";
-            this.textTicket.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.textTicket);
-            this.panel1.Location = new System.Drawing.Point(570, 86);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(275, 436);
-            this.panel1.TabIndex = 70;
+            this.txtTicket.Location = new System.Drawing.Point(570, 86);
+            this.txtTicket.Name = "txtTicket";
+            this.txtTicket.Size = new System.Drawing.Size(213, 436);
+            this.txtTicket.TabIndex = 71;
+            this.txtTicket.Text = "";
             // 
             // Vista_DatosVenta_Ventas
             // 
@@ -185,7 +171,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.ClientSize = new System.Drawing.Size(945, 660);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.txtTicket);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnVolverAtras);
             this.Controls.Add(this.btnContinuarVenta);
@@ -202,8 +188,6 @@
             this.Text = "Vista_DatosVenta_Ventas";
             this.Load += new System.EventHandler(this.Vista_DatosVenta_Ventas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ctrol_numMesa)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,7 +206,6 @@
         private System.Windows.Forms.Button btnContinuarVenta;
         private System.Windows.Forms.Button btnVolverAtras;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label textTicket;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RichTextBox txtTicket;
     }
 }

@@ -54,7 +54,7 @@ namespace AccesosDatos.Inventario
 
                 return listaCtegorias;
             }
-            catch (Exception)
+            catch (SqlException)
             {
                 return listaCtegorias;
             }
@@ -62,7 +62,6 @@ namespace AccesosDatos.Inventario
 
         public bool crearCategoria(BE_Categoria categoria, out string mensaje)
         {
-            int idCategoria = 0;
             mensaje = string.Empty;
 
             try
@@ -89,10 +88,8 @@ namespace AccesosDatos.Inventario
                     }
                 }
             }
-            catch (SqlException Exception)
+            catch (SqlException)
             {
-                idCategoria = 0;
-                mensaje = Exception.Message;
                 return false;
             }
         }
@@ -124,7 +121,7 @@ namespace AccesosDatos.Inventario
                 }
 
             }
-            catch (SqlException Exception)
+            catch (SqlException)
             {
                 return false;
             }
@@ -153,7 +150,7 @@ namespace AccesosDatos.Inventario
                 }
 
             }
-            catch (SqlException Exception)
+            catch (SqlException)
             {
                 return false;
             }

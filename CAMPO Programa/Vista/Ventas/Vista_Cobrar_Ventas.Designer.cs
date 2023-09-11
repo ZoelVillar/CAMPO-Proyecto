@@ -37,25 +37,27 @@
             this.btnPagarTarjeta = new System.Windows.Forms.Button();
             this.btnVolverAtras = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(295, 169);
+            this.label2.Location = new System.Drawing.Point(240, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 28);
+            this.label2.Size = new System.Drawing.Size(157, 28);
             this.label2.TabIndex = 62;
-            this.label2.Text = "Total a pagar";
+            this.label2.Text = "Total a pagar:";
             // 
             // lblTotalPagar
             // 
             this.lblTotalPagar.AutoSize = true;
             this.lblTotalPagar.BackColor = System.Drawing.Color.White;
             this.lblTotalPagar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPagar.Location = new System.Drawing.Point(296, 206);
+            this.lblTotalPagar.Location = new System.Drawing.Point(241, 149);
             this.lblTotalPagar.Name = "lblTotalPagar";
             this.lblTotalPagar.Size = new System.Drawing.Size(15, 22);
             this.lblTotalPagar.TabIndex = 63;
@@ -65,7 +67,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(295, 261);
+            this.label3.Location = new System.Drawing.Point(240, 204);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(135, 19);
             this.label3.TabIndex = 64;
@@ -76,7 +78,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(554, 261);
+            this.label4.Location = new System.Drawing.Point(499, 204);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 19);
             this.label4.TabIndex = 66;
@@ -88,7 +90,7 @@
             this.lblCambio.AutoSize = true;
             this.lblCambio.BackColor = System.Drawing.Color.White;
             this.lblCambio.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCambio.Location = new System.Drawing.Point(554, 283);
+            this.lblCambio.Location = new System.Drawing.Point(499, 226);
             this.lblCambio.Name = "lblCambio";
             this.lblCambio.Size = new System.Drawing.Size(15, 22);
             this.lblCambio.TabIndex = 67;
@@ -96,39 +98,53 @@
             // 
             // btnCobrar
             // 
-            this.btnCobrar.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F);
-            this.btnCobrar.Location = new System.Drawing.Point(300, 335);
+            this.btnCobrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(129)))), ((int)(((byte)(48)))));
+            this.btnCobrar.FlatAppearance.BorderSize = 0;
+            this.btnCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCobrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnCobrar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCobrar.Location = new System.Drawing.Point(436, 298);
             this.btnCobrar.Name = "btnCobrar";
-            this.btnCobrar.Size = new System.Drawing.Size(130, 31);
+            this.btnCobrar.Size = new System.Drawing.Size(130, 40);
             this.btnCobrar.TabIndex = 68;
-            this.btnCobrar.Text = "Cobrar";
-            this.btnCobrar.UseVisualStyleBackColor = true;
+            this.btnCobrar.Text = "Cobrar en efectivo";
+            this.btnCobrar.UseVisualStyleBackColor = false;
             this.btnCobrar.Click += new System.EventHandler(this.btnCobrar_Click);
             // 
             // btnPagarTarjeta
             // 
-            this.btnPagarTarjeta.Location = new System.Drawing.Point(300, 372);
+            this.btnPagarTarjeta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(129)))), ((int)(((byte)(48)))));
+            this.btnPagarTarjeta.FlatAppearance.BorderSize = 0;
+            this.btnPagarTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagarTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnPagarTarjeta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnPagarTarjeta.Location = new System.Drawing.Point(244, 298);
             this.btnPagarTarjeta.Name = "btnPagarTarjeta";
-            this.btnPagarTarjeta.Size = new System.Drawing.Size(130, 31);
+            this.btnPagarTarjeta.Size = new System.Drawing.Size(130, 40);
             this.btnPagarTarjeta.TabIndex = 69;
             this.btnPagarTarjeta.Text = "Pagar con Tarjeta";
-            this.btnPagarTarjeta.UseVisualStyleBackColor = true;
+            this.btnPagarTarjeta.UseVisualStyleBackColor = false;
             this.btnPagarTarjeta.Click += new System.EventHandler(this.btnPagarTarjeta_Click);
             // 
             // btnVolverAtras
             // 
-            this.btnVolverAtras.Location = new System.Drawing.Point(300, 409);
+            this.btnVolverAtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(129)))), ((int)(((byte)(48)))));
+            this.btnVolverAtras.FlatAppearance.BorderSize = 0;
+            this.btnVolverAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolverAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnVolverAtras.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnVolverAtras.Location = new System.Drawing.Point(17, 14);
             this.btnVolverAtras.Name = "btnVolverAtras";
-            this.btnVolverAtras.Size = new System.Drawing.Size(130, 31);
+            this.btnVolverAtras.Size = new System.Drawing.Size(130, 40);
             this.btnVolverAtras.TabIndex = 70;
             this.btnVolverAtras.Text = "Volver Atras";
-            this.btnVolverAtras.UseVisualStyleBackColor = true;
+            this.btnVolverAtras.UseVisualStyleBackColor = false;
             this.btnVolverAtras.Click += new System.EventHandler(this.btnVolverAtras_Click);
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(299, 287);
+            this.numericUpDown1.Location = new System.Drawing.Point(244, 230);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -139,28 +155,38 @@
             this.numericUpDown1.TabIndex = 71;
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.numericUpDown1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.btnVolverAtras);
+            this.panel1.Controls.Add(this.lblTotalPagar);
+            this.panel1.Controls.Add(this.btnPagarTarjeta);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.btnCobrar);
+            this.panel1.Controls.Add(this.lblCambio);
+            this.panel1.Location = new System.Drawing.Point(74, 73);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(794, 455);
+            this.panel1.TabIndex = 72;
+            // 
             // Vista_Cobrar_Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.ClientSize = new System.Drawing.Size(945, 660);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.btnVolverAtras);
-            this.Controls.Add(this.btnPagarTarjeta);
-            this.Controls.Add(this.btnCobrar);
-            this.Controls.Add(this.lblCambio);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.lblTotalPagar);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Vista_Cobrar_Ventas";
             this.Text = "Vista_Cobrar_Ventas";
             this.Load += new System.EventHandler(this.Vista_Cobrar_Ventas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -175,5 +201,6 @@
         private System.Windows.Forms.Button btnPagarTarjeta;
         private System.Windows.Forms.Button btnVolverAtras;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

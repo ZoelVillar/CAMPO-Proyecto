@@ -19,6 +19,7 @@ namespace BE.Venta
         public string comentariosAdicionales { get; set; }
         public string tipoPedido { get; set; }
         public string fechaCreacion { get; set; }
+        public string FormaPago { get; set; }
 
         public List<BE_DetalleVenta> oDetalleVenta { get; set; }
 

@@ -45,7 +45,7 @@ namespace AccesosDatos
                     }
                 }
             }
-            catch (SqlException Exception)
+            catch (SqlException )
             {
                 return false;
             }
@@ -89,7 +89,7 @@ namespace AccesosDatos
                 }
 
             }
-            catch (SqlException Exception)
+            catch (SqlException )
             {
                 return false;
             }
@@ -116,7 +116,7 @@ namespace AccesosDatos
                     }
                 }
             }
-            catch (SqlException Exception)
+            catch (SqlException )
             {
                 return false;
             }
@@ -145,7 +145,7 @@ namespace AccesosDatos
                     }
                 }
             }
-            catch (SqlException Exception)
+            catch (SqlException )
             {
                 return false;
             }
@@ -186,7 +186,7 @@ namespace AccesosDatos
                 }
 
             }
-            catch (SqlException Exception)
+            catch (SqlException )
             {
                 List<BE_Perfil> listaVacia = new List<BE_Perfil>();
                 return listaVacia;

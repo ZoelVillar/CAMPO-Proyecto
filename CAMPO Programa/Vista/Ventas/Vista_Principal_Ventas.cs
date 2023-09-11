@@ -56,5 +56,10 @@ namespace Vista
         {
             AbrirFormulario<Vista_Carrito_Ventas>();
         }
+
+        private void btnVerVentas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Vista_VerVentas>();
+        }
     }
 }

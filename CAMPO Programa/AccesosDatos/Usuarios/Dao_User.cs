@@ -50,7 +50,7 @@ namespace AccesosDatos
                     }
                 }
             }
-            catch (SqlException Exception)
+            catch (SqlException )
             {
                 return false;
             }
@@ -83,7 +83,7 @@ namespace AccesosDatos
                 }
 
             }
-            catch (SqlException Exception)
+            catch (SqlException )
             {
                 return false;
             }
@@ -114,7 +114,7 @@ namespace AccesosDatos
                 }
 
             }
-            catch (SqlException Exception)
+            catch (SqlException )
             {
                 return false;
             }
@@ -145,7 +145,7 @@ namespace AccesosDatos
                 }
 
             }
-            catch (SqlException Exception)
+            catch (SqlException )
             {
                 return false;
             }
@@ -181,7 +181,7 @@ namespace AccesosDatos
                 }
 
             }
-            catch (SqlException Exception)
+            catch (SqlException )
             {
                 return false;
             }
@@ -223,7 +223,7 @@ namespace AccesosDatos
                 }
 
             }
-            catch (SqlException Exception)
+            catch (SqlException )
             {
                 return null;
             }
@@ -262,7 +262,7 @@ namespace AccesosDatos
                     }
                 }
             }
-            catch (SqlException Exception)
+            catch (SqlException )
             {
                 return false;
             }
@@ -316,7 +316,7 @@ namespace AccesosDatos
 
                 return usuarios;
             }
-            catch (SqlException Exception)
+            catch (SqlException )
             {
                 return usuarios;
             }

@@ -10,7 +10,7 @@ namespace BE.Compra
     {
         public int IdProveedor { get; set; }
         public string Documento { get; set; }
-        public string RazonSocial { get; set; }
+        public string Ubicacion { get; set; }
         public string Mail { get; set; }
         public string Telefono { get; set; }
         public bool Estado { get; set; }

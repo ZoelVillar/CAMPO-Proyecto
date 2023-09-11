@@ -43,16 +43,13 @@ namespace Vista.Ventas
             if (numericUpDown1.Value >= VentaCache.venta.montoTotal)
             {
                 VentaCache.venta.montoCambio = numericUpDown1.Value - VentaCache.venta.montoTotal;
-            VentaCache.venta.montoPago = numericUpDown1.Value;
+                VentaCache.venta.montoPago = numericUpDown1.Value;
+                VentaCache.venta.FormaPago = "Efectivo";
 
             if (BLLVenta.CrearVenta(VentaCache.venta))
             {
                 MessageBox.Show("Venta Creada");
                 VentaCache.borrarCacheVenta();
-                if (Vista_Principal_Ventas.Instancia != null)
-                {
-                    //Vista_Principal_Ventas.Instancia.AbrirFormulario<Vista_Principal>();
-                }
             }
             else
             {
@@ -68,29 +65,21 @@ namespace Vista.Ventas
 
         private void btnPagarTarjeta_Click(object sender, EventArgs e)
         {
-            if (numericUpDown1.Value >= VentaCache.venta.montoTotal)
-            {
-                VentaCache.venta.montoCambio = 0;
-                VentaCache.venta.montoPago = VentaCache.venta.montoTotal;
+            
+            VentaCache.venta.montoCambio = 0;
+            VentaCache.venta.montoPago = VentaCache.venta.montoTotal;
+            VentaCache.venta.FormaPago = "Tarjeta";
 
-                if (BLLVenta.CrearVenta(VentaCache.venta))
-                {
-                    MessageBox.Show("Pago con tarjeta realizado");
-                    VentaCache.borrarCacheVenta();
-                    if (Vista_Principal_Ventas.Instancia != null)
-                    {
-                        //Vista_Principal_Ventas.Instancia.AbrirFormulario<Vista_Principal>();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Error al crear la venta");
-                }
+            if (BLLVenta.CrearVenta(VentaCache.venta))
+            {
+                MessageBox.Show("Pago con tarjeta realizado");
+                VentaCache.borrarCacheVenta();
             }
             else
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Error al crear la venta");
             }
+            
         }
 
         private void btnVolverAtras_Click(object sender, EventArgs e)

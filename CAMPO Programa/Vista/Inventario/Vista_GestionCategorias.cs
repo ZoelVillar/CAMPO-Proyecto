@@ -1,5 +1,6 @@
 ﻿using BE.Inventario;
 using BE.Usuarios;
+using ClosedXML.Excel;
 using Negocio;
 using Negocio.Inventario;
 using System;
@@ -290,6 +291,75 @@ namespace Vista.Inventario
             cargarComboEstado();
             cargarComboBusqueda();
             ActualizarGrilla();
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGrid.Rows.Count > 0)
+                {
+                    DataTable dt = new DataTable();
+
+                    foreach (DataGridViewColumn column in dataGrid.Columns)
+                    {
+                        if (column.HeaderText != "" && column.Visible)
+                        {
+                            dt.Columns.Add(column.HeaderText, typeof(string));
+                        }
+                    }
+
+                    foreach (DataGridViewRow row in dataGrid.Rows)
+                    {
+                        if (row.Visible)
+                        {
+                            object[] values = new object[dataGrid.Columns.Count];
+
+                            for (int i = 0; i < dataGrid.Columns.Count; i++)
+                            {
+                                values[i] = row.Cells[i].Value;
+                            }
+
+                            dt.Rows.Add(values);
+
+                        }
+                    }
+                    string nombreProyecto = this.GetType().Name;
+                    if (nombreProyecto.StartsWith("Vista_"))
+                    {
+                        nombreProyecto = nombreProyecto.Substring("Vista_".Length);
+                    }
+
+                    SaveFileDialog savefile = new SaveFileDialog();
+                    savefile.FileName = string.Format($"{nombreProyecto}_{DateTime.Now.ToString("ddMMyyyyHHmm")}.xlsx");
+                    savefile.Filter = "Excel Files | *.xlsx";
+
+                    if (savefile.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            XLWorkbook xLWorkbook = new XLWorkbook();
+                            var hoja = xLWorkbook.Worksheets.Add(dt, "Reporte");
+                            hoja.ColumnsUsed().AdjustToContents();
+                            xLWorkbook.SaveAs(savefile.FileName);
+                            MessageBox.Show("Reporte Generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Error generando el reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No hay datos para descargar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un error inesperado");
+            }
         }
     }
 }

@@ -33,7 +33,7 @@ namespace AccesosDatos.Inventario
                     {
                         command.Connection = connection;
                         command.CommandText = "SELECT [idProducto],[codigo],[nombre],p.[descripcion],c.[idCategoria], c.descripcion[DescripcionCategoria], p.stock,[precioCompra],[precioVenta], p.estado FROM Producto p inner join Categoria c on c.idCategoria = p.idCategoria";
-                        command.CommandType = System.Data.CommandType.Text;
+                        command.CommandType = CommandType.Text;
 
                         SqlDataReader dr = command.ExecuteReader();
 
@@ -59,7 +59,7 @@ namespace AccesosDatos.Inventario
                         else { return listaProductos; }
                     }
                 }
-                catch (SqlException Exception)
+                catch (SqlException)
                 {
                     return listaProductos;
                 }
@@ -96,7 +96,7 @@ namespace AccesosDatos.Inventario
                     }
                 }
             }
-            catch (SqlException Exception)
+            catch (SqlException)
             {
                 return false;
             }
@@ -130,7 +130,7 @@ namespace AccesosDatos.Inventario
                 }
 
             }
-            catch (SqlException Exception)
+            catch (SqlException)
             {
                 return false;
             }
@@ -159,7 +159,7 @@ namespace AccesosDatos.Inventario
                 }
 
             }
-            catch (SqlException Exception)
+            catch (SqlException)
             {
                 return false;
             }

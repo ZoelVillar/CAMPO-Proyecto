@@ -15,5 +15,10 @@ namespace Negocio
         {
             return daoVenta.CrearVenta(BEventa);
         }
+
+        public List<BE_Venta> retornarVentas()
+        {
+            return daoVenta.retornarVentas();
+        }
     }
 }

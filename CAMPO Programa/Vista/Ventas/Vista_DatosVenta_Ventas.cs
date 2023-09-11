@@ -29,8 +29,6 @@ namespace Vista.Ventas
             Negocio = new BLL_Negocio();
             ctrol_tipoPedido.SelectedIndex = 0;
             previsualizarTicket();
-
-
         }
         private void btnContinuarVenta_Click(object sender, EventArgs e)
         {
@@ -69,7 +67,7 @@ namespace Vista.Ventas
                     "---------------------\n" +
                     "Control del pedido\n" +
                     $"Numero de mesa: {(Convert.ToInt32(ctrol_numMesa.Value)).ToString()}\n " +
-                    $"Nombre del mesero: {ctrol_nbreMesero.Text}\n " +
+                    $"Nombre del mesero: {ctrol_nbreMesero.Text}\n" +
                     $"Tipo De Pedido: {ctrol_tipoPedido.SelectedItem.ToString()}\n" +
                     $"Comentario: {ctrol_Comentarios.Text}\n" +
                     "---------------------\n" +
@@ -88,7 +86,7 @@ namespace Vista.Ventas
             ticketInfo += "---------------------\n" +
                           "Total: $" + totalVenta;
 
-            textTicket.Text = ticketInfo;
+            txtTicket.Text = ticketInfo;
         }
 
         private void ctrol_numMesa_ValueChanged(object sender, EventArgs e)

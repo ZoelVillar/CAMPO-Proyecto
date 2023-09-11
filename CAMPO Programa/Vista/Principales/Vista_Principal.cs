@@ -1,9 +1,12 @@
-﻿using BE.Permisos;
+﻿using BE.Idiomas;
+using BE.Permisos;
 using BE.Usuarios;
 using Microsoft.VisualBasic.ApplicationServices;
 using Negocio;
+using Negocio.Idiomas;
 using Negocio.Usuarios;
 using Servicios.Cache;
+using Servicios.Idiomas;
 using Servicios.Validaciones;
 using System;
 using System.Collections.Generic;
@@ -16,10 +19,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vista.Inventario;
+using Vista.Usuarios;
+using Vista.Usuarios.Idiomas;
 
 namespace Vista
 {
-    public partial class Vista_Principal : Form
+    public partial class Vista_Principal : Form, IObserver
     {
         private static Vista_Principal Vista = new Vista_Principal();
 
@@ -28,6 +33,9 @@ namespace Vista
         BLL_Perfil bllPerfil;
         BLL_Permiso bllPermiso;
         List<BE_Permiso> listaPermisos;
+
+        BLL_Idioma bllIdioma;
+        ObservableIdioma observerIdioma;
         public Vista_Principal()
         {
             InitializeComponent();
@@ -38,6 +46,12 @@ namespace Vista
             listaPermisos = new List<BE_Permiso>();
             bllPerfil = new BLL_Perfil();
             bllPermiso = new BLL_Permiso();
+            observerIdioma = new ObservableIdioma();
+
+            bllIdioma = new BLL_Idioma();
+            actualizarComboIdiomas();
+
+            observerIdioma.AgregarObservador(this);
             cargarPerfiles();
             LoadUserData();
             AttachButtonClickEvent(panelBotones);
@@ -117,6 +131,20 @@ namespace Vista
             lblArea.Text = UserLoginInfo.id_perfil;
         }
 
+        private void actualizarComboIdiomas()
+        {
+            comboIdiomas.Items.Clear();
+
+            var idiomas = bllIdioma.retornaIdiomas();
+
+            if (idiomas.Count > 0)
+            {
+                comboIdiomas.DataSource = idiomas;
+                comboIdiomas.DisplayMember = "nombre";
+                comboIdiomas.ValueMember = "id";
+                comboIdiomas.SelectedIndex = 0;
+            }
+        }
         #region "Salir , minimizar y redimensionar"
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -166,7 +194,7 @@ namespace Vista
 
         private void btnGestionUsuarios_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Vista_GestionarUsuarios>();
+            AbrirFormulario<Vista_PrincipalUsuarios>();
         }
         private void btnPerfil_Click(object sender, EventArgs e)
         {
@@ -242,6 +270,37 @@ namespace Vista
             }
         }
 
-      
+        private void btnGestionIdiomas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Vista_Idiomas>();
+        }
+
+        public void ActualizarTraducciones()
+        {
+            MessageBox.Show($"Traducciones {observerIdioma.obtenerIdiomaActual()}");
+
+            //Recorrer los botones -> recorrer traducciones - relacionar
+            var idiomaEncontrado = bllIdioma.retornaIdiomas().Find(x => x.nombre == comboIdiomas.Text);
+            var traducciones = bllIdioma.retornaTraduccionesIdioma(new BE_Idioma() { id = idiomaEncontrado.id, nombre = idiomaEncontrado.nombre});
+
+            foreach (BE_Traduccion traduccion in traducciones) 
+            { 
+                foreach(Control control in this.panelBotones.Controls) 
+                {
+                    if(control.Tag.ToString() == traduccion.tagIdioma.tag) 
+                    {
+                        if (traduccion.textoTraducido != "-----") 
+                        { 
+                            control.Text = traduccion.textoTraducido;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void comboIdiomas_SelectedValueChanged(object sender, EventArgs e)
+        {
+            observerIdioma.cambiarIdioma(comboIdiomas.Text);
+        }
     }
 }

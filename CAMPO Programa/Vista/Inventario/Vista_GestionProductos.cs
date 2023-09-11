@@ -1,5 +1,6 @@
 ﻿using BE.Inventario;
 using BE.Usuarios;
+using ClosedXML.Excel;
 using Negocio;
 using Negocio.Inventario;
 using System;
@@ -8,6 +9,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -170,6 +172,10 @@ namespace Vista.Inventario
             {
                 if (dataGrid.SelectedRows.Count > 0)
                 {
+                    if (modoboton == modoBoton.btnModificar || modoboton == modoBoton.btnEliminar)
+                    {
+                        txtCodigo.Text = dataGrid.SelectedRows[0].Cells["codigo"].Value.ToString();
+                    }
                     lblSeleccionadoEspecifico.Text = dataGrid.SelectedRows[0].Cells["id"].Value.ToString() + "- " + dataGrid.SelectedRows[0].Cells["nombre"].Value.ToString();
                 }
             }
@@ -190,15 +196,6 @@ namespace Vista.Inventario
         }
 
 
-        private void btnAceptar_Click(object sender, EventArgs e)
-        {
-            switch (modoboton)
-            {
-                case modoBoton.btnAgregar: agregar(); break;
-                case modoBoton.btnEliminar: eliminar(); break;
-                case modoBoton.btnModificar: modificar(); break;
-            }
-        }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -366,6 +363,79 @@ namespace Vista.Inventario
             txtCodigo.Text = "";
             comboCategoria.SelectedIndex = 0;
             comboEstado.SelectedIndex = 0;
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(dataGrid.Rows.Count > 0)
+                {
+                    DataTable dt = new DataTable();
+
+                    foreach (DataGridViewColumn column in dataGrid.Columns)
+                    {
+                        if(column.HeaderText != "" && column.Visible)
+                        {
+                            dt.Columns.Add(column.HeaderText, typeof(string));
+                        }
+                    }
+
+                    foreach(DataGridViewRow row in dataGrid.Rows)
+                    {
+                        if(row.Visible)
+                        {
+                                dt.Rows.Add(new object[] {
+                                    row.Cells[0].Value.ToString(),
+                                    row.Cells[1].Value.ToString(),
+                                    row.Cells[2].Value.ToString(),
+                                    row.Cells[3].Value.ToString(),
+                                    row.Cells[4].Value.ToString(),
+                                    row.Cells[5].Value.ToString(),
+                                    row.Cells[6].Value.ToString(),
+                                    row.Cells[7].Value.ToString(),
+                                    row.Cells[8].Value.ToString(),
+                                });
+                            
+                        }
+                    }
+
+                    string nombreProyecto = this.GetType().Name;
+                    if (nombreProyecto.StartsWith("Vista_"))
+                    {
+                        nombreProyecto = nombreProyecto.Substring("Vista_".Length);
+                    }
+
+                    SaveFileDialog savefile = new SaveFileDialog();
+                    savefile.FileName = string.Format($"{nombreProyecto}_{DateTime.Now.ToString("ddMMyyyyHHmm")}.xlsx");
+                    savefile.Filter = "Excel Files | *.xlsx";
+
+                    if (savefile.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            XLWorkbook xLWorkbook = new XLWorkbook();
+                            var hoja = xLWorkbook.Worksheets.Add(dt, "Reporte");
+                            hoja.ColumnsUsed().AdjustToContents();
+                            xLWorkbook.SaveAs(savefile.FileName);
+                            MessageBox.Show("Reporte Generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Error generando el reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No hay datos para descargar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un error inesperado");
+            }
         }
     }
 }
