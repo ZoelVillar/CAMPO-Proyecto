@@ -8,7 +8,7 @@ namespace Servicios.Idiomas
 {
     public interface IObserver
     {
-        void ActualizarTraducciones();
+        void Actualizar();
     }
 
    

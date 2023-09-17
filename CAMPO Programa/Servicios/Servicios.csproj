@@ -64,6 +64,7 @@
     <Compile Include="Idiomas\IObservable.cs" />
     <Compile Include="Idiomas\IObserver.cs" />
     <Compile Include="Idiomas\ObservableIdioma.cs" />
+    <Compile Include="Idiomas\ObserverVentas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validaciones\EncriptarContraseña.cs" />
     <Compile Include="Validaciones\ValidacionesRegex.cs" />

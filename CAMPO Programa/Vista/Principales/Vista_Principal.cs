@@ -219,7 +219,7 @@ namespace Vista
             if (selectedButton != null)
             {
                 // Restablece el color del botón seleccionado previamente
-                selectedButton.BackColor = Color.FromArgb(237, 237, 233);
+                selectedButton.BackColor = Color.White;
                 selectedButton.ForeColor = Color.FromArgb(64, 64, 64);
             }
 
@@ -227,7 +227,7 @@ namespace Vista
             Button clickedButton = (Button)sender;
 
             // Cambia el color del botón seleccionado al color
-            clickedButton.BackColor = Color.FromArgb(107, 112, 92);
+            clickedButton.BackColor = Color.FromArgb(230, 107, 45);
             clickedButton.ForeColor = Color.White;
 
             // Actualiza el botón seleccionado
@@ -275,7 +275,7 @@ namespace Vista
             AbrirFormulario<Vista_Idiomas>();
         }
 
-        public void ActualizarTraducciones()
+        public void Actualizar()
         {
             MessageBox.Show($"Traducciones {observerIdioma.obtenerIdiomaActual()}");
 

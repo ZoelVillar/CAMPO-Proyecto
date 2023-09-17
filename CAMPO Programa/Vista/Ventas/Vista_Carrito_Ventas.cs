@@ -1,7 +1,9 @@
 ﻿using BE.Inventario;
 using BE.Venta;
+using DocumentFormat.OpenXml.Vml.Spreadsheet;
 using Negocio.Inventario;
 using Servicios.Cache;
+using Servicios.Idiomas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,10 +24,12 @@ namespace Vista.Ventas
         }
 
         BLL_Producto ProductoManager;
+        Vista_Cobrar_Ventas cobrar;
         private void Vista_Carrito_Ventas_Load(object sender, EventArgs e)
         {
             ProductoManager = new BLL_Producto();
             cargarProductos();
+
         }
 
         private void cargarProductos()
@@ -42,22 +46,6 @@ namespace Vista.Ventas
             else MessageBox.Show("im here");
         }
 
-        private void txtProductoBuscar_TextChanged(object sender, EventArgs e)
-        {
-            string textoBusqueda = txtProductoBuscar.Text;
-            var lista = ProductoManager.retornarProductos();
-            listProductos.Items.Clear();
-
-            foreach (BE_Producto producto in lista)
-            {
-                if (producto.Nombre.Contains(textoBusqueda))
-                {
-                    listProductos.Items.Add(producto.Nombre);
-                }
-            }
-
-
-        }
         private void btnAceptarProducto_Click(object sender, EventArgs e)
         {
             bool posible = true;
@@ -110,6 +98,7 @@ namespace Vista.Ventas
                                         //Agrego el producto
                                         VentaCache.listaDetalleVenta.Add(productoAgregado);
                                     }
+                                    else MessageBox.Show("No hay mas stock");
                                 }
                             }
                         }
@@ -122,7 +111,16 @@ namespace Vista.Ventas
                             VentaCache.listaDetalleVenta.Add(productoAgregado);
                             gridCarrito.Rows.Add(productoAgregado.oProducto.Nombre, productoAgregado.cantidad, productoAgregado.precioVenta, productoAgregado.subTotal);
                         }
+                        else MessageBox.Show("No hay mas stock");
                     }
+
+                    decimal total = 0;
+                    foreach (BE_DetalleVenta detalleVenta in VentaCache.listaDetalleVenta)
+                    {
+                        total += detalleVenta.subTotal;
+                    }
+                    VentaCache.venta.montoTotal = total;    
+                    VentaCache.Observer.NotificarObservadores();
                 }
                 txtCantidad.Value = 0;
 
@@ -136,6 +134,7 @@ namespace Vista.Ventas
 
             if (Vista_Principal_Ventas.Instancia != null && posible)
             {
+
                 Vista_Principal_Ventas.Instancia.AbrirFormulario<Vista_DatosVenta_Ventas>();
             }
         }
@@ -144,6 +143,37 @@ namespace Vista.Ventas
         {
             gridCarrito.Rows.Clear();
             VentaCache.borrarCacheVenta();
+            VentaCache.Observer.NotificarObservadores();
         }
+
+        private void btnCobrarVenta_Click(object sender, EventArgs e)
+        {
+            if (Vista_Principal_Ventas.Instancia != null && VentaCache.venta.numMesa != 0 && VentaCache.venta.oDetalleVenta.Count > 0)
+            {
+                Vista_Principal_Ventas.Instancia.AbrirFormulario<Vista_Cobrar_Ventas>();
+            }
+            else
+            {
+                MessageBox.Show("Debe completar todos los datos de la venta");
+            }
+        }
+
+        private void txtProductoBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string textoBusqueda = txtProductoBuscar.Text;
+            var lista = ProductoManager.retornarProductos();
+            listProductos.Items.Clear();
+
+            foreach (BE_Producto producto in lista)
+            {
+                if (producto.Nombre.Contains(textoBusqueda))
+                {
+                    listProductos.Items.Add(producto.Nombre);
+                }
+            }
+
+        }
+
+
     }
 }

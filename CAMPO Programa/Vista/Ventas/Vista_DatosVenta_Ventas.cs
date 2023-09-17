@@ -2,6 +2,7 @@
 using BE.Venta;
 using Negocio.Usuarios;
 using Servicios.Cache;
+using Servicios.Idiomas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,20 +16,25 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Vista.Ventas
 {
-    public partial class Vista_DatosVenta_Ventas : Form
+    public partial class Vista_DatosVenta_Ventas : Form, IObserver
     {
+
         public Vista_DatosVenta_Ventas()
         {
             InitializeComponent();
         }
+
         BLL_Negocio Negocio;
-        decimal totalVenta = 0;
         string ticketInfo = "";
+
         private void Vista_DatosVenta_Ventas_Load(object sender, EventArgs e)
         {
             Negocio = new BLL_Negocio();
+
+            VentaCache.Observer.AgregarObservador(this);
             ctrol_tipoPedido.SelectedIndex = 0;
             previsualizarTicket();
+
         }
         private void btnContinuarVenta_Click(object sender, EventArgs e)
         {
@@ -36,13 +42,13 @@ namespace Vista.Ventas
             bool posible = true;
             if (ctrol_numMesa.Value <= 0) { MessageBox.Show("Numero de mesa incorrecto"); posible = false; ctrol_numMesa.Value = 0; }
 
-            if (ctrol_nbreMesero.Text.Trim() == "") { MessageBox.Show("Nombre de mesero incompleto"); posible = false; }
+            if (ctrol_nbreMesero.Text.Trim() == "" || ctrol_nbreMesero.Text == "Nombre Apellido") { MessageBox.Show("Nombre de mesero incompleto"); posible = false; }
+            
 
 
             if (posible)
             {
                 VentaCache.venta.oUsuario = UserLoginInfo.retornarUser();
-                VentaCache.venta.montoTotal = totalVenta;
                 VentaCache.venta.nombreMesero = ctrol_nbreMesero.Text;
                 VentaCache.venta.numMesa = Convert.ToInt32(ctrol_numMesa.Value);
                 VentaCache.venta.comentariosAdicionales = ctrol_Comentarios.Text;
@@ -52,7 +58,7 @@ namespace Vista.Ventas
 
                 if (Vista_Principal_Ventas.Instancia != null)
                 {
-                    Vista_Principal_Ventas.Instancia.AbrirFormulario<Vista_Cobrar_Ventas>();
+                    Vista_Principal_Ventas.Instancia.AbrirFormulario<Vista_Carrito_Ventas>();
                 }
 
             }
@@ -76,7 +82,7 @@ namespace Vista.Ventas
                     "---------------------\n" +
                     "Productos:\n";
 
-            totalVenta = 0;
+            decimal totalVenta = 0;
             foreach (BE_DetalleVenta detalleVenta in VentaCache.listaDetalleVenta)
             {
                 ticketInfo += detalleVenta.cantidad + " * " + detalleVenta.oProducto.Nombre + " - $" + detalleVenta.subTotal + "\n";
@@ -110,6 +116,12 @@ namespace Vista.Ventas
         }
 
         #endregion
+
+
+        public void Actualizar()
+        {
+            previsualizarTicket();
+        }
 
         private void btnVolverAtras_Click(object sender, EventArgs e)
         {

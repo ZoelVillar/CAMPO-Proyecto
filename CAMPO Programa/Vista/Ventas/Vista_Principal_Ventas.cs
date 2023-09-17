@@ -34,7 +34,6 @@ namespace Vista
             Form formulario;
             formulario = panelFormularios.Controls.OfType<MiForm>().FirstOrDefault(); //Busca en la coleeccion el formulario
 
-
             if (formulario == null) // Si el form no existe
             {
                 formulario = new MiForm();

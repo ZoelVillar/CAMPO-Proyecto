@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Servicios.Idiomas
 {
-    public class ObservableIdioma : IObservable
+    public class ObserverVentas : IObservable
     {
         private List<IObserver> observadores = new List<IObserver>();
-        private string currentIdioma = "";
 
         public void AgregarObservador(IObserver observador)
         {
@@ -29,16 +28,7 @@ namespace Servicios.Idiomas
             }
         }
 
-        public void cambiarIdioma(string idioma)
-        {
-            currentIdioma = idioma;
-            NotificarObservadores();
-        }
 
-        public string obtenerIdiomaActual() 
-        {
-            return currentIdioma;
-        }
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Negocio;
 using Servicios.Cache;
+using Servicios.Idiomas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace Vista.Ventas
 {
-    public partial class Vista_Cobrar_Ventas : Form
+    public partial class Vista_Cobrar_Ventas : Form, IObserver
     {
         public Vista_Cobrar_Ventas()
         {
@@ -22,7 +23,8 @@ namespace Vista.Ventas
         BLL_Venta BLLVenta;
         private void Vista_Cobrar_Ventas_Load(object sender, EventArgs e)
         {
-            lblTotalPagar.Text = VentaCache.venta.montoTotal.ToString();
+            VentaCache.Observer.AgregarObservador(this);
+            Actualizar();
             BLLVenta = new BLL_Venta();
         }
 
@@ -65,7 +67,6 @@ namespace Vista.Ventas
 
         private void btnPagarTarjeta_Click(object sender, EventArgs e)
         {
-            
             VentaCache.venta.montoCambio = 0;
             VentaCache.venta.montoPago = VentaCache.venta.montoTotal;
             VentaCache.venta.FormaPago = "Tarjeta";
@@ -86,8 +87,14 @@ namespace Vista.Ventas
         {
             if (Vista_Principal_Ventas.Instancia != null)
             {
-                Vista_Principal_Ventas.Instancia.AbrirFormulario<Vista_DatosVenta_Ventas>();
+                Vista_Principal_Ventas.Instancia.AbrirFormulario<Vista_Carrito_Ventas>();
             }
+        }
+
+
+        public void Actualizar()
+        {
+            lblTotalPagar.Text = VentaCache.venta.montoTotal.ToString();
         }
     }
 }
