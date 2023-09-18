@@ -38,15 +38,14 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblPerfil = new System.Windows.Forms.Label();
             this.panelBotones = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
-            this.btnGestionProductos = new System.Windows.Forms.Button();
             this.btnGestionIdiomas = new System.Windows.Forms.Button();
             this.btnPerfil = new System.Windows.Forms.Button();
             this.btnGestionUsuarios = new System.Windows.Forms.Button();
             this.btnAbrirVentas = new System.Windows.Forms.Button();
             this.btnAbrirCompras = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -160,7 +159,6 @@
             this.panelBotones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelBotones.Controls.Add(this.btnLogout);
             this.panelBotones.Controls.Add(this.btnInventario);
-            this.panelBotones.Controls.Add(this.btnGestionProductos);
             this.panelBotones.Controls.Add(this.btnGestionIdiomas);
             this.panelBotones.Controls.Add(this.btnPerfil);
             this.panelBotones.Controls.Add(this.btnGestionUsuarios);
@@ -171,6 +169,26 @@
             this.panelBotones.Size = new System.Drawing.Size(220, 516);
             this.panelBotones.TabIndex = 0;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.AutoEllipsis = true;
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.btnLogout.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(112)))), ((int)(((byte)(92)))));
+            this.btnLogout.FlatAppearance.BorderSize = 2;
+            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(112)))), ((int)(((byte)(92)))));
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnLogout.Location = new System.Drawing.Point(7, 468);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(203, 35);
+            this.btnLogout.TabIndex = 40;
+            this.btnLogout.Tag = "btnCerrarSesion";
+            this.btnLogout.Text = "Cerrar Sesión";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // btnInventario
             // 
             this.btnInventario.AutoEllipsis = true;
@@ -180,7 +198,7 @@
             this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventario.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnInventario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnInventario.Location = new System.Drawing.Point(21, 294);
+            this.btnInventario.Location = new System.Drawing.Point(21, 244);
             this.btnInventario.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
             this.btnInventario.Name = "btnInventario";
             this.btnInventario.Size = new System.Drawing.Size(177, 35);
@@ -189,24 +207,6 @@
             this.btnInventario.Text = "Inventario";
             this.btnInventario.UseVisualStyleBackColor = false;
             this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
-            // 
-            // btnGestionProductos
-            // 
-            this.btnGestionProductos.AutoEllipsis = true;
-            this.btnGestionProductos.BackColor = System.Drawing.Color.White;
-            this.btnGestionProductos.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnGestionProductos.FlatAppearance.BorderSize = 0;
-            this.btnGestionProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGestionProductos.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnGestionProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnGestionProductos.Location = new System.Drawing.Point(21, 144);
-            this.btnGestionProductos.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
-            this.btnGestionProductos.Name = "btnGestionProductos";
-            this.btnGestionProductos.Size = new System.Drawing.Size(177, 35);
-            this.btnGestionProductos.TabIndex = 49;
-            this.btnGestionProductos.Tag = "btnProductos";
-            this.btnGestionProductos.Text = "Gestión de Productos";
-            this.btnGestionProductos.UseVisualStyleBackColor = false;
             // 
             // btnGestionIdiomas
             // 
@@ -217,7 +217,7 @@
             this.btnGestionIdiomas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionIdiomas.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnGestionIdiomas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnGestionIdiomas.Location = new System.Drawing.Point(21, 244);
+            this.btnGestionIdiomas.Location = new System.Drawing.Point(21, 194);
             this.btnGestionIdiomas.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
             this.btnGestionIdiomas.Name = "btnGestionIdiomas";
             this.btnGestionIdiomas.Size = new System.Drawing.Size(177, 35);
@@ -236,7 +236,7 @@
             this.btnPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPerfil.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPerfil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnPerfil.Location = new System.Drawing.Point(21, 344);
+            this.btnPerfil.Location = new System.Drawing.Point(21, 294);
             this.btnPerfil.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
             this.btnPerfil.Name = "btnPerfil";
             this.btnPerfil.Size = new System.Drawing.Size(177, 35);
@@ -255,7 +255,7 @@
             this.btnGestionUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionUsuarios.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnGestionUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnGestionUsuarios.Location = new System.Drawing.Point(21, 194);
+            this.btnGestionUsuarios.Location = new System.Drawing.Point(21, 144);
             this.btnGestionUsuarios.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
             this.btnGestionUsuarios.Name = "btnGestionUsuarios";
             this.btnGestionUsuarios.Size = new System.Drawing.Size(177, 35);
@@ -314,26 +314,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 42;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.AutoEllipsis = true;
-            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
-            this.btnLogout.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(112)))), ((int)(((byte)(92)))));
-            this.btnLogout.FlatAppearance.BorderSize = 2;
-            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(112)))), ((int)(((byte)(92)))));
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnLogout.Location = new System.Drawing.Point(7, 468);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(203, 35);
-            this.btnLogout.TabIndex = 40;
-            this.btnLogout.Tag = "btnCerrarSesion";
-            this.btnLogout.Text = "Cerrar Sesión";
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // button4
             // 
@@ -469,7 +449,6 @@
         private System.Windows.Forms.Button btnPerfil;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnGestionIdiomas;
-        private System.Windows.Forms.Button btnGestionProductos;
         private System.Windows.Forms.Button btnInventario;
         private System.Windows.Forms.ComboBox comboIdiomas;
         private System.Windows.Forms.Label label3;

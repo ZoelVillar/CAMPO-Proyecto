@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Usuarios.Idiomas;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Vista.Ventas
@@ -32,6 +33,7 @@ namespace Vista.Ventas
             Negocio = new BLL_Negocio();
 
             VentaCache.Observer.AgregarObservador(this);
+            IdiomasStatic.Observer.AgregarObservador(this);
             ctrol_tipoPedido.SelectedIndex = 0;
             previsualizarTicket();
 
@@ -118,17 +120,19 @@ namespace Vista.Ventas
         #endregion
 
 
-        public void Actualizar()
-        {
-            previsualizarTicket();
-        }
-
         private void btnVolverAtras_Click(object sender, EventArgs e)
         {
             if (Vista_Principal_Ventas.Instancia != null)
             {
                 Vista_Principal_Ventas.Instancia.AbrirFormulario<Vista_Carrito_Ventas>();
             }
+        }
+
+        public void Actualizar()
+        {
+            IdiomasTraduccionServicios idiomasTraduccion = new IdiomasTraduccionServicios();
+            idiomasTraduccion.CambiarIdiomaEnFormulario(this);
+            previsualizarTicket();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Servicios.Idiomas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,14 +8,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Usuarios.Idiomas;
 
 namespace Vista.Usuarios
 {
-    public partial class Vista_PrincipalUsuarios : Form
+    public partial class Vista_PrincipalUsuarios : Form, IObserver
     {
         public Vista_PrincipalUsuarios()
         {
             InitializeComponent();
+        }
+
+
+        private void Vista_PrincipalUsuarios_Load(object sender, EventArgs e)
+        {
+            IdiomasStatic.Observer.AgregarObservador(this);
         }
 
         public void AbrirFormulario<MiForm>() where MiForm : Form, new()
@@ -53,6 +61,12 @@ namespace Vista.Usuarios
         private void btnGestionProveedores_Click(object sender, EventArgs e)
         {
             AbrirFormulario<Vista_GestionarProveedoes>();
+        }
+
+        public void Actualizar()
+        {
+            IdiomasTraduccionServicios idiomasTraduccion = new IdiomasTraduccionServicios();
+            idiomasTraduccion.CambiarIdiomaEnFormulario(this);
         }
     }
 }

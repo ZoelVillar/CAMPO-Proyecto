@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Usuarios.Idiomas;
 
 namespace Vista.Ventas
 {
@@ -24,6 +25,7 @@ namespace Vista.Ventas
         private void Vista_Cobrar_Ventas_Load(object sender, EventArgs e)
         {
             VentaCache.Observer.AgregarObservador(this);
+            IdiomasStatic.Observer.AgregarObservador(this);
             Actualizar();
             BLLVenta = new BLL_Venta();
         }
@@ -94,6 +96,8 @@ namespace Vista.Ventas
 
         public void Actualizar()
         {
+            IdiomasTraduccionServicios idiomasTraduccion = new IdiomasTraduccionServicios();
+            idiomasTraduccion.CambiarIdiomaEnFormulario(this);
             lblTotalPagar.Text = VentaCache.venta.montoTotal.ToString();
         }
     }

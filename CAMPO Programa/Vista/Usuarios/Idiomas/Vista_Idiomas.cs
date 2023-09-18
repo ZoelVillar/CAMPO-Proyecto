@@ -1,6 +1,7 @@
 ﻿using BE.Idiomas;
 using Microsoft.VisualBasic;
 using Negocio.Idiomas;
+using Servicios.Idiomas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ using System.Windows.Forms;
 
 namespace Vista.Usuarios.Idiomas
 {
-    public partial class Vista_Idiomas : Form
+    public partial class Vista_Idiomas : Form, IObserver
     {
         public Vista_Idiomas()
         {
@@ -30,6 +31,8 @@ namespace Vista.Usuarios.Idiomas
             dataGrid.AllowUserToAddRows = false;
             dataGrid.AllowUserToDeleteRows = false;
             
+            IdiomasStatic.Observer.AgregarObservador(this);
+
             ActualizarGrilla();
             ActualizarLista();
         }
@@ -176,6 +179,13 @@ namespace Vista.Usuarios.Idiomas
                 }
                 else MessageBox.Show("Actualizacion Fallida");
             }
+        }
+
+        public void Actualizar()
+        {
+            IdiomasTraduccionServicios idiomasTraduccion = new IdiomasTraduccionServicios();
+            idiomasTraduccion.CambiarIdiomaEnFormulario(this);
+            idiomasTraduccion.TraducirColumnas(dataGrid);
         }
     }
 }

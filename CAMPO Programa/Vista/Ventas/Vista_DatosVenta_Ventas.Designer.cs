@@ -95,6 +95,7 @@
             this.lblNumMesa.Name = "lblNumMesa";
             this.lblNumMesa.Size = new System.Drawing.Size(113, 17);
             this.lblNumMesa.TabIndex = 4;
+            this.lblNumMesa.Tag = "lblNumerodeMesa";
             this.lblNumMesa.Text = "Numero de Mesa";
             // 
             // label2
@@ -105,6 +106,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(130, 17);
             this.label2.TabIndex = 5;
+            this.label2.Tag = "lblNombredelMesero";
             this.label2.Text = "Nombre del Mesero";
             // 
             // label3
@@ -115,6 +117,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 17);
             this.label3.TabIndex = 6;
+            this.label3.Tag = "lblComentarios";
             this.label3.Text = "Comentarios";
             // 
             // label4
@@ -125,6 +128,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(102, 17);
             this.label4.TabIndex = 7;
+            this.label4.Tag = "lblTipodepedido";
             this.label4.Text = "Tipo de pedido";
             // 
             // btnContinuarVenta
@@ -139,6 +143,7 @@
             this.btnContinuarVenta.Name = "btnContinuarVenta";
             this.btnContinuarVenta.Size = new System.Drawing.Size(284, 46);
             this.btnContinuarVenta.TabIndex = 64;
+            this.btnContinuarVenta.Tag = "btnContinuarVenta";
             this.btnContinuarVenta.Text = "Continuar Venta";
             this.btnContinuarVenta.UseVisualStyleBackColor = false;
             this.btnContinuarVenta.Click += new System.EventHandler(this.btnContinuarVenta_Click);
@@ -172,6 +177,7 @@
             this.btnVolverAtras.Name = "btnVolverAtras";
             this.btnVolverAtras.Size = new System.Drawing.Size(130, 40);
             this.btnVolverAtras.TabIndex = 72;
+            this.btnVolverAtras.Tag = "btnVolverAtras";
             this.btnVolverAtras.Text = "Volver Atras";
             this.btnVolverAtras.UseVisualStyleBackColor = false;
             this.btnVolverAtras.Click += new System.EventHandler(this.btnVolverAtras_Click);

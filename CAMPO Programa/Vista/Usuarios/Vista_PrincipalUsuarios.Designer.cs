@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panelBotones = new System.Windows.Forms.Panel();
+            this.btnGestionProveedores = new System.Windows.Forms.Button();
+            this.btnGestionPerfiles = new System.Windows.Forms.Button();
+            this.btnGestionUsuarios = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panelFormularios = new System.Windows.Forms.Panel();
-            this.btnGestionUsuarios = new System.Windows.Forms.Button();
-            this.btnGestionPerfiles = new System.Windows.Forms.Button();
-            this.btnGestionProveedores = new System.Windows.Forms.Button();
             this.panelBotones.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +51,57 @@
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Size = new System.Drawing.Size(155, 660);
             this.panelBotones.TabIndex = 43;
+            // 
+            // btnGestionProveedores
+            // 
+            this.btnGestionProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGestionProveedores.FlatAppearance.BorderSize = 0;
+            this.btnGestionProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionProveedores.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnGestionProveedores.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnGestionProveedores.Location = new System.Drawing.Point(12, 166);
+            this.btnGestionProveedores.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.btnGestionProveedores.Name = "btnGestionProveedores";
+            this.btnGestionProveedores.Size = new System.Drawing.Size(130, 46);
+            this.btnGestionProveedores.TabIndex = 51;
+            this.btnGestionProveedores.Tag = "btnGestionarProveedores";
+            this.btnGestionProveedores.Text = "Gestionar \r\nProveedores";
+            this.btnGestionProveedores.UseVisualStyleBackColor = false;
+            this.btnGestionProveedores.Click += new System.EventHandler(this.btnGestionProveedores_Click);
+            // 
+            // btnGestionPerfiles
+            // 
+            this.btnGestionPerfiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGestionPerfiles.FlatAppearance.BorderSize = 0;
+            this.btnGestionPerfiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionPerfiles.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnGestionPerfiles.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnGestionPerfiles.Location = new System.Drawing.Point(12, 107);
+            this.btnGestionPerfiles.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.btnGestionPerfiles.Name = "btnGestionPerfiles";
+            this.btnGestionPerfiles.Size = new System.Drawing.Size(130, 46);
+            this.btnGestionPerfiles.TabIndex = 50;
+            this.btnGestionPerfiles.Tag = "btnGestionarPerfiles";
+            this.btnGestionPerfiles.Text = "Gestionar \r\nPerfiles";
+            this.btnGestionPerfiles.UseVisualStyleBackColor = false;
+            this.btnGestionPerfiles.Click += new System.EventHandler(this.btnGestionPerfiles_Click);
+            // 
+            // btnGestionUsuarios
+            // 
+            this.btnGestionUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGestionUsuarios.FlatAppearance.BorderSize = 0;
+            this.btnGestionUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionUsuarios.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnGestionUsuarios.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnGestionUsuarios.Location = new System.Drawing.Point(12, 48);
+            this.btnGestionUsuarios.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.btnGestionUsuarios.Name = "btnGestionUsuarios";
+            this.btnGestionUsuarios.Size = new System.Drawing.Size(130, 46);
+            this.btnGestionUsuarios.TabIndex = 49;
+            this.btnGestionUsuarios.Tag = "btnGestionarUsuarios";
+            this.btnGestionUsuarios.Text = "Gestionar Usuarios";
+            this.btnGestionUsuarios.UseVisualStyleBackColor = false;
+            this.btnGestionUsuarios.Click += new System.EventHandler(this.btnGestionUsuarios_Click);
             // 
             // btnLogout
             // 
@@ -78,54 +129,6 @@
             this.panelFormularios.Size = new System.Drawing.Size(945, 660);
             this.panelFormularios.TabIndex = 47;
             // 
-            // btnGestionUsuarios
-            // 
-            this.btnGestionUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnGestionUsuarios.FlatAppearance.BorderSize = 0;
-            this.btnGestionUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGestionUsuarios.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnGestionUsuarios.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGestionUsuarios.Location = new System.Drawing.Point(12, 48);
-            this.btnGestionUsuarios.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.btnGestionUsuarios.Name = "btnGestionUsuarios";
-            this.btnGestionUsuarios.Size = new System.Drawing.Size(130, 46);
-            this.btnGestionUsuarios.TabIndex = 49;
-            this.btnGestionUsuarios.Text = "Gestionar Usuarios";
-            this.btnGestionUsuarios.UseVisualStyleBackColor = false;
-            this.btnGestionUsuarios.Click += new System.EventHandler(this.btnGestionUsuarios_Click);
-            // 
-            // btnGestionPerfiles
-            // 
-            this.btnGestionPerfiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnGestionPerfiles.FlatAppearance.BorderSize = 0;
-            this.btnGestionPerfiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGestionPerfiles.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnGestionPerfiles.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGestionPerfiles.Location = new System.Drawing.Point(12, 107);
-            this.btnGestionPerfiles.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.btnGestionPerfiles.Name = "btnGestionPerfiles";
-            this.btnGestionPerfiles.Size = new System.Drawing.Size(130, 46);
-            this.btnGestionPerfiles.TabIndex = 50;
-            this.btnGestionPerfiles.Text = "Gestionar \r\nPerfiles";
-            this.btnGestionPerfiles.UseVisualStyleBackColor = false;
-            this.btnGestionPerfiles.Click += new System.EventHandler(this.btnGestionPerfiles_Click);
-            // 
-            // btnGestionProveedores
-            // 
-            this.btnGestionProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnGestionProveedores.FlatAppearance.BorderSize = 0;
-            this.btnGestionProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGestionProveedores.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnGestionProveedores.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGestionProveedores.Location = new System.Drawing.Point(12, 166);
-            this.btnGestionProveedores.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.btnGestionProveedores.Name = "btnGestionProveedores";
-            this.btnGestionProveedores.Size = new System.Drawing.Size(130, 46);
-            this.btnGestionProveedores.TabIndex = 51;
-            this.btnGestionProveedores.Text = "Gestionar \r\nProveedores";
-            this.btnGestionProveedores.UseVisualStyleBackColor = false;
-            this.btnGestionProveedores.Click += new System.EventHandler(this.btnGestionProveedores_Click);
-            // 
             // Vista_PrincipalUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -137,6 +140,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Vista_PrincipalUsuarios";
             this.Text = "Vista_PrincipalUsuarios";
+            this.Load += new System.EventHandler(this.Vista_PrincipalUsuarios_Load);
             this.panelBotones.ResumeLayout(false);
             this.ResumeLayout(false);
 

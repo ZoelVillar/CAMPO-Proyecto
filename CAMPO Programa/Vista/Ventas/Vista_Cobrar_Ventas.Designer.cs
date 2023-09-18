@@ -52,6 +52,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(157, 28);
             this.label2.TabIndex = 62;
+            this.label2.Tag = "lblTotalapagar";
             this.label2.Text = "Total a pagar:";
             // 
             // lblTotalPagar
@@ -73,6 +74,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(135, 19);
             this.label3.TabIndex = 64;
+            this.label3.Tag = "lblEfectivoRecibido";
             this.label3.Text = "Efectivo recibido";
             this.label3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
@@ -84,6 +86,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 19);
             this.label4.TabIndex = 66;
+            this.label4.Tag = "lblCambio";
             this.label4.Text = "Cambio";
             this.label4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
@@ -109,6 +112,7 @@
             this.btnCobrar.Name = "btnCobrar";
             this.btnCobrar.Size = new System.Drawing.Size(130, 40);
             this.btnCobrar.TabIndex = 68;
+            this.btnCobrar.Tag = "btnCobrarEnEfectivo";
             this.btnCobrar.Text = "Cobrar en efectivo";
             this.btnCobrar.UseVisualStyleBackColor = false;
             this.btnCobrar.Click += new System.EventHandler(this.btnCobrar_Click);
@@ -124,6 +128,7 @@
             this.btnPagarTarjeta.Name = "btnPagarTarjeta";
             this.btnPagarTarjeta.Size = new System.Drawing.Size(130, 40);
             this.btnPagarTarjeta.TabIndex = 69;
+            this.btnPagarTarjeta.Tag = "btnPagarconTarjeta";
             this.btnPagarTarjeta.Text = "Pagar con Tarjeta";
             this.btnPagarTarjeta.UseVisualStyleBackColor = false;
             this.btnPagarTarjeta.Click += new System.EventHandler(this.btnPagarTarjeta_Click);
@@ -139,6 +144,7 @@
             this.btnVolverAtras.Name = "btnVolverAtras";
             this.btnVolverAtras.Size = new System.Drawing.Size(130, 40);
             this.btnVolverAtras.TabIndex = 70;
+            this.btnVolverAtras.Tag = "btnVolverAtras";
             this.btnVolverAtras.Text = "Volver Atras";
             this.btnVolverAtras.UseVisualStyleBackColor = false;
             this.btnVolverAtras.Click += new System.EventHandler(this.btnVolverAtras_Click);
