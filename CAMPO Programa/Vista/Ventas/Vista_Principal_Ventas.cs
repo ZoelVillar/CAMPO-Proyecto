@@ -1,6 +1,9 @@
-﻿using BE.Inventario;
+﻿using BE.Idiomas;
+using BE.Inventario;
 using BE.Venta;
+using Negocio.Idiomas;
 using Negocio.Inventario;
+using Servicios.Idiomas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,11 +13,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Usuarios.Idiomas;
 using Vista.Ventas;
 
 namespace Vista
 {
-    public partial class Vista_Principal_Ventas : Form
+    public partial class Vista_Principal_Ventas : Form, IObserver
     {
         public Vista_Principal_Ventas()
         {
@@ -25,6 +29,7 @@ namespace Vista
 
         private void Vista_Principal_Ventas_Load(object sender, EventArgs e)
         {
+            IdiomasStatic.Observer.AgregarObservador(this);
             Instancia = this;
         }
 
@@ -59,6 +64,12 @@ namespace Vista
         private void btnVerVentas_Click(object sender, EventArgs e)
         {
             AbrirFormulario<Vista_VerVentas>();
+        }
+
+        public void Actualizar()
+        {
+            IdiomasTraduccionServicios idiomasTraduccion = new IdiomasTraduccionServicios();
+            idiomasTraduccion.CambiarIdiomaEnFormulario(this);
         }
     }
 }

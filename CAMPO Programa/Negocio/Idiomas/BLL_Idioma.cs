@@ -49,5 +49,15 @@ namespace Negocio.Idiomas
             return daoIdioma.editarTraduccion(Idioma, etiqueta, texto);
         }
 
+        public bool agregarTag(string tag, string descripcion)
+        {
+            return daoIdioma.agregarTag(tag, descripcion);
+        }
+
+        public bool eliminarTag(string TagID)
+        {
+            return daoIdioma.eliminarTag(TagID);
+        }
+
     }
 }

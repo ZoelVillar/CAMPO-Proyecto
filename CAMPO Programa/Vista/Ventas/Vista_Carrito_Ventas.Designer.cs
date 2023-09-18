@@ -62,6 +62,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(162, 22);
             this.label2.TabIndex = 61;
+            this.label2.Tag = "lblListadeProductos";
             this.label2.Text = "Lista de Productos";
             // 
             // gridCarrito
@@ -132,6 +133,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 22);
             this.label1.TabIndex = 60;
+            this.label1.Tag = "lblCarrito";
             this.label1.Text = "Carrito";
             // 
             // btnAceptarProducto
@@ -145,6 +147,7 @@
             this.btnAceptarProducto.Name = "btnAceptarProducto";
             this.btnAceptarProducto.Size = new System.Drawing.Size(288, 46);
             this.btnAceptarProducto.TabIndex = 66;
+            this.btnAceptarProducto.Tag = "btnAceptar";
             this.btnAceptarProducto.Text = "Aceptar";
             this.btnAceptarProducto.UseVisualStyleBackColor = false;
             this.btnAceptarProducto.Click += new System.EventHandler(this.btnAceptarProducto_Click);
@@ -158,6 +161,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 21);
             this.label3.TabIndex = 62;
+            this.label3.Tag = "lblCantidad";
             this.label3.Text = "Cantidad";
             // 
             // txtProductoBuscar
@@ -183,6 +187,7 @@
             this.btnDatosAd.Name = "btnDatosAd";
             this.btnDatosAd.Size = new System.Drawing.Size(253, 46);
             this.btnDatosAd.TabIndex = 63;
+            this.btnDatosAd.Tag = "btnAgregardatosadicionales";
             this.btnDatosAd.Text = "Agregar datos adicionales";
             this.btnDatosAd.UseVisualStyleBackColor = false;
             this.btnDatosAd.Click += new System.EventHandler(this.btnContinuarVenta_Click);
@@ -198,6 +203,7 @@
             this.btnBorrarCarrito.Name = "btnBorrarCarrito";
             this.btnBorrarCarrito.Size = new System.Drawing.Size(75, 46);
             this.btnBorrarCarrito.TabIndex = 64;
+            this.btnBorrarCarrito.Tag = "btnBorrarCarrito";
             this.btnBorrarCarrito.Text = "Borrar Carrito";
             this.btnBorrarCarrito.UseVisualStyleBackColor = false;
             this.btnBorrarCarrito.Click += new System.EventHandler(this.btnBorrarCarrito_Click);
@@ -217,6 +223,7 @@
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(96, 21);
             this.btnRefresh.TabIndex = 83;
+            this.btnRefresh.Tag = "btnRefresh";
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
             // 
@@ -229,6 +236,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 21);
             this.label4.TabIndex = 84;
+            this.label4.Tag = "lblNombre";
             this.label4.Text = "Nombre";
             // 
             // panel1
@@ -254,6 +262,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 46);
             this.button3.TabIndex = 70;
+            this.button3.Tag = "btnEliminardelCarrito";
             this.button3.Text = "Eliminar del Carrito";
             this.button3.UseVisualStyleBackColor = false;
             // 
@@ -268,6 +277,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 46);
             this.button2.TabIndex = 69;
+            this.button2.Tag = "btnRemoverdelCarrito";
             this.button2.Text = "Remover del Carrito";
             this.button2.UseVisualStyleBackColor = false;
             // 
@@ -282,6 +292,7 @@
             this.btnCobrarVenta.Name = "btnCobrarVenta";
             this.btnCobrarVenta.Size = new System.Drawing.Size(252, 46);
             this.btnCobrarVenta.TabIndex = 86;
+            this.btnCobrarVenta.Tag = "btnCobrarVenta";
             this.btnCobrarVenta.Text = "Cobrar Venta";
             this.btnCobrarVenta.UseVisualStyleBackColor = false;
             this.btnCobrarVenta.Click += new System.EventHandler(this.btnCobrarVenta_Click);

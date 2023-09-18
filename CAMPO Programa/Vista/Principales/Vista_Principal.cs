@@ -35,7 +35,6 @@ namespace Vista
         List<BE_Permiso> listaPermisos;
 
         BLL_Idioma bllIdioma;
-        ObservableIdioma observerIdioma;
         public Vista_Principal()
         {
             InitializeComponent();
@@ -46,12 +45,11 @@ namespace Vista
             listaPermisos = new List<BE_Permiso>();
             bllPerfil = new BLL_Perfil();
             bllPermiso = new BLL_Permiso();
-            observerIdioma = new ObservableIdioma();
 
             bllIdioma = new BLL_Idioma();
             actualizarComboIdiomas();
 
-            observerIdioma.AgregarObservador(this);
+            IdiomasStatic.Observer.AgregarObservador(this);
             cargarPerfiles();
             LoadUserData();
             AttachButtonClickEvent(panelBotones);
@@ -277,7 +275,7 @@ namespace Vista
 
         public void Actualizar()
         {
-            MessageBox.Show($"Traducciones {observerIdioma.obtenerIdiomaActual()}");
+            MessageBox.Show($"Traducciones {IdiomasStatic.Observer.obtenerIdiomaActual()}");
 
             //Recorrer los botones -> recorrer traducciones - relacionar
             var idiomaEncontrado = bllIdioma.retornaIdiomas().Find(x => x.nombre == comboIdiomas.Text);
@@ -300,7 +298,7 @@ namespace Vista
 
         private void comboIdiomas_SelectedValueChanged(object sender, EventArgs e)
         {
-            observerIdioma.cambiarIdioma(comboIdiomas.Text);
+            IdiomasStatic.Observer.cambiarIdioma(comboIdiomas.Text);
         }
     }
 }

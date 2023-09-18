@@ -1,5 +1,6 @@
 ﻿using BE.Idiomas;
 using BE.Inventario;
+using BE.Usuarios;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -65,7 +66,7 @@ namespace AccesosDatos.Idiomas
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "select T.ID as 'TraduccionID', I.ID as 'IdiomaID', I.Nombre, E.ID as 'TagID', E.Tag, T.TextoTraducido from Traduccion T inner join Idioma I ON T.IdiomaID = I.ID inner join Etiqueta E on T.EtiquetaID = E.ID ";
+                        command.CommandText = "select T.ID as 'TraduccionID', I.ID as 'IdiomaID', I.Nombre, E.ID as 'TagID', E.Tag, E.descripcion,T.TextoTraducido from Traduccion T inner join Idioma I ON T.IdiomaID = I.ID inner join Etiqueta E on T.EtiquetaID = E.ID ";
                         command.CommandType = CommandType.Text;
 
                         SqlDataReader reader = command.ExecuteReader();
@@ -79,7 +80,7 @@ namespace AccesosDatos.Idiomas
                                     {
                                         id = Convert.ToInt32(reader["TraduccionID"]),
                                         idIdioma = new BE_Idioma() { id = Convert.ToInt32(reader["IdiomaID"]), nombre = reader["Nombre"].ToString() },
-                                        tagIdioma = new BE_TagIdioma() { id = Convert.ToInt32(reader["TagID"]), tag = reader["Tag"].ToString() },
+                                        tagIdioma = new BE_TagIdioma() { id = Convert.ToInt32(reader["TagID"]), tag = reader["Tag"].ToString(), descripcion = reader["descripcion"].ToString() },
                                         textoTraducido = reader["TextoTraducido"].ToString()
                                     });
                             }
@@ -103,7 +104,7 @@ namespace AccesosDatos.Idiomas
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "select T.ID as 'TraduccionID', I.ID as 'IdiomaID', I.Nombre, E.ID as 'TagID', E.Tag, T.TextoTraducido from Traduccion T inner join Idioma I ON T.IdiomaID = I.ID inner join Etiqueta E on T.EtiquetaID = E.ID  where I.ID = @idioma";
+                        command.CommandText = "select T.ID as 'TraduccionID', I.ID as 'IdiomaID', I.Nombre, E.ID as 'TagID', E.Tag, E.descripcion, T.TextoTraducido from Traduccion T inner join Idioma I ON T.IdiomaID = I.ID inner join Etiqueta E on T.EtiquetaID = E.ID  where I.ID = @idioma";
                         command.Parameters.AddWithValue("@idioma", Idioma.id);
                         command.CommandType = CommandType.Text;
 
@@ -118,7 +119,7 @@ namespace AccesosDatos.Idiomas
                                     {
                                         id = Convert.ToInt32(reader["TraduccionID"]),
                                         idIdioma = new BE_Idioma() { id = Convert.ToInt32(reader["IdiomaID"]), nombre = reader["Nombre"].ToString() },
-                                        tagIdioma = new BE_TagIdioma() { id = Convert.ToInt32(reader["TagID"]), tag = reader["Tag"].ToString() },
+                                        tagIdioma = new BE_TagIdioma() { id = Convert.ToInt32(reader["TagID"]), tag = reader["Tag"].ToString(), descripcion = reader["descripcion"].ToString() },
                                         textoTraducido = reader["TextoTraducido"].ToString()
                                     });
                             }
@@ -215,5 +216,81 @@ namespace AccesosDatos.Idiomas
                 return false;
             }
         }
+
+        public bool agregarTag(string tag, string descripcion)
+        {
+
+            try
+            {
+                using (var connection = dbConnection.GetConnection())
+                {
+                    dbConnection.OpenConnection();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+
+                        command.CommandText = $"select * from Etiqueta where Tag=@tag";
+                        command.Parameters.AddWithValue("@tag", tag);
+                        command.CommandType = CommandType.Text;
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (!reader.HasRows)
+                            {
+                                reader.Close();
+                                command.CommandText = $"SP_AgregarEtiquetaConTraducciones";
+                                command.Parameters.AddWithValue("@descripcion", descripcion);
+                                command.CommandType = CommandType.StoredProcedure;
+                                int rowsAffected = command.ExecuteNonQuery();
+
+                                if (rowsAffected > 0)
+                                {
+                                    return true;
+                                }
+                                else { return false; }
+                            }
+                            else
+                            {
+                                reader.Close();
+                                return false;
+                            }
+                        }
+                    }
+                }
+
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+        }
+
+        public bool eliminarTag(string TagID)
+        {
+            try
+            {
+                using (var connection = dbConnection.GetConnection())
+                {
+                    dbConnection.OpenConnection();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "SP_EliminarEtiquetaYTraducciones";
+                        command.Parameters.AddWithValue("@Tag", TagID);
+
+
+                        command.CommandType = CommandType.StoredProcedure;
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        { return true; }
+                        else { return false; }
+                    }
+                }
+            }
+            catch { return false; }
+
+        }
+
+
     }
 }

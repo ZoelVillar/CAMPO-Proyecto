@@ -41,7 +41,7 @@ namespace Vista.Usuarios.Idiomas
 
             foreach (var traduccion in traducciones)
             {
-                dataGrid.Rows.Add(traduccion.id, traduccion.idIdioma.id, traduccion.idIdioma.nombre, traduccion.tagIdioma.id,traduccion.tagIdioma.tag, traduccion.textoTraducido);
+                dataGrid.Rows.Add(traduccion.id, traduccion.idIdioma.id, traduccion.idIdioma.nombre, traduccion.tagIdioma.id,traduccion.tagIdioma.tag, traduccion.tagIdioma.descripcion, traduccion.textoTraducido);
             }
         }
 
@@ -67,13 +67,12 @@ namespace Vista.Usuarios.Idiomas
             {
                 var idioma = BLLIdioma.retornaIdiomas().Find(x => x.nombre == listaIdiomas.Text);
 
-
                 var traducciones = BLLIdioma.retornaTraduccionesIdioma(new BE_Idioma() { id = idioma.id, nombre = idioma.nombre});
 
                 dataGrid.Rows.Clear();
                 foreach (var traduccion in traducciones) 
                 { 
-                    dataGrid.Rows.Add(traduccion.id, traduccion.idIdioma.id, traduccion.idIdioma.nombre, traduccion.tagIdioma.id, traduccion.tagIdioma.tag, traduccion.textoTraducido);
+                    dataGrid.Rows.Add(traduccion.id, traduccion.idIdioma.id, traduccion.idIdioma.nombre, traduccion.tagIdioma.id, traduccion.tagIdioma.tag, traduccion.tagIdioma.descripcion, traduccion.textoTraducido);
                 }
 
             }
@@ -145,6 +144,37 @@ namespace Vista.Usuarios.Idiomas
                     ActualizarLista();
                 }
                 
+            }
+        }
+
+        private void btnAgregarTag_Click(object sender, EventArgs e)
+        {
+            string Tag = Interaction.InputBox("Ingrese el tag: ");
+            string Descripcion = Interaction.InputBox("Ingrese la descripción: ");
+
+            if(!string.IsNullOrEmpty(Tag) && !string.IsNullOrEmpty(Descripcion))
+            {
+                if(BLLIdioma.agregarTag(Tag, Descripcion))
+                {
+                    ActualizarGrilla();
+                    MessageBox.Show("Tag agregado exitosamente");
+                }
+                else MessageBox.Show("Actualizacion Fallida");
+            }
+        }
+
+        private void btnEliminarTag_Click(object sender, EventArgs e)
+        {
+            string Tag = Interaction.InputBox("Ingrese el tag: ");
+
+            if (!string.IsNullOrEmpty(Tag) )
+            {
+                if (BLLIdioma.eliminarTag(Tag))
+                {
+                    ActualizarGrilla();
+                    MessageBox.Show("Tag agregado exitosamente");
+                }
+                else MessageBox.Show("Actualizacion Fallida");
             }
         }
     }

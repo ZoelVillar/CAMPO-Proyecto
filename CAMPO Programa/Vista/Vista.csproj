@@ -169,6 +169,7 @@
     <Compile Include="Inventario\Vista_InventarioPrincipal.Designer.cs">
       <DependentUpon>Vista_InventarioPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Usuarios\Idiomas\IdiomasTraduccionServicios.cs" />
     <Compile Include="Usuarios\Idiomas\Vista_Idiomas.cs">
       <SubType>Form</SubType>
     </Compile>

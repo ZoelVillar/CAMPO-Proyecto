@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panelBotones = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
             this.btnVerVentas = new System.Windows.Forms.Button();
             this.btnCrearVenta = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
@@ -41,7 +40,6 @@
             // 
             this.panelBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.panelBotones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelBotones.Controls.Add(this.button4);
             this.panelBotones.Controls.Add(this.btnVerVentas);
             this.panelBotones.Controls.Add(this.btnCrearVenta);
             this.panelBotones.Controls.Add(this.btnLogout);
@@ -51,21 +49,6 @@
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Size = new System.Drawing.Size(155, 660);
             this.panelBotones.TabIndex = 44;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
-            this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button4.Location = new System.Drawing.Point(13, 161);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(130, 40);
-            this.button4.TabIndex = 50;
-            this.button4.Text = "Ver Reportes";
-            this.button4.UseVisualStyleBackColor = false;
             // 
             // btnVerVentas
             // 
@@ -79,6 +62,7 @@
             this.btnVerVentas.Name = "btnVerVentas";
             this.btnVerVentas.Size = new System.Drawing.Size(130, 40);
             this.btnVerVentas.TabIndex = 49;
+            this.btnVerVentas.Tag = "btnVerVentas";
             this.btnVerVentas.Text = "Ver Ventas";
             this.btnVerVentas.UseVisualStyleBackColor = false;
             this.btnVerVentas.Click += new System.EventHandler(this.btnVerVentas_Click);
@@ -95,6 +79,7 @@
             this.btnCrearVenta.Name = "btnCrearVenta";
             this.btnCrearVenta.Size = new System.Drawing.Size(130, 40);
             this.btnCrearVenta.TabIndex = 48;
+            this.btnCrearVenta.Tag = "btnCrearVenta";
             this.btnCrearVenta.Text = "Crear Venta ";
             this.btnCrearVenta.UseVisualStyleBackColor = false;
             this.btnCrearVenta.Click += new System.EventHandler(this.btnCrearVenta_Click);
@@ -145,7 +130,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panelBotones;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnVerVentas;
         private System.Windows.Forms.Button btnCrearVenta;
         private System.Windows.Forms.Button btnLogout;

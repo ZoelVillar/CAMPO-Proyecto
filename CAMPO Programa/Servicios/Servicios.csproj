@@ -61,6 +61,7 @@
     <Compile Include="Cache\PerfilesCache.cs" />
     <Compile Include="Cache\UserLoginInfo.cs" />
     <Compile Include="Cache\VentaCache.cs" />
+    <Compile Include="Idiomas\IdiomasStatic.cs" />
     <Compile Include="Idiomas\IObservable.cs" />
     <Compile Include="Idiomas\IObserver.cs" />
     <Compile Include="Idiomas\ObservableIdioma.cs" />

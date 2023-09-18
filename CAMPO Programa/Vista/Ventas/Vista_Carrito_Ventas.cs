@@ -12,11 +12,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
+using Vista.Usuarios.Idiomas;
 
 namespace Vista.Ventas
 {
-    public partial class Vista_Carrito_Ventas : Form
+    public partial class Vista_Carrito_Ventas : Form, IObserver
     {
         public Vista_Carrito_Ventas()
         {
@@ -27,6 +29,7 @@ namespace Vista.Ventas
         Vista_Cobrar_Ventas cobrar;
         private void Vista_Carrito_Ventas_Load(object sender, EventArgs e)
         {
+            IdiomasStatic.Observer.AgregarObservador(this);
             ProductoManager = new BLL_Producto();
             cargarProductos();
 
@@ -174,6 +177,11 @@ namespace Vista.Ventas
 
         }
 
-
+        public void Actualizar()
+        {
+            IdiomasTraduccionServicios idiomasTraduccion = new IdiomasTraduccionServicios();
+            idiomasTraduccion.CambiarIdiomaEnFormulario(this);
+            idiomasTraduccion.TraducirColumnas(gridCarrito);
+        }
     }
 }
