@@ -4,6 +4,7 @@ using BE.Usuarios;
 using ClosedXML.Excel;
 using Negocio.Inventario;
 using Negocio.Usuarios;
+using Servicios.Idiomas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Usuarios.Idiomas;
 
 namespace Vista.Usuarios
 {
-    public partial class Vista_GestionarProveedoes : Form
+    public partial class Vista_GestionarProveedoes : Form, IObserver
     {
         string botonSeleccionado = "btnAgregar";
         private enum modoBoton
@@ -36,6 +38,7 @@ namespace Vista.Usuarios
 
         private void Vista_GestionarProveedoes_Load(object sender, EventArgs e)
         {
+            IdiomasStatic.Observer.AgregarObservador(this);
             bllProveedor = new BLL_Proveedor();
             dataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
@@ -45,6 +48,8 @@ namespace Vista.Usuarios
             cargarComboBusqueda();
             botonesSeleccionados();
             cargarComboEstado();
+
+            Actualizar();
         }
 
         #region actualizaciones
@@ -407,6 +412,13 @@ namespace Vista.Usuarios
                     lblSeleccionadoEspecifico.Text = dataGrid.SelectedRows[0].Cells["id"].Value.ToString() + "- " + dataGrid.SelectedRows[0].Cells["Documento"].Value.ToString();
                 }
             }
+        }
+
+        public void Actualizar()
+        {
+            IdiomasTraduccionServicios idio = new IdiomasTraduccionServicios();
+            idio.CambiarIdiomaEnFormulario(this);
+            idio.TraducirColumnas(dataGrid);
         }
     }
 }

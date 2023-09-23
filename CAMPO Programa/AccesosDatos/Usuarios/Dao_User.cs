@@ -228,7 +228,7 @@ namespace AccesosDatos
                 return null;
             }
         }
-        public bool Login(string key_email)
+        public bool Login(string key_email, string password)
         {
             try
             {
@@ -238,25 +238,16 @@ namespace AccesosDatos
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "SELECT U.key_email, U.user_name, U.user_lastname, U.user_password, U.user_blocked, U.user_attempts, U.id_perfil, P.FK_PermisoPerfil FROM Users U JOIN Perfil P ON U.id_perfil = P.id_perfil WHERE U.key_email = @user";
-                        command.Parameters.AddWithValue("user", key_email);
+                        command.CommandText = "SELECT user_password FROM Users WHERE key_email = @email";
+                        command.Parameters.AddWithValue("@email", key_email);
                         command.CommandType = System.Data.CommandType.Text;
 
                         SqlDataReader reader = command.ExecuteReader();
-                        if (reader.HasRows)
+                        if (reader.Read())
                         {
-                            while (reader.Read())
-                            {
-                                UserLoginInfo.key_email = reader.GetString(0);
-                                UserLoginInfo.user_name = reader.GetString(1);
-                                UserLoginInfo.user_lastname = reader.GetString(2);
-                                UserLoginInfo.user_password = reader.GetString(3);
-                                UserLoginInfo.user_blocked = reader.GetBoolean(4);
-                                UserLoginInfo.user_attempts = reader.GetInt32(5);
-                                UserLoginInfo.id_perfil = reader.GetString(6);
-                                UserLoginInfo.permiso_perfil = new BE_PermisoCompuesto(reader.GetString(7));
-                            }
-                            return true;
+                            string hashedPassword = reader.GetString(0);
+                            Servicios.Validaciones.EncriptarContraseña passwordHasher = new Servicios.Validaciones.EncriptarContraseña();
+                            return passwordHasher.ValidarContraseñaUsuario(password, hashedPassword);
                         }
                         else { return false; }
                     }

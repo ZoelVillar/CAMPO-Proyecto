@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Servicios.Idiomas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,10 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Usuarios.Idiomas;
 
 namespace Vista.Inventario
 {
-    public partial class Vista_InventarioPrincipal : Form
+    public partial class Vista_InventarioPrincipal : Form, IObserver
     {
         public Vista_InventarioPrincipal()
         {
@@ -20,6 +22,8 @@ namespace Vista.Inventario
         private void Vista_InventarioPrincipal_Load(object sender, EventArgs e)
         {
             Instancia = this;
+            IdiomasStatic.Observer.AgregarObservador(this);
+            Actualizar();
         }
 
         public void AbrirFormulario<MiForm>() where MiForm : Form, new()
@@ -53,6 +57,12 @@ namespace Vista.Inventario
         private void btnGestionProductos_Click(object sender, EventArgs e)
         {
             AbrirFormulario<Vista_GestionProductos>();
+        }
+
+        public void Actualizar()
+        {
+            IdiomasTraduccionServicios Idiomas = new IdiomasTraduccionServicios();
+            Idiomas.CambiarIdiomaEnFormulario(this);
         }
     }
 }

@@ -59,7 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cache\PerfilesCache.cs" />
-    <Compile Include="Cache\UserLoginInfo.cs" />
+    <Compile Include="SessionManager.cs" />
     <Compile Include="Cache\VentaCache.cs" />
     <Compile Include="Idiomas\IdiomasStatic.cs" />
     <Compile Include="Idiomas\IObservable.cs" />

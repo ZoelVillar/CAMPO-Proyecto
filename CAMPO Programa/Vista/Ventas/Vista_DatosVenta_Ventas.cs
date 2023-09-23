@@ -36,6 +36,7 @@ namespace Vista.Ventas
             IdiomasStatic.Observer.AgregarObservador(this);
             ctrol_tipoPedido.SelectedIndex = 0;
             previsualizarTicket();
+            Actualizar();
 
         }
         private void btnContinuarVenta_Click(object sender, EventArgs e)
@@ -50,7 +51,7 @@ namespace Vista.Ventas
 
             if (posible)
             {
-                VentaCache.venta.oUsuario = UserLoginInfo.retornarUser();
+                VentaCache.venta.oUsuario = SessionManager.getSession.Usuario;
                 VentaCache.venta.nombreMesero = ctrol_nbreMesero.Text;
                 VentaCache.venta.numMesa = Convert.ToInt32(ctrol_numMesa.Value);
                 VentaCache.venta.comentariosAdicionales = ctrol_Comentarios.Text;

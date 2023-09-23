@@ -3,6 +3,7 @@ using BE.Usuarios;
 using ClosedXML.Excel;
 using Negocio;
 using Negocio.Inventario;
+using Servicios.Idiomas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,11 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Usuarios.Idiomas;
 
 namespace Vista.Inventario
 {
-    public partial class Vista_GestionProductos : Form
+    public partial class Vista_GestionProductos : Form, IObserver
     {
         BLL_Producto bllProducto;
         string botonSeleccionado = "btnAgregar";
@@ -36,6 +38,7 @@ namespace Vista.Inventario
         private void Vista_GestionProductos_Load(object sender, EventArgs e)
         {
             bllProducto = new BLL_Producto();
+            IdiomasStatic.Observer.AgregarObservador(this);
 
             dataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
@@ -46,6 +49,7 @@ namespace Vista.Inventario
             botonesSeleccionados();
             cargarComboEstado();
             cargarComboCategorias();
+            Actualizar();
         }
 
         #region actualizar datos
@@ -436,6 +440,13 @@ namespace Vista.Inventario
             {
                 MessageBox.Show("Hubo un error inesperado");
             }
+        }
+
+        public void Actualizar()
+        {
+            IdiomasTraduccionServicios asd = new IdiomasTraduccionServicios();
+            asd.CambiarIdiomaEnFormulario(this);
+            asd.TraducirColumnas(dataGrid);
         }
     }
 }

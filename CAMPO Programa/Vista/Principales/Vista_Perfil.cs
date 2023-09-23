@@ -12,10 +12,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BE.Usuarios;
 using BE;
+using Servicios.Idiomas;
+using Vista.Usuarios.Idiomas;
 
 namespace Vista
 {
-    public partial class Vista_Perfil : Form
+    public partial class Vista_Perfil : Form, IObserver
     {
         public Vista_Perfil()
         {
@@ -25,8 +27,10 @@ namespace Vista
         EncriptarContraseña encriptacion;
         private void Vista_Perfil_Load(object sender, EventArgs e)
         {
+            IdiomasStatic.Observer.AgregarObservador(this);
             validaciones = new ValidarRegex();
             encriptacion = new EncriptarContraseña();
+            Actualizar();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -39,7 +43,7 @@ namespace Vista
                     BLL_User User = new BLL_User();
                     string contraseñaActual = encriptacion.Encriptar(txtContraActual.Text);
 
-                    var userAux = User.retornaUsuario(UserLoginInfo.key_email);
+                    var userAux = User.retornaUsuario(SessionManager.getSession.Usuario.key_email);
 
                     if(encriptacion.ValidarContraseñaUsuario(txtContraActual.Text.Trim(), userAux.user_password))
                     {
@@ -55,7 +59,7 @@ namespace Vista
                                 txtRepetirContra.Text = "";
 
                                 userAux.user_password = "";
-                                UserLoginInfo.user_password = "";
+                                SessionManager.getSession.Usuario.user_password = "";
 
                             }
                             else { MessageBox.Show("La contraseña es insegura"); }
@@ -67,6 +71,12 @@ namespace Vista
                 else { MessageBox.Show("Complete todos los campos"); }
             }
             else { MessageBox.Show("Ingrese la contraseña Actual");}
+        }
+
+        public void Actualizar()
+        {
+            IdiomasTraduccionServicios asd = new IdiomasTraduccionServicios();
+            asd.CambiarIdiomaEnFormulario(this);
         }
     }
 }

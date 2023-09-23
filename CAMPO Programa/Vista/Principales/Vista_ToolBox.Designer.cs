@@ -104,6 +104,7 @@
             this.Name = "Vista_ToolBox";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vista_ToolBox";
+            this.Load += new System.EventHandler(this.Vista_ToolBox_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

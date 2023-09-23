@@ -23,6 +23,7 @@ namespace Vista.Usuarios
         private void Vista_PrincipalUsuarios_Load(object sender, EventArgs e)
         {
             IdiomasStatic.Observer.AgregarObservador(this);
+            Actualizar();
         }
 
         public void AbrirFormulario<MiForm>() where MiForm : Form, new()

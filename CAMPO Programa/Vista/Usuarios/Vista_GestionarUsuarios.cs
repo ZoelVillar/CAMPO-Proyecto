@@ -13,10 +13,12 @@ using BE.Usuarios;
 using Servicios.Validaciones;
 using Servicios.Cache;
 using ClosedXML.Excel;
+using Servicios.Idiomas;
+using Vista.Usuarios.Idiomas;
 
 namespace Vista
 {
-    public partial class Vista_GestionarUsuarios : Form
+    public partial class Vista_GestionarUsuarios : Form, IObserver
     {
         
         Vista_GestionarPerfil perfilForm = new Vista_GestionarPerfil();
@@ -31,6 +33,7 @@ namespace Vista
 
         private void Vista_GestionarUsuarios_Load(object sender, EventArgs e)
         {
+            IdiomasStatic.Observer.AgregarObservador(this);
             AttachButtonClickEvent(panelBotones);
 
             perfilForm.PerfilAgregado += actualizarCombo;
@@ -45,6 +48,9 @@ namespace Vista
             ActualizarGrilla();
             cargarComboPerfiles();
             cargarComboBusqueda();
+
+            Actualizar();
+
         }
 
         private void cargarComboBusqueda()
@@ -510,6 +516,13 @@ namespace Vista
             {
                 MessageBox.Show("Hubo un error inesperado");
             }
+        }
+
+        public void Actualizar()
+        {
+            IdiomasTraduccionServicios idiomas = new IdiomasTraduccionServicios();
+            idiomas.CambiarIdiomaEnFormulario(this);
+            idiomas.TraducirColumnas(dataGrid);
         }
     }
 }

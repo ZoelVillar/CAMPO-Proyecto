@@ -33,9 +33,9 @@ namespace Negocio
             return DaoUser.EditarRestricciones(usuario);
         }
 
-        public bool LoginUser(string user)
+        public bool LoginUser(string user, string contraseña)
         {
-            return DaoUser.Login(user);
+            return DaoUser.Login(user, contraseña);
         }
 
         public List<BE_User> ObtenerUsuarios()

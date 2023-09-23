@@ -3,6 +3,7 @@ using BE.Usuarios;
 using Microsoft.VisualBasic;
 using Negocio;
 using Negocio.Usuarios;
+using Servicios.Idiomas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,10 +13,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Usuarios.Idiomas;
 
 namespace Vista
 {
-    public partial class Vista_GestionarPerfil : Form
+    public partial class Vista_GestionarPerfil : Form, IObserver
     {
         public Vista_GestionarPerfil()
         {
@@ -28,6 +30,7 @@ namespace Vista
         public event EventHandler PerfilAgregado;
         private void Vista_GestionarPerfil_Load(object sender, EventArgs e)
         {
+            IdiomasStatic.Observer.AgregarObservador(this);
             bllPermiso = new BLL_Permiso();
             bllRelacionPermisos = new BLL_RelacionPermisos();
             bllUser = new BLL_User();
@@ -44,6 +47,7 @@ namespace Vista
             grillaPerfiles.AllowUserToAddRows = false; 
 
             refrescarGrilla();
+            Actualizar();
         }
 
         private void refrescarArbol()
@@ -341,6 +345,15 @@ namespace Vista
                 }
             }
 
+        }
+
+        public void Actualizar()
+        {
+            IdiomasTraduccionServicios idioams = new IdiomasTraduccionServicios();
+            idioams.CambiarIdiomaEnFormulario(this);
+            idioams.TraducirColumnas(grillaPerfiles);
+            idioams.TraducirColumnas(grillaPC);
+            idioams.TraducirColumnas(grillaPS);
         }
     }
 }

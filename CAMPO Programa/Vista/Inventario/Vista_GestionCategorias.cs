@@ -3,6 +3,7 @@ using BE.Usuarios;
 using ClosedXML.Excel;
 using Negocio;
 using Negocio.Inventario;
+using Servicios.Idiomas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,10 +13,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Usuarios.Idiomas;
 
 namespace Vista.Inventario
 {
-    public partial class Vista_GestionCategorias : Form
+    public partial class Vista_GestionCategorias : Form, IObserver
     {
         public Vista_GestionCategorias()
         {
@@ -34,6 +36,7 @@ namespace Vista.Inventario
         private modoBoton modoboton;
         private void Vista_GestionCategorias_Load(object sender, EventArgs e)
         {
+            IdiomasStatic.Observer.AgregarObservador(this);
             bllCategoria = new BLL_Categoria(); 
             dataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
@@ -42,6 +45,7 @@ namespace Vista.Inventario
             cargarComboBusqueda();
             botonesSeleccionados();
             cargarComboEstado();
+            Actualizar();
         }
 
         private void cargarComboEstado()
@@ -360,6 +364,13 @@ namespace Vista.Inventario
             {
                 MessageBox.Show("Hubo un error inesperado");
             }
+        }
+
+        public void Actualizar()
+        {
+            IdiomasTraduccionServicios asd = new IdiomasTraduccionServicios();
+            asd.CambiarIdiomaEnFormulario(this);
+            asd.TraducirColumnas(dataGrid);
         }
     }
 }

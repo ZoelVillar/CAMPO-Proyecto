@@ -31,6 +31,7 @@ namespace Vista
         {
             IdiomasStatic.Observer.AgregarObservador(this);
             Instancia = this;
+            Actualizar();
         }
 
         //abrir form al presionar boton

@@ -54,14 +54,15 @@ namespace Vista
             LoadUserData();
             AttachButtonClickEvent(panelBotones);
             consultarCambiarContraseña();
+            Actualizar();
         }
 
         public void consultarCambiarContraseña()
         {
             BLL_User User = new BLL_User();
-            var primerContraseña = UserLoginInfo.user_name.Trim() + UserLoginInfo.user_lastname.Trim();
+            var primerContraseña = SessionManager.getSession.Usuario.user_name.Trim() + SessionManager.getSession.Usuario.user_lastname.Trim();
 
-            var userAux = User.retornaUsuario(UserLoginInfo.key_email);
+            var userAux = User.retornaUsuario(SessionManager.getSession.Usuario.key_email);
 
             if (encript.ValidarContraseñaUsuario(primerContraseña, userAux.user_password))
             {
@@ -125,8 +126,8 @@ namespace Vista
 
         private void LoadUserData()
         {
-            lblNombre.Text = UserLoginInfo.user_name + " " + UserLoginInfo.user_lastname;
-            lblArea.Text = UserLoginInfo.id_perfil;
+            lblNombre.Text = SessionManager.getSession.Usuario.user_name + " " + SessionManager.getSession.Usuario.user_lastname;
+            lblArea.Text = SessionManager.getSession.Usuario.id_perfil;
         }
 
         private void actualizarComboIdiomas()
@@ -249,11 +250,11 @@ namespace Vista
 
         private void cargarPerfiles()
         {
-            if(UserLoginInfo.id_perfil != "Administrador")
+            if(SessionManager.getSession.Usuario.id_perfil != "Administrador")
             {
                 List <BE_Perfil> perfiles = bllPerfil.retornaPerfiles();
                 List<BE_Permiso> permisos = bllPermiso.ObtenerTodosPermisos();
-                BE_Perfil perfil = perfiles.Find(x => x.id_perfil == UserLoginInfo.id_perfil);
+                BE_Perfil perfil = perfiles.Find(x => x.id_perfil == SessionManager.getSession.Usuario.id_perfil);
 
                 foreach(Control control in this.panelBotones.Controls)
                 {
@@ -275,25 +276,8 @@ namespace Vista
 
         public void Actualizar()
         {
-            MessageBox.Show($"Traducciones {IdiomasStatic.Observer.obtenerIdiomaActual()}");
-
-            //Recorrer los botones -> recorrer traducciones - relacionar
-            var idiomaEncontrado = bllIdioma.retornaIdiomas().Find(x => x.nombre == comboIdiomas.Text);
-            var traducciones = bllIdioma.retornaTraduccionesIdioma(new BE_Idioma() { id = idiomaEncontrado.id, nombre = idiomaEncontrado.nombre});
-
-            foreach (BE_Traduccion traduccion in traducciones) 
-            { 
-                foreach(Control control in this.panelBotones.Controls) 
-                {
-                    if(control.Tag.ToString() == traduccion.tagIdioma.tag) 
-                    {
-                        if (traduccion.textoTraducido != "-----") 
-                        { 
-                            control.Text = traduccion.textoTraducido;
-                        }
-                    }
-                }
-            }
+            IdiomasTraduccionServicios asd = new IdiomasTraduccionServicios();
+            asd.CambiarIdiomaEnFormulario(this);
         }
 
         private void comboIdiomas_SelectedValueChanged(object sender, EventArgs e)

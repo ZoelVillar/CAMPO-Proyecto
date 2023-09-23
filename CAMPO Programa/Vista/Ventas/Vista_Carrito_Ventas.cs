@@ -33,6 +33,8 @@ namespace Vista.Ventas
             ProductoManager = new BLL_Producto();
             cargarProductos();
 
+            Actualizar();
+
         }
 
         private void cargarProductos()

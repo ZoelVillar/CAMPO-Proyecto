@@ -1,6 +1,7 @@
 ﻿using BE.Usuarios;
 using ClosedXML.Excel;
 using Negocio;
+using Servicios.Idiomas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,10 +11,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Usuarios.Idiomas;
 
 namespace Vista.Ventas
 {
-    public partial class Vista_VerVentas : Form
+    public partial class Vista_VerVentas : Form, IObserver
     {
         public Vista_VerVentas()
         {
@@ -23,6 +25,7 @@ namespace Vista.Ventas
 
         private void Vista_VerVentas_Load(object sender, EventArgs e)
         {
+            IdiomasStatic.Observer.AgregarObservador(this);
             bllVentas = new BLL_Venta();
 
             dataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -31,6 +34,7 @@ namespace Vista.Ventas
 
             actualizarGrilla();
             cargarComboBusqueda();
+
         }
 
         private void actualizarGrilla()
@@ -184,6 +188,13 @@ namespace Vista.Ventas
             }
             actualizarGrilla();
             cargarComboBusqueda();
+        }
+
+        public void Actualizar()
+        {
+            IdiomasTraduccionServicios idiomas = new IdiomasTraduccionServicios();
+            idiomas.CambiarIdiomaEnFormulario(this);
+            idiomas.TraducirColumnas(dataGrid);
         }
     }
 }
