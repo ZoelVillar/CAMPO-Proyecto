@@ -8,15 +8,13 @@ namespace BE.Biatcora
 {
     public class BE_BitacoraEventos
     {
-        public BE_BitacoraEventos(string user, DateTime fecha, string accion)
+        public BE_BitacoraEventos()
         {
-            User = user;
-            Fecha = fecha;
-            Accion = accion;
         }
 
+        public int idBitacora { get; set; }
         public string User { get; set; }
-        public DateTime Fecha { get; set; }
+        public string Fecha { get; set; }
         public string Accion { get; set; }
     }
 }

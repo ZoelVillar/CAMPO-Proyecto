@@ -269,7 +269,6 @@ D:\Escritorio\ENTREGA FINAL\CAMPO Programa\Vista\obj\Debug\Vista.csproj.CopyComp
 D:\Escritorio\ENTREGA FINAL\CAMPO Programa\Vista\obj\Debug\Vista.exe
 D:\Escritorio\ENTREGA FINAL\CAMPO Programa\Vista\obj\Debug\Vista.pdb
 C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.csproj.AssemblyReference.cache
-C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.csproj.SuggestedBindingRedirects.cache
 C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Vista_GestionarPerfil.resources
 C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Vista_GestionarUsuarios.resources
 C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Vista_Perfil.resources
