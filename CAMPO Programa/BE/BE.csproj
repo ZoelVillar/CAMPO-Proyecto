@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Biatcora\BE_BitacoraEventos.cs" />
+    <Compile Include="Biatcora\BE_BitacoraCambios.cs" />
     <Compile Include="Compra\BE_Compra.cs" />
     <Compile Include="Compra\BE_DetalleCompra.cs" />
     <Compile Include="Compra\BE_Proveedor.cs" />

@@ -57,9 +57,9 @@ namespace Vista
                             user_blocked = false,
                             user_attempts = 0
                         };
-                        User.EditarRestricciones(userAux);
-
                         SessionManager.Login(Usuario);
+
+                        User.EditarRestricciones(userAux);
 
                         Vista_Principal mainMenu = new Vista_Principal();
                         mainMenu.Show();

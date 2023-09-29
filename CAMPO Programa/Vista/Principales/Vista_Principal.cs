@@ -18,6 +18,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Bitacora;
 using Vista.Inventario;
 using Vista.Usuarios;
 using Vista.Usuarios.Idiomas;
@@ -274,6 +275,11 @@ namespace Vista
             AbrirFormulario<Vista_Idiomas>();
         }
 
+        private void btnAdministrar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Vista_BitacoraCambios>();
+        }
+
         public void Actualizar()
         {
             IdiomasTraduccionServicios asd = new IdiomasTraduccionServicios();
@@ -284,5 +290,7 @@ namespace Vista
         {
             IdiomasStatic.Observer.cambiarIdioma(comboIdiomas.Text);
         }
+
+        
     }
 }

@@ -58,7 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bitacora\BLL_BitacoraEventos.cs" />
+    <Compile Include="Bitacora\BLL_Bitacora.cs" />
     <Compile Include="BLL_Venta.cs" />
     <Compile Include="Idiomas\BLL_Idioma.cs" />
     <Compile Include="Inventario\BLL_Categoria.cs" />

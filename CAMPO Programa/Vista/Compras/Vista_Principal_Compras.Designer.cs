@@ -47,7 +47,7 @@
             this.ClientSize = new System.Drawing.Size(1050, 483);
             this.Controls.Add(this.label1);
             this.Name = "Vista_Principal_Compras";
-            this.Text = "Form1";
+            this.Text = " ";
             this.ResumeLayout(false);
             this.PerformLayout();
 

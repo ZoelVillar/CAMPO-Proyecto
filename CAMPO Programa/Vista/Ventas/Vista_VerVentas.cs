@@ -34,7 +34,6 @@ namespace Vista.Ventas
 
             actualizarGrilla();
             cargarComboBusqueda();
-
         }
 
         private void actualizarGrilla()

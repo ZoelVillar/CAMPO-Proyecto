@@ -52,6 +52,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.comboIdiomas = new System.Windows.Forms.ComboBox();
+            this.btnAdministrar = new System.Windows.Forms.Button();
             this.panelContenedor.SuspendLayout();
             this.panelDerecho.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -157,6 +158,7 @@
             // 
             this.panelBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(42)))));
             this.panelBotones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBotones.Controls.Add(this.btnAdministrar);
             this.panelBotones.Controls.Add(this.btnLogout);
             this.panelBotones.Controls.Add(this.btnInventario);
             this.panelBotones.Controls.Add(this.btnGestionIdiomas);
@@ -404,6 +406,25 @@
             this.comboIdiomas.TabIndex = 40;
             this.comboIdiomas.SelectedValueChanged += new System.EventHandler(this.comboIdiomas_SelectedValueChanged);
             // 
+            // btnAdministrar
+            // 
+            this.btnAdministrar.AutoEllipsis = true;
+            this.btnAdministrar.BackColor = System.Drawing.Color.White;
+            this.btnAdministrar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAdministrar.FlatAppearance.BorderSize = 0;
+            this.btnAdministrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdministrar.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdministrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAdministrar.Location = new System.Drawing.Point(21, 344);
+            this.btnAdministrar.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
+            this.btnAdministrar.Name = "btnAdministrar";
+            this.btnAdministrar.Size = new System.Drawing.Size(177, 35);
+            this.btnAdministrar.TabIndex = 51;
+            this.btnAdministrar.Tag = "btnAdministrar";
+            this.btnAdministrar.Text = "Administrar";
+            this.btnAdministrar.UseVisualStyleBackColor = false;
+            this.btnAdministrar.Click += new System.EventHandler(this.btnAdministrar_Click);
+            // 
             // Vista_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -452,6 +473,7 @@
         private System.Windows.Forms.Button btnInventario;
         private System.Windows.Forms.ComboBox comboIdiomas;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnAdministrar;
     }
 }
 

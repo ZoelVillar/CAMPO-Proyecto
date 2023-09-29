@@ -200,7 +200,13 @@ namespace Vista
 
                         if (!String.IsNullOrEmpty(txtNuevoNombre.Text) || !String.IsNullOrEmpty(txtNuevoApellido.Text))
                         {
-                                BE_User usuarioAux = new BE_User(email, txtNuevoNombre.Text.Trim(), txtNuevoApellido.Text.Trim(), comboPerfiles.SelectedItem.ToString());
+                                BE_User usuarioAux = new BE_User()
+                                {
+                                    key_email = email,
+                                    user_name = txtNuevoNombre.Text,
+                                    user_lastname = txtNuevoApellido.Text,
+                                    id_perfil = comboPerfiles.SelectedValue.ToString()
+                                };
 
                                 string mensaje = $"Seguro que quieres modificar a {usuarioAux.key_email}, con el nombre: {usuarioAux.user_name}, el apellido: {usuarioAux.user_lastname} y el rol de: {comboPerfiles.Text}?";
 

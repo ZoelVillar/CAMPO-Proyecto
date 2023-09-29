@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace AccesosDatos
 {
-    public class Dao_User
+   public class Dao_User
     {
         private AccesoSQL dbConnection;
 
@@ -28,6 +28,15 @@ namespace AccesosDatos
                 using (var connection = dbConnection.GetConnection())
                 {
                     dbConnection.OpenConnection();
+
+
+                    byte[] userEmail = Encoding.UTF8.GetBytes(SessionManager.getSession.Usuario.key_email); // Obtiene el correo del usuario
+                    using (var sessionCommand = new SqlCommand("SET CONTEXT_INFO @UserEmail", connection))
+                    {
+                        sessionCommand.Parameters.AddWithValue("@UserEmail", userEmail);
+                        sessionCommand.ExecuteNonQuery();
+                    }
+
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
@@ -63,6 +72,14 @@ namespace AccesosDatos
                 using (var connection = dbConnection.GetConnection())
                 {
                     dbConnection.OpenConnection();
+
+                    byte[] userEmail = Encoding.UTF8.GetBytes(SessionManager.getSession.Usuario.key_email); // Obtiene el correo del usuario
+                    using (var sessionCommand = new SqlCommand("SET CONTEXT_INFO @UserEmail", connection))
+                    {
+                        sessionCommand.Parameters.AddWithValue("@UserEmail", userEmail);
+                        sessionCommand.ExecuteNonQuery();
+                    }
+
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
@@ -96,6 +113,14 @@ namespace AccesosDatos
                 using (var connection = dbConnection.GetConnection())
                 {
                     dbConnection.OpenConnection();
+
+                    byte[] userEmail = Encoding.UTF8.GetBytes(SessionManager.getSession.Usuario.key_email); // Obtiene el correo del usuario
+                    using (var sessionCommand = new SqlCommand("SET CONTEXT_INFO @UserEmail", connection))
+                    {
+                        sessionCommand.Parameters.AddWithValue("@UserEmail", userEmail);
+                        sessionCommand.ExecuteNonQuery();
+                    }
+
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
@@ -126,6 +151,14 @@ namespace AccesosDatos
                 using (var connection = dbConnection.GetConnection())
                 {
                     dbConnection.OpenConnection();
+
+                    byte[] userEmail = Encoding.UTF8.GetBytes(SessionManager.getSession.Usuario.key_email); // Obtiene el correo del usuario
+                    using (var sessionCommand = new SqlCommand("SET CONTEXT_INFO @UserEmail", connection))
+                    {
+                        sessionCommand.Parameters.AddWithValue("@UserEmail", userEmail);
+                        sessionCommand.ExecuteNonQuery();
+                    }
+
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
