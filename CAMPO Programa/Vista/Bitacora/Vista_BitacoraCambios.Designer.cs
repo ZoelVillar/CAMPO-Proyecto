@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGrid = new System.Windows.Forms.DataGridView();
-            this.grillaBitacoraCambios = new System.Windows.Forms.Label();
             this.idBitacora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Accion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,6 +38,7 @@
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.executedSQL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reverseSQL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grillaBitacoraCambios = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnBorrarBusqueda = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -48,6 +49,7 @@
             this.btnExportar = new FontAwesome.Sharp.IconButton();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnRestaurarCambio = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -68,16 +70,6 @@
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.Size = new System.Drawing.Size(884, 329);
             this.dataGrid.TabIndex = 1;
-            // 
-            // grillaBitacoraCambios
-            // 
-            this.grillaBitacoraCambios.AutoSize = true;
-            this.grillaBitacoraCambios.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grillaBitacoraCambios.Location = new System.Drawing.Point(22, 33);
-            this.grillaBitacoraCambios.Name = "grillaBitacoraCambios";
-            this.grillaBitacoraCambios.Size = new System.Drawing.Size(210, 26);
-            this.grillaBitacoraCambios.TabIndex = 2;
-            this.grillaBitacoraCambios.Text = "Bitácora de Cambios";
             // 
             // idBitacora
             // 
@@ -121,6 +113,16 @@
             this.reverseSQL.HeaderText = "reverseSQL";
             this.reverseSQL.Name = "reverseSQL";
             this.reverseSQL.Visible = false;
+            // 
+            // grillaBitacoraCambios
+            // 
+            this.grillaBitacoraCambios.AutoSize = true;
+            this.grillaBitacoraCambios.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grillaBitacoraCambios.Location = new System.Drawing.Point(22, 33);
+            this.grillaBitacoraCambios.Name = "grillaBitacoraCambios";
+            this.grillaBitacoraCambios.Size = new System.Drawing.Size(210, 26);
+            this.grillaBitacoraCambios.TabIndex = 2;
+            this.grillaBitacoraCambios.Text = "Bitácora de Cambios";
             // 
             // panel1
             // 
@@ -271,6 +273,11 @@
             this.btnRestaurarCambio.UseVisualStyleBackColor = false;
             this.btnRestaurarCambio.Click += new System.EventHandler(this.btnRestaurarCambio_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // Vista_BitacoraCambios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,5 +324,6 @@
         private FontAwesome.Sharp.IconButton btnExportar;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnRestaurarCambio;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

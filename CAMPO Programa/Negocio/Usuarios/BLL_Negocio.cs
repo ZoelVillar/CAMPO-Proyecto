@@ -16,5 +16,20 @@ namespace Negocio.Usuarios
         {
             return daoNegocio.retornarNegocio();
         }
+
+        public bool guardarDatos(BE_Negocio negocio, out string mensaje)
+        {
+            return daoNegocio.guardarDatos(negocio, out mensaje);
+        }
+
+        public byte[] obtenerLogo(out bool obtenido)
+        { 
+            return daoNegocio.obtenerLogo(out obtenido);
+        }
+
+        public bool actualizarLogo(byte[] image, out string mensaje)
+        { 
+            return daoNegocio.actualizarLogo(image, out mensaje);
+        }
     }
 }

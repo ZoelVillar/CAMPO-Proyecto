@@ -169,6 +169,12 @@
     <Compile Include="Inventario\Vista_InventarioPrincipal.Designer.cs">
       <DependentUpon>Vista_InventarioPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Principales\Vista_Negocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principales\Vista_Negocio.Designer.cs">
+      <DependentUpon>Vista_Negocio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios\Idiomas\IdiomasTraduccionServicios.cs" />
     <Compile Include="Usuarios\Idiomas\Vista_Idiomas.cs">
       <SubType>Form</SubType>
@@ -279,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario\Vista_InventarioPrincipal.resx">
       <DependentUpon>Vista_InventarioPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principales\Vista_Negocio.resx">
+      <DependentUpon>Vista_Negocio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Idiomas\Vista_Idiomas.resx">
       <DependentUpon>Vista_Idiomas.cs</DependentUpon>
