@@ -59,7 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoSQL.cs" />
-    <Compile Include="Bitacora\DAO_BitaciraEventos.cs" />
+    <Compile Include="Bitacora\DAO_Bitacora.cs" />
     <Compile Include="DAO_Venta.cs" />
     <Compile Include="Idiomas\DAO_Idioma.cs" />
     <Compile Include="Inventario\DAO_Categoria.cs" />

@@ -14,6 +14,7 @@ using BE.Usuarios;
 using BE;
 using Servicios.Idiomas;
 using Vista.Usuarios.Idiomas;
+using Negocio.Bitacora;
 
 namespace Vista
 {
@@ -60,6 +61,9 @@ namespace Vista
 
                                 userAux.user_password = "";
                                 SessionManager.getSession.Usuario.user_password = "";
+
+                                BLL_Bitacora bitacora = new BLL_Bitacora();
+                                bitacora.registrarBitacoraEvento("Cambio de Password", this.GetType().Name, 3);
 
                             }
                             else { MessageBox.Show("La contraseña es insegura"); }

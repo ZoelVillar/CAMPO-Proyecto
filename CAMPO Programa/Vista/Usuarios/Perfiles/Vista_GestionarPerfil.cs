@@ -2,6 +2,7 @@
 using BE.Usuarios;
 using Microsoft.VisualBasic;
 using Negocio;
+using Negocio.Bitacora;
 using Negocio.Usuarios;
 using Servicios.Idiomas;
 using System;
@@ -122,11 +123,16 @@ namespace Vista
         }
         private void btnAgregarPC_Click(object sender, EventArgs e)
         {
+            BLL_Bitacora bitacora = new BLL_Bitacora();
+            bitacora.registrarBitacoraEvento($"Permiso Agregado", this.GetType().Name, 2);
             agregarPermiso("C");
         }
 
         private void btnAgregarPS_Click(object sender, EventArgs e)
         {
+
+            BLL_Bitacora bitacora = new BLL_Bitacora();
+            bitacora.registrarBitacoraEvento($"Permiso Agregado", this.GetType().Name, 2);
             agregarPermiso("S");
         }
 
@@ -284,9 +290,17 @@ namespace Vista
             if (string.IsNullOrEmpty(idPerfil)) { return; }
             string permisoPerfil = grillaPC.CurrentRow.Cells[0].Value.ToString();
 
-            bllPerfil.agregarPerfil(idPerfil, permisoPerfil);
-            refrescarGrilla();
-            refrescarArbol();
+            if (bllPerfil.agregarPerfil(idPerfil, permisoPerfil)) 
+            {
+                BLL_Bitacora bitacora = new BLL_Bitacora();
+                bitacora.registrarBitacoraEvento($"Perfil Agregado", this.GetType().Name, 1);
+                refrescarGrilla();
+                refrescarArbol();
+            }
+            else
+            {
+                MessageBox.Show("Error agregando el perfil");
+            }
 
             EventHandler handler = PerfilAgregado;
             if(handler != null)
@@ -304,6 +318,11 @@ namespace Vista
             if (result == DialogResult.Yes)
             {
                 if (bllPerfil.eliminarPerfil(id_perfilBorrar)) {
+
+
+                    BLL_Bitacora bitacora = new BLL_Bitacora();
+                    bitacora.registrarBitacoraEvento($"Perfil Eliminado", this.GetType().Name, 1);
+
                     refrescarGrilla();
                     refrescarArbol();
 

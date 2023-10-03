@@ -21,6 +21,7 @@ using System.Windows.Forms;
 using Vista.Bitacora;
 using Vista.Inventario;
 using Vista.Principales;
+using Vista.Principales.Administracion;
 using Vista.Usuarios;
 using Vista.Usuarios.Idiomas;
 
@@ -278,7 +279,7 @@ namespace Vista
 
         private void btnAdministrar_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Vista_Negocio>();
+            AbrirFormulario<Vista_Administracion>();
         }
 
         public void Actualizar()

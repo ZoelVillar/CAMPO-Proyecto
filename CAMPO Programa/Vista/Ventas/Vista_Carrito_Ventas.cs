@@ -1,6 +1,7 @@
 ﻿using BE.Inventario;
 using BE.Venta;
 using DocumentFormat.OpenXml.Vml.Spreadsheet;
+using Negocio.Bitacora;
 using Negocio.Inventario;
 using Servicios.Cache;
 using Servicios.Idiomas;
@@ -140,6 +141,8 @@ namespace Vista.Ventas
             if (Vista_Principal_Ventas.Instancia != null && posible)
             {
 
+                BLL_Bitacora bitacora = new BLL_Bitacora();
+                bitacora.registrarBitacoraEvento("Completando datos de venta", this.GetType().Name, 2);
                 Vista_Principal_Ventas.Instancia.AbrirFormulario<Vista_DatosVenta_Ventas>();
             }
         }
@@ -155,6 +158,7 @@ namespace Vista.Ventas
         {
             if (Vista_Principal_Ventas.Instancia != null && VentaCache.venta.numMesa != 0 && VentaCache.venta.oDetalleVenta.Count > 0)
             {
+
                 Vista_Principal_Ventas.Instancia.AbrirFormulario<Vista_Cobrar_Ventas>();
             }
             else

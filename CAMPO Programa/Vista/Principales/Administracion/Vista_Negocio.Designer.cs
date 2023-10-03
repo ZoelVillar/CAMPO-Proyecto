@@ -48,18 +48,20 @@
             // 
             this.grillaBitacoraCambios.AutoSize = true;
             this.grillaBitacoraCambios.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grillaBitacoraCambios.Location = new System.Drawing.Point(148, 37);
+            this.grillaBitacoraCambios.Location = new System.Drawing.Point(197, 46);
+            this.grillaBitacoraCambios.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.grillaBitacoraCambios.Name = "grillaBitacoraCambios";
-            this.grillaBitacoraCambios.Size = new System.Drawing.Size(189, 26);
+            this.grillaBitacoraCambios.Size = new System.Drawing.Size(237, 31);
             this.grillaBitacoraCambios.TabIndex = 3;
             this.grillaBitacoraCambios.Text = "Datos del Negocio";
             // 
             // pictureLogo
             // 
             this.pictureLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureLogo.Location = new System.Drawing.Point(16, 31);
+            this.pictureLogo.Location = new System.Drawing.Point(21, 38);
+            this.pictureLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureLogo.Name = "pictureLogo";
-            this.pictureLogo.Size = new System.Drawing.Size(205, 177);
+            this.pictureLogo.Size = new System.Drawing.Size(273, 217);
             this.pictureLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureLogo.TabIndex = 4;
             this.pictureLogo.TabStop = false;
@@ -67,9 +69,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 15);
+            this.label2.Location = new System.Drawing.Point(17, 18);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 13);
+            this.label2.Size = new System.Drawing.Size(41, 16);
             this.label2.TabIndex = 60;
             this.label2.Text = "Logo:";
             // 
@@ -85,9 +88,10 @@
             this.btnCargarLogo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCargarLogo.IconSize = 18;
             this.btnCargarLogo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCargarLogo.Location = new System.Drawing.Point(16, 226);
+            this.btnCargarLogo.Location = new System.Drawing.Point(21, 278);
+            this.btnCargarLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCargarLogo.Name = "btnCargarLogo";
-            this.btnCargarLogo.Size = new System.Drawing.Size(205, 32);
+            this.btnCargarLogo.Size = new System.Drawing.Size(273, 39);
             this.btnCargarLogo.TabIndex = 61;
             this.btnCargarLogo.Text = "Cargar Logo";
             this.btnCargarLogo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -96,49 +100,55 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(265, 47);
+            this.txtNombre.Location = new System.Drawing.Point(353, 58);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(205, 20);
+            this.txtNombre.Size = new System.Drawing.Size(272, 22);
             this.txtNombre.TabIndex = 63;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(262, 31);
+            this.label1.Location = new System.Drawing.Point(349, 38);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 13);
+            this.label1.Size = new System.Drawing.Size(136, 16);
             this.label1.TabIndex = 62;
             this.label1.Text = "Nombre del Negocio:";
             // 
             // txtCUIT
             // 
-            this.txtCUIT.Location = new System.Drawing.Point(265, 101);
+            this.txtCUIT.Location = new System.Drawing.Point(353, 124);
+            this.txtCUIT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCUIT.Name = "txtCUIT";
-            this.txtCUIT.Size = new System.Drawing.Size(205, 20);
+            this.txtCUIT.Size = new System.Drawing.Size(272, 22);
             this.txtCUIT.TabIndex = 65;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(262, 85);
+            this.label3.Location = new System.Drawing.Point(349, 105);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(41, 16);
             this.label3.TabIndex = 64;
             this.label3.Text = "CUIT:";
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(265, 158);
+            this.txtDireccion.Location = new System.Drawing.Point(353, 194);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(205, 20);
+            this.txtDireccion.Size = new System.Drawing.Size(272, 22);
             this.txtDireccion.TabIndex = 69;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(262, 142);
+            this.label4.Location = new System.Drawing.Point(349, 175);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.Size = new System.Drawing.Size(64, 16);
             this.label4.TabIndex = 68;
             this.label4.Text = "Direccion";
             // 
@@ -154,13 +164,15 @@
             this.btnGuardarCambios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardarCambios.IconSize = 18;
             this.btnGuardarCambios.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGuardarCambios.Location = new System.Drawing.Point(265, 226);
+            this.btnGuardarCambios.Location = new System.Drawing.Point(353, 278);
+            this.btnGuardarCambios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
-            this.btnGuardarCambios.Size = new System.Drawing.Size(205, 32);
+            this.btnGuardarCambios.Size = new System.Drawing.Size(273, 39);
             this.btnGuardarCambios.TabIndex = 70;
             this.btnGuardarCambios.Text = "Guardar  Cambios";
             this.btnGuardarCambios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardarCambios.UseVisualStyleBackColor = false;
+            this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
             // 
             // panel1
             // 
@@ -175,19 +187,21 @@
             this.panel1.Controls.Add(this.txtCUIT);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(153, 81);
+            this.panel1.Location = new System.Drawing.Point(204, 100);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(485, 283);
+            this.panel1.Size = new System.Drawing.Size(647, 348);
             this.panel1.TabIndex = 71;
             // 
             // Vista_Negocio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.grillaBitacoraCambios);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Vista_Negocio";
             this.Text = "Vista_Negocio";
             this.Load += new System.EventHandler(this.Vista_Negocio_Load);

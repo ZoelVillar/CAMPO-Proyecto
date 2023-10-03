@@ -11,10 +11,10 @@ using Servicios.Cache;
 
 namespace AccesosDatos.Bitacora
 {
-    public class DAO_BitaciraEventos
+    public class DAO_Bitacora
     {
         private AccesoSQL dbConnection;
-        public DAO_BitaciraEventos()
+        public DAO_Bitacora()
         {
             dbConnection = AccesoSQL.getInstance();
         }
@@ -43,8 +43,10 @@ namespace AccesosDatos.Bitacora
                                     {
                                         idBitacora = reader.GetInt32(0),
                                         User = reader.GetString(1),
-                                        Fecha = reader.GetString(2),
-                                        Accion = reader.GetString(3)
+                                        Fecha = reader.GetDateTime(2),
+                                        Accion = reader.GetString(3),
+                                        Modulo = reader.GetString(4),
+                                        Criticidad = reader.GetInt32(5)
                                     });
                             }
                             return listaBitacora;
@@ -55,6 +57,39 @@ namespace AccesosDatos.Bitacora
             }
             catch { return listaBitacora; }
         }
+
+        public bool registrarBitacoraEvento(string accion, string Modulo, int Criticidad)
+        {
+            try
+            {
+                using (var connection = dbConnection.GetConnection())
+                {
+                    dbConnection.OpenConnection();
+
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = $"INSERT INTO BitacoraEventos (userEmail, accion, Modulo, Criticidad) VALUES (@useremail, @accion, @Modulo, @Criticidad)"; ;
+                        // Parámetros para los valores a insertar
+                        command.Parameters.AddWithValue("@useremail", SessionManager.getSession.Usuario.key_email);
+                        command.Parameters.AddWithValue("@accion", accion);
+                        command.Parameters.AddWithValue("@Modulo", Modulo);
+                        command.Parameters.AddWithValue("@Criticidad", Criticidad);
+
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        { return true; }
+                        else { return false; }
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+        }
+
 
         public bool restaurarCambio(string reverseSQL)
         {

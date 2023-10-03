@@ -1,4 +1,5 @@
 ﻿using BE.Usuarios;
+using Negocio.Bitacora;
 using Negocio.Usuarios;
 using System;
 using System.Collections.Generic;
@@ -69,6 +70,14 @@ namespace Vista.Principales
                 if (respuesta) { pictureLogo.Image = ByteToImage(image); } else { MessageBox.Show(mensaje, "Mensaje", MessageBoxButton.OK);  }
                 
             }
+        }
+
+        private void btnGuardarCambios_Click(object sender, EventArgs e)
+        {
+
+
+            BLL_Bitacora bitacora = new BLL_Bitacora();
+            bitacora.registrarBitacoraEvento($"Cambios del negocio", this.GetType().Name, 2);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using BE.Idiomas;
 using Microsoft.VisualBasic;
+using Negocio.Bitacora;
 using Negocio.Idiomas;
 using Servicios.Idiomas;
 using System;
@@ -90,6 +91,9 @@ namespace Vista.Usuarios.Idiomas
 
                 if (BLLIdioma.agregarIdioma(idioma))
                 {
+                    BLL_Bitacora bitacora = new BLL_Bitacora();
+                    bitacora.registrarBitacoraEvento($"Idioma Agregado", this.GetType().Name, 2);
+
                     ActualizarGrilla();
                     ActualizarLista();
                     MessageBox.Show("Exito");
@@ -112,6 +116,11 @@ namespace Vista.Usuarios.Idiomas
                     {
                         if (BLLIdioma.eliminarIdioma(idioma.id))
                         {
+
+
+                            BLL_Bitacora bitacora = new BLL_Bitacora();
+                            bitacora.registrarBitacoraEvento($"Idioma Eliminado", this.GetType().Name, 2);
+
                             MessageBox.Show("Idioma eliminado con éxito");
                             ActualizarGrilla();
                             ActualizarLista();
@@ -139,6 +148,11 @@ namespace Vista.Usuarios.Idiomas
                     string texto = Interaction.InputBox($"Ingrese el texto para el idioma {idioma.nombre} y el tag {tag.tag}: ");
                     if(BLLIdioma.editarTraduccion(idioma, tag, texto))
                     {
+
+
+                        BLL_Bitacora bitacora = new BLL_Bitacora();
+                        bitacora.registrarBitacoraEvento($"Traduccion Editada", this.GetType().Name, 3);
+
                         MessageBox.Show("Actualizacion Exitosa");
                     }
                     else MessageBox.Show("Actualizacion Fallida");

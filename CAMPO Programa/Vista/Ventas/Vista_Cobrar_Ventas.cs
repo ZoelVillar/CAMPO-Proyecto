@@ -1,4 +1,5 @@
 ﻿using Negocio;
+using Negocio.Bitacora;
 using Servicios.Cache;
 using Servicios.Idiomas;
 using System;
@@ -50,16 +51,22 @@ namespace Vista.Ventas
                 VentaCache.venta.montoPago = numericUpDown1.Value;
                 VentaCache.venta.FormaPago = "Efectivo";
 
-            if (BLLVenta.CrearVenta(VentaCache.venta))
-            {
-                MessageBox.Show("Venta Creada");
-                VentaCache.borrarCacheVenta();
+                if (BLLVenta.CrearVenta(VentaCache.venta))
+                {
+
+                    BLL_Bitacora bitacora = new BLL_Bitacora();
+                    bitacora.registrarBitacoraEvento("Nueva Venta", this.GetType().Name, 1);
+                    MessageBox.Show("Venta Creada");
+                    VentaCache.borrarCacheVenta();
+                }
+                else
+                {
+
+                    BLL_Bitacora bitacora = new BLL_Bitacora();
+                    bitacora.registrarBitacoraEvento("Pago Rechazado", this.GetType().Name, 1);
+                    MessageBox.Show("Error al crear la venta");
+                }
             }
-            else
-            {
-                MessageBox.Show("Error al crear la venta");
-            }
-             }
             else
             {
                 MessageBox.Show("Error");
@@ -75,11 +82,17 @@ namespace Vista.Ventas
 
             if (BLLVenta.CrearVenta(VentaCache.venta))
             {
+
+                BLL_Bitacora bitacora = new BLL_Bitacora();
+                bitacora.registrarBitacoraEvento("Nueva Venta", this.GetType().Name, 1);
                 MessageBox.Show("Pago con tarjeta realizado");
                 VentaCache.borrarCacheVenta();
             }
             else
             {
+
+                BLL_Bitacora bitacora = new BLL_Bitacora();
+                bitacora.registrarBitacoraEvento("Pago Rechazado", this.GetType().Name, 1);
                 MessageBox.Show("Error al crear la venta");
             }
             

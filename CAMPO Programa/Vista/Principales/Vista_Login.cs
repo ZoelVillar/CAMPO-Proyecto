@@ -16,6 +16,7 @@ using Servicios.Cache;
 using Servicios.Idiomas;
 using Vista.Usuarios.Idiomas;
 using Microsoft.VisualBasic.ApplicationServices;
+using Negocio.Bitacora;
 
 namespace Vista
 {
@@ -26,8 +27,11 @@ namespace Vista
         {
             InitializeComponent();
         }
+
+        BLL_Bitacora bitacora;
         private void Vista_Login_Load(object sender, EventArgs e)
         {
+            bitacora = new BLL_Bitacora();
             IdiomasStatic.Observer.AgregarObservador(this);
             encript = new EncriptarContraseña();
             Actualizar();
@@ -61,6 +65,7 @@ namespace Vista
 
                         User.EditarRestricciones(userAux);
 
+                        bitacora.registrarBitacoraEvento("Login", this.GetType().Name, 3);
                         Vista_Principal mainMenu = new Vista_Principal();
                         mainMenu.Show();
                         mainMenu.FormClosed += Logout;
@@ -96,6 +101,8 @@ namespace Vista
                 {
                     Console.WriteLine("Error");
                 }
+                bitacora.registrarBitacoraEvento("Usuario Bloqueado", this.GetType().Name, 3);
+
                 msgError("Número de intentos alcanzado, se bloqueó el usuario");
             }
             else
@@ -153,6 +160,8 @@ namespace Vista
 
         private void button1_Click(object sender, EventArgs e) //Btn Cerrar
         {
+            bitacora.registrarBitacoraEvento("Logout", this.GetType().Name, 3);
+
             Application.Exit();
         }
 

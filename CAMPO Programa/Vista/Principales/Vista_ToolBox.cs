@@ -1,4 +1,5 @@
 ﻿using Negocio;
+using Negocio.Bitacora;
 using Servicios.Cache;
 using Servicios.Idiomas;
 using System;
@@ -30,6 +31,11 @@ namespace Vista
         public bool respuesta;
         private void btnSI_Click(object sender, EventArgs e)
         {
+
+
+            BLL_Bitacora bitacora = new BLL_Bitacora();
+            bitacora.registrarBitacoraEvento($"Usurio Logout", this.GetType().Name, 3);
+
             SessionManager.Logout();
             respuesta = true;
             this.Close();

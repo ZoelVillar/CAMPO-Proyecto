@@ -11,25 +11,25 @@ namespace Negocio.Bitacora
 {
     public class BLL_Bitacora
     {
-        DAO_BitaciraEventos daoBiEventos = new DAO_BitaciraEventos();
+        DAO_Bitacora daoBitacora = new DAO_Bitacora();
         public List<BE_BitacoraEventos> retornarBitacoraEventos()
         {
-            return daoBiEventos.retornarBitacoraEventos();
+            return daoBitacora.retornarBitacoraEventos();
+        }
+        public bool registrarBitacoraEvento(string accion, string Modulo, int Accion)
+        {
+            return daoBitacora.registrarBitacoraEvento(accion, Modulo, Accion);
         }
 
         public List<BE_BitacoraCambios> retornarBitacoraCambios()
         {
-            return daoBiEventos.retornarBitacoraCambios();
+            return daoBitacora.retornarBitacoraCambios();
         }
 
         public bool restaurarCambio(string reverseSQL)
         {
-            return daoBiEventos.restaurarCambio(reverseSQL);
+            return daoBitacora.restaurarCambio(reverseSQL);
         }
 
-            public bool guardarBitacora()
-        {
-            return true;
-        }
     }
 }

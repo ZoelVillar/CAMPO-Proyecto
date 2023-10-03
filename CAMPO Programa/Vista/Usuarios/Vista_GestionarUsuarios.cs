@@ -15,6 +15,7 @@ using Servicios.Cache;
 using ClosedXML.Excel;
 using Servicios.Idiomas;
 using Vista.Usuarios.Idiomas;
+using Negocio.Bitacora;
 
 namespace Vista
 {
@@ -216,6 +217,8 @@ namespace Vista
                                 {
                                     if (User.ModificarUsuario(usuarioAux))
                                     {
+                                        BLL_Bitacora bitacora = new BLL_Bitacora();
+                                        bitacora.registrarBitacoraEvento($"Usuario Modificado", this.GetType().Name, 1);
                                         MessageBox.Show("Usuario modificado exitosamente!");
                                         txtEmail.Text = "";
                                         txtNuevoApellido.Text = "";
@@ -223,7 +226,9 @@ namespace Vista
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Hubo un error agregando el usuario");
+                                        BLL_Bitacora bitacora = new BLL_Bitacora();
+                                        bitacora.registrarBitacoraEvento($"Error Modifcando el usuario", this.GetType().Name, 1);
+                                        MessageBox.Show("Hubo un error modificando el usuario");
                                         txtEmail.Text = "";
                                         txtNuevoApellido.Text = "";
                                         txtNuevoNombre.Text = "";
@@ -266,6 +271,9 @@ namespace Vista
                             {
                                 if (User.CrearUsuario(usuario))
                                 {
+
+                                    BLL_Bitacora bitacora = new BLL_Bitacora();
+                                    bitacora.registrarBitacoraEvento("Usuario Nuevo Creado", this.GetType().Name, 1);
                                     MessageBox.Show("Usuario Agregado exitosamente!");
                                     txtEmail.Text = "";
                                     txtNuevoApellido.Text = "";
@@ -273,6 +281,9 @@ namespace Vista
                                 }
                                 else
                                 {
+
+                                    BLL_Bitacora bitacora = new BLL_Bitacora();
+                                    bitacora.registrarBitacoraEvento("Error creando un usuario", this.GetType().Name, 1);
                                     MessageBox.Show("Hubo un error agregando el usuario");
                                     txtEmail.Text = "";
                                     txtNuevoApellido.Text = "";
@@ -348,6 +359,8 @@ namespace Vista
 
                         if (User.EditarRestricciones(userAux))
                         {
+                            BLL_Bitacora bitacora = new BLL_Bitacora();
+                            bitacora.registrarBitacoraEvento($"Usuario {funcion}", this.GetType().Name, 2);
                             MessageBox.Show("Se modificó el usuario correctamente");
                         }
                         else

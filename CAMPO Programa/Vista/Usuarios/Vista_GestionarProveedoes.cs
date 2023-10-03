@@ -2,6 +2,7 @@
 using BE.Inventario;
 using BE.Usuarios;
 using ClosedXML.Excel;
+using Negocio.Bitacora;
 using Negocio.Inventario;
 using Negocio.Usuarios;
 using Servicios.Idiomas;
@@ -317,6 +318,9 @@ namespace Vista.Usuarios
                 {
                     if (bllProveedor.crearProveedor(proveedor))
                     {
+
+                        BLL_Bitacora bitacora = new BLL_Bitacora();
+                        bitacora.registrarBitacoraEvento($"Proveedor Agregado", this.GetType().Name, 1);
                         MessageBox.Show("Proveedor agregado con éxito");
                         ActualizarGrilla();
                     }
@@ -344,6 +348,9 @@ namespace Vista.Usuarios
                     {
                         if (bllProveedor.eliminarProveedor(id))
                         {
+
+                            BLL_Bitacora bitacora = new BLL_Bitacora();
+                            bitacora.registrarBitacoraEvento($"Proveedor Eliminado", this.GetType().Name, 1);
                             MessageBox.Show("Proveedor eliminado con éxito");
                             ActualizarGrilla();
                         }
@@ -384,6 +391,9 @@ namespace Vista.Usuarios
 
                             if (bllProveedor.modificarProveedor(proveedor))
                             {
+
+                                BLL_Bitacora bitacora = new BLL_Bitacora();
+                                bitacora.registrarBitacoraEvento($"Proveedor Modificado", this.GetType().Name, 1);
                                 MessageBox.Show("Proveedor modificado con éxito");
                                 ActualizarGrilla();
                             }

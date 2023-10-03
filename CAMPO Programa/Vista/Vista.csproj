@@ -169,10 +169,16 @@
     <Compile Include="Inventario\Vista_InventarioPrincipal.Designer.cs">
       <DependentUpon>Vista_InventarioPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Principales\Vista_Negocio.cs">
+    <Compile Include="Principales\Administracion\Vista_Administracion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Principales\Vista_Negocio.Designer.cs">
+    <Compile Include="Principales\Administracion\Vista_Administracion.Designer.cs">
+      <DependentUpon>Vista_Administracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principales\Administracion\Vista_Negocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principales\Administracion\Vista_Negocio.Designer.cs">
       <DependentUpon>Vista_Negocio.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuarios\Idiomas\IdiomasTraduccionServicios.cs" />
@@ -286,7 +292,10 @@
     <EmbeddedResource Include="Inventario\Vista_InventarioPrincipal.resx">
       <DependentUpon>Vista_InventarioPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Principales\Vista_Negocio.resx">
+    <EmbeddedResource Include="Principales\Administracion\Vista_Administracion.resx">
+      <DependentUpon>Vista_Administracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principales\Administracion\Vista_Negocio.resx">
       <DependentUpon>Vista_Negocio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Idiomas\Vista_Idiomas.resx">
