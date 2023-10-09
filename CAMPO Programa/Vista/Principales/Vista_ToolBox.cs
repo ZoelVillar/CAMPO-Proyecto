@@ -36,11 +36,11 @@ namespace Vista
             BLL_Bitacora bitacora = new BLL_Bitacora();
             bitacora.registrarBitacoraEvento($"Usurio Logout", this.GetType().Name.Substring("Vista_".Length), 3);
 
-            SessionManager.Logout();
             respuesta = true;
             this.Close();
             BLL_User User = new BLL_User();
 
+            SessionManager.Logout();
             User.CloseConnection();
         }
 

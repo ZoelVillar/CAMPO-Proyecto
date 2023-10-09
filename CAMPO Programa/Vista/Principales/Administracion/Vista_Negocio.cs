@@ -42,8 +42,8 @@ namespace Vista.Principales
         public void cargarImagen()
         {
             bool obtenido = true;
-            byte[] image = bllNegocio.obtenerLogo(out obtenido);
-            if (obtenido) { pictureLogo.Image = ByteToImage(image); }
+            byte[] image = new BLL_Negocio().obtenerLogo(out obtenido);
+            if (obtenido && image != null && image.Length > 0) { pictureLogo.Image = ByteToImage(image); }
         }
         public Image ByteToImage(byte[] image) 
         { 
@@ -67,17 +67,42 @@ namespace Vista.Principales
                 byte[] image = File.ReadAllBytes(openDialog.FileName);
                 bool respuesta = bllNegocio.actualizarLogo(image, out mensaje);
 
-                if (respuesta) { pictureLogo.Image = ByteToImage(image); } else { MessageBox.Show(mensaje, "Mensaje", MessageBoxButton.OK);  }
+                if (respuesta)
+                { 
+                    pictureLogo.Image = ByteToImage(image); 
+                    BLL_Bitacora bitacora = new BLL_Bitacora();
+                    bitacora.registrarBitacoraEvento($"Cambios del negocio", this.GetType().Name.Substring("Vista_".Length), 2);
+                }
+                else { MessageBox.Show(mensaje, "Mensaje", MessageBoxButton.OK); }
+               
                 
             }
         }
 
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
+            string mensaje = string.Empty;
 
+            BE_Negocio negocio = new BE_Negocio()
+            {
+                Nombre = txtNombre.Text,
+                CUIT = txtCUIT.Text,
+                Direccion = txtDireccion.Text
+            };
 
-            BLL_Bitacora bitacora = new BLL_Bitacora();
-            bitacora.registrarBitacoraEvento($"Cambios del negocio", this.GetType().Name.Substring("Vista_".Length), 2);
+            bool respuesta = bllNegocio.guardarDatos(negocio, out mensaje);
+
+            if (respuesta)
+            {
+                MessageBox.Show("Los cambios fueron guardados");
+                BLL_Bitacora bitacora = new BLL_Bitacora();
+                bitacora.registrarBitacoraEvento($"Cambios del negocio", this.GetType().Name.Substring("Vista_".Length), 2);
+            }
+            else
+            {
+                MessageBox.Show("No se pudieron actualizar los datos");
+            }
+
         }
     }
 }

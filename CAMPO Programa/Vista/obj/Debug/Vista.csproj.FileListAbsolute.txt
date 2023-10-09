@@ -358,3 +358,7 @@ D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Principales.Vi
 C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Principales.Vista_Negocio.resources
 C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Principales.Administracion.Vista_Administracion.resources
 D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Principales.Administracion.Vista_Administracion.resources
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\BouncyCastle.Crypto.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\itextsharp.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\itextsharp.xmlworker.dll
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\itextsharp.xml
