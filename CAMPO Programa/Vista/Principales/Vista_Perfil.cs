@@ -63,7 +63,7 @@ namespace Vista
                                 SessionManager.getSession.Usuario.user_password = "";
 
                                 BLL_Bitacora bitacora = new BLL_Bitacora();
-                                bitacora.registrarBitacoraEvento("Cambio de Password", this.GetType().Name, 3);
+                                bitacora.registrarBitacoraEvento("Cambio de Password", this.GetType().Name.Substring("Vista_".Length), 3);
 
                             }
                             else { MessageBox.Show("La contraseña es insegura"); }

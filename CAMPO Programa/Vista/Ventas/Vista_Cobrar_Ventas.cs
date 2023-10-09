@@ -55,7 +55,7 @@ namespace Vista.Ventas
                 {
 
                     BLL_Bitacora bitacora = new BLL_Bitacora();
-                    bitacora.registrarBitacoraEvento("Nueva Venta", this.GetType().Name, 1);
+                    bitacora.registrarBitacoraEvento("Nueva Venta", this.GetType().Name.Substring("Vista_".Length), 1);
                     MessageBox.Show("Venta Creada");
                     VentaCache.borrarCacheVenta();
                 }
@@ -63,7 +63,7 @@ namespace Vista.Ventas
                 {
 
                     BLL_Bitacora bitacora = new BLL_Bitacora();
-                    bitacora.registrarBitacoraEvento("Pago Rechazado", this.GetType().Name, 1);
+                    bitacora.registrarBitacoraEvento("Pago Rechazado", this.GetType().Name.Substring("Vista_".Length), 1);
                     MessageBox.Show("Error al crear la venta");
                 }
             }
@@ -84,7 +84,7 @@ namespace Vista.Ventas
             {
 
                 BLL_Bitacora bitacora = new BLL_Bitacora();
-                bitacora.registrarBitacoraEvento("Nueva Venta", this.GetType().Name, 1);
+                bitacora.registrarBitacoraEvento("Nueva Venta", this.GetType().Name.Substring("Vista_".Length), 1);
                 MessageBox.Show("Pago con tarjeta realizado");
                 VentaCache.borrarCacheVenta();
             }
@@ -92,7 +92,7 @@ namespace Vista.Ventas
             {
 
                 BLL_Bitacora bitacora = new BLL_Bitacora();
-                bitacora.registrarBitacoraEvento("Pago Rechazado", this.GetType().Name, 1);
+                bitacora.registrarBitacoraEvento("Pago Rechazado", this.GetType().Name.Substring("Vista_".Length), 1);
                 MessageBox.Show("Error al crear la venta");
             }
             

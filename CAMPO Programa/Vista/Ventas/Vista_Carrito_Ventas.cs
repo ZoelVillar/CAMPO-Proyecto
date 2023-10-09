@@ -49,7 +49,6 @@ namespace Vista.Ventas
                     listProductos.Items.Add(producto.Nombre);
                 }
             }
-            else MessageBox.Show("im here");
         }
 
         private void btnAceptarProducto_Click(object sender, EventArgs e)
@@ -142,7 +141,7 @@ namespace Vista.Ventas
             {
 
                 BLL_Bitacora bitacora = new BLL_Bitacora();
-                bitacora.registrarBitacoraEvento("Completando datos de venta", this.GetType().Name, 2);
+                bitacora.registrarBitacoraEvento("Completando datos de venta", this.GetType().Name.Substring("Vista_".Length), 2);
                 Vista_Principal_Ventas.Instancia.AbrirFormulario<Vista_DatosVenta_Ventas>();
             }
         }

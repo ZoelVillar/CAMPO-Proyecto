@@ -124,7 +124,7 @@ namespace Vista
         private void btnAgregarPC_Click(object sender, EventArgs e)
         {
             BLL_Bitacora bitacora = new BLL_Bitacora();
-            bitacora.registrarBitacoraEvento($"Permiso Agregado", this.GetType().Name, 2);
+            bitacora.registrarBitacoraEvento($"Permiso Agregado", this.GetType().Name.Substring("Vista_".Length), 2);
             agregarPermiso("C");
         }
 
@@ -132,7 +132,7 @@ namespace Vista
         {
 
             BLL_Bitacora bitacora = new BLL_Bitacora();
-            bitacora.registrarBitacoraEvento($"Permiso Agregado", this.GetType().Name, 2);
+            bitacora.registrarBitacoraEvento($"Permiso Agregado", this.GetType().Name.Substring("Vista_".Length), 2);
             agregarPermiso("S");
         }
 
@@ -293,7 +293,7 @@ namespace Vista
             if (bllPerfil.agregarPerfil(idPerfil, permisoPerfil)) 
             {
                 BLL_Bitacora bitacora = new BLL_Bitacora();
-                bitacora.registrarBitacoraEvento($"Perfil Agregado", this.GetType().Name, 1);
+                bitacora.registrarBitacoraEvento($"Perfil Agregado", this.GetType().Name.Substring("Vista_".Length), 1);
                 refrescarGrilla();
                 refrescarArbol();
             }
@@ -321,7 +321,7 @@ namespace Vista
 
 
                     BLL_Bitacora bitacora = new BLL_Bitacora();
-                    bitacora.registrarBitacoraEvento($"Perfil Eliminado", this.GetType().Name, 1);
+                    bitacora.registrarBitacoraEvento($"Perfil Eliminado", this.GetType().Name.Substring("Vista_".Length), 1);
 
                     refrescarGrilla();
                     refrescarArbol();

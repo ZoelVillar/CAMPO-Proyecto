@@ -65,7 +65,7 @@ namespace Vista
 
                         User.EditarRestricciones(userAux);
 
-                        bitacora.registrarBitacoraEvento("Login", this.GetType().Name, 3);
+                        bitacora.registrarBitacoraEvento("Login", this.GetType().Name.Substring("Vista_".Length), 3);
                         Vista_Principal mainMenu = new Vista_Principal();
                         mainMenu.Show();
                         mainMenu.FormClosed += Logout;
@@ -101,7 +101,7 @@ namespace Vista
                 {
                     Console.WriteLine("Error");
                 }
-                bitacora.registrarBitacoraEvento("Usuario Bloqueado", this.GetType().Name, 3);
+                bitacora.registrarBitacoraEvento("Usuario Bloqueado", this.GetType().Name.Substring("Vista_".Length), 3);
 
                 msgError("Número de intentos alcanzado, se bloqueó el usuario");
             }
@@ -160,7 +160,7 @@ namespace Vista
 
         private void button1_Click(object sender, EventArgs e) //Btn Cerrar
         {
-            bitacora.registrarBitacoraEvento("Logout", this.GetType().Name, 3);
+            bitacora.registrarBitacoraEvento("Logout", this.GetType().Name.Substring("Vista_".Length), 3);
 
             Application.Exit();
         }

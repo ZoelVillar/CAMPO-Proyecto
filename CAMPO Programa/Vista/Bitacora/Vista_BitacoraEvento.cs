@@ -162,13 +162,14 @@ namespace Vista.Bitacora
 
                         }
                     }
-
+                     
                     string nombreProyecto = this.GetType().Name;
                     if (nombreProyecto.StartsWith("Vista_"))
                     {
                         nombreProyecto = nombreProyecto.Substring("Vista_".Length);
                     }
 
+                    
                     SaveFileDialog savefile = new SaveFileDialog();
                     savefile.FileName = string.Format($"{nombreProyecto}_{DateTime.Now.ToString("ddMMyyyyHHmm")}.xlsx");
                     savefile.Filter = "Excel Files | *.xlsx";

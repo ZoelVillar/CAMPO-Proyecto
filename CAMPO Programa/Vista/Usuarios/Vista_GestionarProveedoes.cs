@@ -320,7 +320,7 @@ namespace Vista.Usuarios
                     {
 
                         BLL_Bitacora bitacora = new BLL_Bitacora();
-                        bitacora.registrarBitacoraEvento($"Proveedor Agregado", this.GetType().Name, 1);
+                        bitacora.registrarBitacoraEvento($"Proveedor Agregado", this.GetType().Name.Substring("Vista_".Length), 1);
                         MessageBox.Show("Proveedor agregado con éxito");
                         ActualizarGrilla();
                     }
@@ -350,7 +350,7 @@ namespace Vista.Usuarios
                         {
 
                             BLL_Bitacora bitacora = new BLL_Bitacora();
-                            bitacora.registrarBitacoraEvento($"Proveedor Eliminado", this.GetType().Name, 1);
+                            bitacora.registrarBitacoraEvento($"Proveedor Eliminado", this.GetType().Name.Substring("Vista_".Length), 1);
                             MessageBox.Show("Proveedor eliminado con éxito");
                             ActualizarGrilla();
                         }
@@ -393,7 +393,7 @@ namespace Vista.Usuarios
                             {
 
                                 BLL_Bitacora bitacora = new BLL_Bitacora();
-                                bitacora.registrarBitacoraEvento($"Proveedor Modificado", this.GetType().Name, 1);
+                                bitacora.registrarBitacoraEvento($"Proveedor Modificado", this.GetType().Name.Substring("Vista_".Length), 1);
                                 MessageBox.Show("Proveedor modificado con éxito");
                                 ActualizarGrilla();
                             }

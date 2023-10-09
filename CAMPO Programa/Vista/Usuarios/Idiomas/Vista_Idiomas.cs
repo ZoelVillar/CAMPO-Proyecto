@@ -92,7 +92,7 @@ namespace Vista.Usuarios.Idiomas
                 if (BLLIdioma.agregarIdioma(idioma))
                 {
                     BLL_Bitacora bitacora = new BLL_Bitacora();
-                    bitacora.registrarBitacoraEvento($"Idioma Agregado", this.GetType().Name, 2);
+                    bitacora.registrarBitacoraEvento($"Idioma Agregado", this.GetType().Name.Substring("Vista_".Length), 2);
 
                     ActualizarGrilla();
                     ActualizarLista();
@@ -119,7 +119,7 @@ namespace Vista.Usuarios.Idiomas
 
 
                             BLL_Bitacora bitacora = new BLL_Bitacora();
-                            bitacora.registrarBitacoraEvento($"Idioma Eliminado", this.GetType().Name, 2);
+                            bitacora.registrarBitacoraEvento($"Idioma Eliminado", this.GetType().Name.Substring("Vista_".Length), 2);
 
                             MessageBox.Show("Idioma eliminado con éxito");
                             ActualizarGrilla();
@@ -151,7 +151,7 @@ namespace Vista.Usuarios.Idiomas
 
 
                         BLL_Bitacora bitacora = new BLL_Bitacora();
-                        bitacora.registrarBitacoraEvento($"Traduccion Editada", this.GetType().Name, 3);
+                        bitacora.registrarBitacoraEvento($"Traduccion Editada", this.GetType().Name.Substring("Vista_".Length), 3);
 
                         MessageBox.Show("Actualizacion Exitosa");
                     }

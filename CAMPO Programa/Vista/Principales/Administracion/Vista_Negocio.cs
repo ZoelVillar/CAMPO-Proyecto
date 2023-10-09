@@ -77,7 +77,7 @@ namespace Vista.Principales
 
 
             BLL_Bitacora bitacora = new BLL_Bitacora();
-            bitacora.registrarBitacoraEvento($"Cambios del negocio", this.GetType().Name, 2);
+            bitacora.registrarBitacoraEvento($"Cambios del negocio", this.GetType().Name.Substring("Vista_".Length), 2);
         }
     }
 }

@@ -357,3 +357,4 @@ C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista
 D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Principales.Vista_Negocio.resources
 C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Principales.Vista_Negocio.resources
 C:\Users\zoel.villar\Desktop\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Principales.Administracion.Vista_Administracion.resources
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Principales.Administracion.Vista_Administracion.resources

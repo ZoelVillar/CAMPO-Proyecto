@@ -34,7 +34,7 @@ namespace Vista
 
 
             BLL_Bitacora bitacora = new BLL_Bitacora();
-            bitacora.registrarBitacoraEvento($"Usurio Logout", this.GetType().Name, 3);
+            bitacora.registrarBitacoraEvento($"Usurio Logout", this.GetType().Name.Substring("Vista_".Length), 3);
 
             SessionManager.Logout();
             respuesta = true;
