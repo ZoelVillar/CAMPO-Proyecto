@@ -30,14 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGrid = new System.Windows.Forms.DataGridView();
-            this.idBitacora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Accion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datoPrevio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datoPosterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.executedSQL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reverseSQL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grillaBitacoraCambios = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnBorrarBusqueda = new System.Windows.Forms.Button();
@@ -57,62 +49,10 @@
             // dataGrid
             // 
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idBitacora,
-            this.Usuario,
-            this.Accion,
-            this.datoPrevio,
-            this.datoPosterior,
-            this.Fecha,
-            this.executedSQL,
-            this.reverseSQL});
             this.dataGrid.Location = new System.Drawing.Point(27, 62);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.Size = new System.Drawing.Size(884, 329);
             this.dataGrid.TabIndex = 1;
-            // 
-            // idBitacora
-            // 
-            this.idBitacora.HeaderText = "idBitacora";
-            this.idBitacora.Name = "idBitacora";
-            this.idBitacora.Visible = false;
-            // 
-            // Usuario
-            // 
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.Name = "Usuario";
-            // 
-            // Accion
-            // 
-            this.Accion.HeaderText = "Acción";
-            this.Accion.Name = "Accion";
-            // 
-            // datoPrevio
-            // 
-            this.datoPrevio.HeaderText = "Dato Previo";
-            this.datoPrevio.Name = "datoPrevio";
-            // 
-            // datoPosterior
-            // 
-            this.datoPosterior.HeaderText = "Dato Posterior";
-            this.datoPosterior.Name = "datoPosterior";
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            // 
-            // executedSQL
-            // 
-            this.executedSQL.HeaderText = "executedSQL";
-            this.executedSQL.Name = "executedSQL";
-            this.executedSQL.Visible = false;
-            // 
-            // reverseSQL
-            // 
-            this.reverseSQL.HeaderText = "reverseSQL";
-            this.reverseSQL.Name = "reverseSQL";
-            this.reverseSQL.Visible = false;
             // 
             // grillaBitacoraCambios
             // 
@@ -306,14 +246,6 @@
 
         private System.Windows.Forms.DataGridView dataGrid;
         private System.Windows.Forms.Label grillaBitacoraCambios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idBitacora;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Accion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn datoPrevio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn datoPosterior;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn executedSQL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reverseSQL;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnBorrarBusqueda;
         private System.Windows.Forms.Button btnBuscar;

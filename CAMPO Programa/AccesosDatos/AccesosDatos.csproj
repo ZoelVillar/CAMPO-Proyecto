@@ -60,9 +60,12 @@
   <ItemGroup>
     <Compile Include="AccesoSQL.cs" />
     <Compile Include="Bitacora\DAO_Bitacora.cs" />
+    <Compile Include="Bitacora\DAO_BitacoraCambiosProducto.cs" />
     <Compile Include="DAO_Venta.cs" />
     <Compile Include="Idiomas\DAO_Idioma.cs" />
     <Compile Include="Inventario\DAO_Categoria.cs" />
+    <Compile Include="Servicios\DAO_Backup.cs" />
+    <Compile Include="Servicios\DAO_DigitoVerificador.cs" />
     <Compile Include="Usuarios\DAO_Permiso.cs" />
     <Compile Include="Usuarios\DAO_Negocio.cs" />
     <Compile Include="Usuarios\Dao_Perfil.cs" />

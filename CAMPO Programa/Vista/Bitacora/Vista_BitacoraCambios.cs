@@ -1,4 +1,5 @@
-﻿using BE.Usuarios;
+﻿using BE.Biatcora;
+using BE.Usuarios;
 using ClosedXML.Excel;
 using Negocio;
 using Negocio.Bitacora;
@@ -42,14 +43,31 @@ namespace Vista.Bitacora
 
         private void actualizarGrilla()
         {
-            dataGrid.Rows.Clear();
 
             var bitacora = bllBitacora.retornarBitacoraCambios();
+            dataGrid.DataSource = bitacora;
+            dataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGrid.AutoResizeColumns();
 
-            foreach (var row in bitacora)
-            {
-                dataGrid.Rows.Add(row.idBitacora, row.usuario, row.accion, row.datoPrevio, row.datoPosterior, row.fecha, row.executedSQL, row.reverseSQL);
-            }
+            //foreach (var row in bitacora)
+            //{
+            //    dataGrid.Rows.Add(
+            //        row.IdCambio,
+            //        row.IdProducto,
+            //        row.Codigo,
+            //        row.Nombre, 
+            //        row.Descripcion, 
+            //        row.IdCategoria,
+            //        row.Stock, 
+            //        row.PrecioCompra, 
+            //        row.PrecioVenta, 
+            //        row.Estado,
+            //        row.FechaCreado,
+            //        row.Activo,
+            //        row.DigitoHorizontal,
+            //        row.FechaBitacora);
+            //}
+
         }
 
         private void cargarComboBusqueda()
@@ -89,6 +107,7 @@ namespace Vista.Bitacora
                     }
                     else
                     {
+                        this.dataGrid.CurrentCell = null;
                         fila.Visible = false;
                     }
                 }
@@ -205,19 +224,10 @@ namespace Vista.Bitacora
 
         private void btnRestaurarCambio_Click(object sender, EventArgs e)
         {
-            if (dataGrid.SelectedRows.Count > 0 && dataGrid.SelectedRows.Count > 0)
-            {
-                DataGridViewRow selectedRow = dataGrid.SelectedRows[0];
-                string reverseSQLValue = selectedRow.Cells["reverseSQL"].Value.ToString();
-
-                if (bllBitacora.restaurarCambio(reverseSQLValue))
-                {
-                    actualizarGrilla();
-                    MessageBox.Show("Cambio Realizado con exito");
-                }
-                else MessageBox.Show("Ocurrieron errores realizando el cambio");
-
-            }
+            BLL_BitacoraCambiosProducto bllcambios = new BLL_BitacoraCambiosProducto();
+            BE_BitacoraCambiosProducto bita = dataGrid.SelectedRows[0].DataBoundItem as BE_BitacoraCambiosProducto;
+            bllcambios.ActivarCambio(bita);
+            actualizarGrilla();
         }
     }
 }

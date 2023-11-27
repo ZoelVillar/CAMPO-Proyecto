@@ -16,12 +16,12 @@ namespace Negocio.Bitacora
         {
             return daoBitacora.retornarBitacoraEventos();
         }
-        public bool registrarBitacoraEvento(string accion, string Modulo, int Accion)
+        public bool registrarBitacoraEvento(string accion, string Modulo, int Criticidad)
         {
-            return daoBitacora.registrarBitacoraEvento(accion, Modulo, Accion);
+            return daoBitacora.registrarBitacoraEvento(accion, Modulo, Criticidad);
         }
 
-        public List<BE_BitacoraCambios> retornarBitacoraCambios()
+        public List<BE_BitacoraCambiosProducto> retornarBitacoraCambios()
         {
             return daoBitacora.retornarBitacoraCambios();
         }

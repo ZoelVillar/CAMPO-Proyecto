@@ -1,4 +1,5 @@
-﻿using BE.Inventario;
+﻿using AccesosDatos.Servicios;
+using BE.Inventario;
 using BE.Usuarios;
 using BE.Venta;
 using System;
@@ -44,6 +45,10 @@ namespace AccesosDatos
                         command.Parameters.AddWithValue("@FormaPago", bEventa.FormaPago);
 
                         int rowsAffected = command.ExecuteNonQuery();
+
+                        DAO_DigitoVerificador DigitoVerificador = new DAO_DigitoVerificador();
+                        DigitoVerificador.UpdateDigitosVerificadores("Venta");
+                        DigitoVerificador.UpdateDigitosVerificadores("Venta");
 
                         if (rowsAffected > 0)
                         { return true; }

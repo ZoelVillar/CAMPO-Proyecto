@@ -327,11 +327,8 @@ namespace Vista.Inventario
                                 Codigo = txtCodigo.Text,
                                 Nombre = txtNombre.Text,
                                 Descripcion = txtDescripcion.Text,
-                                oCategoria = new BE.Inventario.BE_Categoria() { descripcion = comboCategoria.Text },
-                                Estado = comboEstado.Text == "Activado" ? true : false,
-                                Stock = 0,
-                                PrecioCompra = 0,
-                                PrecioVenta = 0
+                                oCategoria = new BE.Inventario.BE_Categoria() { idCategoria = (int)comboCategoria.SelectedValue, descripcion = comboCategoria.Text },
+                                Estado = comboEstado.Text == "Activado" ? true : false
                             };
 
                             if (bllProducto.modificarProducto(producto))

@@ -1,4 +1,6 @@
-﻿using Servicios.Idiomas;
+﻿using Negocio.Bitacora;
+using Negocio.Servicios;
+using Servicios.Idiomas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -65,6 +67,46 @@ namespace Vista.Principales.Administracion
         private void btnBitacoraEventos_Click(object sender, EventArgs e)
         {
             AbrirFormulario<Vista_BitacoraEvento>();
+        }
+
+        private void btnRealziarRestore_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog opn = new OpenFileDialog();
+            opn.Filter = "SQL SERVER database backup files|*.bak";
+            opn.Title = "Database Restore";
+            if (opn.ShowDialog() == DialogResult.OK)
+            {
+                BLL_Backup backup = new BLL_Backup();
+                if (backup.RestaurarBackup(opn.FileName))
+                {
+                    MessageBox.Show("Restore de la base de datos generado exitosamente");
+                }
+                else {          
+                    MessageBox.Show("Error al realizar el restore de la base de datos");
+                }
+
+            }
+        }
+
+        private void btnRealizarBackup_Click(object sender, EventArgs e)
+        {
+            BLL_Backup backup = new BLL_Backup();
+            string ruta = "";
+            using (var fd = new FolderBrowserDialog())
+            {
+                if (fd.ShowDialog() == System.Windows.Forms.DialogResult.OK && !string.IsNullOrWhiteSpace(fd.SelectedPath))
+                {
+                    ruta = fd.SelectedPath;
+                    if (backup.CrearBackup(ruta))
+                    {
+                        MessageBox.Show("Backup generado exitosamente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al generar el backup");
+                    }
+                }
+            }
         }
     }
 }

@@ -362,3 +362,4 @@ D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\BouncyCastle.Crypto.
 D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\itextsharp.dll
 D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\itextsharp.xmlworker.dll
 D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\bin\Debug\itextsharp.xml
+D:\Escritorio\CAMPO-Proyecto\CAMPO Programa\Vista\obj\Debug\Vista.Principales.Administracion.Vista_DigitoVerificador.resources

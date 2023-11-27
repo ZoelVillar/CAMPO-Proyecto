@@ -59,9 +59,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bitacora\BLL_Bitacora.cs" />
+    <Compile Include="Bitacora\BLL_BitacoraCambiosProducto.cs" />
     <Compile Include="BLL_Venta.cs" />
     <Compile Include="Idiomas\BLL_Idioma.cs" />
     <Compile Include="Inventario\BLL_Categoria.cs" />
+    <Compile Include="Servicios\BLL_Backup.cs" />
+    <Compile Include="Servicios\BLL_DigitoVerificador.cs" />
     <Compile Include="Usuarios\BLL_Negocio.cs" />
     <Compile Include="Usuarios\BLL_Perfil.cs" />
     <Compile Include="Usuarios\BLL_Permiso.cs" />

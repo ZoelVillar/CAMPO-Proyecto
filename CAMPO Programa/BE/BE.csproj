@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Biatcora\BE_BitacoraCambiosProducto.cs" />
     <Compile Include="Biatcora\BE_BitacoraEventos.cs" />
     <Compile Include="Biatcora\BE_BitacoraCambios.cs" />
     <Compile Include="Compra\BE_Compra.cs" />

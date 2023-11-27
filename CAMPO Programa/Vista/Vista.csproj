@@ -184,6 +184,12 @@
     <Compile Include="Principales\Administracion\Vista_Administracion.Designer.cs">
       <DependentUpon>Vista_Administracion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Principales\Administracion\Vista_DigitoVerificador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principales\Administracion\Vista_DigitoVerificador.Designer.cs">
+      <DependentUpon>Vista_DigitoVerificador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principales\Administracion\Vista_Negocio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -303,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Principales\Administracion\Vista_Administracion.resx">
       <DependentUpon>Vista_Administracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principales\Administracion\Vista_DigitoVerificador.resx">
+      <DependentUpon>Vista_DigitoVerificador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principales\Administracion\Vista_Negocio.resx">
       <DependentUpon>Vista_Negocio.cs</DependentUpon>

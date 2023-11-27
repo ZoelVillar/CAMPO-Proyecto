@@ -103,7 +103,11 @@ namespace Vista.Ventas
                                         //Agrego el producto
                                         VentaCache.listaDetalleVenta.Add(productoAgregado);
                                     }
-                                    else MessageBox.Show("No hay mas stock");
+                                    else {
+                                        txtCantidad.Value = 0;
+                                        MessageBox.Show("No hay mas stock");
+                                        return;
+                                    }
                                 }
                             }
                         }
@@ -116,7 +120,12 @@ namespace Vista.Ventas
                             VentaCache.listaDetalleVenta.Add(productoAgregado);
                             gridCarrito.Rows.Add(productoAgregado.oProducto.Nombre, productoAgregado.cantidad, productoAgregado.precioVenta, productoAgregado.subTotal);
                         }
-                        else MessageBox.Show("No hay mas stock");
+                        else
+                        {
+                            txtCantidad.Value = 0;
+                            MessageBox.Show("No hay mas stock");
+                            return;
+                        }
                     }
 
                     decimal total = 0;
@@ -188,5 +197,6 @@ namespace Vista.Ventas
             idiomasTraduccion.CambiarIdiomaEnFormulario(this);
             idiomasTraduccion.TraducirColumnas(gridCarrito);
         }
+
     }
 }

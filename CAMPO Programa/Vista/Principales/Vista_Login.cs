@@ -17,6 +17,8 @@ using Servicios.Idiomas;
 using Vista.Usuarios.Idiomas;
 using Microsoft.VisualBasic.ApplicationServices;
 using Negocio.Bitacora;
+using Negocio.Servicios;
+using Vista.Principales.Administracion;
 
 namespace Vista
 {
@@ -29,9 +31,11 @@ namespace Vista
         }
 
         BLL_Bitacora bitacora;
+        BLL_DigitoVerificador bllDigito;
         private void Vista_Login_Load(object sender, EventArgs e)
         {
             bitacora = new BLL_Bitacora();
+            bllDigito = new BLL_DigitoVerificador();
             IdiomasStatic.Observer.AgregarObservador(this);
             encript = new EncriptarContraseña();
             Actualizar();
@@ -65,12 +69,36 @@ namespace Vista
 
                         User.EditarRestricciones(userAux);
 
-                        bitacora.registrarBitacoraEvento("Login", this.GetType().Name.Substring("Vista_".Length), 3);
-                        Vista_Principal mainMenu = new Vista_Principal();
-                        mainMenu.Show();
-                        mainMenu.FormClosed += Logout;
-                        this.Hide();
+                        if (bllDigito.VerificarDigito("Producto") && bllDigito.VerificarDigito("Venta") && bllDigito.VerificarDigito("Users"))
+                        {
 
+                            bitacora.registrarBitacoraEvento("Login", this.GetType().Name.Substring("Vista_".Length), 3);
+
+                            Vista_Principal mainMenu = new Vista_Principal();
+                            mainMenu.Show();
+                            mainMenu.FormClosed += Logout;
+                            this.Hide();
+
+                        }
+                        else
+                        {
+                            bitacora.registrarBitacoraEvento("Login fallido, errores de integridad", this.GetType().Name.Substring("Vista_".Length), 1);
+                            if (SessionManager.getSession.Usuario.id_perfil == "Administrador")
+                            {
+                                DialogResult r = MessageBox.Show("Errores de integridad. Abrir panel de control", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                                if (r == DialogResult.No) Application.Exit();
+                                else
+                                {
+                                    Vista_DigitoVerificador vista_DigitoVerificador = new Vista_DigitoVerificador();
+                                    vista_DigitoVerificador.Show();
+                                    this.Hide();
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error en el sistema, por favor, contacte a un Administrador", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
 
                     }
                     else { posible = false; mensaje = "Su usuario se encuentra bloqueado"; elseUsuarioBloqueado(Usuario); }
@@ -160,9 +188,16 @@ namespace Vista
 
         private void button1_Click(object sender, EventArgs e) //Btn Cerrar
         {
-            bitacora.registrarBitacoraEvento("Logout", this.GetType().Name.Substring("Vista_".Length), 3);
+            if (bitacora.registrarBitacoraEvento("Logout", this.GetType().Name.Substring("Vista_".Length), 3))
+            {
+                Application.Exit();
+            }
+            else
+            {
+                Application.Exit();
+            }
+            
 
-            Application.Exit();
         }
 
         private void button4_Click(object sender, EventArgs e) //Btn Minimizar

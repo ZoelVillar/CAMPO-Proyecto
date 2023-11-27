@@ -19,6 +19,7 @@ using iTextSharp.tool.xml;
 using BE.Venta;
 using Negocio.Usuarios;
 using System.Drawing;
+using Negocio.Inventario;
 
 namespace Vista.Ventas
 {
@@ -30,6 +31,7 @@ namespace Vista.Ventas
         }
 
         BLL_Venta BLLVenta;
+        BLL_Producto BLL_Producto;
         BLL_Negocio negocio = new BLL_Negocio();
         private void Vista_Cobrar_Ventas_Load(object sender, EventArgs e)
         {
@@ -37,6 +39,7 @@ namespace Vista.Ventas
             IdiomasStatic.Observer.AgregarObservador(this);
             Actualizar();
             BLLVenta = new BLL_Venta();
+            BLL_Producto = new BLL_Producto();
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -63,6 +66,8 @@ namespace Vista.Ventas
 
                 if (BLLVenta.CrearVenta(VentaCache.venta))
                 {
+                    BLL_Producto.ActualizarStock(VentaCache.listaDetalleVenta);
+
                     MessageBox.Show("Venta Creada");
                     generarPDF();
 
@@ -95,6 +100,8 @@ namespace Vista.Ventas
 
             if (BLLVenta.CrearVenta(VentaCache.venta))
             {
+                BLL_Producto.ActualizarStock(VentaCache.listaDetalleVenta);
+
                 MessageBox.Show("Pago con tarjeta realizado");
                 generarPDF();
 

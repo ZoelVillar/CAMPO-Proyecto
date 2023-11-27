@@ -1,6 +1,9 @@
-﻿using BE;
+﻿using AccesosDatos.Bitacora;
+using AccesosDatos.Servicios;
+using BE;
 using BE.Biatcora;
 using BE.Inventario;
+using BE.Venta;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,11 +11,13 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Servicios.Cache;
 
 namespace AccesosDatos.Inventario
 {
     public class DAO_Producto
     {
+        DAO_DigitoVerificador DigitoVerificador = new DAO_DigitoVerificador();
         private AccesoSQL dbConnection;
 
         public DAO_Producto()
@@ -69,6 +74,7 @@ namespace AccesosDatos.Inventario
 
         public bool crearProducto(BE_Producto producto)
         {
+
             try
             {
                 using (var connection = dbConnection.GetConnection())
@@ -87,16 +93,30 @@ namespace AccesosDatos.Inventario
                         command.Parameters.AddWithValue("precioVenta", 0);
                         command.Parameters.AddWithValue("estado", producto.Estado);
 
+                        command.Parameters.Add("@idProducto", SqlDbType.Int).Direction = ParameterDirection.Output;
+                        command.Parameters.Add("@FechaCreacion", SqlDbType.DateTime).Direction = ParameterDirection.Output;
+
                         command.CommandType = CommandType.StoredProcedure;
                         int rowsAffected = command.ExecuteNonQuery();
 
+                        DigitoVerificador.UpdateDigitosVerificadores("Producto");
+                        DigitoVerificador.UpdateDigitosVerificadores("Producto");
+
                         if (rowsAffected > 0)
-                        { return true; }
+                        {
+
+                            DAO_BitacoraCambiosProducto dAO_BitacoraCambiosProducto = new DAO_BitacoraCambiosProducto();
+                            int idProductoGenerado = (int)command.Parameters["@idProducto"].Value;
+
+                            BE_BitacoraCambiosProducto bE_BitacoraCambiosProducto = dAO_BitacoraCambiosProducto.retornarElementoBitacora(idProductoGenerado);
+                            dAO_BitacoraCambiosProducto.GuardarBitacoraCambio(bE_BitacoraCambiosProducto); 
+                            return true; 
+                        }
                         else { return false; }
                     }
                 }
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
                 return false;
             }
@@ -119,18 +139,71 @@ namespace AccesosDatos.Inventario
                         command.Parameters.AddWithValue("@descripcion", producto.Descripcion);
                         command.Parameters.AddWithValue("@idCategoria", producto.oCategoria.idCategoria);
                         command.Parameters.AddWithValue("@estado", producto.Estado);
+                        command.Parameters.AddWithValue("@stock", producto.Stock);
 
                         command.CommandType = CommandType.StoredProcedure;
                         int rowsAffected = command.ExecuteNonQuery();
 
+
+                        DigitoVerificador.UpdateDigitosVerificadores("Producto");
+                        DigitoVerificador.UpdateDigitosVerificadores("Producto");
+
                         if (rowsAffected > 0)
-                        { return true; }
+                        {
+
+                            DAO_BitacoraCambiosProducto dAO_BitacoraCambiosProducto = new DAO_BitacoraCambiosProducto();
+                            
+
+                            BE_BitacoraCambiosProducto bE_BitacoraCambiosProducto = dAO_BitacoraCambiosProducto.retornarElementoBitacora(producto.IdProducto);
+                            dAO_BitacoraCambiosProducto.GuardarBitacoraCambio(bE_BitacoraCambiosProducto);
+                            return true; }
                         else { return false; }
                     }
                 }
 
             }
-            catch (SqlException)
+            catch (SqlException ex)
+            {
+                return false;
+            }
+        }
+
+        public bool actualizarStock(BE_Producto producto)
+        {
+            try
+            {
+                using (var connection = dbConnection.GetConnection())
+                {
+                    dbConnection.OpenConnection();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "SP_ModificarProducto";
+                        command.Parameters.AddWithValue("@idProducto", producto.IdProducto);
+                        command.Parameters.AddWithValue("@stock", producto.Stock);
+
+                        command.CommandType = CommandType.StoredProcedure;
+                        int rowsAffected = command.ExecuteNonQuery();
+
+
+                        DigitoVerificador.UpdateDigitosVerificadores("Producto");
+                        DigitoVerificador.UpdateDigitosVerificadores("Producto");
+
+                        if (rowsAffected > 0)
+                        {
+
+                            DAO_BitacoraCambiosProducto dAO_BitacoraCambiosProducto = new DAO_BitacoraCambiosProducto();
+
+                            BE_BitacoraCambiosProducto bE_BitacoraCambiosProducto = dAO_BitacoraCambiosProducto.retornarElementoBitacora(producto.IdProducto);
+                            dAO_BitacoraCambiosProducto.GuardarBitacoraCambio(bE_BitacoraCambiosProducto);
+                            return true;
+                        }
+                        else { return false; }
+                    }
+                }
+
+            }
+            catch (SqlException )
             {
                 return false;
             }

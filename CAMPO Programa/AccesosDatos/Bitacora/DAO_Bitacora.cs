@@ -68,6 +68,10 @@ namespace AccesosDatos.Bitacora
 
                     using (var command = new SqlCommand())
                     {
+                        if(SessionManager.getSession.Usuario == null)
+                        {
+                            return false;
+                        }
                         command.Connection = connection;
                         command.CommandText = $"INSERT INTO BitacoraEventos (userEmail, accion, Modulo, Criticidad) VALUES (@useremail, @accion, @Modulo, @Criticidad)"; ;
                         // Parámetros para los valores a insertar
@@ -124,18 +128,18 @@ namespace AccesosDatos.Bitacora
             }
             catch { return false; }
         }
-        public List<BE_BitacoraCambios> retornarBitacoraCambios()
+        public List<BE_BitacoraCambiosProducto> retornarBitacoraCambios()
         {
-            List<BE_BitacoraCambios> listaBitacora = new List<BE_BitacoraCambios>();
-            try
-            {
+            List<BE_BitacoraCambiosProducto> listaBitacora = new List<BE_BitacoraCambiosProducto>();
+            //try
+            //{
                 using (var connection = dbConnection.GetConnection())
                 {
                     dbConnection.OpenConnection();
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "select * from BitacoraCambiosUsuarios";
+                        command.CommandText = "select * from BitacoraCambios";
                         command.CommandType = CommandType.Text;
 
                         SqlDataReader reader = command.ExecuteReader();
@@ -145,16 +149,24 @@ namespace AccesosDatos.Bitacora
                             while (reader.Read())
                             {
                                 listaBitacora.Add(
-                                    new BE_BitacoraCambios()
+                                    new BE_BitacoraCambiosProducto()
                                     {
-                                        idBitacora = reader.GetInt32(0),
-                                        usuario = reader.GetString(1),
-                                        accion = reader.GetString(2),
-                                        datoPrevio = reader.GetString(3),
-                                        datoPosterior = reader.GetString(4),
-                                        fecha = reader.GetDateTime(5),
-                                        executedSQL = reader.GetString(6),
-                                        reverseSQL = reader.GetString(7)
+                                        IdCambio = reader.GetInt32(0),
+                                        IdProducto = reader.GetInt32(1),
+                                        Codigo = reader.GetString(2),
+                                        Nombre = reader.GetString(3),
+                                        Descripcion = reader.GetString(4),
+                                        IdCategoria = reader.GetInt32(5),
+                                        Stock = reader.GetInt32(6),
+                                        PrecioCompra = reader.GetDecimal(7),
+                                        PrecioVenta = reader.GetDecimal(8),
+                                        Estado = reader.GetBoolean(9),
+                                        FechaCreado = reader.GetDateTime(10),
+                                        Activo = reader.GetBoolean(11),
+                                        DigitoHorizontal = reader.GetInt32(12),
+                                        FechaBitacora = reader.GetDateTime(13)
+
+
                                     });
                             }
                             return listaBitacora;
@@ -162,8 +174,8 @@ namespace AccesosDatos.Bitacora
                         else { return listaBitacora; }
                     }
                 }
-            }
-            catch { return listaBitacora; }
+            //}
+            //catch(SqlException ex ) { throw ex; return listaBitacora; }
         }
 
     }

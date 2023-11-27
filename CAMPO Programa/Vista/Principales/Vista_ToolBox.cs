@@ -34,14 +34,25 @@ namespace Vista
 
 
             BLL_Bitacora bitacora = new BLL_Bitacora();
-            bitacora.registrarBitacoraEvento($"Usurio Logout", this.GetType().Name.Substring("Vista_".Length), 3);
+            if(bitacora.registrarBitacoraEvento($"Usurio Logout", this.GetType().Name.Substring("Vista_".Length), 3))
+            {
+                respuesta = true;
+                this.Close();
+                BLL_User User = new BLL_User();
 
-            respuesta = true;
-            this.Close();
-            BLL_User User = new BLL_User();
+                SessionManager.Logout();
+                User.CloseConnection();
+            }
+            else
+            {
+                respuesta = true;
+                this.Close();
+                BLL_User User = new BLL_User();
 
-            SessionManager.Logout();
-            User.CloseConnection();
+                SessionManager.Logout();
+                User.CloseConnection();
+            }
+
         }
 
         private void btnNO_Click(object sender, EventArgs e)

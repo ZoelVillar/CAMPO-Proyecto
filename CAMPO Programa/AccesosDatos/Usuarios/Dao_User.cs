@@ -1,7 +1,9 @@
-﻿using BE;
+﻿using AccesosDatos.Servicios;
+using BE;
 using BE.Permisos;
 using BE.Usuarios;
 using Servicios.Cache;
+using Servicios.Validaciones;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -53,6 +55,10 @@ namespace AccesosDatos
 
                         int rowsAffected = command.ExecuteNonQuery();
 
+                        DAO_DigitoVerificador DigitoVerificador = new DAO_DigitoVerificador();
+                        DigitoVerificador.UpdateDigitosVerificadores("Users");
+                        DigitoVerificador.UpdateDigitosVerificadores("Users");
+
                         if (rowsAffected > 0)
                         { return true;}
                         else{ return false;}
@@ -93,6 +99,10 @@ namespace AccesosDatos
 
                         int rowsAffected = command.ExecuteNonQuery();
 
+                        DAO_DigitoVerificador DigitoVerificador = new DAO_DigitoVerificador();
+                        DigitoVerificador.UpdateDigitosVerificadores("Users");
+                        DigitoVerificador.UpdateDigitosVerificadores("Users");
+
                         if (rowsAffected > 0)
                         { return true; }
                         else { return false; }
@@ -132,6 +142,10 @@ namespace AccesosDatos
 
                         int rowsAffected = command.ExecuteNonQuery();
 
+                        DAO_DigitoVerificador DigitoVerificador = new DAO_DigitoVerificador();
+                        DigitoVerificador.UpdateDigitosVerificadores("Users");
+                        DigitoVerificador.UpdateDigitosVerificadores("Users");
+
                         if (rowsAffected > 0)
                         { return true; }
                         else { return false; }
@@ -170,6 +184,10 @@ namespace AccesosDatos
                         command.Parameters.AddWithValue("@user_attempts", usuario.user_attempts);
 
                         int rowsAffected = command.ExecuteNonQuery();
+
+                        DAO_DigitoVerificador DigitoVerificador = new DAO_DigitoVerificador();
+                        DigitoVerificador.UpdateDigitosVerificadores("Users");
+                        DigitoVerificador.UpdateDigitosVerificadores("Users");
 
                         if (rowsAffected > 0)
                         { return true; }
@@ -279,7 +297,7 @@ namespace AccesosDatos
                         if (reader.Read())
                         {
                             string hashedPassword = reader.GetString(0);
-                            Servicios.Validaciones.EncriptarContraseña passwordHasher = new Servicios.Validaciones.EncriptarContraseña();
+                            EncriptarContraseña passwordHasher = new EncriptarContraseña();
                             return passwordHasher.ValidarContraseñaUsuario(password, hashedPassword);
                         }
                         else { return false; }

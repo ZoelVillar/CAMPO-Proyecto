@@ -4,6 +4,7 @@ using BE.Usuarios;
 using Microsoft.VisualBasic.ApplicationServices;
 using Negocio;
 using Negocio.Idiomas;
+using Negocio.Servicios;
 using Negocio.Usuarios;
 using Servicios.Cache;
 using Servicios.Idiomas;
@@ -58,6 +59,9 @@ namespace Vista
             AttachButtonClickEvent(panelBotones);
             consultarCambiarContraseña();
             Actualizar();
+
+            BLL_DigitoVerificador bLL_DigitoVerificador = new BLL_DigitoVerificador();
+           
         }
 
         public void consultarCambiarContraseña()
