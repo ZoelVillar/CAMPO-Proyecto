@@ -19,6 +19,7 @@ using Microsoft.VisualBasic.ApplicationServices;
 using Negocio.Bitacora;
 using Negocio.Servicios;
 using Vista.Principales.Administracion;
+using Negocio.Idiomas;
 
 namespace Vista
 {
@@ -32,10 +33,14 @@ namespace Vista
 
         BLL_Bitacora bitacora;
         BLL_DigitoVerificador bllDigito;
+        BLL_Idioma bllIdioma;
         private void Vista_Login_Load(object sender, EventArgs e)
         {
             bitacora = new BLL_Bitacora();
             bllDigito = new BLL_DigitoVerificador();
+            bllIdioma = new BLL_Idioma();
+            actualizarComboIdiomas();
+
             IdiomasStatic.Observer.AgregarObservador(this);
             encript = new EncriptarContraseña();
             Actualizar();
@@ -219,6 +224,21 @@ namespace Vista
         private void btnVerContra_Click(object sender, EventArgs e)
         {
             if (txtContraseña.UseSystemPasswordChar == true) { txtContraseña.UseSystemPasswordChar = false;  } else txtContraseña.UseSystemPasswordChar = true;
+        }
+
+        private void actualizarComboIdiomas()
+        {
+            comboIdiomas.Items.Clear();
+
+            var idiomas = bllIdioma.retornaIdiomas();
+
+            if (idiomas.Count > 0)
+            {
+                comboIdiomas.DataSource = idiomas;
+                comboIdiomas.DisplayMember = "nombre";
+                comboIdiomas.ValueMember = "id";
+                comboIdiomas.SelectedIndex = 0;
+            }
         }
 
         public void Actualizar()

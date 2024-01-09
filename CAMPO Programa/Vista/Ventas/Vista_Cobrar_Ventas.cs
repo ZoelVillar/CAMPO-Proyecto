@@ -149,7 +149,7 @@ namespace Vista.Ventas
             }
 
             paginaHTML_texto = paginaHTML_texto.Replace("@FILAS", filas);
-            paginaHTML_texto = paginaHTML_texto.Replace("@TOTAL", VentaCache.venta.montoPago.ToString());
+            paginaHTML_texto = paginaHTML_texto.Replace("@TOTAL", VentaCache.venta.montoTotal.ToString());
 
 
             if (dialog.ShowDialog() == DialogResult.OK)
