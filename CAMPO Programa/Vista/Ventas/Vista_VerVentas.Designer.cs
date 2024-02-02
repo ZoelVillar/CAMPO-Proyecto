@@ -138,6 +138,7 @@
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(119, 32);
             this.btnExportar.TabIndex = 83;
+            this.btnExportar.Tag = "btnExportExcel";
             this.btnExportar.Text = "Export Excel";
             this.btnExportar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -159,6 +160,7 @@
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(119, 32);
             this.btnRefresh.TabIndex = 82;
+            this.btnRefresh.Tag = "btnRefresh";
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -194,6 +196,7 @@
             this.btnBorrarBusqueda.Name = "btnBorrarBusqueda";
             this.btnBorrarBusqueda.Size = new System.Drawing.Size(121, 35);
             this.btnBorrarBusqueda.TabIndex = 67;
+            this.btnBorrarBusqueda.Tag = "btnBorrar";
             this.btnBorrarBusqueda.Text = "Borrar";
             this.btnBorrarBusqueda.UseVisualStyleBackColor = false;
             this.btnBorrarBusqueda.Click += new System.EventHandler(this.btnBorrarBusqueda_Click);
@@ -213,6 +216,7 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(119, 35);
             this.btnBuscar.TabIndex = 66;
+            this.btnBuscar.Tag = "btnBuscar";
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -239,6 +243,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 15);
             this.label2.TabIndex = 59;
+            this.label2.Tag = "lblBuscarPor";
             this.label2.Text = "Buscar por:";
             // 
             // label8
@@ -249,6 +254,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(156, 20);
             this.label8.TabIndex = 58;
+            this.label8.Tag = "lblBuscarELaGrilla";
             this.label8.Text = "Buscar en la Grilla";
             // 
             // Vista_VerVentas

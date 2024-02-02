@@ -38,6 +38,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblPerfil = new System.Windows.Forms.Label();
             this.panelBotones = new System.Windows.Forms.Panel();
+            this.btnAdministrar = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
             this.btnGestionIdiomas = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.comboIdiomas = new System.Windows.Forms.ComboBox();
-            this.btnAdministrar = new System.Windows.Forms.Button();
             this.panelContenedor.SuspendLayout();
             this.panelDerecho.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -119,6 +119,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 19);
             this.label2.TabIndex = 47;
+            this.label2.Tag = "lblUsuario";
             this.label2.Text = "Usuario:";
             // 
             // lblArea
@@ -152,6 +153,7 @@
             this.lblPerfil.Name = "lblPerfil";
             this.lblPerfil.Size = new System.Drawing.Size(49, 19);
             this.lblPerfil.TabIndex = 46;
+            this.lblPerfil.Tag = "lblPerfil";
             this.lblPerfil.Text = "Perfil:";
             // 
             // panelBotones
@@ -170,6 +172,25 @@
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Size = new System.Drawing.Size(220, 516);
             this.panelBotones.TabIndex = 0;
+            // 
+            // btnAdministrar
+            // 
+            this.btnAdministrar.AutoEllipsis = true;
+            this.btnAdministrar.BackColor = System.Drawing.Color.White;
+            this.btnAdministrar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAdministrar.FlatAppearance.BorderSize = 0;
+            this.btnAdministrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdministrar.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdministrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAdministrar.Location = new System.Drawing.Point(21, 344);
+            this.btnAdministrar.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
+            this.btnAdministrar.Name = "btnAdministrar";
+            this.btnAdministrar.Size = new System.Drawing.Size(177, 35);
+            this.btnAdministrar.TabIndex = 51;
+            this.btnAdministrar.Tag = "btnAdministrar";
+            this.btnAdministrar.Text = "Administrar";
+            this.btnAdministrar.UseVisualStyleBackColor = false;
+            this.btnAdministrar.Click += new System.EventHandler(this.btnAdministrar_Click);
             // 
             // btnLogout
             // 
@@ -405,25 +426,6 @@
             this.comboIdiomas.Size = new System.Drawing.Size(121, 21);
             this.comboIdiomas.TabIndex = 40;
             this.comboIdiomas.SelectedValueChanged += new System.EventHandler(this.comboIdiomas_SelectedValueChanged);
-            // 
-            // btnAdministrar
-            // 
-            this.btnAdministrar.AutoEllipsis = true;
-            this.btnAdministrar.BackColor = System.Drawing.Color.White;
-            this.btnAdministrar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAdministrar.FlatAppearance.BorderSize = 0;
-            this.btnAdministrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdministrar.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdministrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAdministrar.Location = new System.Drawing.Point(21, 344);
-            this.btnAdministrar.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
-            this.btnAdministrar.Name = "btnAdministrar";
-            this.btnAdministrar.Size = new System.Drawing.Size(177, 35);
-            this.btnAdministrar.TabIndex = 51;
-            this.btnAdministrar.Tag = "btnAdministrar";
-            this.btnAdministrar.Text = "Administrar";
-            this.btnAdministrar.UseVisualStyleBackColor = false;
-            this.btnAdministrar.Click += new System.EventHandler(this.btnAdministrar_Click);
             // 
             // Vista_Principal
             // 

@@ -49,13 +49,13 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGrid = new System.Windows.Forms.DataGridView();
-            this.idCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnExportar = new FontAwesome.Sharp.IconButton();
+            this.idCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
@@ -92,6 +92,7 @@
             this.btnBorrarBusqueda.Name = "btnBorrarBusqueda";
             this.btnBorrarBusqueda.Size = new System.Drawing.Size(144, 35);
             this.btnBorrarBusqueda.TabIndex = 67;
+            this.btnBorrarBusqueda.Tag = "btnBorrar";
             this.btnBorrarBusqueda.Text = "Borrar";
             this.btnBorrarBusqueda.UseVisualStyleBackColor = false;
             this.btnBorrarBusqueda.Click += new System.EventHandler(this.btnBorrarBusqueda_Click);
@@ -111,6 +112,7 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(144, 35);
             this.btnBuscar.TabIndex = 66;
+            this.btnBuscar.Tag = "lblBuscar";
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -137,6 +139,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 15);
             this.label2.TabIndex = 59;
+            this.label2.Tag = "lblBuscarPor";
             this.label2.Text = "Buscar por:";
             // 
             // label8
@@ -147,6 +150,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(156, 20);
             this.label8.TabIndex = 58;
+            this.label8.Tag = "lblBuscarEnLaGrilla";
             this.label8.Text = "Buscar en la Grilla";
             // 
             // btnRefresh
@@ -164,6 +168,7 @@
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(68, 32);
             this.btnRefresh.TabIndex = 70;
+            this.btnRefresh.Tag = "btnRefresh";
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -206,9 +211,10 @@
             this.lblCategoriaSeleccionada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategoriaSeleccionada.Location = new System.Drawing.Point(22, 99);
             this.lblCategoriaSeleccionada.Name = "lblCategoriaSeleccionada";
-            this.lblCategoriaSeleccionada.Size = new System.Drawing.Size(179, 16);
+            this.lblCategoriaSeleccionada.Size = new System.Drawing.Size(171, 16);
             this.lblCategoriaSeleccionada.TabIndex = 68;
-            this.lblCategoriaSeleccionada.Text = "Categoría Seleccionada:";
+            this.lblCategoriaSeleccionada.Tag = "CategoríaSeleccionada";
+            this.lblCategoriaSeleccionada.Text = "CategoríaSeleccionada";
             this.lblCategoriaSeleccionada.Visible = false;
             // 
             // comboEstado
@@ -237,6 +243,7 @@
             this.btnBorrarIngresoDatos.Name = "btnBorrarIngresoDatos";
             this.btnBorrarIngresoDatos.Size = new System.Drawing.Size(144, 35);
             this.btnBorrarIngresoDatos.TabIndex = 68;
+            this.btnBorrarIngresoDatos.Tag = "btnBorrar";
             this.btnBorrarIngresoDatos.Text = "Borrar";
             this.btnBorrarIngresoDatos.UseVisualStyleBackColor = false;
             this.btnBorrarIngresoDatos.Click += new System.EventHandler(this.btnBorrarIngresoDatos_Click);
@@ -249,6 +256,7 @@
             this.estadolbl.Name = "estadolbl";
             this.estadolbl.Size = new System.Drawing.Size(45, 15);
             this.estadolbl.TabIndex = 63;
+            this.estadolbl.Tag = "Estado";
             this.estadolbl.Text = "Estado";
             // 
             // btnAceptar
@@ -266,6 +274,7 @@
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(144, 35);
             this.btnAceptar.TabIndex = 61;
+            this.btnAceptar.Tag = "btnAceptar";
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -300,6 +309,7 @@
             this.lblDatos.Name = "lblDatos";
             this.lblDatos.Size = new System.Drawing.Size(129, 20);
             this.lblDatos.TabIndex = 58;
+            this.lblDatos.Tag = "IngresarDatos";
             this.lblDatos.Text = "Ingresar Datos";
             // 
             // txtDescripcion
@@ -317,6 +327,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 15);
             this.label1.TabIndex = 51;
+            this.label1.Tag = "Descripcion";
             this.label1.Text = "Descripción";
             // 
             // dataGrid
@@ -333,22 +344,6 @@
             this.dataGrid.TabIndex = 67;
             this.dataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridCategoria_CellClick);
             // 
-            // idCategoria
-            // 
-            this.idCategoria.HeaderText = "idCategoria";
-            this.idCategoria.Name = "idCategoria";
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "descripción";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.Width = 150;
-            // 
-            // estado
-            // 
-            this.estado.HeaderText = "estado";
-            this.estado.Name = "estado";
-            // 
             // btnAgregar
             // 
             this.btnAgregar.AutoEllipsis = true;
@@ -364,6 +359,7 @@
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(68, 32);
             this.btnAgregar.TabIndex = 71;
+            this.btnAgregar.Tag = "btnAgregar";
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -383,6 +379,7 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(68, 32);
             this.btnModificar.TabIndex = 72;
+            this.btnModificar.Tag = "btnModificar";
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -402,6 +399,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(68, 32);
             this.btnEliminar.TabIndex = 73;
+            this.btnEliminar.Tag = "btnBorrar";
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -422,11 +420,28 @@
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(119, 32);
             this.btnExportar.TabIndex = 82;
+            this.btnExportar.Tag = "btnExportExcel";
             this.btnExportar.Text = "Export Excel";
             this.btnExportar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExportar.UseVisualStyleBackColor = false;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            // 
+            // idCategoria
+            // 
+            this.idCategoria.HeaderText = "idCategoria";
+            this.idCategoria.Name = "idCategoria";
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "descripción";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.Width = 150;
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "estado";
+            this.estado.Name = "estado";
             // 
             // Vista_GestionCategorias
             // 
@@ -476,14 +491,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGrid;
         private System.Windows.Forms.ComboBox comboEstado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCategoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label lblCategoriaSeleccionada;
         private System.Windows.Forms.Label lblCategoria;
         private FontAwesome.Sharp.IconButton btnExportar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
     }
 }

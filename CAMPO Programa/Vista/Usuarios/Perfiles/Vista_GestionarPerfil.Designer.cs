@@ -131,6 +131,7 @@
             this.btnAgregarPerfil.Name = "btnAgregarPerfil";
             this.btnAgregarPerfil.Size = new System.Drawing.Size(130, 40);
             this.btnAgregarPerfil.TabIndex = 57;
+            this.btnAgregarPerfil.Tag = "btnAgregarPerfil";
             this.btnAgregarPerfil.Text = "Agregar Perfil";
             this.btnAgregarPerfil.UseVisualStyleBackColor = false;
             this.btnAgregarPerfil.Click += new System.EventHandler(this.btnAgregarPerfil_Click);
@@ -147,6 +148,7 @@
             this.btnEliminarPerfil.Name = "btnEliminarPerfil";
             this.btnEliminarPerfil.Size = new System.Drawing.Size(130, 40);
             this.btnEliminarPerfil.TabIndex = 58;
+            this.btnEliminarPerfil.Tag = "btnEliminarPerfil";
             this.btnEliminarPerfil.Text = "Eliminar Perfil";
             this.btnEliminarPerfil.UseVisualStyleBackColor = false;
             this.btnEliminarPerfil.Click += new System.EventHandler(this.btnEliminarPerfil_Click);
@@ -163,6 +165,7 @@
             this.btnEliminarPC.Name = "btnEliminarPC";
             this.btnEliminarPC.Size = new System.Drawing.Size(130, 50);
             this.btnEliminarPC.TabIndex = 60;
+            this.btnEliminarPC.Tag = "btnEliminarPermisoCompuesto";
             this.btnEliminarPC.Text = "Eliminar Permiso Compuesto";
             this.btnEliminarPC.UseVisualStyleBackColor = false;
             this.btnEliminarPC.Click += new System.EventHandler(this.btnEliminarPC_Click);
@@ -179,6 +182,7 @@
             this.btnAgregarPC.Name = "btnAgregarPC";
             this.btnAgregarPC.Size = new System.Drawing.Size(130, 50);
             this.btnAgregarPC.TabIndex = 59;
+            this.btnAgregarPC.Tag = "btnAgregarPermisoCompuesto";
             this.btnAgregarPC.Text = "Agregar Permiso Compuesto";
             this.btnAgregarPC.UseVisualStyleBackColor = false;
             this.btnAgregarPC.Click += new System.EventHandler(this.btnAgregarPC_Click);
@@ -195,6 +199,7 @@
             this.btnVincularPCaPC.Name = "btnVincularPCaPC";
             this.btnVincularPCaPC.Size = new System.Drawing.Size(130, 50);
             this.btnVincularPCaPC.TabIndex = 62;
+            this.btnVincularPCaPC.Tag = "btnVincularP.S.-P.C.";
             this.btnVincularPCaPC.Text = "Vincular: \r\nP.C. → P.C.";
             this.btnVincularPCaPC.UseVisualStyleBackColor = false;
             this.btnVincularPCaPC.Click += new System.EventHandler(this.btnVincularPCaPC_Click);
@@ -211,6 +216,7 @@
             this.btnVincularPCaPS.Name = "btnVincularPCaPS";
             this.btnVincularPCaPS.Size = new System.Drawing.Size(130, 50);
             this.btnVincularPCaPS.TabIndex = 61;
+            this.btnVincularPCaPS.Tag = "btnVincularP.C.-P.S.";
             this.btnVincularPCaPS.Text = "Vincular: \r\nP.C. → P.S.";
             this.btnVincularPCaPS.UseVisualStyleBackColor = false;
             this.btnVincularPCaPS.Click += new System.EventHandler(this.btnVincularPCaPS_Click);
@@ -227,6 +233,7 @@
             this.btnAgregarPS.Name = "btnAgregarPS";
             this.btnAgregarPS.Size = new System.Drawing.Size(86, 36);
             this.btnAgregarPS.TabIndex = 63;
+            this.btnAgregarPS.Tag = "NuevoPS";
             this.btnAgregarPS.Text = "Nuevo PS";
             this.btnAgregarPS.UseVisualStyleBackColor = false;
             this.btnAgregarPS.Click += new System.EventHandler(this.btnAgregarPS_Click);
@@ -243,6 +250,7 @@
             this.btnBorrarPS.Name = "btnBorrarPS";
             this.btnBorrarPS.Size = new System.Drawing.Size(86, 36);
             this.btnBorrarPS.TabIndex = 64;
+            this.btnBorrarPS.Tag = "BorrarPS";
             this.btnBorrarPS.Text = "Borrar PS";
             this.btnBorrarPS.UseVisualStyleBackColor = false;
             this.btnBorrarPS.Click += new System.EventHandler(this.btnBorrarPS_Click);
@@ -299,6 +307,7 @@
             this.btnDesvincular.Name = "btnDesvincular";
             this.btnDesvincular.Size = new System.Drawing.Size(234, 36);
             this.btnDesvincular.TabIndex = 69;
+            this.btnDesvincular.Tag = "btnDesvincular";
             this.btnDesvincular.Text = "Desvincular";
             this.btnDesvincular.UseVisualStyleBackColor = false;
             this.btnDesvincular.Click += new System.EventHandler(this.btnDesvincular_Click);

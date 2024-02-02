@@ -62,6 +62,7 @@
             this.btnGestionProductos.Name = "btnGestionProductos";
             this.btnGestionProductos.Size = new System.Drawing.Size(130, 47);
             this.btnGestionProductos.TabIndex = 49;
+            this.btnGestionProductos.Tag = "GestionarProductos";
             this.btnGestionProductos.Text = "Gestionar Productos";
             this.btnGestionProductos.UseVisualStyleBackColor = false;
             this.btnGestionProductos.Click += new System.EventHandler(this.btnGestionProductos_Click);
@@ -78,6 +79,7 @@
             this.btnGestionCategorias.Name = "btnGestionCategorias";
             this.btnGestionCategorias.Size = new System.Drawing.Size(130, 46);
             this.btnGestionCategorias.TabIndex = 48;
+            this.btnGestionCategorias.Tag = "GestionarCategorias";
             this.btnGestionCategorias.Text = "Gestionar Categorías";
             this.btnGestionCategorias.UseVisualStyleBackColor = false;
             this.btnGestionCategorias.Click += new System.EventHandler(this.btnGestionCategorias_Click);

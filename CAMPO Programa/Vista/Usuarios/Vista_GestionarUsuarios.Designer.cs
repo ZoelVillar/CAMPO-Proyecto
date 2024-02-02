@@ -83,6 +83,7 @@
             this.btnDesbloquear.Name = "btnDesbloquear";
             this.btnDesbloquear.Size = new System.Drawing.Size(102, 32);
             this.btnDesbloquear.TabIndex = 51;
+            this.btnDesbloquear.Tag = "btnDesbloquear";
             this.btnDesbloquear.Text = "Desbloquear";
             this.btnDesbloquear.UseVisualStyleBackColor = false;
             this.btnDesbloquear.Click += new System.EventHandler(this.btnDesbloquear_Click);
@@ -99,6 +100,7 @@
             this.btnBloquear.Name = "btnBloquear";
             this.btnBloquear.Size = new System.Drawing.Size(102, 32);
             this.btnBloquear.TabIndex = 50;
+            this.btnBloquear.Tag = "btnBloquear";
             this.btnBloquear.Text = "Bloquear";
             this.btnBloquear.UseVisualStyleBackColor = false;
             this.btnBloquear.Click += new System.EventHandler(this.btnBloquear_Click);
@@ -115,6 +117,7 @@
             this.btnModifUser.Name = "btnModifUser";
             this.btnModifUser.Size = new System.Drawing.Size(76, 32);
             this.btnModifUser.TabIndex = 48;
+            this.btnModifUser.Tag = "btnModificar";
             this.btnModifUser.Text = "Modificar";
             this.btnModifUser.UseVisualStyleBackColor = false;
             this.btnModifUser.Click += new System.EventHandler(this.btnModifUser_Click);
@@ -131,6 +134,7 @@
             this.btnCrearUsuario.Name = "btnCrearUsuario";
             this.btnCrearUsuario.Size = new System.Drawing.Size(76, 32);
             this.btnCrearUsuario.TabIndex = 44;
+            this.btnCrearUsuario.Tag = "btnCrear";
             this.btnCrearUsuario.Text = "Crear";
             this.btnCrearUsuario.UseVisualStyleBackColor = false;
             this.btnCrearUsuario.Click += new System.EventHandler(this.btnCrearUsuario_Click);
@@ -205,6 +209,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 15);
             this.label1.TabIndex = 51;
+            this.label1.Tag = "lblNombre";
             this.label1.Text = "Nombre";
             // 
             // lblEmail
@@ -239,6 +244,7 @@
             this.lblDatos.Name = "lblDatos";
             this.lblDatos.Size = new System.Drawing.Size(129, 20);
             this.lblDatos.TabIndex = 58;
+            this.lblDatos.Tag = "lblIngresarDatos";
             this.lblDatos.Text = "Ingresar Datos";
             // 
             // labelFunction
@@ -278,6 +284,7 @@
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(144, 35);
             this.btnAceptar.TabIndex = 61;
+            this.btnAceptar.Tag = "btnAceptar";
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -290,6 +297,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 15);
             this.label3.TabIndex = 63;
+            this.label3.Tag = "lblApellido";
             this.label3.Text = "Apellido";
             // 
             // txtNuevoApellido
@@ -315,6 +323,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 15);
             this.label4.TabIndex = 65;
+            this.label4.Tag = "lblPerfil";
             this.label4.Text = "Perfil";
             // 
             // panel2
@@ -355,6 +364,7 @@
             this.btnBorrarIngresoDatos.Name = "btnBorrarIngresoDatos";
             this.btnBorrarIngresoDatos.Size = new System.Drawing.Size(144, 35);
             this.btnBorrarIngresoDatos.TabIndex = 68;
+            this.btnBorrarIngresoDatos.Tag = "btnBorrar";
             this.btnBorrarIngresoDatos.Text = "Borrar";
             this.btnBorrarIngresoDatos.UseVisualStyleBackColor = false;
             this.btnBorrarIngresoDatos.Click += new System.EventHandler(this.btnBorrarIngresoDatos_Click);
@@ -374,6 +384,7 @@
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(68, 32);
             this.btnRefresh.TabIndex = 66;
+            this.btnRefresh.Tag = "btnRefresh";
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -402,6 +413,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 15);
             this.label5.TabIndex = 68;
+            this.label5.Tag = "lblBuscar";
             this.label5.Text = "Buscar:";
             // 
             // btnBorrarBusqueda
@@ -419,6 +431,7 @@
             this.btnBorrarBusqueda.Name = "btnBorrarBusqueda";
             this.btnBorrarBusqueda.Size = new System.Drawing.Size(144, 35);
             this.btnBorrarBusqueda.TabIndex = 67;
+            this.btnBorrarBusqueda.Tag = "btnBorrar";
             this.btnBorrarBusqueda.Text = "Borrar";
             this.btnBorrarBusqueda.UseVisualStyleBackColor = false;
             this.btnBorrarBusqueda.Click += new System.EventHandler(this.btnBorrarBusqueda_Click);
@@ -438,6 +451,7 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(144, 35);
             this.btnBuscar.TabIndex = 66;
+            this.btnBuscar.Tag = "btnBuscar";
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -464,6 +478,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 15);
             this.label2.TabIndex = 59;
+            this.label2.Tag = "lblBuscarPor";
             this.label2.Text = "Buscar por:";
             // 
             // label8
@@ -474,6 +489,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(156, 20);
             this.label8.TabIndex = 58;
+            this.label8.Tag = "lblBuscarELaGrilla";
             this.label8.Text = "Buscar en la Grilla";
             // 
             // btnExportar
@@ -492,6 +508,7 @@
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(119, 32);
             this.btnExportar.TabIndex = 83;
+            this.btnExportar.Tag = "btnExportExcel";
             this.btnExportar.Text = "Export Excel";
             this.btnExportar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

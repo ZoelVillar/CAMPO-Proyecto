@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vista.Bitacora;
+using Vista.Usuarios.Idiomas;
 
 namespace Vista.Principales.Administracion
 {
@@ -57,6 +58,8 @@ namespace Vista.Principales.Administracion
 
         public void Actualizar()
         {
+            IdiomasTraduccionServicios idiomasTraduccion = new IdiomasTraduccionServicios();
+            idiomasTraduccion.CambiarIdiomaEnFormulario(this);
         }
 
         private void btnBitacoraCambios_Click(object sender, EventArgs e)

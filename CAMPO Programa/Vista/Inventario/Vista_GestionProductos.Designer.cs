@@ -57,16 +57,16 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGrid = new System.Windows.Forms.DataGridView();
+            this.btnExportar = new FontAwesome.Sharp.IconButton();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnExportar = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
@@ -87,6 +87,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(70, 32);
             this.btnEliminar.TabIndex = 80;
+            this.btnEliminar.Tag = "btnBorrar";
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Visible = false;
@@ -107,6 +108,7 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(70, 32);
             this.btnModificar.TabIndex = 79;
+            this.btnModificar.Tag = "btnModificar";
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -126,6 +128,7 @@
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(70, 32);
             this.btnAgregar.TabIndex = 78;
+            this.btnAgregar.Tag = "btnAgregar";
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -161,6 +164,7 @@
             this.btnBorrarBusqueda.Name = "btnBorrarBusqueda";
             this.btnBorrarBusqueda.Size = new System.Drawing.Size(121, 35);
             this.btnBorrarBusqueda.TabIndex = 67;
+            this.btnBorrarBusqueda.Tag = "btnBorrar";
             this.btnBorrarBusqueda.Text = "Borrar";
             this.btnBorrarBusqueda.UseVisualStyleBackColor = false;
             this.btnBorrarBusqueda.Click += new System.EventHandler(this.btnBorrarBusqueda_Click);
@@ -180,6 +184,7 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(119, 35);
             this.btnBuscar.TabIndex = 66;
+            this.btnBuscar.Tag = "lblBuscar";
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -206,6 +211,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 15);
             this.label2.TabIndex = 59;
+            this.label2.Tag = "lblBuscarPor";
             this.label2.Text = "Buscar por:";
             // 
             // label8
@@ -216,6 +222,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(156, 20);
             this.label8.TabIndex = 58;
+            this.label8.Tag = "lblBuscarEnLaGrilla";
             this.label8.Text = "Buscar en la Grilla";
             // 
             // btnRefresh
@@ -233,6 +240,7 @@
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(70, 32);
             this.btnRefresh.TabIndex = 77;
+            this.btnRefresh.Tag = "btnRefresh";
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -282,6 +290,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 15);
             this.label4.TabIndex = 71;
+            this.label4.Tag = "Categoria";
             this.label4.Text = "Categoría";
             // 
             // lblSeleccionadoEspecifico
@@ -311,6 +320,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 15);
             this.label5.TabIndex = 72;
+            this.label5.Tag = "estado";
             this.label5.Text = "Estado";
             // 
             // lblSeleccionado
@@ -321,6 +331,7 @@
             this.lblSeleccionado.Name = "lblSeleccionado";
             this.lblSeleccionado.Size = new System.Drawing.Size(159, 15);
             this.lblSeleccionado.TabIndex = 68;
+            this.lblSeleccionado.Tag = "ProductoSeleccionado";
             this.lblSeleccionado.Text = "Producto Seleccionado:";
             this.lblSeleccionado.Visible = false;
             // 
@@ -339,6 +350,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 15);
             this.label3.TabIndex = 70;
+            this.label3.Tag = "Descripcion";
             this.label3.Text = "Descripción";
             // 
             // btnBorrarIngresoDatos
@@ -356,6 +368,7 @@
             this.btnBorrarIngresoDatos.Name = "btnBorrarIngresoDatos";
             this.btnBorrarIngresoDatos.Size = new System.Drawing.Size(144, 35);
             this.btnBorrarIngresoDatos.TabIndex = 68;
+            this.btnBorrarIngresoDatos.Tag = "btnBorrar";
             this.btnBorrarIngresoDatos.Text = "Borrar";
             this.btnBorrarIngresoDatos.UseVisualStyleBackColor = false;
             this.btnBorrarIngresoDatos.Click += new System.EventHandler(this.btnBorrarIngresoDatos_Click);
@@ -368,6 +381,7 @@
             this.estadolbl.Name = "estadolbl";
             this.estadolbl.Size = new System.Drawing.Size(52, 15);
             this.estadolbl.TabIndex = 63;
+            this.estadolbl.Tag = "lblNombre";
             this.estadolbl.Text = "Nombre";
             // 
             // btnAceptar
@@ -385,6 +399,7 @@
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(144, 35);
             this.btnAceptar.TabIndex = 61;
+            this.btnAceptar.Tag = "btnAceptar";
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click_1);
@@ -435,6 +450,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 15);
             this.label1.TabIndex = 51;
+            this.label1.Tag = "codigo";
             this.label1.Text = "Código";
             // 
             // dataGrid
@@ -443,9 +459,9 @@
             this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.codigo,
-            this.nombre,
-            this.descripcion,
-            this.categoria,
+            this.lblNombre,
+            this.Descripcion,
+            this.Categoria,
             this.stock,
             this.precioCompra,
             this.precioVenta,
@@ -456,6 +472,29 @@
             this.dataGrid.Size = new System.Drawing.Size(884, 329);
             this.dataGrid.TabIndex = 74;
             this.dataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridProductos_CellClick);
+            // 
+            // btnExportar
+            // 
+            this.btnExportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(129)))), ((int)(((byte)(48)))));
+            this.btnExportar.FlatAppearance.BorderSize = 0;
+            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnExportar.ForeColor = System.Drawing.Color.White;
+            this.btnExportar.IconChar = FontAwesome.Sharp.IconChar.Download;
+            this.btnExportar.IconColor = System.Drawing.Color.White;
+            this.btnExportar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExportar.IconSize = 18;
+            this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportar.Location = new System.Drawing.Point(719, 375);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(119, 32);
+            this.btnExportar.TabIndex = 81;
+            this.btnExportar.Tag = "btnExportExcel";
+            this.btnExportar.Text = "Export Excel";
+            this.btnExportar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExportar.UseVisualStyleBackColor = false;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // id
             // 
@@ -469,22 +508,22 @@
             this.codigo.Name = "codigo";
             this.codigo.Width = 55;
             // 
-            // nombre
+            // lblNombre
             // 
-            this.nombre.HeaderText = "nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.Width = 120;
+            this.lblNombre.HeaderText = "nombre";
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Width = 120;
             // 
-            // descripcion
+            // Descripcion
             // 
-            this.descripcion.HeaderText = "descripción";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.Width = 140;
+            this.Descripcion.HeaderText = "descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Width = 140;
             // 
-            // categoria
+            // Categoria
             // 
-            this.categoria.HeaderText = "categoría";
-            this.categoria.Name = "categoria";
+            this.Categoria.HeaderText = "categoría";
+            this.Categoria.Name = "Categoria";
             // 
             // stock
             // 
@@ -505,28 +544,6 @@
             // 
             this.estado.HeaderText = "estado";
             this.estado.Name = "estado";
-            // 
-            // btnExportar
-            // 
-            this.btnExportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(129)))), ((int)(((byte)(48)))));
-            this.btnExportar.FlatAppearance.BorderSize = 0;
-            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnExportar.ForeColor = System.Drawing.Color.White;
-            this.btnExportar.IconChar = FontAwesome.Sharp.IconChar.Download;
-            this.btnExportar.IconColor = System.Drawing.Color.White;
-            this.btnExportar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExportar.IconSize = 18;
-            this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportar.Location = new System.Drawing.Point(719, 375);
-            this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(119, 32);
-            this.btnExportar.TabIndex = 81;
-            this.btnExportar.Text = "Export Excel";
-            this.btnExportar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExportar.UseVisualStyleBackColor = false;
-            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // Vista_GestionProductos
             // 
@@ -586,15 +603,15 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label3;
+        private FontAwesome.Sharp.IconButton btnExportar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lblNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn stock;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
-        private FontAwesome.Sharp.IconButton btnExportar;
     }
 }

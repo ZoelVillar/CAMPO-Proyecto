@@ -57,13 +57,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ubicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -77,6 +77,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 15);
             this.label4.TabIndex = 71;
+            this.label4.Tag = "Telefono";
             this.label4.Text = "Teléfono";
             // 
             // lblSeleccionadoEspecifico
@@ -106,6 +107,7 @@
             this.lblSeleccionado.Name = "lblSeleccionado";
             this.lblSeleccionado.Size = new System.Drawing.Size(167, 15);
             this.lblSeleccionado.TabIndex = 68;
+            this.lblSeleccionado.Tag = "ProveedorSeleccionado";
             this.lblSeleccionado.Text = "Proveedor Seleccionado:";
             this.lblSeleccionado.Visible = false;
             // 
@@ -123,7 +125,7 @@
             this.id,
             this.Documento,
             this.Ubicacion,
-            this.Mail,
+            this.Email,
             this.Telefono,
             this.Estado});
             this.dataGrid.Location = new System.Drawing.Point(30, 29);
@@ -141,6 +143,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 15);
             this.label5.TabIndex = 72;
+            this.label5.Tag = "Estado";
             this.label5.Text = "Estado";
             // 
             // btnExportar
@@ -159,6 +162,7 @@
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(119, 32);
             this.btnExportar.TabIndex = 89;
+            this.btnExportar.Tag = "btnExportExcel";
             this.btnExportar.Text = "Export Excel";
             this.btnExportar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -173,6 +177,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 15);
             this.label3.TabIndex = 70;
+            this.label3.Tag = "Ubicacion";
             this.label3.Text = "Ubicacion";
             // 
             // btnEliminar
@@ -190,6 +195,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(70, 32);
             this.btnEliminar.TabIndex = 88;
+            this.btnEliminar.Tag = "btnBorrar";
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -209,6 +215,7 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(70, 32);
             this.btnModificar.TabIndex = 87;
+            this.btnModificar.Tag = "btnModificar";
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -228,6 +235,7 @@
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(70, 32);
             this.btnAgregar.TabIndex = 86;
+            this.btnAgregar.Tag = "btnAgregar";
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -263,6 +271,7 @@
             this.btnBorrarBusqueda.Name = "btnBorrarBusqueda";
             this.btnBorrarBusqueda.Size = new System.Drawing.Size(121, 35);
             this.btnBorrarBusqueda.TabIndex = 67;
+            this.btnBorrarBusqueda.Tag = "btnBorrar";
             this.btnBorrarBusqueda.Text = "Borrar";
             this.btnBorrarBusqueda.UseVisualStyleBackColor = false;
             this.btnBorrarBusqueda.Click += new System.EventHandler(this.btnBorrarBusqueda_Click);
@@ -282,6 +291,7 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(119, 35);
             this.btnBuscar.TabIndex = 66;
+            this.btnBuscar.Tag = "btnBuscar";
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -308,6 +318,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 15);
             this.label2.TabIndex = 59;
+            this.label2.Tag = "lblBuscarPor";
             this.label2.Text = "Buscar por:";
             // 
             // label8
@@ -318,6 +329,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(156, 20);
             this.label8.TabIndex = 58;
+            this.label8.Tag = "lblBuscarEnLaGrilla";
             this.label8.Text = "Buscar en la Grilla";
             // 
             // btnBorrarIngresoDatos
@@ -335,6 +347,7 @@
             this.btnBorrarIngresoDatos.Name = "btnBorrarIngresoDatos";
             this.btnBorrarIngresoDatos.Size = new System.Drawing.Size(144, 35);
             this.btnBorrarIngresoDatos.TabIndex = 68;
+            this.btnBorrarIngresoDatos.Tag = "btnBorrar";
             this.btnBorrarIngresoDatos.Text = "Borrar";
             this.btnBorrarIngresoDatos.UseVisualStyleBackColor = false;
             this.btnBorrarIngresoDatos.Click += new System.EventHandler(this.btnBorrarIngresoDatos_Click);
@@ -347,6 +360,7 @@
             this.estadolbl.Name = "estadolbl";
             this.estadolbl.Size = new System.Drawing.Size(31, 15);
             this.estadolbl.TabIndex = 63;
+            this.estadolbl.Tag = "Email";
             this.estadolbl.Text = "Mail";
             // 
             // btnAceptar
@@ -364,6 +378,7 @@
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(144, 35);
             this.btnAceptar.TabIndex = 61;
+            this.btnAceptar.Tag = "btnAceptar";
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -414,6 +429,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 15);
             this.label1.TabIndex = 51;
+            this.label1.Tag = "Documento";
             this.label1.Text = "Documento";
             // 
             // btnRefresh
@@ -431,6 +447,7 @@
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(70, 32);
             this.btnRefresh.TabIndex = 85;
+            this.btnRefresh.Tag = "btnRefresh";
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -461,6 +478,13 @@
             this.panel2.Size = new System.Drawing.Size(604, 217);
             this.panel2.TabIndex = 83;
             // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(428, 67);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(156, 21);
+            this.txtTelefono.TabIndex = 73;
+            // 
             // id
             // 
             this.id.HeaderText = "id";
@@ -476,10 +500,10 @@
             this.Ubicacion.HeaderText = "Ubicacion";
             this.Ubicacion.Name = "Ubicacion";
             // 
-            // Mail
+            // Email
             // 
-            this.Mail.HeaderText = "Mail";
-            this.Mail.Name = "Mail";
+            this.Email.HeaderText = "Mail";
+            this.Email.Name = "Email";
             // 
             // Telefono
             // 
@@ -490,13 +514,6 @@
             // 
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(428, 67);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(156, 21);
-            this.txtTelefono.TabIndex = 73;
             // 
             // Vista_GestionarProveedoes
             // 
@@ -555,12 +572,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ubicacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.TextBox txtTelefono;
     }
 }

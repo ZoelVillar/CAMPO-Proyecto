@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Usuarios.Idiomas;
 
 namespace Vista.Bitacora
 {
@@ -72,7 +73,9 @@ namespace Vista.Bitacora
 
         public void Actualizar()
         {
-
+            IdiomasTraduccionServicios asd = new IdiomasTraduccionServicios();
+            asd.CambiarIdiomaEnFormulario(this);
+            asd.TraducirColumnas(dataGrid);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
