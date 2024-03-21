@@ -41,11 +41,15 @@ namespace Vista.Usuarios.Idiomas
             BLL_Idioma bllIdioma = new BLL_Idioma();
             string idiomaActual = IdiomasStatic.Observer.obtenerIdiomaActual();
             var idiomaEncontrado = bllIdioma.retornaIdiomas().Find(x => x.nombre == idiomaActual);
-            var traducciones = bllIdioma.retornaTraduccionesIdioma(new BE_Idioma() { id = idiomaEncontrado.id, nombre = idiomaEncontrado.nombre });
-
-            foreach (BE_Traduccion traduccion in traducciones)
+            if(idiomaEncontrado != null)
             {
-                RecorrerControles(formulario, traduccion);
+                var traducciones = bllIdioma.retornaTraduccionesIdioma(new BE_Idioma() { id = idiomaEncontrado.id, nombre = idiomaEncontrado.nombre });
+
+                foreach (BE_Traduccion traduccion in traducciones)
+                {
+                    RecorrerControles(formulario, traduccion);
+                }
+
             }
         }
 

@@ -243,8 +243,8 @@ namespace Vista
 
         public void Actualizar()
         {
-            //IdiomasTraduccionServicios asd = new IdiomasTraduccionServicios();
-            //asd.CambiarIdiomaEnFormulario(this);
+            IdiomasTraduccionServicios asd = new IdiomasTraduccionServicios();
+            asd.CambiarIdiomaEnFormulario(this);
         }
 
         private void comboIdiomas_SelectedValueChanged(object sender, EventArgs e)

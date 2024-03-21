@@ -139,7 +139,6 @@ namespace Vista
 
         private void actualizarComboIdiomas()
         {
-            comboIdiomas.Items.Clear();
 
             var idiomas = bllIdioma.retornaIdiomas();
 
@@ -297,6 +296,9 @@ namespace Vista
             IdiomasStatic.Observer.cambiarIdioma(comboIdiomas.Text);
         }
 
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            actualizarComboIdiomas();
+        }
     }
 }
