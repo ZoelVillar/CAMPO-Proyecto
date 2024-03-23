@@ -17,22 +17,27 @@ namespace Vista.Usuarios.Idiomas
             BLL_Idioma bllIdioma = new BLL_Idioma();
             string idiomaActual = IdiomasStatic.Observer.obtenerIdiomaActual();
             var idiomaEncontrado = bllIdioma.retornaIdiomas().Find(x => x.nombre == idiomaActual);
-            var traducciones = bllIdioma.retornaTraduccionesIdioma(new BE_Idioma() { id = idiomaEncontrado.id, nombre = idiomaEncontrado.nombre });
 
-            foreach (DataGridViewColumn columna in dataGridView.Columns)
+            if(idiomaEncontrado != null)
             {
-                // Verifica si la columna tiene un nombre asignado
-                if (!string.IsNullOrEmpty(columna.Name))
-                {
-                    // Busca la traducción correspondiente en las traducciones usando el nombre de la columna
-                    var traduccion = traducciones.FirstOrDefault(t => t.tagIdioma.tag == columna.Name);
+                var traducciones = bllIdioma.retornaTraduccionesIdioma(new BE_Idioma() { id = idiomaEncontrado.id, nombre = idiomaEncontrado.nombre });
 
-                    // Si se encuentra una traducción válida, asigna el texto traducido a la cabecera de la columna
-                    if (traduccion != null && traduccion.textoTraducido != "-----")
+                foreach (DataGridViewColumn columna in dataGridView.Columns)
+                {
+                    // Verifica si la columna tiene un nombre asignado
+                    if (!string.IsNullOrEmpty(columna.Name))
                     {
-                        columna.HeaderText = traduccion.textoTraducido;
+                        // Busca la traducción correspondiente en las traducciones usando el nombre de la columna
+                        var traduccion = traducciones.FirstOrDefault(t => t.tagIdioma.tag == columna.Name);
+
+                        // Si se encuentra una traducción válida, asigna el texto traducido a la cabecera de la columna
+                        if (traduccion != null && traduccion.textoTraducido != "-----")
+                        {
+                            columna.HeaderText = traduccion.textoTraducido;
+                        }
                     }
                 }
+
             }
         }
 

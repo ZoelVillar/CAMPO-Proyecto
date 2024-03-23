@@ -53,15 +53,17 @@ namespace Vista
             if (string.IsNullOrEmpty(txtUsuario.Text)) { posible = false; mensaje += "Ingrese un mail";  }
             if (string.IsNullOrEmpty(txtContraseña.Text)) { posible = false; mensaje += "\nIngrese una contraseña"; }
 
-           
+           //Comprobar que los campos no estén vacíos
             if (posible)
             {
                 BLL_User User = new BLL_User();
+                BE_User Usuario = User.retornaUsuario(txtUsuario.Text);
                 string hash = encript.Encriptar(txtContraseña.Text);
                 
+                //Comrpobar usuario y contraseña + que no haya una conexion existente
                 if (User.LoginUser(txtUsuario.Text, txtContraseña.Text) && !User.comprobarConexion())
                 {
-                    var Usuario = User.retornaUsuario(txtUsuario.Text);
+                    //Comprobar que no este bloqueado
                     if (!Usuario.user_blocked)
                     {
                         BE_User userAux = new BE_User()
@@ -74,6 +76,7 @@ namespace Vista
 
                         User.EditarRestricciones(userAux);
 
+                        //Verificar DV
                         if (bllDigito.VerificarDigito("Producto") && bllDigito.VerificarDigito("Venta") && bllDigito.VerificarDigito("Users"))
                         {
 
@@ -106,9 +109,40 @@ namespace Vista
                         }
 
                     }
-                    else { posible = false; mensaje = "Su usuario se encuentra bloqueado"; elseUsuarioBloqueado(Usuario); }
+                    else { posible = false; mensaje = "Su usuario se encuentra bloqueado"; }
                 }
-                else { posible = false; mensaje = "Hubo un problema iniciando sesión"; }
+                else 
+                {
+                    posible = false;
+                    mensaje = "La contraseña y usuario no coinciden"; 
+                    if (Usuario.key_email != null)
+                    {
+                        //Si erró 3 veces, se bloquea
+                        if (Usuario.user_attempts + 1 >= 3)
+                        {
+                           BE_User userAux = new BE_User(
+                           Usuario.key_email,
+                           true,
+                           Usuario.user_attempts);
+
+                           if (!User.EditarRestricciones(userAux)) { Console.WriteLine("Error"); }
+                            mensaje = "La contraseña y usuario no coinciden, Se bloqueó su Usuario. Comuníquese con un Administrador";
+                        }
+                        else
+                        {
+                        //Aumentar el número de intentos
+                            BE_User userAux = new BE_User(
+                                Usuario.key_email,
+                                false,
+                                Usuario.user_attempts + 1
+                            );
+
+                            if (!User.EditarRestricciones(userAux)) { Console.WriteLine("Error"); }
+                            mensaje = $"La contraseña y usuario no coinciden, le quedan {3 - Usuario.user_attempts + 1} intentos.";
+
+                        }
+                    }
+                }
             }
 
             if (!posible)

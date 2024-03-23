@@ -20,6 +20,7 @@ using BE.Venta;
 using Negocio.Usuarios;
 using System.Drawing;
 using Negocio.Inventario;
+using Irony.Parsing;
 
 namespace Vista.Ventas
 {
@@ -56,6 +57,9 @@ namespace Vista.Ventas
 
         private void btnCobrar_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show($"¿Desea realizar el pago de {VentaCache.venta.montoTotal} en Efectivo?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No) return;
+
             if (numericUpDown1.Value >= VentaCache.venta.montoTotal)
             {
                 VentaCache.venta.oUsuario = SessionManager.getSession.Usuario;
@@ -63,6 +67,8 @@ namespace Vista.Ventas
                 VentaCache.venta.fechaCreacion = DateTime.Now.ToString("ddMMyyyyHHmmss" );
                 VentaCache.venta.montoPago = numericUpDown1.Value;
                 VentaCache.venta.FormaPago = "Efectivo";
+
+                MessageBox.Show($"El cambio a entregar debe ser de {VentaCache.venta.montoCambio}", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (BLLVenta.CrearVenta(VentaCache.venta))
                 {
@@ -74,6 +80,11 @@ namespace Vista.Ventas
                     BLL_Bitacora bitacora = new BLL_Bitacora();
                     bitacora.registrarBitacoraEvento("Nueva Venta", this.GetType().Name.Substring("Vista_".Length), 1);
                     VentaCache.borrarCacheVenta();
+
+                    if (Vista_Principal_Ventas.Instancia != null)
+                    {
+                        Vista_Principal_Ventas.Instancia.AbrirFormulario<Vista_Carrito_Ventas>();
+                    }
                 }
                 else
                 {
@@ -85,13 +96,16 @@ namespace Vista.Ventas
             }
             else
             {
-                MessageBox.Show("Error");
+                MessageBox.Show($"El dinero no es suficiente. El precio final es de: {VentaCache.venta.montoTotal}");
             }
 
         }
 
         private void btnPagarTarjeta_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show($"¿Desea realizar el pago total de {VentaCache.venta.montoTotal} con Tarjeta de Débito?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No) return;
+            
             VentaCache.venta.oUsuario = SessionManager.getSession.Usuario;
             VentaCache.venta.montoCambio = 0;
             VentaCache.venta.fechaCreacion = DateTime.Now.ToString("ddMMyyyyHHmmss");
@@ -108,6 +122,11 @@ namespace Vista.Ventas
                 BLL_Bitacora bitacora = new BLL_Bitacora();
                 bitacora.registrarBitacoraEvento("Nueva Venta", this.GetType().Name.Substring("Vista_".Length), 1);
                 VentaCache.borrarCacheVenta();
+
+                if (Vista_Principal_Ventas.Instancia != null)
+                {
+                    Vista_Principal_Ventas.Instancia.AbrirFormulario<Vista_Carrito_Ventas>();
+                }
             }
             else
             {

@@ -46,8 +46,6 @@ namespace Vista.Ventas
             if (ctrol_numMesa.Value <= 0) { MessageBox.Show("Numero de mesa incorrecto"); posible = false; ctrol_numMesa.Value = 0; }
 
             if (ctrol_nbreMesero.Text.Trim() == "" || ctrol_nbreMesero.Text == "Nombre Apellido") { MessageBox.Show("Nombre de mesero incompleto"); posible = false; }
-            
-
 
             if (posible)
             {

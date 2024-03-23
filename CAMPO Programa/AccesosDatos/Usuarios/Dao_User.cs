@@ -165,8 +165,17 @@ namespace AccesosDatos
                 using (var connection = dbConnection.GetConnection())
                 {
                     dbConnection.OpenConnection();
+                    byte[] userEmail;
 
-                    byte[] userEmail = Encoding.UTF8.GetBytes(SessionManager.getSession.Usuario.key_email); // Obtiene el correo del usuario
+                    if (SessionManager.getSession.Usuario != null && SessionManager.getSession.Usuario.key_email != null)
+                    {
+                        userEmail = Encoding.UTF8.GetBytes(SessionManager.getSession.Usuario.key_email);
+                    }
+                    else
+                    {
+                        userEmail = Encoding.UTF8.GetBytes("zo@el.com");
+                    }
+
                     using (var sessionCommand = new SqlCommand("SET CONTEXT_INFO @UserEmail", connection))
                     {
                         sessionCommand.Parameters.AddWithValue("@UserEmail", userEmail);

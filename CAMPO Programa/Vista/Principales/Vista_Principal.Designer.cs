@@ -51,9 +51,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.comboIdiomas = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.panelContenedor.SuspendLayout();
             this.panelDerecho.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -68,7 +68,7 @@
             this.panelContenedor.Controls.Add(this.panelDerecho);
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(0, 74);
-            this.panelContenedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelContenedor.Margin = new System.Windows.Forms.Padding(4);
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1760, 812);
             this.panelContenedor.TabIndex = 41;
@@ -108,7 +108,7 @@
             this.panel3.Controls.Add(this.lblNombre);
             this.panel3.Controls.Add(this.lblPerfil);
             this.panel3.Location = new System.Drawing.Point(0, 118);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(291, 64);
             this.panel3.TabIndex = 47;
@@ -176,7 +176,7 @@
             this.panelBotones.Controls.Add(this.btnAbrirVentas);
             this.panelBotones.Controls.Add(this.btnAbrirCompras);
             this.panelBotones.Location = new System.Drawing.Point(-1, 176);
-            this.panelBotones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelBotones.Margin = new System.Windows.Forms.Padding(4);
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Size = new System.Drawing.Size(293, 635);
             this.panelBotones.TabIndex = 0;
@@ -190,7 +190,7 @@
             this.btnAdministrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdministrar.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdministrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAdministrar.Location = new System.Drawing.Point(28, 423);
+            this.btnAdministrar.Location = new System.Drawing.Point(28, 362);
             this.btnAdministrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 15);
             this.btnAdministrar.Name = "btnAdministrar";
             this.btnAdministrar.Size = new System.Drawing.Size(236, 43);
@@ -212,7 +212,7 @@
             this.btnLogout.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnLogout.Location = new System.Drawing.Point(9, 576);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(271, 43);
             this.btnLogout.TabIndex = 40;
@@ -268,7 +268,7 @@
             this.btnPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPerfil.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPerfil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnPerfil.Location = new System.Drawing.Point(28, 362);
+            this.btnPerfil.Location = new System.Drawing.Point(28, 424);
             this.btnPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 15);
             this.btnPerfil.Name = "btnPerfil";
             this.btnPerfil.Size = new System.Drawing.Size(236, 43);
@@ -341,7 +341,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(42)))));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, -9);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(292, 132);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -361,7 +361,7 @@
             this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button4.Location = new System.Drawing.Point(1619, 16);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(47, 43);
             this.button4.TabIndex = 9;
@@ -380,7 +380,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button1.Location = new System.Drawing.Point(1673, 16);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(47, 43);
             this.button1.TabIndex = 2;
@@ -418,31 +418,6 @@
             this.panel4.TabIndex = 21;
             this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseDown_1);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(16, 30);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 24);
-            this.label3.TabIndex = 48;
-            this.label3.Text = "Idioma:";
-            // 
-            // comboIdiomas
-            // 
-            this.comboIdiomas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.comboIdiomas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboIdiomas.ForeColor = System.Drawing.SystemColors.Window;
-            this.comboIdiomas.FormattingEnabled = true;
-            this.comboIdiomas.Location = new System.Drawing.Point(104, 27);
-            this.comboIdiomas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboIdiomas.Name = "comboIdiomas";
-            this.comboIdiomas.Size = new System.Drawing.Size(160, 24);
-            this.comboIdiomas.TabIndex = 40;
-            this.comboIdiomas.SelectedValueChanged += new System.EventHandler(this.comboIdiomas_SelectedValueChanged);
-            // 
             // button2
             // 
             this.button2.AutoEllipsis = true;
@@ -465,6 +440,31 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(16, 30);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 24);
+            this.label3.TabIndex = 48;
+            this.label3.Text = "Idioma:";
+            // 
+            // comboIdiomas
+            // 
+            this.comboIdiomas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.comboIdiomas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboIdiomas.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboIdiomas.FormattingEnabled = true;
+            this.comboIdiomas.Location = new System.Drawing.Point(104, 27);
+            this.comboIdiomas.Margin = new System.Windows.Forms.Padding(4);
+            this.comboIdiomas.Name = "comboIdiomas";
+            this.comboIdiomas.Size = new System.Drawing.Size(160, 24);
+            this.comboIdiomas.TabIndex = 40;
+            this.comboIdiomas.SelectedValueChanged += new System.EventHandler(this.comboIdiomas_SelectedValueChanged);
+            // 
             // Vista_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -473,7 +473,7 @@
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Vista_Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vista_ToolBox";

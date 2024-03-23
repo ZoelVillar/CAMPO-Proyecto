@@ -272,6 +272,10 @@ namespace Vista
                         }
                     }
                 }
+
+                //Estos no deben ocultarse y lo hago asi xq estoy apurado
+                btnLogout.Visible = true;
+                btnPerfil.Visible = true;
             }
         }
 

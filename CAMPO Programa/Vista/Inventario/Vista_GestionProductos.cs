@@ -171,16 +171,14 @@ namespace Vista.Inventario
         #region manejo de botones
         private void dataGridProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+           
+
             lblSeleccionadoEspecifico.Text = "";
             if (dataGrid.RowCount != 0)
             {
                 if (dataGrid.SelectedRows.Count > 0)
                 {
-                    if (modoboton == modoBoton.btnModificar || modoboton == modoBoton.btnEliminar)
-                    {
-                        txtCodigo.Text = dataGrid.SelectedRows[0].Cells["codigo"].Value.ToString();
-                    }
-                    lblSeleccionadoEspecifico.Text = dataGrid.SelectedRows[0].Cells["id"].Value.ToString() + "- " + dataGrid.SelectedRows[0].Cells["nombre"].Value.ToString();
+                    lblSeleccionadoEspecifico.Text = dataGrid.SelectedRows[0].Cells["id"].Value.ToString() + " " + dataGrid.SelectedRows[0].Cells["lblNombre"].Value.ToString();
                 }
             }
         }
@@ -250,7 +248,7 @@ namespace Vista.Inventario
             if (!String.IsNullOrEmpty(txtCodigo.Text) && !String.IsNullOrEmpty(txtNombre.Text) && !String.IsNullOrEmpty(txtDescripcion.Text) && !String.IsNullOrEmpty(comboCategoria.Text) && !String.IsNullOrEmpty(comboEstado.Text))
             {
                 BE_Producto producto = new BE_Producto() {
-                    Codigo = txtCodigo.Text,
+                    Codigo = dataGrid.SelectedRows[0].Cells["codigo"].Value.ToString(),
                     Nombre = txtNombre.Text,
                     Descripcion = txtDescripcion.Text,
                     oCategoria = new BE.Inventario.BE_Categoria() { idCategoria = (int)comboCategoria.SelectedValue, descripcion = comboCategoria.Text },
@@ -287,7 +285,7 @@ namespace Vista.Inventario
                 {
                     int id = int.Parse(dataGrid.SelectedRows[0].Cells["id"].Value.ToString());
 
-                    DialogResult result = MessageBox.Show($"¿Desea eliminar el producto {dataGrid.SelectedRows[0].Cells["nombre"].Value.ToString()}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult result = MessageBox.Show($"¿Desea eliminar el producto {dataGrid.SelectedRows[0].Cells["lblNombre"].Value.ToString()}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (result == DialogResult.Yes)
                     {
@@ -309,42 +307,40 @@ namespace Vista.Inventario
 
         private void modificar()
         {
-            if (dataGrid.RowCount != 0)
+            if (dataGrid.RowCount == 0 && dataGrid.SelectedRows.Count <= 0) { MessageBox.Show("No hay datos"); return;  }
+
+            if (String.IsNullOrEmpty(txtCodigo.Text) && String.IsNullOrEmpty(txtNombre.Text) && String.IsNullOrEmpty(txtDescripcion.Text) && String.IsNullOrEmpty(comboCategoria.Text) && String.IsNullOrEmpty(comboEstado.Text)) { MessageBox.Show("Complete todos los campos"); return; }
+                    
+            int id = int.Parse(dataGrid.SelectedRows[0].Cells["id"].Value.ToString());
+
+            DialogResult result = MessageBox.Show($"¿Desea modificar el producto {dataGrid.SelectedRows[0].Cells["lblNombre"].Value.ToString()}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
             {
-                if (dataGrid.SelectedRows.Count > 0)
+                BE_Producto producto = new BE_Producto()
                 {
-                    if (!String.IsNullOrEmpty(txtCodigo.Text) && !String.IsNullOrEmpty(txtNombre.Text) && !String.IsNullOrEmpty(txtDescripcion.Text) && !String.IsNullOrEmpty(comboCategoria.Text) && !String.IsNullOrEmpty(comboEstado.Text))
-                    {
-                        int id = int.Parse(dataGrid.SelectedRows[0].Cells["id"].Value.ToString());
+                    IdProducto = id,
+                    Codigo = txtCodigo.Text,
+                    Nombre = txtNombre.Text,
+                    Descripcion = txtDescripcion.Text,
+                    oCategoria = new BE.Inventario.BE_Categoria() { idCategoria = (int)comboCategoria.SelectedValue, descripcion = comboCategoria.Text },
+                    Estado = comboEstado.Text == "Activado" ? true : false
+                };
 
-                        DialogResult result = MessageBox.Show($"¿Desea modificar el producto {dataGrid.SelectedRows[0].Cells["nombre"].Value.ToString()}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                        if (result == DialogResult.Yes)
-                        {
-                            BE_Producto producto = new BE_Producto()
-                            {
-                                IdProducto = id,
-                                Codigo = txtCodigo.Text,
-                                Nombre = txtNombre.Text,
-                                Descripcion = txtDescripcion.Text,
-                                oCategoria = new BE.Inventario.BE_Categoria() { idCategoria = (int)comboCategoria.SelectedValue, descripcion = comboCategoria.Text },
-                                Estado = comboEstado.Text == "Activado" ? true : false
-                            };
-
-                            if (bllProducto.modificarProducto(producto))
-                            {
-                                MessageBox.Show("Producto modificado con éxito");
-                                ActualizarGrilla();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Hubo un problema actualizando el Producto");
-                            }
-
-                        }
-                    }
+                if (bllProducto.modificarProducto(producto))
+                {
+                    MessageBox.Show("Producto modificado con éxito");
+                    ActualizarGrilla();
                 }
+                else
+                {
+                    MessageBox.Show("Hubo un problema actualizando el Producto");
+                }
+
             }
+                    
+                
+            
         }
 
         private void btnAceptar_Click_1(object sender, EventArgs e)

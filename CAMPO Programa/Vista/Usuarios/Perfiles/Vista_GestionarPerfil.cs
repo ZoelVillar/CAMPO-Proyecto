@@ -13,6 +13,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 using Vista.Usuarios.Idiomas;
 
@@ -63,7 +64,8 @@ namespace Vista
         }
         private void refrescarGrilla()
         {
-            var listaPC = bllPermiso.ObtenerPermisos("C");
+            var listaPC = bllPermiso.ObtenerPermisos("C").Where(pc => pc.idPermiso != "Administrador").ToList();
+   
             var listaPS = bllPermiso.ObtenerPermisos("S");
             var listaPerfiles = bllPerfil.retornaPerfiles();
 
@@ -290,22 +292,28 @@ namespace Vista
             if (string.IsNullOrEmpty(idPerfil)) { return; }
             string permisoPerfil = grillaPC.CurrentRow.Cells[0].Value.ToString();
 
-            if (bllPerfil.agregarPerfil(idPerfil, permisoPerfil)) 
-            {
-                BLL_Bitacora bitacora = new BLL_Bitacora();
-                bitacora.registrarBitacoraEvento($"Perfil Agregado", this.GetType().Name.Substring("Vista_".Length), 1);
-                refrescarGrilla();
-                refrescarArbol();
-            }
-            else
-            {
-                MessageBox.Show("Error agregando el perfil");
-            }
+            DialogResult result = MessageBox.Show($"Desea vincular el perfil {idPerfil} con el permiso {permisoPerfil}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            EventHandler handler = PerfilAgregado;
-            if(handler != null)
+            if (result == DialogResult.Yes)
             {
-                handler(this, EventArgs.Empty);
+                if (bllPerfil.agregarPerfil(idPerfil, permisoPerfil)) 
+                {
+                    BLL_Bitacora bitacora = new BLL_Bitacora();
+                    bitacora.registrarBitacoraEvento($"Perfil Agregado", this.GetType().Name.Substring("Vista_".Length), 1);
+                    refrescarGrilla();
+                    refrescarArbol();
+                }
+                else
+                {
+                    MessageBox.Show("Error agregando el perfil");
+                }
+
+                EventHandler handler = PerfilAgregado;
+                if(handler != null)
+                {
+                    handler(this, EventArgs.Empty);
+                }
+
             }
         }
 
@@ -317,7 +325,7 @@ namespace Vista
 
             if (result == DialogResult.Yes)
             {
-                if (bllPerfil.eliminarPerfil(id_perfilBorrar)) {
+                if (bllPerfil.eliminarPerfil(id_perfilBorrar) && id_perfilBorrar != "Administrador")  {
 
 
                     BLL_Bitacora bitacora = new BLL_Bitacora();
